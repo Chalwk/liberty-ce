@@ -14,4 +14,4 @@ redistribute, or use any assets without explicit prior written permission.
 
 For the full legal terms, please read the [LICENSE](LICENSE) file.
 
-Website developed by [Chalwk](mailto:chalwk.dev@gmail.com) for Liberty.
+Website developed by [Chalwk](https://github.com/Chalwk) for Liberty.
