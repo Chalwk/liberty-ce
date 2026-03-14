@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty Gaming - Servers</title>
+    <link href="../core.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script defer src="../nav-menu.js"></script>
+    <style>
+        .server-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .server-entry {
+            background: rgba(10, 12, 15, 0.8);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .server-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-size: 1.8rem;
+        }
+        .server-info p {
+            color: var(--text-muted);
+        }
+        .server-meta {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .ip-address {
+            background: var(--bg-panel);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-family: monospace;
+            border: 1px solid var(--border-glow);
+        }
+        @media (max-width: 700px) {
+            .server-entry {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="header"></header>
+
+<main>
+    <h1>Active Servers</h1>
+    <p>insert_description_here</p>
+
+    <div class="server-list">
+        <div class="server-entry">
+            <div class="server-info">
+                <h3>! ++ LIBERTY ++ !</h3>
+                <p>...</p>
+            </div>
+            <div class="server-meta">
+                <span class="ip-address" onclick="navigator.clipboard?.writeText('185.107.96.224:2302<')">185.107.96.224:2302</span>
+            </div>
+        </div>
+        <div class="server-entry">
+            <div class="server-info">
+                <h3>! ++ LIBERTY - RACING ++ !</h3>
+                <p>...</p>
+            </div>
+            <div class="server-meta">
+                <span class="ip-address" onclick="navigator.clipboard?.writeText('185.107.96.219:2302')">185.107.96.219:2302</span>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
