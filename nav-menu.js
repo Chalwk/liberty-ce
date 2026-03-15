@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="${basePath}pages/community.html" class="nav-link">Community</a></li>
               <li><a href="${basePath}pages/members.html" class="nav-link">Members</a></li>
               <li><a href="${basePath}pages/community-rules.html" class="nav-link">Community Rules</a></li>
+              <li><a href="${basePath}pages/resources.html" class="nav-link">Resources</a></li>
               <li><a href="${basePath}pages/contact.html" class="nav-link">Contact</a></li>
             </ul>
         </nav>
