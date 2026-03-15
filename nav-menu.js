@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const headerHTML = `
     <div class="header-top">
-        <img src="${basePath}images/halo-logo.png" alt="Liberty Gaming Logo" class="header-logo" onerror="this.onerror=null; this.src='${basePath}images/placeholder-logo.png';">
+        <img src="${basePath}images/liberty-logo.png" alt="Liberty Gaming Logo" class="header-logo" onerror="this.onerror=null; this.src='${basePath}images/placeholder-logo.png';">
         <h1>Liberty Gaming - Halo CE</h1>
     </div>
         <nav class="main-nav" aria-label="Main navigation">
