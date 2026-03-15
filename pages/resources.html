@@ -126,6 +126,13 @@
             transform: scale(1.05);
             box-shadow: 0 4px 10px var(--primary);
         }
+
+        @media (max-width: 600px) {
+            ul[style*="columns"] {
+                columns: 1 !important;
+                column-gap: 0;
+            }
+        }
     </style>
 </head>
 <body>

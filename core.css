@@ -245,6 +245,12 @@ footer {
     box-shadow: 0 0 15px var(--accent);
 }
 
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1rem 0;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 0 1rem;
@@ -263,6 +269,8 @@ footer {
         cursor: pointer;
         padding: 0.3rem 1rem;
         border-radius: 8px;
+        min-width: 44px;
+        min-height: 44px;
     }
 
     .main-nav {
@@ -290,6 +298,7 @@ footer {
         display: block;
         padding: 0.8rem;
         border-radius: 0;
+        font-size: 1.1rem;
     }
 
     .header-top {
@@ -322,5 +331,9 @@ footer {
     }
     main {
         padding: 1.5rem;
+    }
+    .btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
     }
 }

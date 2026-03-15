@@ -54,13 +54,6 @@
             color: var(--text-muted);
             font-style: italic;
         }
-        @media (max-width: 600px) {
-            .members-table th,
-            .members-table td {
-                padding: 0.75rem;
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -70,16 +63,18 @@
     <h1>Members</h1>
     <p class="members-note">February 2026</p>
 
-    <table class="members-table">
-        <thead>
-        <tr>
-            <th>Member</th>
-            <th>Country</th>
-            <th>Discord Role(s)</th>
-        </tr>
-        </thead>
-        <tbody id="members-tbody"></tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="members-table">
+            <thead>
+            <tr>
+                <th>Member</th>
+                <th>Country</th>
+                <th>Discord Role(s)</th>
+            </tr>
+            </thead>
+            <tbody id="members-tbody"></tbody>
+        </table>
+    </div>
 </main>
 
 <script>
