@@ -2,13 +2,13 @@ LIB-Akuma;🇮🇹 Italy;Member
 LIB-Ales;🇵🇦 Panama;Member
 LIB-AMouse;🇳🇱 Netherlands;Member
 LIB-Chalwk;🇳🇿 New Zealand;Member
-LIB-Cyber;🇦🇹 Austria;Member
+LIB-Cyber;🇦🇹 Austria;Founder
 LIB-Easy;🇳🇱 Netherlands;Member
 LIB-Eddy;🇪🇹 Ethiopia;Member
 LIB-Epic;🇺🇸 United States;Member
 LIB-JBomb;🇬🇧 United Kingdom;Member
 LIB-Mina;🇨🇴 Colombia;Member
-LIB-Maja;🇩🇪 Germany;Member
+LIB-Maja;🇩🇪 Germany;Founder
 LIB-Oldi;🇩🇪 Germany;Member
 LIB-Perico;🇬🇧 United Kingdom;Founder
 LIB-Renard;🇲🇽 Mexico;Member
