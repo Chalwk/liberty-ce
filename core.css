@@ -259,6 +259,7 @@ footer {
     .nav-toggle {
         display: block;
         margin-left: auto;
+        margin-top: 20px;
     }
 
     .nav-toggle button {
