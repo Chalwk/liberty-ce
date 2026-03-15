@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty Gaming - Members</title>
+    <link href="../core.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script defer src="../nav-menu.js"></script>
+    <style>
+        .members-note {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .members-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(10, 12, 15, 0.8);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .members-table th {
+            background: var(--bg-panel);
+            color: var(--primary);
+            font-family: var(--font-header);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid var(--border-glow);
+        }
+        .members-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-glow);
+            color: var(--text-light);
+        }
+        .members-table tr:last-child td {
+            border-bottom: none;
+        }
+        .members-table tr:hover td {
+            background: rgba(42, 169, 161, 0.1);
+        }
+        .country-flag {
+            font-size: 1.4rem;
+            line-height: 1;
+            margin-right: 0.3rem;
+        }
+        .role-placeholder {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        @media (max-width: 600px) {
+            .members-table th,
+            .members-table td {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="header"></header>
+
+<main>
+    <h1>Members</h1>
+    <p class="members-note">February 2026</p>
+
+    <table class="members-table">
+        <thead>
+        <tr>
+            <th>Member</th>
+            <th>Country</th>
+            <th>Discord Role(s)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>LIB-Akuma</td><td><span class="country-flag">🇮🇹</span> Italy</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Ales</td><td><span class="country-flag">🇵🇦</span> Panama</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-AMouse</td><td><span class="country-flag">🇳🇱</span> Netherlands</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Chalwk</td><td><span class="country-flag">🇳🇿</span> New Zealand</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Cyber</td><td><span class="country-flag">🇦🇹</span> Austria</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Easy</td><td><span class="country-flag">🇳🇱</span> Netherlands</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Eddy</td><td><span class="country-flag">🇪🇹</span> Ethiopia</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Epic</td><td><span class="country-flag">🇺🇸</span> United States</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-JBomb</td><td><span class="country-flag">🇬🇧</span> United Kingdom</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Mina</td><td><span class="country-flag">🇨🇴</span> Colombia</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Maja</td><td><span class="country-flag">🇩🇪</span> Germany</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Oldi</td><td><span class="country-flag">🇩🇪</span> Germany</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Perico</td><td><span class="country-flag">🇬🇧</span> United Kingdom</td><td class="role-placeholder">Founder</td></tr>
+        <tr><td>LIB-Renard</td><td><span class="country-flag">🇲🇽</span> Mexico</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Rookie</td><td><span class="country-flag">🇺🇸</span> United States</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Spark</td><td><span class="country-flag">🇷🇸</span> Serbia</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Spirou</td><td><span class="country-flag">🇳🇱</span> Netherlands</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Thors</td><td><span class="country-flag">🇺🇸</span> United States</td><td class="role-placeholder">Member</td></tr>
+        <tr><td>LIB-Vegeta</td><td><span class="country-flag">🇪🇸</span> Spain</td><td class="role-placeholder">Member</td></tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

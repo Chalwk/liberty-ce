@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty Gaming - Community Rules</title>
+    <link href="../core.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script defer src="../nav-menu.js"></script>
+    <style>
+        .rules-intro {
+            background: rgba(10, 12, 15, 0.6);
+            border-left: 6px solid var(--primary);
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+        }
+
+        .rules-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .rule-card {
+            background: rgba(10, 12, 15, 0.8);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(2px);
+        }
+
+        .rule-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 18px rgba(42, 169, 161, 0.3);
+        }
+
+        .rule-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-glow);
+            padding-bottom: 0.5rem;
+        }
+
+        .rule-card h3 i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .rule-card ul {
+            list-style: none;
+            padding-left: 0.5rem;
+        }
+
+        .rule-card li {
+            margin-bottom: 0.75rem;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .rule-card li::before {
+            content: "⏺";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .quote-note {
+            background: rgba(42, 169, 161, 0.1);
+            border-radius: 16px;
+            padding: 1.2rem 2rem;
+            margin: 2rem 0 0.5rem;
+            font-style: italic;
+            border-left: 4px solid var(--accent);
+            color: var(--text-muted);
+        }
+
+        .quote-note strong {
+            color: var(--primary);
+            font-style: normal;
+        }
+
+        .enforcement-box {
+            background: rgba(122, 165, 245, 0.08);
+            border: 1px solid var(--accent);
+            border-radius: 30px;
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .enforcement-box h4 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .enforcement-box p {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 600px) {
+            .rule-card {
+                padding: 1.2rem;
+            }
+            .rule-card h3 {
+                font-size: 1.4rem;
+            }
+            .rule-card li {
+                font-size: 1rem;
+                padding-left: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="header"></header>
+
+<main>
+    <h1>🛡️ community rules</h1>
+
+    <div class="rules-intro">
+        <i class="fas fa-shield-alt" style="color: var(--primary); margin-right: 0.8rem;"></i>
+        Liberty Gaming is all about good times and great Halo CE matches. Our rules are simple - if you're caught
+        breaking them, you may be kicked or muted. We really don't like banning anyone, but we will if someone
+        continually fails to control themselves. Play smart, respect others, and you'll fit right in.
+    </div>
+
+    <div class="rules-grid">
+
+        <div class="rule-card">
+            <h3><i class="fas fa-handshake"></i> Respect others</h3>
+            <ul>
+                <li>No offensive or inappropriate nametags - keep it clean.</li>
+                <li>Zero tolerance for insults, harassment, or racist remarks.</li>
+                <li>Treat everyone like a fellow Spartan - we're here to have fun.</li>
+            </ul>
+        </div>
+
+        <div class="rule-card">
+            <h3><i class="fas fa-gamepad"></i> Fair play & gameplay</h3>
+            <ul>
+                <li><strong>Don't cheat.</strong> No aimbots, wallhacks, or any form of unfair advantage.</li>
+                <li>No intentional teamkilling, teamshooting, or damaging your own team's vehicles.</li>
+                <li>Avoid unnecessary team switching - it unbalances the game.</li>
+                <li>Don't constantly block portals or intentionally disrupt the flow of play.</li>
+                <li>Excessive chatting during a match (instead of playing) is disruptive - keep it brief.</li>
+            </ul>
+        </div>
+
+        <div class="rule-card">
+            <h3><i class="fas fa-comments"></i> Chat & communication</h3>
+            <ul>
+                <li>No spamming text or voice (Discord) chat.</li>
+                <li>Refrain from disruptive, offensive, or overly loud voice chat.</li>
+                <li>If you have a problem with someone, contact an admin - don't start a flame war.</li>
+            </ul>
+        </div>
+
+        <div class="rule-card">
+            <h3><i class="fas fa-bug"></i> Exploits & glitches</h3>
+            <ul>
+                <li>Don't abuse map glitches, geometry holes, or game bugs to gain an unfair advantage.</li>
+                <li>Report any major exploits to the admin team so we can fix or address them.</li>
+            </ul>
+        </div>
+
+        <div class="rule-card">
+            <h3><i class="fas fa-crown"></i> Listen to admins</h3>
+            <ul>
+                <li>Admins are volunteers who keep the servers fun and fair.</li>
+                <li>Respect their decisions - if you disagree, discuss it politely after the match.</li>
+                <li>Repeatedly ignoring admin instructions will lead to mutes or kicks.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="quote-note">
+        <i class="fas fa-quote-left" style="color: var(--primary); margin-right: 0.5rem;"></i>
+        As the founder puts it: <strong>“Cheating is only for idiots with very small dicks and obviously no real
+        skills.”</strong>
+        So, seriously - just don't cheat. Be better than that.
+    </div>
+
+    <div class="enforcement-box">
+        <h4><i class="fas fa-gavel"></i> How we enforce</h4>
+        <p><i class="fas fa-circle" style="color: var(--primary); font-size: 0.6rem; vertical-align: middle;"></i>
+            <strong>First offence</strong> - usually a warning (verbal or via chat).</p>
+        <p><i class="fas fa-circle" style="color: var(--primary); font-size: 0.6rem; vertical-align: middle;"></i>
+            <strong>Repeated / serious offence</strong> - temporary mute or kick from server.</p>
+        <p><i class="fas fa-circle" style="color: var(--primary); font-size: 0.6rem; vertical-align: middle;"></i>
+            <strong>Continual issues or major violations</strong> - temporary ban (duration depends on severity).</p>
+        <p><i class="fas fa-circle" style="color: var(--primary); font-size: 0.6rem; vertical-align: middle;"></i>
+            <strong>Permanent ban</strong> - only as a last resort for extreme or repeated behaviour.</p>
+        <p style="margin-top: 0.8rem; color: var(--text-muted);"><i class="fas fa-info-circle"></i> These rules apply
+            in-game and on our Discord. If you see someone breaking them, ping an admin or send a direct message.</p>
+    </div>
+
+    <p style="text-align: center; margin: 2rem 0 0.5rem; color: var(--text-muted);">
+        <i class="fas fa-heart" style="color: var(--primary);"></i>
+        We're here to enjoy Halo CE together - thanks for being part of Liberty.
+    </p>
+
+</main>
+</body>
+</html>
