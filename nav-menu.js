@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <ul>
               <li><a href="${basePath}index.html" class="nav-link">Home</a></li>
               <li><a href="${basePath}pages/servers.html" class="nav-link">Servers</a></li>
-              <li><a href="${basePath}pages/maps.html" class="nav-link">Maps</a></li>
               <li><a href="${basePath}pages/community.html" class="nav-link">Community</a></li>
               <li><a href="${basePath}pages/members.html" class="nav-link">Members</a></li>
               <li><a href="${basePath}pages/community-rules.html" class="nav-link">Community Rules</a></li>
