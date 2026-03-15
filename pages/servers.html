@@ -82,8 +82,9 @@
             border-radius: 12px;
             padding: 0.8rem 1.2rem;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            gap: 0.5rem;
         }
         .map-name a {
             color: var(--text-light);
@@ -104,7 +105,10 @@
             padding: 0.2rem 0.8rem;
             border-radius: 20px;
             border: 1px solid var(--border-glow);
-            white-space: nowrap;
+            white-space: normal;
+            text-align: center;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         .note {
             color: var(--text-muted);
@@ -167,9 +171,6 @@
             }
 
             .map-item {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
                 padding: 1rem;
             }
 
@@ -181,11 +182,6 @@
             .map-name a {
                 padding: 0.5rem 0;
                 display: inline-block;
-            }
-
-            .map-gametype {
-                white-space: normal;
-                font-size: 0.85rem;
             }
 
             .note {
