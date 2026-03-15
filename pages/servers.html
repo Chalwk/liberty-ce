@@ -190,6 +190,33 @@
             "CTF rox"
         ];
 
+        const racingLaps = {
+            "cliffhanger": 10,
+            "mystic_mod": 10,
+            "highlow_race": 10,
+            "atephobia__v2": 10,
+            "bc_raceway_final_mp": 5,
+            "lostcove_race": 10,
+            "equinox_v2": 10,
+            "prime_c3_race": 10,
+            "Nervous_King": 10,
+            "mongoose_point": 15,
+            "grove_final": 10,
+            "siege": 10,
+            "dessication_pb1": 10,
+            "timberland": 10,
+            "New_Mombasa_Race_v2": 10,
+            "hypothermia_race": 10,
+            "wpitest1_race": 15,
+            "gauntlet_race": 10,
+            "islandthunder_race": 10,
+            "camtrack-arena-race": 10,
+            "hornets_nest": 10,
+            "tlsstronghold": 10,
+            "massacre_mountain_race_v2": 10,
+            "cityscape-adrenaline": 10
+        };
+
         fetch(mapsTxtPath)
             .then(response => {
             if (!response.ok) throw new Error(`Failed to load maps.txt (${response.status})`);
@@ -254,10 +281,11 @@
             } else {
                 maps.forEach(mapname => {
                     const encoded = encodeURIComponent(mapname);
+                    const laps = racingLaps[mapname] || 10;
                     html += `
                         <div class="map-item">
                             <span class="map-name"><a href="${baseUrl}${encoded}.zip" target="_blank" title="Download ${mapname}">${mapname}</a></span>
-                            <span class="map-gametype">Racing</span>
+                            <span class="map-gametype">${laps} lap${laps !== 1 ? 's' : ''}</span>
                         </div>
                     `;
                 });
