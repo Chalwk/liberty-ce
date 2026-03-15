@@ -25,7 +25,7 @@ body {
     background-image:
     radial-gradient(circle at 20% 30%, rgba(90, 180, 180, 0.05) 0%, transparent 20%),
     radial-gradient(circle at 80% 70%, rgba(42, 169, 161, 0.05) 0%, transparent 25%),
-    url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 5 L55 20 L55 40 L30 55 L5 40 L5 20 Z" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/></svg>');
+    url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="https://www.w3.org/2000/svg"><path d="M30 5 L55 20 L55 40 L30 55 L5 40 L5 20 Z" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/></svg>');
     color: var(--text-light);
     line-height: 1.6;
     padding: 0 2rem;
