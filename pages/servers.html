@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a0c0f">
     <title>Liberty Gaming - Servers</title>
     <link href="../core.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap"
@@ -52,6 +53,11 @@
             font-family: monospace;
             border: 1px solid var(--border-glow);
             cursor: pointer;
+            transition: background 0.2s;
+            user-select: all;
+        }
+        .ip-address:active {
+            background: var(--bg-panel-light);
         }
         .server-details {
             margin-top: 1.5rem;
@@ -85,6 +91,8 @@
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s;
             font-weight: 500;
+            display: inline-block;
+            padding: 0.2rem 0;
         }
         .map-name a:hover {
             border-bottom-color: var(--accent);
@@ -96,6 +104,7 @@
             padding: 0.2rem 0.8rem;
             border-radius: 20px;
             border: 1px solid var(--border-glow);
+            white-space: nowrap;
         }
         .note {
             color: var(--text-muted);
@@ -110,27 +119,126 @@
         .error {
             color: #ff6b6b;
         }
+
         @media (max-width: 700px) {
             .server-entry {
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
+                padding: 1.2rem;
             }
+
+            .server-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .server-info p {
+                font-size: 0.95rem;
+            }
+
             .server-meta {
                 flex-direction: column;
                 gap: 0.8rem;
+                width: 100%;
             }
+
             .ip-address {
-                font-size: 0.9rem;
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                word-break: break-all;
+                line-height: 1.4;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
+
+            .expand-icon {
+                font-size: 1.5rem;
+                padding: 0.5rem;
+                min-width: 44px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
             .map-item {
                 flex-direction: column;
                 gap: 0.5rem;
                 text-align: center;
+                padding: 1rem;
             }
+
             .maps-grid {
                 grid-template-columns: 1fr;
+                gap: 0.8rem;
             }
+
+            .map-name a {
+                padding: 0.5rem 0;
+                display: inline-block;
+            }
+
+            .map-gametype {
+                white-space: normal;
+                font-size: 0.85rem;
+            }
+
+            .note {
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .server-details {
+                padding: 1rem;
+            }
+
+            .loading i {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .server-entry {
+                padding: 1rem;
+                border-radius: 16px;
+            }
+
+            .server-info h3 {
+                font-size: 1.3rem;
+            }
+
+            .ip-address {
+                font-size: 0.95rem;
+                padding: 0.7rem 0.8rem;
+            }
+
+            .expand-icon {
+                font-size: 1.3rem;
+            }
+
+            .map-item {
+                padding: 0.8rem;
+            }
+
+            .maps-grid {
+                gap: 0.6rem;
+            }
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .note i {
+            margin-right: 0.3rem;
         }
     </style>
 </head>
@@ -164,7 +272,7 @@
             <div class="server-meta">
                 <span class="ip-address"
                       onclick="event.stopPropagation(); navigator.clipboard?.writeText('185.107.96.219:2302')">185.107.96.219:2302</span>
-                <i class="fas fa-chevron-down expand-icon"></i>
+                <i class="fa-solid fa-chevron-down expand-icon"></i>
             </div>
         </div>
         <div class="server-details" id="details-racing"></div>
