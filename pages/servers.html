@@ -287,44 +287,6 @@
         let racingMaps = [];
         let fetchCompleted = false;
 
-        const standardGametypes = [
-            "CTF rox", "CTF rox", "CTF all weapons", "CTF all weapons", "CTF rox",
-            "Oddball rox (2 skulls)", "CTF rox", "KoH rox", "CTF shotguns",
-            "Teamslayer 50 kill classic weapons", "Oddball shotguns (2 skulls)",
-            "CTF all weapons", "CTF rox", "teamslayer 50 kill rox", "CTF normal weapons",
-            "CTF shotguns", "CTF rox", "CTF all weapons", "CTF rox", "Slayer 25 kill rox",
-            "CTF rox", "Oddball rox (2 skulls)", "CTF rox", "CTF rox", "Slayer 25 kill rox",
-            "CTF rox", "CTF rox", "CTF classic weapons", "CTF rox", "Slayer 25 kill rox",
-            "CTF rox"
-        ];
-
-        const racingLaps = {
-            "cliffhanger": 10,
-            "mystic_mod": 10,
-            "highlow_race": 10,
-            "atephobia__v2": 10,
-            "bc_raceway_final_mp": 5,
-            "lostcove_race": 10,
-            "equinox_v2": 10,
-            "prime_c3_race": 10,
-            "Nervous_King": 10,
-            "mongoose_point": 15,
-            "grove_final": 10,
-            "siege": 10,
-            "dessication_pb1": 10,
-            "timberland": 10,
-            "New_Mombasa_Race_v2": 10,
-            "hypothermia_race": 10,
-            "wpitest1_race": 15,
-            "gauntlet_race": 10,
-            "islandthunder_race": 10,
-            "camtrack-arena-race": 10,
-            "hornets_nest": 10,
-            "tlsstronghold": 10,
-            "massacre_mountain_race_v2": 10,
-            "cityscape-adrenaline": 10
-        };
-
         fetch(mapsTxtPath)
             .then(response => {
             if (!response.ok) throw new Error(`Failed to load maps.txt (${response.status})`);
@@ -334,16 +296,25 @@
             const lines = data.split(/\r?\n/);
             const standard = [];
             const racing = [];
+
             lines.forEach(line => {
                 line = line.trim();
                 if (!line || line.startsWith('#')) return;
+
                 const parts = line.split(';');
-                if (parts.length < 2) return;
+                if (parts.length < 3) return;
+
                 const server = parts[0].trim();
                 const mapname = parts[1].trim();
-                if (server === 'standard') standard.push(mapname);
-                else if (server === 'racing') racing.push(mapname);
+                const info = parts[2].trim();
+
+                if (server === 'standard') {
+                    standard.push({ map: mapname, gametype: info });
+                } else if (server === 'racing') {
+                    racing.push({ map: mapname, laps: info });
+                }
             });
+
             standardMaps = standard;
             racingMaps = racing;
             fetchCompleted = true;
@@ -362,42 +333,39 @@
                 return;
             }
 
-            if (serverType === 'standard' && standardMaps.length === 0) {
-                container.innerHTML = '<div class="error">No map data available for standard server.</div>';
-                return;
-            }
-            if (serverType === 'racing' && racingMaps.length === 0) {
-                container.innerHTML = '<div class="error">No map data available for racing server.</div>';
+            const maps = serverType === 'standard' ? standardMaps : racingMaps;
+            if (maps.length === 0) {
+                container.innerHTML = `<div class="error">No map data available for ${serverType} server.</div>`;
                 return;
             }
 
-            const maps = serverType === 'standard' ? standardMaps : racingMaps;
             let html = '<p class="note"><i class="fas fa-clock"></i> All games run for 20 minutes. Click a map name to download.</p>';
             html += '<div class="maps-grid">';
 
             if (serverType === 'standard') {
-                maps.forEach((mapname, index) => {
-                    const gametype = (index < standardGametypes.length) ? standardGametypes[index] : 'Unknown gametype';
-                    const encoded = encodeURIComponent(mapname);
+                maps.forEach(item => {
+                    const encoded = encodeURIComponent(item.map);
                     html += `
                         <div class="map-item">
-                            <span class="map-name"><a href="${baseUrl}${encoded}.zip" target="_blank" title="Download ${mapname}">${mapname}</a></span>
-                            <span class="map-gametype">${gametype}</span>
+                            <span class="map-name"><a href="${baseUrl}${encoded}.zip" target="_blank" title="Download ${item.map}">${item.map}</a></span>
+                            <span class="map-gametype">${item.gametype}</span>
                         </div>
                     `;
                 });
             } else {
-                maps.forEach(mapname => {
-                    const encoded = encodeURIComponent(mapname);
-                    const laps = racingLaps[mapname] || 10;
+                maps.forEach(item => {
+                    const encoded = encodeURIComponent(item.map);
+                    const laps = item.laps;
+                    const lapsText = `${laps} lap${parseInt(laps) !== 1 ? 's' : ''}`;
                     html += `
                         <div class="map-item">
-                            <span class="map-name"><a href="${baseUrl}${encoded}.zip" target="_blank" title="Download ${mapname}">${mapname}</a></span>
-                            <span class="map-gametype">${laps} lap${laps !== 1 ? 's' : ''}</span>
+                            <span class="map-name"><a href="${baseUrl}${encoded}.zip" target="_blank" title="Download ${item.map}">${item.map}</a></span>
+                            <span class="map-gametype">${lapsText}</span>
                         </div>
                     `;
                 });
             }
+
             html += '</div>';
             container.innerHTML = html;
         }
@@ -405,6 +373,7 @@
         document.querySelectorAll('.server-entry').forEach(entry => {
             entry.addEventListener('click', function(e) {
                 if (e.target.classList.contains('ip-address')) return;
+
                 const server = this.dataset.server;
                 const detailsId = `details-${server}`;
                 const detailsDiv = document.getElementById(detailsId);

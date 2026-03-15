@@ -1,55 +1,55 @@
-racing;cliffhanger
-racing;mystic_mod
-racing;highlow_race
-racing;atephobia__v2
-racing;bc_raceway_final_mp
-racing;lostcove_race
-racing;equinox_v2
-racing;prime_c3_race
-racing;Nervous_King
-racing;mongoose_point
-racing;grove_final
-racing;siege
-racing;dessication_pb1
-racing;timberland
-racing;New_Mombasa_Race_v2
-racing;hypothermia_race
-racing;wpitest1_race
-racing;gauntlet_race
-racing;islandthunder_race
-racing;camtrack-arena-race
-racing;hornets_nest
-racing;tlsstronghold
-racing;massacre_mountain_race_v2
-racing;cityscape-adrenaline
-standard;liberty_bountygulch
-standard;liberty_tension
-standard;fragment_v2
-standard;oblivion
-standard;dichotomy
-standard;forgotten_fortress_beta
-standard;liberty_battle_creek
-standard;abandonment
-standard;chillout
-standard;silo_surprise
-standard;trainingday
-standard;cmt_g3_vestigial
-standard;hangemhigh
-standard;bloodgulch
-standard;tactics
-standard;delta_ruined
-standard;carousel
-standard;h2_zanzibar_v3
-standard;gephyrophobia
-standard;opavo
-standard;facing_worldsrx
-standard;hangemhigh
-standard;sidewinder
-standard;liberty_damnation
-standard;chillout
-standard;liberty_g3_augur
-standard;launch_bay
-standard;trainingday
-standard;dangercanyon
-standard;ivory_tower_final
-standard;triduct
+racing;cliffhanger;10
+racing;mystic_mod;10
+racing;highlow_race;10
+racing;atephobia__v2;10
+racing;bc_raceway_final_mp;5
+racing;lostcove_race;10
+racing;equinox_v2;10
+racing;prime_c3_race;10
+racing;Nervous_King;10
+racing;mongoose_point;15
+racing;grove_final;10
+racing;siege;10
+racing;dessication_pb1;10
+racing;timberland;10
+racing;New_Mombasa_Race_v2;10
+racing;hypothermia_race;10
+racing;wpitest1_race;15
+racing;gauntlet_race;10
+racing;islandthunder_race;10
+racing;camtrack-arena-race;10
+racing;hornets_nest;10
+racing;tlsstronghold;10
+racing;massacre_mountain_race_v2;10
+racing;cityscape-adrenaline;10
+standard;liberty_bountygulch;CTF rox
+standard;liberty_tension;CTF rox
+standard;fragment_v2;CTF all weapons
+standard;oblivion;CTF all weapons
+standard;dichotomy;CTF rox
+standard;forgotten_fortress_beta;Oddball rox (2 skulls)
+standard;liberty_battle_creek;CTF rox
+standard;abandonment;KoH rox
+standard;chillout;CTF shotguns
+standard;silo_surprise;Teamslayer 50 kill classic weapons
+standard;trainingday;Oddball shotguns (2 skulls)
+standard;cmt_g3_vestigial;CTF all weapons
+standard;hangemhigh;CTF rox
+standard;bloodgulch;teamslayer 50 kill rox
+standard;tactics;CTF normal weapons
+standard;delta_ruined;CTF shotguns
+standard;carousel;CTF rox
+standard;h2_zanzibar_v3;CTF all weapons
+standard;gephyrophobia;CTF rox
+standard;opavo;Slayer 25 kill rox
+standard;facing_worldsrx;CTF rox
+standard;hangemhigh;Oddball rox (2 skulls)
+standard;sidewinder;CTF rox
+standard;liberty_damnation;CTF rox
+standard;chillout;Slayer 25 kill rox
+standard;liberty_g3_augur;CTF rox
+standard;launch_bay;CTF rox
+standard;trainingday;CTF classic weapons
+standard;dangercanyon;CTF rox
+standard;ivory_tower_final;Slayer 25 kill rox
+standard;triduct;CTF rox
