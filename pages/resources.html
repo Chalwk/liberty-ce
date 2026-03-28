@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Liberty Gaming - Resources & HAC2 Guide</title>
     <link href="../core.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <script defer src="../nav-menu.js"></script>
     <style>
         .guide-section {
@@ -17,6 +17,7 @@
             margin: 2.5rem 0;
             border-left: 6px solid var(--primary);
         }
+
         .guide-section h2 {
             margin-top: 0;
             border-bottom: 2px solid var(--border-glow);
@@ -25,21 +26,25 @@
             align-items: center;
             gap: 0.8rem;
         }
+
         .guide-section h2 i {
             color: var(--accent);
             font-size: 2rem;
         }
+
         .guide-steps {
             display: flex;
             flex-direction: column;
             gap: 1.8rem;
         }
+
         .step {
             background: rgba(26, 30, 36, 0.5);
             border-radius: 20px;
             padding: 1.5rem;
             border: 1px solid var(--border-glow);
         }
+
         .step h3 {
             color: var(--primary);
             font-size: 1.6rem;
@@ -47,27 +52,33 @@
             border-bottom: 1px dashed var(--border-glow);
             padding-bottom: 0.3rem;
         }
+
         .step ul, .step ol {
             padding-left: 1.8rem;
             color: var(--text-light);
         }
+
         .step li {
             margin-bottom: 0.5rem;
         }
+
         .step a {
             color: var(--accent);
             text-decoration: underline;
             text-underline-offset: 3px;
         }
+
         .step a:hover {
             color: var(--primary);
         }
+
         .resource-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
+
         .resource-card {
             background: rgba(26, 30, 36, 0.8);
             border: 1px solid var(--border-glow);
@@ -76,23 +87,27 @@
             text-align: center;
             transition: var(--transition);
         }
+
         .resource-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary);
             box-shadow: 0 0 18px var(--primary);
         }
+
         .resource-card i {
             font-size: 2.8rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
+
         .resource-card h4 {
             font-size: 1.5rem;
             margin-bottom: 0.8rem;
             color: var(--accent);
         }
+
         .credits {
-            background: rgba(0,0,0,0.3);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 30px;
             padding: 1rem 2rem;
             margin: 1rem 0 2rem;
@@ -100,9 +115,11 @@
             color: var(--text-muted);
             font-size: 1.1rem;
         }
+
         .credits strong {
             color: var(--primary);
         }
+
         .btn-download {
             display: inline-block;
             background: var(--primary);
@@ -130,9 +147,10 @@
         details {
             margin-bottom: 2rem;
             border-radius: 28px;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0, 0, 0, 0.2);
             padding: 0.5rem;
         }
+
         details summary {
             cursor: pointer;
             list-style: none;
@@ -144,21 +162,25 @@
             border: 1px solid var(--border-glow);
             transition: 0.2s;
         }
+
         details summary:hover {
             background: rgba(40, 45, 50, 0.9);
             border-color: var(--primary);
         }
+
         details summary span {
             font-size: 1.8rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.03em;
             display: flex;
             align-items: center;
             gap: 0.8rem;
         }
+
         details summary i {
             font-size: 2.2rem;
         }
+
         details[open] summary {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
@@ -188,31 +210,31 @@
             <i class="fas fa-map"></i>
             <h4>halomaps.org</h4>
             <p>Custom maps, mods, tools & file database for Halo CE.</p>
-            <a href="https://hce.halomaps.org" target="_blank" class="btn">Visit</a>
+            <a class="btn" href="https://hce.halomaps.org" target="_blank">Visit</a>
         </div>
         <div class="resource-card">
             <i class="fas fa-shield-halved"></i>
             <h4>HAC2 Wiki</h4>
             <p>Official HAC2 documentation - installation, commands, settings.</p>
-            <a href="https://halonet.net/wiki/index.php/HAC2/Installation" target="_blank" class="btn">Read</a>
+            <a class="btn" href="https://halonet.net/wiki/index.php/HAC2/Installation" target="_blank">Read</a>
         </div>
         <div class="resource-card">
             <i class="fas fa-download"></i>
             <h4>Map Downloads</h4>
             <p>Direct .zip downloads for all maps on our servers.</p>
-            <a href="https://github.com/Chalwk/liberty-ce/releases/tag/1.0.0" target="_blank" class="btn">Browse</a>
+            <a class="btn" href="https://github.com/Chalwk/liberty-ce/releases/tag/1.0.0" target="_blank">Browse</a>
         </div>
         <div class="resource-card">
             <i class="fab fa-youtube"></i>
             <h4>Video Tutorial</h4>
             <p>See HAC2 map downloading in action (YouTube).</p>
-            <a href="https://youtu.be/AwE_USt_lx4" target="_blank" class="btn">Watch</a>
+            <a class="btn" href="https://youtu.be/AwE_USt_lx4" target="_blank">Watch</a>
         </div>
         <div class="resource-card">
             <i class="fas fa-robot"></i>
             <h4>Chimera Client</h4>
             <p>Modern Halo CE enhancement – anti‑cheat, auto map download, and more. (Incompatible with HAC2)</p>
-            <a href="https://github.com/SnowyMouse/chimera" target="_blank" class="btn">GitHub</a>
+            <a class="btn" href="https://github.com/SnowyMouse/chimera" target="_blank">GitHub</a>
         </div>
     </div>
 
@@ -325,8 +347,8 @@
                     <p>HAC2 (Halo Anti‑Cheat) also provides automatic map downloading and improved chat. Follow the
                         official
                         installation guide:</p>
-                    <p><a href="https://halonet.net/wiki/index.php/HAC2/Installation" target="_blank"
-                          class="btn-download"><i class="fas fa-external-link-alt"></i> HAC2 Installation Wiki</a> (site
+                    <p><a class="btn-download" href="https://halonet.net/wiki/index.php/HAC2/Installation"
+                          target="_blank"><i class="fas fa-external-link-alt"></i> HAC2 Installation Wiki</a> (site
                         is
                         safe - ignore any security warnings)</p>
                     <p>After installation, HAC2 will handle map downloads automatically whenever you join a custom map

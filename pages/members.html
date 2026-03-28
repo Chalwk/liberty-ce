@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Liberty Gaming - Members</title>
     <link href="../core.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <script defer src="../nav-menu.js"></script>
     <style>
         .members-note {
             color: var(--text-muted);
             margin-bottom: 2rem;
             font-style: italic;
+            font-family: var(--font-body), sans-serif;
         }
+
         .members-table {
             width: 100%;
             border-collapse: collapse;
@@ -22,11 +24,13 @@
             border: 1px solid var(--border-glow);
             border-radius: 20px;
             overflow: hidden;
+            font-family: var(--font-body), sans-serif;
         }
+
         .members-table th {
             background: var(--bg-panel);
             color: var(--primary);
-            font-family: var(--font-header);
+            font-family: var(--font-header), sans-serif;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -34,25 +38,26 @@
             text-align: left;
             border-bottom: 2px solid var(--border-glow);
         }
+
         .members-table td {
             padding: 1rem;
             border-bottom: 1px solid var(--border-glow);
             color: var(--text-light);
+            font-family: var(--font-body), sans-serif;
         }
+
         .members-table tr:last-child td {
             border-bottom: none;
         }
+
         .members-table tr:hover td {
             background: rgba(42, 169, 161, 0.1);
         }
+
         .country-flag {
             font-size: 1.4rem;
             line-height: 1;
             margin-right: 0.3rem;
-        }
-        .role-placeholder {
-            color: var(--text-muted);
-            font-style: italic;
         }
     </style>
 </head>
@@ -60,7 +65,7 @@
 <header class="header"></header>
 
 <main>
-    <h1>Members</h1>
+    <h1 style="font-family: var(--font-header), sans-serif;">Members</h1>
     <p class="members-note">February 2026</p>
 
     <div class="table-responsive">
@@ -78,61 +83,64 @@
 </main>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const tbody = document.getElementById('members-tbody');
         if (!tbody) return;
 
         fetch('../members.txt')
             .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error ${response.status}`);
-            }
-            return response.text();
-        })
+                if (!response.ok) {
+                    throw new Error(`HTTP error ${response.status}`);
+                }
+                return response.text();
+            })
             .then(data => {
-            const lines = data.split('\n').filter(line => line.trim() !== '');
-            tbody.innerHTML = '';
+                const lines = data.split('\n').filter(line => line.trim() !== '');
+                tbody.innerHTML = '';
 
-            lines.forEach(line => {
-                const parts = line.split(';').map(s => s.trim());
-                if (parts.length < 3) return;
+                lines.forEach(line => {
+                    const parts = line.split(';').map(s => s.trim());
+                    if (parts.length < 3) return;
 
-                const [name, flagCountry, roles] = parts;
+                    const [name, flagCountry, roles] = parts;
 
-                let flagEmoji = flagCountry;
-                let countryName = '';
-                const firstSpace = flagCountry.indexOf(' ');
-                if (firstSpace > -1) {
-                    flagEmoji = flagCountry.substring(0, firstSpace);
-                    countryName = flagCountry.substring(firstSpace + 1);
-                }
+                    let flagEmoji = flagCountry;
+                    let countryName = '';
+                    const firstSpace = flagCountry.indexOf(' ');
+                    if (firstSpace > -1) {
+                        flagEmoji = flagCountry.substring(0, firstSpace);
+                        countryName = flagCountry.substring(firstSpace + 1);
+                    }
 
-                const tr = document.createElement('tr');
+                    const tr = document.createElement('tr');
 
-                const tdName = document.createElement('td');
-                tdName.textContent = name;
-                tr.appendChild(tdName);
+                    const tdName = document.createElement('td');
+                    tdName.textContent = name;
+                    tdName.style.fontFamily = 'var(--font-body), sans-serif';
+                    tr.appendChild(tdName);
 
-                const tdCountry = document.createElement('td');
-                const spanFlag = document.createElement('span');
-                spanFlag.className = 'country-flag';
-                spanFlag.textContent = flagEmoji;
-                tdCountry.appendChild(spanFlag);
-                if (countryName) {
-                    tdCountry.appendChild(document.createTextNode(' ' + countryName));
-                }
-                tr.appendChild(tdCountry);
+                    const tdCountry = document.createElement('td');
+                    tdCountry.style.fontFamily = 'var(--font-body), sans-serif';
+                    const spanFlag = document.createElement('span');
+                    spanFlag.className = 'country-flag';
+                    spanFlag.textContent = flagEmoji;
+                    tdCountry.appendChild(spanFlag);
+                    if (countryName) {
+                        tdCountry.appendChild(document.createTextNode(' ' + countryName));
+                    }
+                    tr.appendChild(tdCountry);
 
-                const tdRoles = document.createElement('td');
-                tdRoles.textContent = roles || 'Member';
-                tr.appendChild(tdRoles);
+                    const tdRoles = document.createElement('td');
+                    tdRoles.textContent = roles || 'Member';
+                    tdRoles.style.fontFamily = 'var(--font-body), sans-serif';
+                    tr.appendChild(tdRoles);
 
-                tbody.appendChild(tr);
-            });
-        })
+                    tbody.appendChild(tr);
+                });
+            })
             .catch(error => {
-            tbody.innerHTML = `<tr><td colspan="3" style="color: var(--text-muted); text-align: center; padding: 2rem;">⚠️ Error loading members: ${error.message}</td></tr>`;
-        });
+                tbody.innerHTML = `<tr><td colspan="3" style="color: var(--text-muted); text-align: center; padding: 2rem; font-family: var(--font-body), sans-serif;">⚠️ Error loading members: ${error.message}</td></tr>`;
+            });
     });
 </script>
 </body>

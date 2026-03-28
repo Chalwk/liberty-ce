@@ -8,11 +8,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    const headerHTML = `
-    <div class="header-top">
-        <img src="${basePath}images/liberty-logo-transparent.png" alt="Liberty Gaming Logo" class="header-logo" onerror="this.onerror=null; this.src='${basePath}images/placeholder-logo.png';">
-        <h1>Liberty Gaming - Halo CE</h1>
-    </div>
+    const headerTop = document.createElement('div');
+    headerTop.className = 'header-top';
+
+    const logoImg = document.createElement('img');
+    logoImg.src = `${basePath}images/liberty-logo-transparent.png`;
+    logoImg.alt = 'Liberty Gaming Logo';
+    logoImg.className = 'header-logo';
+    logoImg.addEventListener('error', function () {
+        this.src = `${basePath}images/placeholder-logo.png`;
+    });
+
+    const headerTitle = document.createElement('h1');
+    headerTitle.textContent = 'Liberty Gaming - Halo CE';
+    headerTitle.style.fontFamily = 'var(--font-header), sans-serif';
+
+    headerTop.appendChild(logoImg);
+    headerTop.appendChild(headerTitle);
+    header.appendChild(headerTop);
+
+    header.innerHTML += `
         <nav class="main-nav" aria-label="Main navigation">
             <ul>
               <li><a href="${basePath}index.html" class="nav-link">Home</a></li>
@@ -26,13 +41,11 @@ document.addEventListener('DOMContentLoaded', function () {
         </nav>
     `;
 
-    header.innerHTML = headerHTML;
-
     const mainNav = header.querySelector('.main-nav');
     const toggleDiv = document.createElement('div');
     toggleDiv.className = 'nav-toggle';
     toggleDiv.innerHTML = '<button aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>';
-    header.querySelector('.header-top').after(toggleDiv);
+    headerTop.after(toggleDiv);
 
     const toggleButton = toggleDiv.querySelector('button');
     toggleButton.addEventListener('click', () => {
@@ -44,9 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', () => {
             mainNav.classList.remove('show');
         });
-    });
 
-    navLinks.forEach(link => {
         const linkHref = link.getAttribute('href').split('/').pop();
         if (linkHref === currentPage) {
             link.classList.add('active');
@@ -83,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     scrollBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({top: 0, behavior: 'smooth'});
     });
 });
 
