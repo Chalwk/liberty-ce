@@ -18,10 +18,11 @@ racing;wpitest1_race;15
 racing;gauntlet_race;10
 racing;islandthunder_race;10
 racing;camtrack-arena-race;10
-racing;hornets_nest;10
+racing;liberty_hornets_nest;10
 racing;tlsstronghold;10
 racing;massacre_mountain_race_v2;10
 racing;cityscape-adrenaline;10
+racing;liberty_blockfort_quad;10
 standard;liberty_bountygulch;CTF rox
 standard;liberty_tension;CTF rox
 standard;fragment_v2;CTF all weapons
@@ -30,8 +31,8 @@ standard;dichotomy;CTF rox
 standard;forgotten_fortress_beta;Oddball rox (2 skulls)
 standard;liberty_battle_creek;CTF rox
 standard;abandonment;KoH rox
-standard;chillout;CTF shotguns
-standard;silo_surprise;Teamslayer 50 kill classic weapons
+standard;liberty_chillout;CTF shotguns
+standard;liberty_silo_surprise2;Teamslayer 50 kill classic weapons
 standard;trainingday;Oddball shotguns (2 skulls)
 standard;cmt_g3_vestigial;CTF all weapons
 standard;hangemhigh;CTF rox
@@ -46,7 +47,7 @@ standard;facing_worldsrx;CTF rox
 standard;hangemhigh;Oddball rox (2 skulls)
 standard;sidewinder;CTF rox
 standard;liberty_damnation;CTF rox
-standard;chillout;Slayer 25 kill rox
+standard;liberty_chillout;Slayer 25 kill rox
 standard;liberty_g3_augur;CTF rox
 standard;launch_bay;CTF rox
 standard;trainingday;CTF classic weapons
