@@ -54,6 +54,22 @@
             background: rgba(42, 169, 161, 0.1);
         }
 
+        .role-founder {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(255, 206, 0, 0.15);
+            border: 1px solid rgba(255, 206, 0, 0.5);
+            border-radius: 6px;
+            padding: 0.1rem 0.25rem;
+            margin-right: 0.3rem;
+            font-size: 0.85rem;
+            line-height: 1;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
         .country-flag {
             font-size: 1.4rem;
             line-height: 1;
@@ -131,8 +147,26 @@
                     tr.appendChild(tdCountry);
 
                     const tdRoles = document.createElement('td');
-                    tdRoles.textContent = roles || 'Member';
+                    const roleText = roles || 'Member';
                     tdRoles.style.fontFamily = 'var(--font-body), sans-serif';
+
+                    const roleChunks = roleText.split(/,|\/|\\|\s\/\s/).map(r => r.trim()).filter(Boolean);
+                    if (roleChunks.length > 1) {
+                        tdRoles.innerHTML = roleChunks.map((role, index) => {
+                            const content = /\bFounder\b/i.test(role)
+                                ? `<span class="role-founder">${role}</span>`
+                                : `<span>${role}</span>`;
+                            return index > 0 ? `, ${content}` : content;
+                        }).join('');
+                    } else {
+                        const role = roleChunks[0] || 'Member';
+                        if (/\bFounder\b/i.test(role)) {
+                            tdRoles.innerHTML = `<span class="role-founder">${role}</span>`;
+                        } else {
+                            tdRoles.textContent = role;
+                        }
+                    }
+
                     tr.appendChild(tdRoles);
 
                     tbody.appendChild(tr);
