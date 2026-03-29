@@ -27,21 +27,21 @@ document.addEventListener('DOMContentLoaded', function () {
     headerTop.appendChild(headerTitle);
     header.appendChild(headerTop);
 
-    header.innerHTML += `
-        <nav class="main-nav" aria-label="Main navigation">
-            <ul>
-              <li><a href="${basePath}index.html" class="nav-link">Home</a></li>
-              <li><a href="${basePath}pages/servers.html" class="nav-link">Servers</a></li>
-              <li><a href="${basePath}pages/community.html" class="nav-link">Community</a></li>
-              <li><a href="${basePath}pages/members.html" class="nav-link">Members</a></li>
-              <li><a href="${basePath}pages/community-rules.html" class="nav-link">Community Rules</a></li>
-              <li><a href="${basePath}pages/resources.html" class="nav-link">Resources</a></li>
-              <li><a href="${basePath}pages/contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
+    const mainNav = document.createElement('nav');
+    mainNav.className = 'main-nav';
+    mainNav.setAttribute('aria-label', 'Main navigation');
+    mainNav.innerHTML = `
+        <ul>
+          <li><a href="${basePath}index.html" class="nav-link">Home</a></li>
+          <li><a href="${basePath}pages/servers.html" class="nav-link">Servers</a></li>
+          <li><a href="${basePath}pages/community.html" class="nav-link">Community</a></li>
+          <li><a href="${basePath}pages/members.html" class="nav-link">Members</a></li>
+          <li><a href="${basePath}pages/community-rules.html" class="nav-link">Community Rules</a></li>
+          <li><a href="${basePath}pages/resources.html" class="nav-link">Resources</a></li>
+          <li><a href="${basePath}pages/contact.html" class="nav-link">Contact</a></li>
+        </ul>
     `;
-
-    const mainNav = header.querySelector('.main-nav');
+    header.appendChild(mainNav);
     const toggleDiv = document.createElement('div');
     toggleDiv.className = 'nav-toggle';
     toggleDiv.innerHTML = '<button aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>';
