@@ -273,16 +273,23 @@ footer {
     }
 
     .nav-toggle button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: none;
         border: 1px solid var(--border-glow);
         font-size: 2rem;
         color: var(--primary);
         cursor: pointer;
-        padding: 0.3rem 1rem;
+        padding: 0;
         border-radius: 8px;
         min-width: 44px;
         min-height: 44px;
-        font-family: var(--font-body), sans-serif;
+    }
+
+    .nav-toggle button i {
+        position: relative;
+        top: 2px;
     }
 
     .main-nav {
