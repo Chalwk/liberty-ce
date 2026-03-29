@@ -1,9 +1,8 @@
 <!--
   Liberty Gaming - Halo CE Website
   Developer: Jericho Crosby / Chalwk
-  Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
+  Copyright (c) 2026 Liberty Gaming. All rights reserved.
   This file is part of the proprietary Liberty Gaming website.
-  Use, copying, or distribution without permission is strictly prohibited.
 -->
 
 <!DOCTYPE html>
@@ -30,24 +29,41 @@
             --transition: all 0.2s ease;
         }
 
+        main {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
         .server-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 380px));
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .server-list.hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
         }
 
         .server-entry {
             background: rgba(10, 12, 15, 0.8);
             border: 1px solid var(--border-glow);
             border-radius: 20px;
-            padding: 1.8rem;
+            padding: 1rem;
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
             cursor: pointer;
             transition: var(--transition);
+            min-height: 720px;
+            overflow: hidden;
         }
 
         .server-entry:hover {
@@ -55,54 +71,11 @@
             box-shadow: 0 0 15px var(--primary);
         }
 
-        .server-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .server-title {
-            display: flex;
-            align-items: center;
-            gap: 0.65rem;
-        }
-
-        .server-thumb {
-            width: 320px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 0;
-            border: 1px solid var(--border-glow);
-            background: #000;
-            flex-shrink: 0;
-        }
-
-        @media (max-width: 1400px) {
-            .server-thumb {
-                width: 270px;
-                height: 190px;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .server-thumb {
-                width: 240px;
-                height: 170px;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .server-thumb {
-                width: 140px;
-                height: 100px;
-            }
-        }
-
         .server-info h3 {
             color: var(--primary);
             margin: 0;
-            font-size: 1.8rem;
-            line-height: 1.1;
+            font-size: 1.4rem;
+            line-height: 1.2;
         }
 
         .server-info p {
@@ -112,93 +85,108 @@
 
         .server-meta {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
             align-items: center;
         }
 
-        .ip-address {
-            background: var(--bg-panel);
-            padding: 0.7rem 1.1rem;
-            border-radius: 30px;
-            font-family: monospace;
-            font-size: 1.1rem;
-            font-weight: 700;
+        .toggle-maps-button {
+            background: var(--primary);
             border: 1px solid var(--border-glow);
+            color: #fff;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
             cursor: pointer;
-            transition: background 0.2s;
-            user-select: all;
-            position: relative;
-            top: 0;
+            font-weight: 700;
+            transition: background 0.2s, transform 0.2s;
         }
 
-        @media (min-width: 701px) {
-            .ip-address { top: -1rem; }
+        .toggle-maps-button:hover {
+            background: rgba(42, 169, 161, 0.85);
+            transform: translateY(-1px);
         }
 
-        @media (max-width: 700px) {
-            .ip-address { font-size: 1rem; }
+        .tracker-embed {
+            width: 240px;
+            max-width: 100%;
         }
 
-        .ip-address:active {
-            background: var(--bg-panel-light);
+        .tracker-embed iframe {
+            width: 100%;
+            height: 550px;
+            border: 0;
         }
 
-        .server-details {
-            margin-top: 1.5rem;
-            padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            border: 1px dashed var(--border-glow);
+        .server-thumb {
             display: none;
         }
 
-        .server-details.visible {
-            display: block;
+        .server-details {
+            display: none;
+        }
+
+        .full-map-view {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .full-map-view.visible {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .maps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 0.8rem;
             margin-top: 1rem;
         }
 
         .map-item {
-            background: rgba(26, 30, 36, 0.8);
-            border: 1px solid var(--border-glow);
-            border-radius: 12px;
-            padding: 0.8rem 1.2rem;
+            background: rgba(18, 21, 27, 0.95);
+            border: 1px solid rgba(63, 160, 150, 0.45);
+            border-radius: 14px;
+            padding: 0.8rem;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
+            gap: 0.4rem;
+            min-height: 80px;
         }
 
         .map-name a {
             color: var(--text-light);
             text-decoration: none;
             border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-            font-weight: 500;
-            display: inline-block;
-            padding: 0.2rem 0;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 600;
+            font-size: 0.94rem;
+            display: block;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .map-name a:hover {
-            border-bottom-color: var(--accent);
+            color: #ffffff;
+            border-bottom-color: var(--primary);
         }
 
         .map-gametype {
-            color: var(--accent);
-            font-size: 0.9rem;
-            background: rgba(42, 169, 161, 0.1);
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            border: 1px solid var(--border-glow);
-            white-space: normal;
+            color: #d2f8ee;
+            font-size: 0.82rem;
+            font-weight: 700;
+            background: rgba(34, 54, 66, 0.8);
+            padding: 0.26rem 0.7rem;
+            border-radius: 12px;
+            border: 1px solid rgba(42, 169, 161, 0.3);
             text-align: center;
-            max-width: 100%;
-            box-sizing: border-box;
         }
 
         .note {
@@ -217,118 +205,21 @@
             color: #ff6b6b;
         }
 
-        @media (max-width: 700px) {
-            .server-entry {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-                text-align: center;
-                padding: 1.2rem;
-            }
-
-            .server-info h3 {
-                font-size: 1.5rem;
-            }
-
-            .server-info p {
-                font-size: 0.95rem;
-            }
-
-            .server-meta {
-                flex-direction: column;
-                gap: 0.8rem;
-                width: 100%;
-            }
-
-            .ip-address {
-                font-size: 1rem;
-                padding: 0.8rem 1rem;
-                width: 100%;
-                box-sizing: border-box;
-                text-align: center;
-                word-break: break-all;
-                line-height: 1.4;
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .expand-icon {
-                font-size: 1.5rem;
-                padding: 0.5rem;
-                min-width: 44px;
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .map-item {
-                padding: 1rem;
-            }
-
-            .maps-grid {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
-
-            .map-name a {
-                padding: 0.5rem 0;
-                display: inline-block;
-            }
-
-            .note {
-                font-size: 0.9rem;
-                text-align: center;
-            }
-
-            .server-details {
-                padding: 1rem;
-            }
-
-            .loading i {
-                font-size: 2rem;
-            }
+        .hide-maps-button {
+            align-self: flex-start;
+            background: #ff6b6b;
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background 0.2s, transform 0.2s;
         }
 
-        @media (max-width: 480px) {
-            .server-entry {
-                padding: 1rem;
-                border-radius: 16px;
-            }
-
-            .server-info h3 {
-                font-size: 1.3rem;
-            }
-
-            .ip-address {
-                font-size: 0.95rem;
-                padding: 0.7rem 0.8rem;
-            }
-
-            .expand-icon {
-                font-size: 1.3rem;
-            }
-
-            .map-item {
-                padding: 0.8rem;
-            }
-
-            .maps-grid {
-                gap: 0.6rem;
-            }
-        }
-
-        main {
-            padding: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
-
-        .note i {
-            margin-right: 0.3rem;
+        .hide-maps-button:hover {
+            background: #ff4c4c;
+            transform: translateY(-1px);
         }
     </style>
 </head>
@@ -340,38 +231,44 @@
     <p>Click on a server to see its current map rotation and gametypes. All games run for 20 minutes. Click any map name
         to download it.</p>
 
+    <div class="full-map-view" id="map-view-container"></div>
+
     <div class="server-list">
         <div class="server-entry" data-server="standard">
             <div class="server-info">
                 <div class="server-title">
-                    <img class="server-thumb" src="../images/standard-screenshot.png" alt="Standard server screenshot">
                     <h3>! ++ LIBERTY ++ !</h3>
+                    <div class="tracker-embed">
+                        <iframe frameborder="0"
+                                height="420" scrolling="no"
+                                src="https://cache.gametracker.com/components/html0/?host=185.107.96.224:2302&bgColor=333333&fontColor=cccccc&titleBgColor=222222&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=100&showCurrPlayers=1&topPlayersHeight=100&showTopPlayers=1&showBlogs=0&width=240"
+                                width="240"></iframe>
+                    </div>
+                    <p>Standard Halo CE mix - CTF, Slayer, Oddball, KoH</p>
                 </div>
-                <p>Standard Halo CE mix - CTF, Slayer, Oddball, KoH</p>
             </div>
             <div class="server-meta">
-                <span class="ip-address"
-                      onclick="event.stopPropagation(); navigator.clipboard?.writeText('185.107.96.224:2302')">185.107.96.224:2302</span>
-                <i class="fas fa-chevron-down expand-icon"></i>
+                <button class="toggle-maps-button" type="button">View map rotation</button>
             </div>
         </div>
-        <div class="server-details" id="details-standard"></div>
 
         <div class="server-entry" data-server="racing">
             <div class="server-info">
                 <div class="server-title">
-                    <img class="server-thumb" src="../images/racing-screenshot.png" alt="Racing server screenshot">
                     <h3>! ++ LIBERTY - RACING ++ !</h3>
+                    <div class="tracker-embed">
+                        <iframe frameborder="0"
+                                height="420" scrolling="no"
+                                src="https://cache.gametracker.com/components/html0/?host=185.107.96.224:2302&bgColor=333333&fontColor=cccccc&titleBgColor=222222&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=100&showCurrPlayers=1&topPlayersHeight=100&showTopPlayers=1&showBlogs=0&width=240"
+                                width="240"></iframe>
+                    </div>
+                    <p>Dedicated racing server - circuit and obstacle maps</p>
                 </div>
-                <p>Dedicated racing server - circuit and obstacle maps</p>
             </div>
             <div class="server-meta">
-                <span class="ip-address"
-                      onclick="event.stopPropagation(); navigator.clipboard?.writeText('185.107.96.219:2302')">185.107.96.219:2302</span>
-                <i class="fa-solid fa-chevron-down expand-icon"></i>
+                <button class="toggle-maps-button" type="button">View map rotation</button>
             </div>
         </div>
-        <div class="server-details" id="details-racing"></div>
     </div>
 </main>
 
@@ -383,10 +280,13 @@
         let racingMaps = [];
         let fetchCompleted = false;
 
+        const mapViewContainer = document.getElementById('map-view-container');
+        const serverList = document.querySelector('.server-list');
+
         fetch(mapsTxtPath)
-            .then(response => {
-                if (!response.ok) throw new Error(`Failed to load maps.txt (${response.status})`);
-                return response.text();
+            .then(res => {
+                if (!res.ok) throw new Error(`Failed to load maps.txt (${res.status})`);
+                return res.text();
             })
             .then(data => {
                 const lines = data.split(/\r?\n/);
@@ -404,88 +304,76 @@
                     const mapname = parts[1].trim();
                     const info = parts[2].trim();
 
-                    if (server === 'standard') {
-                        standard.push({map: mapname, gametype: info});
-                    } else if (server === 'racing') {
-                        racing.push({map: mapname, laps: info});
-                    }
+                    if (server === 'standard') standard.push({map: mapname, gametype: info});
+                    else if (server === 'racing') racing.push({map: mapname, laps: info});
                 });
 
                 standardMaps = standard;
                 racingMaps = racing;
                 fetchCompleted = true;
             })
-            .catch(error => {
-                console.error('Error loading maps:', error);
+            .catch(err => {
+                console.error('Error loading maps:', err);
                 fetchCompleted = true;
             });
 
-        function renderServerDetails(serverType, containerId) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-
+        function renderMapView(serverType) {
             if (!fetchCompleted) {
-                container.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading maps...</div>';
+                mapViewContainer.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading maps...</div>';
                 return;
             }
 
             const maps = serverType === 'standard' ? standardMaps : racingMaps;
-            if (maps.length === 0) {
-                container.innerHTML = `<div class="error">No map data available for ${serverType} server.</div>`;
+            if (!maps.length) {
+                mapViewContainer.innerHTML = `<div class="error">No map data available for ${serverType} server.</div>`;
                 return;
             }
 
-            let html = '<p class="note"><i class="fas fa-clock"></i> All games run for 20 minutes. Click a map name to download.</p>';
+            let html = `<button class="hide-maps-button" type="button">Hide map rotation</button>`;
+            html += '<p class="note"><i class="fas fa-clock"></i> All games run for 20 minutes. Click a map name to download.</p>';
             html += '<div class="maps-grid">';
-
-            if (serverType === 'standard') {
-                maps.forEach(item => {
-                    const encoded = encodeURIComponent(item.map);
-                    html += `
-                        <div class="map-item">
-                            <span class="map-name"><a href="${baseUrl}${encoded}.zip" target="_blank" title="Download ${item.map}">${item.map}</a></span>
-                            <span class="map-gametype">${item.gametype}</span>
-                        </div>
-                    `;
-                });
-            } else {
-                maps.forEach(item => {
-                    const encoded = encodeURIComponent(item.map);
-                    const laps = item.laps;
-                    const lapsText = `${laps} lap${parseInt(laps) !== 1 ? 's' : ''}`;
-                    html += `
-                        <div class="map-item">
-                            <span class="map-name"><a href="${baseUrl}${encoded}.zip" target="_blank" title="Download ${item.map}">${item.map}</a></span>
-                            <span class="map-gametype">${lapsText}</span>
-                        </div>
-                    `;
-                });
-            }
-
+            maps.forEach(item => {
+                const encoded = encodeURIComponent(item.map);
+                let gametype = serverType === 'standard' ? item.gametype : `${item.laps} lap${parseInt(item.laps) !== 1 ? 's' : ''}`;
+                html += `
+        <div class="map-item">
+            <span class="map-name"><a href="${baseUrl}${encoded}.zip" target="_blank" title="Download ${item.map}">${item.map}</a></span>
+            <span class="map-gametype">${gametype}</span>
+        </div>
+    `;
+            });
             html += '</div>';
-            container.innerHTML = html;
+            mapViewContainer.innerHTML = html;
+
+            const transitionDuration = 400;
+
+            serverList.classList.add('hidden');
+
+            setTimeout(() => {
+                mapViewContainer.classList.add('visible');
+            }, transitionDuration);
+
+            const hideBtn = mapViewContainer.querySelector('.hide-maps-button');
+            hideBtn.addEventListener('click', () => {
+                mapViewContainer.classList.remove('visible');
+                setTimeout(() => {
+                    serverList.classList.remove('hidden');
+                }, transitionDuration);
+            });
         }
 
         document.querySelectorAll('.server-entry').forEach(entry => {
-            entry.addEventListener('click', function (e) {
-                if (e.target.classList.contains('ip-address')) return;
+            const toggleButton = entry.querySelector('.toggle-maps-button');
+            const serverType = entry.dataset.server;
 
-                const server = this.dataset.server;
-                const detailsId = `details-${server}`;
-                const detailsDiv = document.getElementById(detailsId);
-                const icon = this.querySelector('.expand-icon');
+            toggleButton.addEventListener('click', e => {
+                e.stopPropagation();
+                renderMapView(serverType);
+            });
 
-                if (detailsDiv.classList.contains('visible')) {
-                    detailsDiv.classList.remove('visible');
-                    if (icon) icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
-                } else {
-                    if (!detailsDiv.hasAttribute('data-loaded')) {
-                        renderServerDetails(server, detailsId);
-                        detailsDiv.setAttribute('data-loaded', 'true');
-                    }
-                    detailsDiv.classList.add('visible');
-                    if (icon) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-                }
+            entry.addEventListener('click', e => {
+                if (e.target === toggleButton) return;
+                renderMapView(serverType);
             });
         });
     })();
