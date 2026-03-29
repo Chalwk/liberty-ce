@@ -1,3 +1,11 @@
+/*
+  Liberty Gaming - Halo CE Website
+  Developer: Jericho Crosby / Chalwk
+  Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
+  This file is part of the proprietary Liberty Gaming website.
+  Unauthorized use, copying, or distribution is prohibited.
+*/
+
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('header.header');
     if (!header) return;

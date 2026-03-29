@@ -1,3 +1,11 @@
+<!--
+  Liberty Gaming - Halo CE Website
+  Developer: Jericho Crosby / Chalwk
+  Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
+  This file is part of the proprietary Liberty Gaming website.
+  Use, copying, or distribution without permission is strictly prohibited.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,14 +55,59 @@
             box-shadow: 0 0 15px var(--primary);
         }
 
+        .server-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .server-title {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .server-thumb {
+            width: 320px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 0;
+            border: 1px solid var(--border-glow);
+            background: #000;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1400px) {
+            .server-thumb {
+                width: 270px;
+                height: 190px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .server-thumb {
+                width: 240px;
+                height: 170px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .server-thumb {
+                width: 140px;
+                height: 100px;
+            }
+        }
+
         .server-info h3 {
             color: var(--primary);
-            margin-bottom: 0.3rem;
+            margin: 0;
             font-size: 1.8rem;
+            line-height: 1.1;
         }
 
         .server-info p {
             color: var(--text-muted);
+            margin: 0;
         }
 
         .server-meta {
@@ -65,13 +118,25 @@
 
         .ip-address {
             background: var(--bg-panel);
-            padding: 0.5rem 1rem;
+            padding: 0.7rem 1.1rem;
             border-radius: 30px;
             font-family: monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
             border: 1px solid var(--border-glow);
             cursor: pointer;
             transition: background 0.2s;
             user-select: all;
+            position: relative;
+            top: 0;
+        }
+
+        @media (min-width: 701px) {
+            .ip-address { top: -1rem; }
+        }
+
+        @media (max-width: 700px) {
+            .ip-address { font-size: 1rem; }
         }
 
         .ip-address:active {
@@ -155,6 +220,7 @@
         @media (max-width: 700px) {
             .server-entry {
                 flex-direction: column;
+                align-items: center;
                 gap: 1rem;
                 text-align: center;
                 padding: 1.2rem;
@@ -277,7 +343,10 @@
     <div class="server-list">
         <div class="server-entry" data-server="standard">
             <div class="server-info">
-                <h3>! ++ LIBERTY ++ !</h3>
+                <div class="server-title">
+                    <img class="server-thumb" src="../images/standard-screenshot.png" alt="Standard server screenshot">
+                    <h3>! ++ LIBERTY ++ !</h3>
+                </div>
                 <p>Standard Halo CE mix - CTF, Slayer, Oddball, KoH</p>
             </div>
             <div class="server-meta">
@@ -290,7 +359,10 @@
 
         <div class="server-entry" data-server="racing">
             <div class="server-info">
-                <h3>! ++ LIBERTY - RACING ++ !</h3>
+                <div class="server-title">
+                    <img class="server-thumb" src="../images/racing-screenshot.png" alt="Racing server screenshot">
+                    <h3>! ++ LIBERTY - RACING ++ !</h3>
+                </div>
                 <p>Dedicated racing server - circuit and obstacle maps</p>
             </div>
             <div class="server-meta">
