@@ -75,6 +75,68 @@
             line-height: 1;
             margin-right: 0.3rem;
         }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 840px) {
+            .members-table {
+                border: 0;
+            }
+
+            .members-table thead,
+            .members-table tbody,
+            .members-table th,
+            .members-table td,
+            .members-table tr {
+                display: block;
+            }
+
+            .members-table thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            .members-table tr {
+                margin: 0 0 0.1rem 0;
+                background: rgba(10, 12, 15, 0.93);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 8px;
+                padding: 0.35rem;
+            }
+
+            .members-table td {
+                padding: 0.45rem 0.3rem;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                position: relative;
+                padding-left: 50%;
+                text-align: left;
+            }
+
+            .members-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0.75rem;
+                width: 45%;
+                white-space: normal;
+                font-weight: 600;
+                color: var(--text-muted);
+                font-family: var(--font-body), sans-serif;
+            }
+
+            .members-table td:last-child {
+                border-bottom: none;
+            }
+
+            .members-table tr:hover td {
+                background: rgba(42, 169, 161, 0.05);
+            }
+        }
     </style>
 </head>
 <body>
@@ -131,11 +193,13 @@
                     const tr = document.createElement('tr');
 
                     const tdName = document.createElement('td');
+                    tdName.dataset.label = 'Member';
                     tdName.textContent = name;
                     tdName.style.fontFamily = 'var(--font-body), sans-serif';
                     tr.appendChild(tdName);
 
                     const tdCountry = document.createElement('td');
+                    tdCountry.dataset.label = 'Country';
                     tdCountry.style.fontFamily = 'var(--font-body), sans-serif';
                     const spanFlag = document.createElement('span');
                     spanFlag.className = 'country-flag';
@@ -147,6 +211,7 @@
                     tr.appendChild(tdCountry);
 
                     const tdRoles = document.createElement('td');
+                    tdRoles.dataset.label = 'Discord Role(s)';
                     const roleText = roles || 'Member';
                     tdRoles.style.fontFamily = 'var(--font-body), sans-serif';
 
