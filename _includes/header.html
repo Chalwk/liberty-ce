@@ -7,19 +7,27 @@
 -->
 
 <div class="header-top">
-    <img src="{{ site.baseurl }}/assets/images/liberty-logo-transparent.png" alt="Liberty Gaming Logo" class="header-logo">
+    <img alt="Liberty Gaming Logo" class="header-logo"
+         src="{{ site.baseurl }}/assets/images/liberty-logo-transparent.png">
     <h1>Liberty Gaming - Halo CE</h1>
 </div>
 <div class="nav-toggle">
     <button aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
 </div>
-<nav class="main-nav" aria-label="Main navigation">
+<nav aria-label="Main navigation" class="main-nav">
     <ul>
-        <li><a href="{{ site.baseurl }}/index.html" class="nav-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Home</a></li>
-        <li><a href="{{ site.baseurl }}/pages/servers.html" class="nav-link {% if page.url == '/pages/servers.html' %}active{% endif %}">Servers</a></li>
-        <li><a href="{{ site.baseurl }}/pages/community.html" class="nav-link {% if page.url == '/pages/community.html' %}active{% endif %}">Community</a></li>
-        <li><a href="{{ site.baseurl }}/pages/members.html" class="nav-link {% if page.url == '/pages/members.html' %}active{% endif %}">Members</a></li>
-        <li><a href="{{ site.baseurl }}/pages/community-rules.html" class="nav-link {% if page.url == '/pages/community-rules.html' %}active{% endif %}">Community Rules</a></li>
-        <li><a href="{{ site.baseurl }}/pages/resources.html" class="nav-link {% if page.url == '/pages/resources.html' %}active{% endif %}">Resources</a></li>
+        <li><a class="nav-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}"
+               href="{{ site.baseurl }}/index.html">Home</a></li>
+        <li><a class="nav-link {% if page.url == '/pages/servers.html' %}active{% endif %}"
+               href="{{ site.baseurl }}/pages/servers.html">Servers</a></li>
+        <li><a class="nav-link {% if page.url == '/pages/community.html' %}active{% endif %}"
+               href="{{ site.baseurl }}/pages/community.html">Community</a></li>
+        <li><a class="nav-link {% if page.url == '/pages/members.html' %}active{% endif %}"
+               href="{{ site.baseurl }}/pages/members.html">Members</a></li>
+        <li><a class="nav-link {% if page.url == '/pages/community-rules.html' %}active{% endif %}"
+               href="{{ site.baseurl }}/pages/community-rules.html">Community Rules</a>
+        </li>
+        <li><a class="nav-link {% if page.url == '/pages/resources.html' %}active{% endif %}"
+               href="{{ site.baseurl }}/pages/resources.html">Resources</a></li>
     </ul>
 </nav>
