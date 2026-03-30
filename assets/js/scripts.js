@@ -1,7 +1,12 @@
-// assets/js/scripts.js
+/*
+  Liberty Gaming - Halo CE Website
+  Developer: Jericho Crosby / Chalwk
+  Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
+  This file is part of the proprietary Liberty Gaming website.
+  Use, copying, or distribution without permission is strictly prohibited.
+*/
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Mobile navigation toggle
     const navToggle = document.querySelector('.nav-toggle button');
     const mainNav = document.querySelector('.main-nav');
     if (navToggle && mainNav) {
@@ -10,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Scroll to top button
     const scrollBtn = document.createElement('button');
     scrollBtn.id = 'scrollToTopBtn';
     scrollBtn.className = 'scroll-to-top';
@@ -31,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Social share function (global)
 window.shareOn = function (platform) {
     const url = encodeURIComponent(window.location.href);
     const title = encodeURIComponent(document.title);
