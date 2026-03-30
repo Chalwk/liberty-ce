@@ -1,506 +1,383 @@
-<!--
-  Liberty Gaming - Halo CE Website
-  Developer: Jericho Crosby / Chalwk
-  Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
-  This file is part of the proprietary Liberty Gaming website.
-  Use, copying, or distribution without permission is strictly prohibited.
--->
+---
+layout: default
+title: Resources
+---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Liberty Gaming - Resources & HAC2 Guide</title>
-    <link href="../core.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap"
-          rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <script defer src="../nav-menu.js"></script>
-    <style>
-        .guide-section {
-            background: rgba(10, 12, 15, 0.6);
-            border-radius: 24px;
-            padding: 2rem;
-            margin: 2.5rem 0;
-            border-left: 6px solid var(--primary);
-        }
+<h1><i class="fas fa-book-open" style="margin-right: 1rem;"></i> Resources & Guides</h1>
+<p class="credits">
+    <i class="fas fa-users"></i> Credits: <strong>LIB-Akuma, LIB-Perico, LIB-Chalwk, Btcc22, msalerno®, SnowyMouse, NakedChick</strong>
+</p>
 
-        .guide-section h2 {
-            margin-top: 0;
-            border-bottom: 2px solid var(--border-glow);
-            padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .guide-section h2 i {
-            color: var(--accent);
-            font-size: 2rem;
-        }
-
-        .guide-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        .step {
-            background: rgba(26, 30, 36, 0.5);
-            border-radius: 20px;
-            padding: 1.5rem;
-            border: 1px solid var(--border-glow);
-        }
-
-        .step h3 {
-            color: var(--primary);
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            border-bottom: 1px dashed var(--border-glow);
-            padding-bottom: 0.3rem;
-        }
-
-        .step ul, .step ol {
-            padding-left: 1.8rem;
-            color: var(--text-light);
-        }
-
-        .step li {
-            margin-bottom: 0.5rem;
-        }
-
-        .step a {
-            color: var(--accent);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .step a:hover {
-            color: var(--primary);
-        }
-
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .resource-card {
-            background: rgba(26, 30, 36, 0.8);
-            border: 1px solid var(--border-glow);
-            border-radius: 24px;
-            padding: 1.8rem 1.5rem;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .resource-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 0 18px var(--primary);
-        }
-
-        .resource-card i {
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .resource-card h4 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-            color: var(--accent);
-        }
-
-        .credits {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 30px;
-            padding: 1rem 2rem;
-            margin: 1rem 0 2rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        .credits strong {
-            color: var(--primary);
-        }
-
-        .btn-download {
-            display: inline-block;
-            background: var(--primary);
-            color: #000000 !important;
-            padding: 0.4rem 1rem;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-left: 0.8rem;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-            transition: all 0.2s ease;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-download:hover {
-            background: var(--accent);
-            color: #000000 !important;
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px var(--primary);
-        }
-
-        details {
-            margin-bottom: 2rem;
-            border-radius: 28px;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 0.5rem;
-        }
-
-        details summary {
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            background: rgba(20, 25, 30, 0.8);
-            border-radius: 30px;
-            padding: 0.8rem 1.5rem;
-            border: 1px solid var(--border-glow);
-            transition: 0.2s;
-        }
-
-        details summary:hover {
-            background: rgba(40, 45, 50, 0.9);
-            border-color: var(--primary);
-        }
-
-        details summary span {
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        details summary i {
-            font-size: 2.2rem;
-        }
-
-        details[open] summary {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom: none;
-        }
-
-        @media (max-width: 600px) {
-            ul[style*="columns"] {
-                columns: 1 !important;
-                column-gap: 0;
-            }
-        }
-    </style>
-</head>
-<body>
-<header class="header"></header>
-
-<main>
-    <h1><i class="fas fa-book-open" style="margin-right: 1rem;"></i> Resources & Guides</h1>
-    <p class="credits">
-        <i class="fas fa-users"></i> Credits: <strong>LIB-Akuma, LIB-Perico, LIB-Chalwk, Btcc22, msalerno®,
-        SnowyMouse, NakedChick</strong>
-    </p>
-
-    <div class="resource-grid">
-        <div class="resource-card">
-            <i class="fas fa-map"></i>
-            <h4>halomaps.org</h4>
-            <p>Custom maps, mods, tools & file database for Halo CE.</p>
-            <a class="btn" href="https://hce.halomaps.org" target="_blank">Visit</a>
-        </div>
-        <div class="resource-card">
-            <i class="fas fa-shield-halved"></i>
-            <h4>HAC2 Wiki</h4>
-            <p>Official HAC2 documentation - installation, commands, settings.</p>
-            <a class="btn" href="https://halonet.net/wiki/index.php/HAC2/Installation" target="_blank">Read</a>
-        </div>
-        <div class="resource-card">
-            <i class="fab fa-youtube"></i>
-            <h4>Video Tutorial</h4>
-            <p>See HAC2 map downloading in action (YouTube).</p>
-            <a class="btn" href="https://youtu.be/AwE_USt_lx4" target="_blank">Watch</a>
-        </div>
-        <div class="resource-card">
-            <i class="fas fa-robot"></i>
-            <h4>Chimera Client</h4>
-            <p>Modern Halo CE enhancement – anti‑cheat, auto map download, and more. (Incompatible with HAC2)</p>
-            <a class="btn" href="https://github.com/SnowyMouse/chimera" target="_blank">GitHub</a>
-        </div>
+<div class="resource-grid">
+    <div class="resource-card">
+        <i class="fas fa-map"></i>
+        <h4>halomaps.org</h4>
+        <p>Custom maps, mods, tools & file database for Halo CE.</p>
+        <a class="btn" href="https://hce.halomaps.org" target="_blank">Visit</a>
     </div>
-
-    <div class="guide-section">
-        <h2><i class="fas fa-cog"></i> Halo CE Enhancement Clients (HAC2 & Chimera)</h2>
-
-        <details>
-            <summary>
-                <span style="color: var(--primary);">
-                    <i class="fas fa-shield-alt"></i> HAC2 (Halo Anti-Cheat) Guide
-                </span>
-            </summary>
-            <div class="guide-steps" style="margin-top: 1.5rem;">
-                <div class="step">
-                    <h3>1. About Halo Custom Edition (CE)</h3>
-                    <p><strong>Halo Custom Edition</strong> is a free multiplayer‑only version of Halo: Combat Evolved
-                        (PC).
-                        It allows user‑created content: custom maps, objects, and features not possible in the standard
-                        game. Installing Halo CE requires your original Halo PC CD key. You can keep both <strong>Halo
-                            PC</strong> and <strong>Halo CE</strong> installed side‑by‑side using the same key.</p>
-                </div>
-
-                <div class="step">
-                    <h3>2. Downloading CE</h3>
-                    <ul>
-                        <li><strong>Halo CE installer</strong> (choose your language):
-                            <ul style="margin-top: 0.3rem;">
-                                <li><a href="https://hce.halomaps.org/index.cfm?fid=410" target="_blank">English</a>
-                                </li>
-                                <li><a href="https://hce.halomaps.org/index.cfm?fid=4170" target="_blank">French</a>
-                                </li>
-                                <li><a href="https://hce.halomaps.org/index.cfm?fid=4169" target="_blank">German</a>
-                                </li>
-                                <li><a href="https://hce.halomaps.org/index.cfm?fid=4171" target="_blank">Italian</a>
-                                </li>
-                                <li><a href="https://hce.halomaps.org/index.cfm?fid=3947" target="_blank">Spanish</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><strong>v1.10 patch</strong> (required):
-                            <a href="https://hce.halomaps.org/index.cfm?fid=6798" target="_blank">Mirror 1
-                                (halomaps)</a> |
-                            <a href="https://www.bungie.net/en-us/Forum/Post/64943622/0/0" target="_blank">Mirror 2
-                                (Bungie)</a>
-                        </li>
-                        <li><strong>CD key recovery tools</strong> (if you lost your key):
-                            <a href="https://hce.halomaps.org/index.cfm?fid=2147" target="_blank">Tool v1</a> |
-                            <a href="https://hce.halomaps.org/index.cfm?fid=4547" target="_blank">Tool v2
-                                (recommended)</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="step">
-                    <h3>3. Installing CE</h3>
-                    <ol>
-                        <li>Run the Halo CE installer and enter your Halo PC CD key.</li>
-                        <li>Apply the v1.10 patch (run the downloaded patch file).</li>
-                        <li><strong>Enable console (for admins):</strong>
-                            <ul>
-                                <li>Navigate to your Halo CE installation folder (usually <code>C:\Program Files
-                                    (x86)\Microsoft Games\Halo Custom Edition\</code>).
-                                </li>
-                                <li>Right‑click <code>haloce.exe</code> → Create shortcut. Place shortcut on desktop.
-                                </li>
-                                <li>Right‑click shortcut → Properties → in the <strong>Target</strong> field, add <code>
-                                    -console</code> at the end (with a space before).<br>
-                                    Example: <code>"C:\Program Files\Microsoft Games\Halo Custom Edition\haloce.exe"
-                                        -console</code></li>
-                                <li>Press <kbd>~</kbd> (tilde) in‑game to open the console.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </div>
-
-                <div class="step">
-                    <h3>4. Troubleshooting CE</h3>
-                    <ul>
-                        <li><strong>Graphics:</strong> Set anti‑aliasing to “use application setting” and anisotropic
-                            filtering to “use application setting” in your GPU control panel.
-                        </li>
-                        <li><strong>Codecs:</strong> Install <a href="https://www.xvid.com/download/" target="_blank">Xvid
-                            codec</a> and <a href="https://www.codecguide.com/download_kl.htm" target="_blank">K‑Lite
-                            codec
-                            pack</a> to fix video playback issues.
-                        </li>
-                        <li><strong>Missing text chat:</strong> Download and install <a
-                                href="https://download.cnet.com/download/msxml-4-0-service-pack-2-microsoft-xml-core-services/3000-2070_4-10726922.html"
-                                target="_blank">MSXML 4.0 SP2</a>.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="step">
-                    <h3>5. Using CE & Custom Maps</h3>
-                    <p>After launching Halo CE, connect to the Internet Lobby. In the server browser <strong>enable
-                        “Show
-                        custom maps”</strong> in the filters. You’ll see servers running custom content, but you won’t
-                        have
-                        the maps yet - that’s where <strong>HAC2</strong> comes in.</p>
-                    <p>HAC2 automatically downloads required custom maps when you join a server. No manual hunting for
-                        map
-                        files. Large maps may take a moment, but they are cached for future use.</p>
-                    <p><i class="fas fa-play-circle" style="color: var(--accent);"></i> See it in action: <a
-                            href="https://youtu.be/AwE_USt_lx4" target="_blank">YouTube demonstration</a></p>
-                </div>
-
-                <div class="step">
-                    <h3>6. HAC2 - Download & Installation</h3>
-                    <p>HAC2 (Halo Anti‑Cheat) also provides automatic map downloading and improved chat. Follow the
-                        official
-                        installation guide:</p>
-                    <p><a class="btn-download" href="https://halonet.net/wiki/index.php/HAC2/Installation"
-                          target="_blank"><i class="fas fa-external-link-alt"></i> HAC2 Installation Wiki</a> (site
-                        is
-                        safe - ignore any security warnings)</p>
-                    <p>After installation, HAC2 will handle map downloads automatically whenever you join a custom map
-                        server.</p>
-                </div>
-
-                <div class="step">
-                    <h3>7. HAC2 Settings (optional)</h3>
-                    <ul>
-                        <li><strong>Custom chat appearance:</strong> With Halo CE closed, open console (<kbd>~</kbd>)
-                            and
-                            type <code>custom_chat 1</code> to enable styled text.
-                        </li>
-                        <li><strong>Font size:</strong> Use <code>font_size [size]</code> in console, e.g. <code>font_size
-                            36</code>.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary>
-                <span style="color: var(--accent);">
-                    <i class="fas fa-robot"></i> Chimera Client Guide (Modern Alternative)
-                </span>
-            </summary>
-            <div class="guide-steps" style="margin-top: 1.5rem;">
-                <div class="step">
-                    <h3>1. What is Chimera?</h3>
-                    <p><strong>Chimera</strong> is a modern open‑source enhancement client for Halo CE. It provides
-                        automatic map downloading, improved chat, widescreen fixes, FPS uncap, and many quality‑of‑life
-                        features. It is actively maintained and considered by many to be a more advanced alternative to
-                        HAC2.</p>
-                    <p style="color: #ff7b7b; border-left: 4px solid var(--accent); padding-left: 1rem;"><i
-                            class="fas fa-exclamation-triangle"></i> <strong>Important:</strong> Chimera is <strong>NOT
-                        compatible</strong> with HAC2. You must uninstall or remove HAC2 before installing Chimera
-                        (delete or rename the HAC2 .dll files).</p>
-                </div>
-
-                <div class="step">
-                    <h3>2. Download Chimera</h3>
-                    <ul>
-                        <li><strong>Latest release:</strong> <a href="https://github.com/SnowyMouse/chimera/releases"
-                                                                target="_blank">github.com/SnowyMouse/chimera/releases</a>
-                            – download the ZIP file for the newest version.
-                        </li>
-                        <li><strong>Info & community:</strong> <a
-                                href="https://opencarnage.net/index.php?/topic/6916-chimera-download-source-and-discord-updated-2022-03-12/"
-                                target="_blank">OpenCarnage thread</a> (includes Discord link and additional details).
-                        </li>
-                        <li><strong>Homepage:</strong> <a href="https://github.com/SnowyMouse/chimera" target="_blank">github.com/SnowyMouse/chimera</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="step">
-                    <h3>3. Installation</h3>
-                    <ol>
-                        <li>Locate your Halo CE installation folder (e.g. <code>C:\Program Files (x86)\Microsoft
-                            Games\Halo Custom Edition\</code>).
-                        </li>
-                        <li><strong>Back up your original <code>strings.dll</code></strong> – rename it to <code>strings.dll.backup</code>
-                            or copy it to a safe location.
-                        </li>
-                        <li>Extract the downloaded ZIP archive. Inside you'll find (at least) <code>strings.dll</code>
-                            and <code>chimera.ini</code>.
-                        </li>
-                        <li>Copy both files into your Halo CE root folder. When prompted, overwrite the existing <code>strings.dll</code>.
-                        </li>
-                        <li>Launch Halo CE normally. Chimera loads automatically – you'll see a version message in the
-                            console (<kbd>~</kbd>).
-                        </li>
-                    </ol>
-                    <p><i class="fas fa-info-circle"></i> No additional steps are required; Chimera handles map
-                        downloads right away.</p>
-                </div>
-
-                <div class="step">
-                    <h3>4. Configuration (optional)</h3>
-                    <ul>
-                        <li>Edit <code>chimera.ini</code> (in your Halo CE folder) with a text editor to enable/disable
-                            features, adjust download paths, chat style, and more. The file includes comments explaining
-                            each setting.
-                        </li>
-                        <li>In‑game console commands: press <kbd>~</kbd> and type <code>chimera help</code> to see all
-                            available commands (e.g. <code>chimera fps</code> to show FPS counter).
-                        </li>
-                        <li>You can also change map download behavior, font sizes, and HUD elements via the console.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="step">
-                    <h3>5. Using Chimera</h3>
-                    <ul>
-                        <li><strong>Auto map download:</strong> When you join a server with a custom map you don't have,
-                            Chimera will download it automatically (progress shown in chat). Maps are saved to your
-                            <code>maps</code> folder.
-                        </li>
-                        <li><strong>Extra features:</strong> Widescreen fixes, improved networking, FPS uncap, and a
-                            modern chat interface.
-                        </li>
-                        <li>If you experience issues, check the OpenCarnage thread or the GitHub repository for
-                            troubleshooting.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="step">
-                    <h3>6. Chimera vs HAC2</h3>
-                    <p>Chimera is under active development, supports newer operating systems, and includes many features
-                        not found in HAC2 (such as built‑in widescreen support and extensive customization). However,
-                        because they are incompatible, you must choose one client. Most players now prefer Chimera.</p>
-                </div>
-            </div>
-        </details>
+    <div class="resource-card">
+        <i class="fas fa-shield-halved"></i>
+        <h4>HAC2 Wiki</h4>
+        <p>Official HAC2 documentation - installation, commands, settings.</p>
+        <a class="btn" href="https://halonet.net/wiki/index.php/HAC2/Installation" target="_blank">Read</a>
     </div>
+    <div class="resource-card">
+        <i class="fab fa-youtube"></i>
+        <h4>Video Tutorial</h4>
+        <p>See HAC2 map downloading in action (YouTube).</p>
+        <a class="btn" href="https://youtu.be/AwE_USt_lx4" target="_blank">Watch</a>
+    </div>
+    <div class="resource-card">
+        <i class="fas fa-robot"></i>
+        <h4>Chimera Client</h4>
+        <p>Modern Halo CE enhancement – anti‑cheat, auto map download, and more. (Incompatible with HAC2)</p>
+        <a class="btn" href="https://github.com/SnowyMouse/chimera" target="_blank">GitHub</a>
+    </div>
+</div>
 
-    <h2><i class="fas fa-link"></i> More Useful Resources</h2>
-    <ul style="columns: 2 250px; gap: 2rem; list-style: none; padding: 0;">
-        <li><i class="fas fa-globe" style="color: var(--primary); width: 2rem;"></i> <a href="https://hce.halomaps.org"
-                                                                                        target="_blank">halomaps.org</a>
-            -
-            map database, mods, tools
-        </li>
-        <li><i class="fas fa-shield" style="color: var(--primary); width: 2rem;"></i> <a href="https://halonet.net/"
-                                                                                         target="_blank">halonet.net</a>
-            -
-            HAC2 home, community, wiki
-        </li>
-        <li><i class="fas fa-tools" style="color: var(--primary); width: 2rem;"></i> <a
-                href="https://opencarnage.net/index.php?/topic/6202-halo-ce-troubleshooting-guide/" target="_blank">OpenCarnage
-            troubleshooting</a>
-        </li>
-        <li><i class="fab fa-discord" style="color: var(--primary); width: 2rem;"></i> <a
-                href="https://discord.gg/3J2Zppghz5" target="_blank">Liberty Gaming Discord</a>
-        </li>
-        <li><i class="fab fa-discord" style="color: var(--primary); width: 2rem;"></i> <a
-                href="https://discord.com/invite/ZwQeBE2" target="_blank">Chimera Discord</a> - official Chimera
-            community
-        </li>
-        <li><i class="fab fa-discord" style="color: var(--primary); width: 2rem;"></i> <a
-                href="https://discord.com/invite/sbSwAR8" target="_blank">HAC2 Discord</a> - official HAC2 server
-        </li>
-        <li><i class="fas fa-robot" style="color: var(--primary); width: 2rem;"></i> <a
-                href="https://github.com/SnowyMouse/chimera/releases" target="_blank">Chimera on GitHub</a> - modern
-            client
-        </li>
-    </ul>
-</main>
-</body>
-</html>
+<div class="guide-section">
+    <h2><i class="fas fa-cog"></i> Halo CE Enhancement Clients (HAC2 & Chimera)</h2>
+
+    <details>
+        <summary>
+      <span style="color: var(--primary);">
+        <i class="fas fa-shield-alt"></i> HAC2 (Halo Anti-Cheat) Guide
+      </span>
+        </summary>
+        <div class="guide-steps" style="margin-top: 1.5rem;">
+            <div class="step">
+                <h3>1. About Halo Custom Edition (CE)</h3>
+                <p><strong>Halo Custom Edition</strong> is a free multiplayer‑only version of Halo: Combat Evolved (PC).
+                    It allows user‑created content: custom maps, objects, and features not possible in the standard
+                    game. Installing Halo CE requires your original Halo PC CD key. You can keep both <strong>Halo PC</strong> and <strong>Halo CE</strong> installed side‑by‑side using the same key.</p>
+            </div>
+
+            <div class="step">
+                <h3>2. Downloading CE</h3>
+                <ul>
+                    <li><strong>Halo CE installer</strong> (choose your language):
+                        <ul style="margin-top: 0.3rem;">
+                            <li><a href="https://hce.halomaps.org/index.cfm?fid=410" target="_blank">English</a></li>
+                            <li><a href="https://hce.halomaps.org/index.cfm?fid=4170" target="_blank">French</a></li>
+                            <li><a href="https://hce.halomaps.org/index.cfm?fid=4169" target="_blank">German</a></li>
+                            <li><a href="https://hce.halomaps.org/index.cfm?fid=4171" target="_blank">Italian</a></li>
+                            <li><a href="https://hce.halomaps.org/index.cfm?fid=3947" target="_blank">Spanish</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>v1.10 patch</strong> (required):
+                        <a href="https://hce.halomaps.org/index.cfm?fid=6798" target="_blank">Mirror 1 (halomaps)</a> |
+                        <a href="https://www.bungie.net/en-us/Forum/Post/64943622/0/0" target="_blank">Mirror 2 (Bungie)</a>
+                    </li>
+                    <li><strong>CD key recovery tools</strong> (if you lost your key):
+                        <a href="https://hce.halomaps.org/index.cfm?fid=2147" target="_blank">Tool v1</a> |
+                        <a href="https://hce.halomaps.org/index.cfm?fid=4547" target="_blank">Tool v2 (recommended)</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>3. Installing CE</h3>
+                <ol>
+                    <li>Run the Halo CE installer and enter your Halo PC CD key.</li>
+                    <li>Apply the v1.10 patch (run the downloaded patch file).</li>
+                    <li><strong>Enable console (for admins):</strong>
+                        <ul>
+                            <li>Navigate to your Halo CE installation folder (usually <code>C:\Program Files (x86)\Microsoft Games\Halo Custom Edition\</code>).</li>
+                            <li>Right‑click <code>haloce.exe</code> → Create shortcut. Place shortcut on desktop.</li>
+                            <li>Right‑click shortcut → Properties → in the <strong>Target</strong> field, add <code> -console</code> at the end (with a space before).<br>
+                                Example: <code>"C:\Program Files\Microsoft Games\Halo Custom Edition\haloce.exe" -console</code></li>
+                            <li>Press <kbd>~</kbd> (tilde) in‑game to open the console.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h3>4. Troubleshooting CE</h3>
+                <ul>
+                    <li><strong>Graphics:</strong> Set anti‑aliasing to “use application setting” and anisotropic filtering to “use application setting” in your GPU control panel.</li>
+                    <li><strong>Codecs:</strong> Install <a href="https://www.xvid.com/download/" target="_blank">Xvid codec</a> and <a href="https://www.codecguide.com/download_kl.htm" target="_blank">K‑Lite codec pack</a> to fix video playback issues.</li>
+                    <li><strong>Missing text chat:</strong> Download and install <a href="https://download.cnet.com/download/msxml-4-0-service-pack-2-microsoft-xml-core-services/3000-2070_4-10726922.html" target="_blank">MSXML 4.0 SP2</a>.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>5. Using CE & Custom Maps</h3>
+                <p>After launching Halo CE, connect to the Internet Lobby. In the server browser <strong>enable “Show custom maps”</strong> in the filters. You’ll see servers running custom content, but you won’t have the maps yet - that’s where <strong>HAC2</strong> comes in.</p>
+                <p>HAC2 automatically downloads required custom maps when you join a server. No manual hunting for map files. Large maps may take a moment, but they are cached for future use.</p>
+                <p><i class="fas fa-play-circle" style="color: var(--accent);"></i> See it in action: <a href="https://youtu.be/AwE_USt_lx4" target="_blank">YouTube demonstration</a></p>
+            </div>
+
+            <div class="step">
+                <h3>6. HAC2 - Download & Installation</h3>
+                <p>HAC2 (Halo Anti‑Cheat) also provides automatic map downloading and improved chat. Follow the official installation guide:</p>
+                <p><a class="btn-download" href="https://halonet.net/wiki/index.php/HAC2/Installation" target="_blank"><i class="fas fa-external-link-alt"></i> HAC2 Installation Wiki</a> (site is safe - ignore any security warnings)</p>
+                <p>After installation, HAC2 will handle map downloads automatically whenever you join a custom map server.</p>
+            </div>
+
+            <div class="step">
+                <h3>7. HAC2 Settings (optional)</h3>
+                <ul>
+                    <li><strong>Custom chat appearance:</strong> With Halo CE closed, open console (<kbd>~</kbd>) and type <code>custom_chat 1</code> to enable styled text.</li>
+                    <li><strong>Font size:</strong> Use <code>font_size [size]</code> in console, e.g. <code>font_size 36</code>.</li>
+                </ul>
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+      <span style="color: var(--accent);">
+        <i class="fas fa-robot"></i> Chimera Client Guide (Modern Alternative)
+      </span>
+        </summary>
+        <div class="guide-steps" style="margin-top: 1.5rem;">
+            <div class="step">
+                <h3>1. What is Chimera?</h3>
+                <p><strong>Chimera</strong> is a modern open‑source enhancement client for Halo CE. It provides automatic map downloading, improved chat, widescreen fixes, FPS uncap, and many quality‑of‑life features. It is actively maintained and considered by many to be a more advanced alternative to HAC2.</p>
+                <p style="color: #ff7b7b; border-left: 4px solid var(--accent); padding-left: 1rem;"><i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong> Chimera is <strong>NOT compatible</strong> with HAC2. You must uninstall or remove HAC2 before installing Chimera (delete or rename the HAC2 .dll files).</p>
+            </div>
+
+            <div class="step">
+                <h3>2. Download Chimera</h3>
+                <ul>
+                    <li><strong>Latest release:</strong> <a href="https://github.com/SnowyMouse/chimera/releases" target="_blank">github.com/SnowyMouse/chimera/releases</a> – download the ZIP file for the newest version.</li>
+                    <li><strong>Info & community:</strong> <a href="https://opencarnage.net/index.php?/topic/6916-chimera-download-source-and-discord-updated-2022-03-12/" target="_blank">OpenCarnage thread</a> (includes Discord link and additional details).</li>
+                    <li><strong>Homepage:</strong> <a href="https://github.com/SnowyMouse/chimera" target="_blank">github.com/SnowyMouse/chimera</a></li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>3. Installation</h3>
+                <ol>
+                    <li>Locate your Halo CE installation folder (e.g. <code>C:\Program Files (x86)\Microsoft Games\Halo Custom Edition\</code>).</li>
+                    <li><strong>Back up your original <code>strings.dll</code></strong> – rename it to <code>strings.dll.backup</code> or copy it to a safe location.</li>
+                    <li>Extract the downloaded ZIP archive. Inside you'll find (at least) <code>strings.dll</code> and <code>chimera.ini</code>.</li>
+                    <li>Copy both files into your Halo CE root folder. When prompted, overwrite the existing <code>strings.dll</code>.</li>
+                    <li>Launch Halo CE normally. Chimera loads automatically – you'll see a version message in the console (<kbd>~</kbd>).</li>
+                </ol>
+                <p><i class="fas fa-info-circle"></i> No additional steps are required; Chimera handles map downloads right away.</p>
+            </div>
+
+            <div class="step">
+                <h3>4. Configuration (optional)</h3>
+                <ul>
+                    <li>Edit <code>chimera.ini</code> (in your Halo CE folder) with a text editor to enable/disable features, adjust download paths, chat style, and more. The file includes comments explaining each setting.</li>
+                    <li>In‑game console commands: press <kbd>~</kbd> and type <code>chimera help</code> to see all available commands (e.g. <code>chimera fps</code> to show FPS counter).</li>
+                    <li>You can also change map download behavior, font sizes, and HUD elements via the console.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>5. Using Chimera</h3>
+                <ul>
+                    <li><strong>Auto map download:</strong> When you join a server with a custom map you don't have, Chimera will download it automatically (progress shown in chat). Maps are saved to your <code>maps</code> folder.</li>
+                    <li><strong>Extra features:</strong> Widescreen fixes, improved networking, FPS uncap, and a modern chat interface.</li>
+                    <li>If you experience issues, check the OpenCarnage thread or the GitHub repository for troubleshooting.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>6. Chimera vs HAC2</h3>
+                <p>Chimera is under active development, supports newer operating systems, and includes many features not found in HAC2 (such as built‑in widescreen support and extensive customization). However, because they are incompatible, you must choose one client. Most players now prefer Chimera.</p>
+            </div>
+        </div>
+    </details>
+</div>
+
+<h2><i class="fas fa-link"></i> More Useful Resources</h2>
+<ul style="columns: 2 250px; gap: 2rem; list-style: none; padding: 0;">
+    <li><i class="fas fa-globe" style="color: var(--primary); width: 2rem;"></i> <a href="https://hce.halomaps.org" target="_blank">halomaps.org</a> - map database, mods, tools</li>
+    <li><i class="fas fa-shield" style="color: var(--primary); width: 2rem;"></i> <a href="https://halonet.net/" target="_blank">halonet.net</a> - HAC2 home, community, wiki</li>
+    <li><i class="fas fa-tools" style="color: var(--primary); width: 2rem;"></i> <a href="https://opencarnage.net/index.php?/topic/6202-halo-ce-troubleshooting-guide/" target="_blank">OpenCarnage troubleshooting</a></li>
+    <li><i class="fab fa-discord" style="color: var(--primary); width: 2rem;"></i> <a href="https://discord.gg/3J2Zppghz5" target="_blank">Liberty Gaming Discord</a></li>
+    <li><i class="fab fa-discord" style="color: var(--primary); width: 2rem;"></i> <a href="https://discord.com/invite/ZwQeBE2" target="_blank">Chimera Discord</a> - official Chimera community</li>
+    <li><i class="fab fa-discord" style="color: var(--primary); width: 2rem;"></i> <a href="https://discord.com/invite/sbSwAR8" target="_blank">HAC2 Discord</a> - official HAC2 server</li>
+    <li><i class="fas fa-robot" style="color: var(--primary); width: 2rem;"></i> <a href="https://github.com/SnowyMouse/chimera/releases" target="_blank">Chimera on GitHub</a> - modern client</li>
+</ul>
+
+<style>
+    .guide-section {
+        background: rgba(10, 12, 15, 0.6);
+        border-radius: 24px;
+        padding: 2rem;
+        margin: 2.5rem 0;
+        border-left: 6px solid var(--primary);
+    }
+
+    .guide-section h2 {
+        margin-top: 0;
+        border-bottom: 2px solid var(--border-glow);
+        padding-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .guide-section h2 i {
+        color: var(--accent);
+        font-size: 2rem;
+    }
+
+    .guide-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+    }
+
+    .step {
+        background: rgba(26, 30, 36, 0.5);
+        border-radius: 20px;
+        padding: 1.5rem;
+        border: 1px solid var(--border-glow);
+    }
+
+    .step h3 {
+        color: var(--primary);
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px dashed var(--border-glow);
+        padding-bottom: 0.3rem;
+    }
+
+    .step ul, .step ol {
+        padding-left: 1.8rem;
+        color: var(--text-light);
+    }
+
+    .step li {
+        margin-bottom: 0.5rem;
+    }
+
+    .step a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .step a:hover {
+        color: var(--primary);
+    }
+
+    .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .resource-card {
+        background: rgba(26, 30, 36, 0.8);
+        border: 1px solid var(--border-glow);
+        border-radius: 24px;
+        padding: 1.8rem 1.5rem;
+        text-align: center;
+        transition: var(--transition);
+    }
+
+    .resource-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+        box-shadow: 0 0 18px var(--primary);
+    }
+
+    .resource-card i {
+        font-size: 2.8rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .resource-card h4 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        color: var(--accent);
+    }
+
+    .credits {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 30px;
+        padding: 1rem 2rem;
+        margin: 1rem 0 2rem;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+    }
+
+    .credits strong {
+        color: var(--primary);
+    }
+
+    .btn-download {
+        display: inline-block;
+        background: var(--primary);
+        color: #000000 !important;
+        padding: 0.4rem 1rem;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-left: 0.8rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.2s ease;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-download:hover {
+        background: var(--accent);
+        color: #000000 !important;
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px var(--primary);
+    }
+
+    details {
+        margin-bottom: 2rem;
+        border-radius: 28px;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 0.5rem;
+    }
+
+    details summary {
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        background: rgba(20, 25, 30, 0.8);
+        border-radius: 30px;
+        padding: 0.8rem 1.5rem;
+        border: 1px solid var(--border-glow);
+        transition: 0.2s;
+    }
+
+    details summary:hover {
+        background: rgba(40, 45, 50, 0.9);
+        border-color: var(--primary);
+    }
+
+    details summary span {
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    details summary i {
+        font-size: 2.2rem;
+    }
+
+    details[open] summary {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: none;
+    }
+
+    @media (max-width: 600px) {
+        ul[style*="columns"] {
+            columns: 1 !important;
+            column-gap: 0;
+        }
+    }
+</style>

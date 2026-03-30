@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+<header class="header">
+    {% include header.html %}
+</header>
+<main>
+    {{ content }}
+</main>
+{% include footer.html %}
+<script src="{{ site.baseurl }}/assets/js/scripts.js" defer></script>
+</body>
+</html>

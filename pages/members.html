@@ -1,172 +1,153 @@
-<!--
-  Liberty Gaming - Halo CE Website
-  Developer: Jericho Crosby / Chalwk
-  Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
-  This file is part of the proprietary Liberty Gaming website.
-  Use, copying, or distribution without permission is strictly prohibited.
--->
+---
+layout: default
+title: Members
+---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Liberty Gaming - Members</title>
-    <link href="../core.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap"
-          rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <script defer src="../nav-menu.js"></script>
-    <style>
-        .members-note {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-style: italic;
-            font-family: var(--font-body), sans-serif;
-        }
+<h1>Members</h1>
+<p class="members-note">March 2026</p>
 
+<div class="table-responsive">
+    <table class="members-table">
+        <thead>
+        <tr>
+            <th>Member</th>
+            <th>Country</th>
+            <th>Discord Role(s)</th>
+        </tr>
+        </thead>
+        <tbody id="members-tbody"></tbody>
+    </table>
+</div>
+
+<style>
+    .members-note {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        font-style: italic;
+        font-family: var(--font-body), sans-serif;
+    }
+
+    .members-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(10, 12, 15, 0.8);
+        border: 1px solid var(--border-glow);
+        border-radius: 20px;
+        overflow: hidden;
+        font-family: var(--font-body), sans-serif;
+    }
+
+    .members-table th {
+        background: var(--bg-panel);
+        color: var(--primary);
+        font-family: var(--font-header), sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--border-glow);
+    }
+
+    .members-table td {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-glow);
+        color: var(--text-light);
+        font-family: var(--font-body), sans-serif;
+    }
+
+    .members-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .members-table tr:hover td {
+        background: rgba(42, 169, 161, 0.1);
+    }
+
+    .role-founder {
+        color: var(--primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: rgba(255, 206, 0, 0.15);
+        border: 1px solid rgba(255, 206, 0, 0.5);
+        border-radius: 6px;
+        padding: 0.1rem 0.25rem;
+        margin-right: 0.3rem;
+        font-size: 0.85rem;
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .country-flag {
+        font-size: 1.4rem;
+        line-height: 1;
+        margin-right: 0.3rem;
+    }
+
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    @media (max-width: 840px) {
         .members-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: rgba(10, 12, 15, 0.8);
-            border: 1px solid var(--border-glow);
-            border-radius: 20px;
-            overflow: hidden;
-            font-family: var(--font-body), sans-serif;
+            border: 0;
         }
 
-        .members-table th {
-            background: var(--bg-panel);
-            color: var(--primary);
-            font-family: var(--font-header), sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 2px solid var(--border-glow);
+        .members-table thead,
+        .members-table tbody,
+        .members-table th,
+        .members-table td,
+        .members-table tr {
+            display: block;
+        }
+
+        .members-table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .members-table tr {
+            margin: 0 0 0.1rem 0;
+            background: rgba(10, 12, 15, 0.93);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 0.35rem;
         }
 
         .members-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-glow);
-            color: var(--text-light);
+            padding: 0.45rem 0.3rem;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            padding-left: 50%;
+            text-align: left;
+        }
+
+        .members-table td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 0.75rem;
+            width: 45%;
+            white-space: normal;
+            font-weight: 600;
+            color: var(--text-muted);
             font-family: var(--font-body), sans-serif;
         }
 
-        .members-table tr:last-child td {
+        .members-table td:last-child {
             border-bottom: none;
         }
 
         .members-table tr:hover td {
-            background: rgba(42, 169, 161, 0.1);
+            background: rgba(42, 169, 161, 0.05);
         }
-
-        .role-founder {
-            color: var(--primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: rgba(255, 206, 0, 0.15);
-            border: 1px solid rgba(255, 206, 0, 0.5);
-            border-radius: 6px;
-            padding: 0.1rem 0.25rem;
-            margin-right: 0.3rem;
-            font-size: 0.85rem;
-            line-height: 1;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .country-flag {
-            font-size: 1.4rem;
-            line-height: 1;
-            margin-right: 0.3rem;
-        }
-
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        @media (max-width: 840px) {
-            .members-table {
-                border: 0;
-            }
-
-            .members-table thead,
-            .members-table tbody,
-            .members-table th,
-            .members-table td,
-            .members-table tr {
-                display: block;
-            }
-
-            .members-table thead tr {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
-
-            .members-table tr {
-                margin: 0 0 0.1rem 0;
-                background: rgba(10, 12, 15, 0.93);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                border-radius: 8px;
-                padding: 0.35rem;
-            }
-
-            .members-table td {
-                padding: 0.45rem 0.3rem;
-                border: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-                position: relative;
-                padding-left: 50%;
-                text-align: left;
-            }
-
-            .members-table td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 0.75rem;
-                width: 45%;
-                white-space: normal;
-                font-weight: 600;
-                color: var(--text-muted);
-                font-family: var(--font-body), sans-serif;
-            }
-
-            .members-table td:last-child {
-                border-bottom: none;
-            }
-
-            .members-table tr:hover td {
-                background: rgba(42, 169, 161, 0.05);
-            }
-        }
-    </style>
-</head>
-<body>
-<header class="header"></header>
-
-<main>
-    <h1 style="font-family: var(--font-header), sans-serif;">Members</h1>
-    <p class="members-note">March 2026</p>
-
-    <div class="table-responsive">
-        <table class="members-table">
-            <thead>
-            <tr>
-                <th>Member</th>
-                <th>Country</th>
-                <th>Discord Role(s)</th>
-            </tr>
-            </thead>
-            <tbody id="members-tbody"></tbody>
-        </table>
-    </div>
-</main>
+    }
+</style>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -241,7 +222,6 @@
                     }
 
                     tr.appendChild(tdRoles);
-
                     tbody.appendChild(tr);
                 });
             })
@@ -250,5 +230,3 @@
             });
     });
 </script>
-</body>
-</html>

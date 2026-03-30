@@ -1,108 +1,87 @@
-<!--
-  Liberty Gaming - Halo CE Website
-  Developer: Jericho Crosby / Chalwk
-  Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
-  This file is part of the proprietary Liberty Gaming website.
-  Use, copying, or distribution without permission is strictly prohibited.
--->
+---
+layout: default
+title: Community
+---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Liberty Gaming - Community</title>
-    <link href="../core.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap"
-          rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <script defer src="../nav-menu.js"></script>
-    <style>
-        .community-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin: 3rem 0;
-        }
+<h1>Join the Community</h1>
+<p>We're a friendly bunch of Halo CE enthusiasts. Jump into our Discord, follow us on YouTube and Facebook.</p>
 
+<div class="community-links">
+    <div class="community-card">
+        <i class="fab fa-discord"></i>
+        <h3>Discord</h3>
+        <p>Chat with players, get server alerts, and organize games.</p>
+        <a class="btn" href="https://discord.gg/3J2Zppghz5">Join Discord</a>
+    </div>
+    <div class="community-card">
+        <i class="fab fa-youtube"></i>
+        <h3>YouTube</h3>
+        <p>Watch gameplay, map showcases, and tutorials.</p>
+        <a class="btn" href="#">COMING SOON</a>
+    </div>
+    <div class="community-card">
+        <i class="fab fa-facebook-f"></i>
+        <h3>Facebook</h3>
+        <p>Join our Facebook community for updates, discussions, and Halo content.</p>
+        <a class="btn" href="https://www.facebook.com/LibertyClan">Visit Page</a>
+    </div>
+    <div class="community-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>Have questions? Reach out to us directly.</p>
+        <a class="btn" href="mailto:libertyclan2024@gmail.com">Contact Us</a>
+    </div>
+</div>
+
+<style>
+    .community-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        margin: 3rem 0;
+    }
+
+    .community-card {
+        background: rgba(10, 12, 15, 0.8);
+        border: 1px solid var(--border-glow);
+        border-radius: 30px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        width: 280px;
+        transition: var(--transition);
+    }
+
+    .community-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 20px var(--primary);
+    }
+
+    .community-card i {
+        font-size: 4rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .community-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .community-card p {
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
         .community-card {
-            background: rgba(10, 12, 15, 0.8);
-            border: 1px solid var(--border-glow);
-            border-radius: 30px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            width: 280px;
-            transition: var(--transition);
-        }
-
-        .community-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 20px var(--primary);
-        }
-
-        .community-card i {
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 350px;
+            padding: 2rem 1.5rem;
         }
 
         .community-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
-
-        .community-card p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        @media (max-width: 600px) {
-            .community-card {
-                width: 100%;
-                max-width: 350px;
-                padding: 2rem 1.5rem;
-            }
-
-            .community-card h3 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-<header class="header"></header>
-
-<main>
-    <h1>Join the Community</h1>
-    <p>We're a friendly bunch of Halo CE enthusiasts. Jump into our Discord, follow us on YouTube and Facebook.</p>
-
-    <div class="community-links">
-        <div class="community-card">
-            <i class="fab fa-discord"></i>
-            <h3>Discord</h3>
-            <p>Chat with players, get server alerts, and organize games.</p>
-            <a class="btn" href="https://discord.gg/3J2Zppghz5">Join Discord</a>
-        </div>
-        <div class="community-card">
-            <i class="fab fa-youtube"></i>
-            <h3>YouTube</h3>
-            <p>Watch gameplay, map showcases, and tutorials.</p>
-            <a class="btn" href="#">COMING SOON</a>
-        </div>
-        <div class="community-card">
-            <i class="fab fa-facebook-f"></i>
-            <h3>Facebook</h3>
-            <p>Join our Facebook community for updates, discussions, and Halo content.</p>
-            <a class="btn" href="https://www.facebook.com/LibertyClan">Visit Page</a>
-        </div>
-        <div class="community-card">
-            <i class="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <p>Have questions? Reach out to us directly.</p>
-            <a class="btn" href="mailto:libertyclan2024@gmail.com">Contact Us</a>
-        </div>
-    </div>
-</main>
-</body>
-</html>
+    }
+</style>

@@ -1,311 +1,284 @@
-<!--
-  Liberty Gaming - Halo CE Website
-  Developer: Jericho Crosby / Chalwk
-  Copyright (c) 2026 Liberty Gaming. All rights reserved.
-  This file is part of the proprietary Liberty Gaming website.
--->
+---
+layout: default
+title: Servers
+---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport">
-    <meta content="#0a0c0f" name="theme-color">
-    <title>Liberty Gaming - Servers</title>
-    <link href="../core.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap"
-          rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <script defer src="../nav-menu.js"></script>
-    <style>
-        :root {
-            --bg-panel: rgba(10, 12, 15, 0.8);
-            --bg-panel-light: rgba(20, 22, 26, 0.9);
-            --border-glow: rgba(42, 169, 161, 0.5);
-            --primary: #2aa9a1;
-            --text-muted: #aaa;
-            --text-light: #fff;
-            --accent: #2aa9a1;
-            --transition: all 0.2s ease;
-        }
+<h1>Active Servers</h1>
+<p>Click on a server to see its current map rotation and gametypes. All games run for 20 minutes. Click any map name
+    to download it.</p>
 
-        main {
-            padding: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
+<div class="full-map-view" id="map-view-container"></div>
 
-        .server-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 380px));
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2.5rem;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
-        .server-list.hidden {
-            opacity: 0;
-            transform: scale(0.95);
-            pointer-events: none;
-        }
-
-        .server-entry {
-            background: rgba(10, 12, 15, 0.8);
-            border: 1px solid var(--border-glow);
-            border-radius: 20px;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            min-height: 720px;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .server-entry:hover {
-            border-color: var(--primary);
-            box-shadow: 0 0 15px var(--primary);
-        }
-
-        .server-info h3 {
-            color: var(--primary);
-            margin-bottom: 0.7rem;
-            font-size: 1.2rem;
-            line-height: 1.2;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .server-info p {
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .server-meta {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .toggle-maps-button {
-            background: var(--primary);
-            border: 1px solid var(--border-glow);
-            color: #fff;
-            padding: 0.7rem 1rem;
-            border-radius: 999px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: background 0.2s, transform 0.2s;
-        }
-
-        .toggle-maps-button:hover {
-            background: rgba(42, 169, 161, 0.85);
-            transform: translateY(-1px);
-        }
-
-        .tracker-embed {
-            width: 240px;
-            max-width: 100%;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .tracker-embed iframe {
-            width: 100%;
-            height: 600px;
-            border: 0;
-            display: block;
-        }
-
-        .tracker-embed .loading-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 12, 15, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-light);
-            font-size: 1.1rem;
-            z-index: 10;
-            transition: opacity 0.3s ease;
-        }
-
-        .tracker-embed .loading-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .server-thumb {
-            display: none;
-        }
-
-        .server-details {
-            display: none;
-        }
-
-        .full-map-view {
-            display: none;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        .full-map-view.visible {
-            display: flex;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .maps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-
-        .map-item {
-            background: rgba(18, 21, 27, 0.95);
-            border: 1px solid rgba(63, 160, 150, 0.45);
-            border-radius: 14px;
-            padding: 0.8rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 0.4rem;
-            min-height: 80px;
-        }
-
-        .map-name a {
-            color: var(--text-light);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s, color 0.2s;
-            font-weight: 600;
-            font-size: 0.94rem;
-            display: block;
-            line-height: 1.2;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .map-name a:hover {
-            color: #ffffff;
-            border-bottom-color: var(--primary);
-        }
-
-        .map-gametype {
-            color: #d2f8ee;
-            font-size: 0.82rem;
-            font-weight: 700;
-            background: rgba(34, 54, 66, 0.8);
-            padding: 0.26rem 0.7rem;
-            border-radius: 12px;
-            border: 1px solid rgba(42, 169, 161, 0.3);
-            text-align: center;
-        }
-
-        .note {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .loading, .error {
-            color: var(--text-muted);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .error {
-            color: #ff6b6b;
-        }
-
-        .hide-maps-button {
-            align-self: center;
-            background: #ff6b6b;
-            color: #fff;
-            border: none;
-            padding: 0.6rem 1rem;
-            border-radius: 999px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: background 0.2s, transform 0.2s;
-        }
-
-        .hide-maps-button:hover {
-            background: #ff4c4c;
-            transform: translateY(-1px);
-        }
-    </style>
-</head>
-<body>
-<header class="header"></header>
-
-<main>
-    <h1>Active Servers</h1>
-    <p>Click on a server to see its current map rotation and gametypes. All games run for 20 minutes. Click any map name
-        to download it.</p>
-
-    <div class="full-map-view" id="map-view-container"></div>
-
-    <div class="server-list">
-        <div class="server-entry" data-server="standard">
-            <div class="server-info">
-                <div class="server-title">
-                    <h3>! ++ LIBERTY ++ !</h3>
-                    <div class="tracker-embed">
-                        <div class="loading-overlay"><i class="fas fa-spinner fa-pulse"></i> Stats loading...</div>
-                        <iframe
-                                height="596"
-                                src="https://cache.gametracker.com/components/html0/?host=185.107.96.224:2302&bgColor=0a0c0f&fontColor=cccccc&titleBgColor=0a0c0f&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=130&showCurrPlayers=1&topPlayersHeight=130&showTopPlayers=1&showBlogs=0&width=240"
-                                style="border:0; overflow:hidden;"
-                                width="240">
-                        </iframe>
-                    </div>
-                    <p>Standard Halo CE mix - CTF, Slayer, Oddball, KoH</p>
+<div class="server-list">
+    <div class="server-entry" data-server="standard">
+        <div class="server-info">
+            <div class="server-title">
+                <h3>! ++ LIBERTY ++ !</h3>
+                <div class="tracker-embed">
+                    <div class="loading-overlay"><i class="fas fa-spinner fa-pulse"></i> Stats loading...</div>
+                    <iframe
+                            height="596"
+                            src="https://cache.gametracker.com/components/html0/?host=185.107.96.224:2302&bgColor=0a0c0f&fontColor=cccccc&titleBgColor=0a0c0f&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=130&showCurrPlayers=1&topPlayersHeight=130&showTopPlayers=1&showBlogs=0&width=240"
+                            style="border:0; overflow:hidden;"
+                            width="240">
+                    </iframe>
                 </div>
-            </div>
-            <div class="server-meta">
-                <button class="toggle-maps-button" type="button">View map rotation</button>
+                <p>Standard Halo CE mix - CTF, Slayer, Oddball, KoH</p>
             </div>
         </div>
-
-        <div class="server-entry" data-server="racing">
-            <div class="server-info">
-                <div class="server-title">
-                    <h3>! ++ LIBERTY - RACING ++ !</h3>
-                    <div class="tracker-embed">
-                        <div class="loading-overlay"><i class="fas fa-spinner fa-pulse"></i> Stats loading...</div>
-                        <iframe
-                                height="596"
-                                src="https://cache.gametracker.com/components/html0/?host=185.107.96.224:2302&bgColor=0a0c0f&fontColor=cccccc&titleBgColor=0a0c0f&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=130&showCurrPlayers=1&topPlayersHeight=130&showTopPlayers=1&showBlogs=0&width=240"
-                                style="border:0; overflow:hidden;"
-                                width="240">
-                        </iframe>
-                    </div>
-                    <p>Dedicated racing server - circuit and obstacle maps</p>
-                </div>
-            </div>
-            <div class="server-meta">
-                <button class="toggle-maps-button" type="button">View map rotation</button>
-            </div>
+        <div class="server-meta">
+            <button class="toggle-maps-button" type="button">View map rotation</button>
         </div>
     </div>
-</main>
+
+    <div class="server-entry" data-server="racing">
+        <div class="server-info">
+            <div class="server-title">
+                <h3>! ++ LIBERTY - RACING ++ !</h3>
+                <div class="tracker-embed">
+                    <div class="loading-overlay"><i class="fas fa-spinner fa-pulse"></i> Stats loading...</div>
+                    <iframe
+                            height="596"
+                            src="https://cache.gametracker.com/components/html0/?host=185.107.96.219:2302&bgColor=0a0c0f&fontColor=cccccc&titleBgColor=0a0c0f&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=130&showCurrPlayers=1&topPlayersHeight=130&showTopPlayers=1&showBlogs=0&width=240"
+                            style="border:0; overflow:hidden;"
+                            width="240">
+                    </iframe>
+                </div>
+                <p>Dedicated racing server - circuit and obstacle maps</p>
+            </div>
+        </div>
+        <div class="server-meta">
+            <button class="toggle-maps-button" type="button">View map rotation</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    :root {
+        --bg-panel: rgba(10, 12, 15, 0.8);
+        --bg-panel-light: rgba(20, 22, 26, 0.9);
+        --border-glow: rgba(42, 169, 161, 0.5);
+        --primary: #2aa9a1;
+        --text-muted: #aaa;
+        --text-light: #fff;
+        --accent: #2aa9a1;
+        --transition: all 0.2s ease;
+    }
+
+    main {
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .server-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 380px));
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2.5rem;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .server-list.hidden {
+        opacity: 0;
+        transform: scale(0.95);
+        pointer-events: none;
+    }
+
+    .server-entry {
+        background: rgba(10, 12, 15, 0.8);
+        border: 1px solid var(--border-glow);
+        border-radius: 20px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        min-height: 720px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .server-entry:hover {
+        border-color: var(--primary);
+        box-shadow: 0 0 15px var(--primary);
+    }
+
+    .server-info h3 {
+        color: var(--primary);
+        margin-bottom: 0.7rem;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .server-info p {
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    .server-meta {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toggle-maps-button {
+        background: var(--primary);
+        border: 1px solid var(--border-glow);
+        color: #fff;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .toggle-maps-button:hover {
+        background: rgba(42, 169, 161, 0.85);
+        transform: translateY(-1px);
+    }
+
+    .tracker-embed {
+        width: 240px;
+        max-width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .tracker-embed iframe {
+        width: 100%;
+        height: 600px;
+        border: 0;
+        display: block;
+    }
+
+    .tracker-embed .loading-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 12, 15, 0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-light);
+        font-size: 1.1rem;
+        z-index: 10;
+        transition: opacity 0.3s ease;
+    }
+
+    .tracker-embed .loading-overlay.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .full-map-view {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    .full-map-view.visible {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .maps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .map-item {
+        background: rgba(18, 21, 27, 0.95);
+        border: 1px solid rgba(63, 160, 150, 0.45);
+        border-radius: 14px;
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.4rem;
+        min-height: 80px;
+    }
+
+    .map-name a {
+        color: var(--text-light);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s, color 0.2s;
+        font-weight: 600;
+        font-size: 0.94rem;
+        display: block;
+        line-height: 1.2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .map-name a:hover {
+        color: #ffffff;
+        border-bottom-color: var(--primary);
+    }
+
+    .map-gametype {
+        color: #d2f8ee;
+        font-size: 0.82rem;
+        font-weight: 700;
+        background: rgba(34, 54, 66, 0.8);
+        padding: 0.26rem 0.7rem;
+        border-radius: 12px;
+        border: 1px solid rgba(42, 169, 161, 0.3);
+        text-align: center;
+    }
+
+    .note {
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .loading, .error {
+        color: var(--text-muted);
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .error {
+        color: #ff6b6b;
+    }
+
+    .hide-maps-button {
+        align-self: center;
+        background: #ff6b6b;
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .hide-maps-button:hover {
+        background: #ff4c4c;
+        transform: translateY(-1px);
+    }
+</style>
 
 <script>
     (function () {
@@ -346,8 +319,8 @@
                     const mapname = parts[1].trim();
                     const info = parts[2].trim();
 
-                    if (server === 'standard') standard.push({map: mapname, gametype: info});
-                    else if (server === 'racing') racing.push({map: mapname, laps: info});
+                    if (server === 'standard') standard.push({ map: mapname, gametype: info });
+                    else if (server === 'racing') racing.push({ map: mapname, laps: info });
                 });
 
                 standardMaps = standard;
@@ -420,5 +393,3 @@
         });
     })();
 </script>
-</body>
-</html>
