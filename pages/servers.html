@@ -272,19 +272,35 @@ title: Servers
 
     .hide-maps-button {
         align-self: center;
-        background: #ff6b6b;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(42, 169, 161, 0.7);
         color: #fff;
-        border: none;
-        padding: 0.6rem 1rem;
-        border-radius: 999px;
+        padding: 0.8rem 1.5rem;
+        border-radius: 40px;
         cursor: pointer;
         font-weight: 700;
-        transition: background 0.2s, transform 0.2s;
+        font-size: 1rem;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .hide-maps-button i {
+        font-size: 1rem;
     }
 
     .hide-maps-button:hover {
-        background: #ff4c4c;
-        transform: translateY(-1px);
+        background: rgba(42, 169, 161, 0.2);
+        border-color: var(--primary);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .hide-maps-button:active {
+        transform: translateY(0);
     }
 </style>
 
@@ -352,7 +368,7 @@ title: Servers
                 return;
             }
 
-            let html = `<button class="hide-maps-button" type="button">Hide map rotation</button>`;
+            let html = `<button class="hide-maps-button" type="button"><i class="fas fa-arrow-left"></i> Back to Servers</button>`;
             html += '<p class="note"><i class="fas fa-clock"></i> All games run for 20 minutes. Click a map name to download.</p>';
             html += '<div class="maps-grid">';
             maps.forEach(item => {
@@ -386,18 +402,19 @@ title: Servers
         }
 
         document.querySelectorAll('.server-entry').forEach(entry => {
-            const toggleButton = entry.querySelector('.toggle-maps-button');
             const serverType = entry.dataset.server;
 
-            toggleButton.addEventListener('click', e => {
-                e.stopPropagation();
+            entry.addEventListener('click', () => {
                 renderMapView(serverType);
             });
 
-            entry.addEventListener('click', e => {
-                if (e.target === toggleButton) return;
-                renderMapView(serverType);
-            });
+            const button = entry.querySelector('.toggle-maps-button');
+            if (button) {
+                button.addEventListener('click', e => {
+                    e.stopPropagation();
+                    renderMapView(serverType);
+                });
+            }
         });
     })();
 </script>
