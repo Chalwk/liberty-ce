@@ -71,6 +71,18 @@ title: Home
         Community</a>
 </div>
 
+<div class="join-section">
+    <h3><i class="fas fa-envelope"></i> Interested in Joining Liberty?</h3>
+    <p>If you're ready to become a part of our Halo CE community, we'd love to hear from you. Please review our <a
+            href="https://liberty-ce.net/pages/community-rules" class="rules-link">Community Rules</a> to ensure a
+        respectful and enjoyable experience for everyone.</p>
+    <p><strong>How to format your name:</strong> Choose a <strong>7‑character</strong> identifier that will become part
+        of your full 11‑character Halo nametag. For example: <code>LIB-MyNames</code> (total 11 characters).</p>
+    <p>Email your request to: <a href="mailto:libertyclan2024@gmail.com"
+                                 class="email-link">libertyclan2024@gmail.com</a></p>
+    <p>Once we receive your email, we’ll reply with further instructions. Welcome to Liberty! 👍 😎</p>
+</div>
+
 <style>
     .hero {
         text-align: center;
@@ -216,6 +228,50 @@ title: Home
         margin-top: 1rem;
     }
 
+    .join-section {
+        text-align: center;
+        background: rgba(26, 30, 36, 0.8);
+        border: 1px solid var(--border-glow);
+        border-radius: 40px;
+        padding: 2.5rem;
+        margin: 2rem 0 1rem;
+        transition: var(--transition);
+    }
+
+    .join-section h3 {
+        font-size: 2rem;
+        color: var(--accent);
+        margin-bottom: 1rem;
+    }
+
+    .join-section p {
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .join-section .email-link,
+    .join-section .rules-link {
+        font-weight: bold;
+        background: var(--bg-panel);
+        padding: 0.2rem 0.8rem;
+        border-radius: 30px;
+        border: 1px solid var(--primary);
+        display: inline-block;
+        margin: 0 0.2rem;
+    }
+
+    .join-section code {
+        background: var(--bg-dark);
+        padding: 0.2rem 0.5rem;
+        border-radius: 8px;
+        font-family: monospace;
+        color: var(--primary);
+        font-size: 1rem;
+    }
+
     @media (max-width: 600px) {
         .hero h2 {
             font-size: 2rem;
@@ -233,7 +289,8 @@ title: Home
             font-size: 1.5rem;
         }
 
-        .cta-section h3 {
+        .cta-section h3,
+        .join-section h3 {
             font-size: 1.6rem;
         }
 
@@ -245,6 +302,16 @@ title: Home
 
         .cta-section a.btn:last-child {
             margin-left: 0 !important;
+        }
+
+        .join-section {
+            padding: 1.5rem;
+        }
+
+        .join-section .email-link,
+        .join-section .rules-link {
+            font-size: 1rem;
+            padding: 0.2rem 0.6rem;
         }
     }
 </style>
