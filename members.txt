@@ -7,8 +7,9 @@ LIB-Easy;🇳🇱 Netherlands;Member
 LIB-Eddy;🇪🇹 Ethiopia;Member
 LIB-Epic;🇺🇸 United States;Member
 LIB-JBomb;🇬🇧 United Kingdom;Member
-LIB-Mina;🇨🇴 Colombia;Member
 LIB-Maja;🇩🇪 Germany;Founder
+LIB-Mina;🇨🇴 Colombia;Member
+LIB-Nasio;🇪🇸 Spain;Member
 LIB-Oldi;🇩🇪 Germany;Member
 LIB-Perico;🇬🇧 United Kingdom;Founder
 LIB-Renard;🇲🇽 Mexico;Member
