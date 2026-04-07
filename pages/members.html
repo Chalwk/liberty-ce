@@ -12,7 +12,7 @@ title: Members
 -->
 
 <h1>Members</h1>
-<p class="members-note">March 2026</p>
+<p class="members-note">March 2026 | Total Members: <span id="total-member-count">--</span></p>
 
 <div class="table-responsive">
     <table class="members-table">
@@ -159,6 +159,7 @@ title: Members
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const tbody = document.getElementById('members-tbody');
+        const memberCountSpan = document.getElementById('total-member-count');
         if (!tbody) return;
 
         fetch('../members.txt')
@@ -171,13 +172,13 @@ title: Members
             .then(data => {
                 const lines = data.split('\n').filter(line => line.trim() !== '');
                 tbody.innerHTML = '';
+                let validCount = 0;
 
                 lines.forEach(line => {
                     const parts = line.split(';').map(s => s.trim());
                     if (parts.length < 3) return;
 
                     const [name, flagCountry, roles] = parts;
-
                     let flagEmoji = flagCountry;
                     let countryName = '';
                     const firstSpace = flagCountry.indexOf(' ');
@@ -230,10 +231,20 @@ title: Members
 
                     tr.appendChild(tdRoles);
                     tbody.appendChild(tr);
+                    validCount++;
                 });
+
+                if (memberCountSpan) {
+                    memberCountSpan.textContent = validCount.toString();
+                }
             })
             .catch(error => {
-                tbody.innerHTML = `<tr><td colspan="3" style="color: var(--text-muted); text-align: center; padding: 2rem; font-family: var(--font-body), sans-serif;">⚠️ Error loading members: ${error.message}</td></tr>`;
+                if (memberCountSpan) {
+                    memberCountSpan.textContent = '0';
+                }
+                if (tbody) {
+                    tbody.innerHTML = `<tr><td colspan="3" style="color: var(--text-muted); text-align: center; padding: 2rem; font-family: var(--font-body), sans-serif;">⚠️ Error loading members: ${error.message}</td></tr>`;
+                }
             });
     });
 </script>
