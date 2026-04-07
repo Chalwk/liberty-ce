@@ -20,7 +20,7 @@ title: Members
         <tr>
             <th>Member</th>
             <th>Country</th>
-            <th>Discord Role(s)</th>
+            <th>Status</th>
         </tr>
         </thead>
         <tbody id="members-tbody"></tbody>
@@ -208,7 +208,7 @@ title: Members
                     tr.appendChild(tdCountry);
 
                     const tdRoles = document.createElement('td');
-                    tdRoles.dataset.label = 'Discord Role(s)';
+                    tdRoles.dataset.label = 'Status';
                     const roleText = roles || 'Member';
                     tdRoles.style.fontFamily = 'var(--font-body), sans-serif';
 
