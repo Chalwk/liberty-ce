@@ -24,9 +24,12 @@ racing;massacre_mountain_race_v2;10
 racing;cityscape-adrenaline;10
 racing;liberty_blockfort_quad;10
 standard;liberty_bountygulch;CTF rox
+standard;liberty_longest;Oddball rox (2 skulls)
+standard;liberty_cyberdyne;Slayer 25 kill rox
 standard;liberty_tension;CTF rox
 standard;fragment_v2;CTF all weapons
 standard;oblivion;CTF all weapons
+standard;liberty_forgotten_market;Slayer 25 kill rox
 standard;dichotomy;CTF rox
 standard;forgotten_fortress_beta;Oddball rox (2 skulls)
 standard;liberty_battle_creek;CTF rox
@@ -35,16 +38,16 @@ standard;liberty_chillout;CTF shotguns
 standard;liberty_silo_surprise2;Teamslayer 50 kill classic weapons
 standard;trainingday;Oddball shotguns (2 skulls)
 standard;cmt_g3_vestigial;CTF all weapons
-standard;hangemhigh;CTF rox
+standard;liberty_hangem;CTF rox
 standard;bloodgulch;teamslayer 50 kill rox
 standard;tactics;CTF normal weapons
 standard;delta_ruined;CTF shotguns
+standard;liberty_hornets_nest;CTF rox
 standard;carousel;CTF rox
 standard;h2_zanzibar_v3;CTF all weapons
 standard;gephyrophobia;CTF rox
 standard;opavo;Slayer 25 kill rox
-standard;facing_worldsrx;CTF rox
-standard;hangemhigh;Oddball rox (2 skulls)
+standard;liberty_hangem;Oddball rox (2 skulls)
 standard;sidewinder;CTF rox
 standard;liberty_damnation;CTF rox
 standard;liberty_chillout;Slayer 25 kill rox
@@ -54,3 +57,4 @@ standard;trainingday;CTF classic weapons
 standard;dangercanyon;CTF rox
 standard;ivory_tower_final;Slayer 25 kill rox
 standard;triduct;CTF rox
+standard;liberty_the_cage;Teamslayer 50 kill rox
