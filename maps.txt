@@ -23,6 +23,7 @@ racing;tlsstronghold;10
 racing;massacre_mountain_race_v2;10
 racing;cityscape-adrenaline;10
 racing;liberty_blockfort_quad;10
+racing;race_me_now;5
 standard;liberty_bountygulch;CTF rox
 standard;liberty_longest;Oddball rox (2 skulls)
 standard;liberty_cyberdyne;Slayer 25 kill rox
