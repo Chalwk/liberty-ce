@@ -62,7 +62,6 @@ title: Members
         border-bottom: 1px solid var(--border-glow);
         color: var(--text-light);
         font-family: var(--font-body), sans-serif;
-        white-space: nowrap;
     }
 
     .members-table tr:last-child td {
@@ -102,103 +101,57 @@ title: Members
     }
 
     @media (max-width: 840px) {
-
-        .members-table thead {
-            display: none;
+        .members-table {
+            border: 0;
         }
 
-        .members-table tbody {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
+        .members-table thead,
+        .members-table tbody,
+        .members-table th,
+        .members-table td,
+        .members-table tr {
+            display: block;
+        }
+
+        .members-table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
         }
 
         .members-table tr {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            grid-template-areas:
-                "member member"
-                "country status";
-            background: rgba(10, 12, 15, 0.95);
-            border: 1px solid var(--border-glow);
-            border-radius: 16px;
-            padding: 0.8rem 1rem;
-            gap: 0.35rem 0.75rem;
-            align-items: center;
+            margin: 0 0 0.1rem 0;
+            background: rgba(10, 12, 15, 0.93);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 0.35rem;
         }
 
         .members-table td {
-            padding: 0;
+            padding: 0.45rem 0.3rem 0.45rem 50%;
             border: none;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .members-table td:nth-child(1) {
-            grid-area: member;
-            font-weight: 600;
-        }
-
-        .members-table td:nth-child(2) {
-            grid-area: country;
-            opacity: 0.9;
-        }
-
-        .members-table td:nth-child(3) {
-            grid-area: status;
-            justify-self: end;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            text-align: left;
         }
 
         .members-table td::before {
-            content: attr(data-label) ":";
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            font-family: var(--font-header), sans-serif;
-            display: inline-block;
-            min-width: 64px;
-            text-align: left;
-            margin-right: 0.25rem;
+            content: attr(data-label);
+            position: absolute;
+            left: 0.75rem;
+            width: 45%;
+            white-space: normal;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-family: var(--font-body), sans-serif;
         }
 
-        .members-table td:nth-child(1)::before {
-            content: "";
-            margin: 0;
+        .members-table td:last-child {
+            border-bottom: none;
         }
 
         .members-table tr:hover td {
-            background: transparent;
-        }
-
-        .country-flag {
-            font-size: 1.1rem;
-        }
-
-        .role-founder {
-            font-size: 0.7rem;
-        }
-    }
-
-    @media (max-width: 560px) {
-        .members-table tr {
-            padding: 0.6rem 0.8rem;
-        }
-
-        .members-table td {
-            font-size: 0.85rem;
-        }
-
-        .members-table td::before {
-            font-size: 0.65rem;
-        }
-
-        .country-flag {
-            font-size: 1rem;
+            background: rgba(42, 169, 161, 0.05);
         }
     }
 </style>
@@ -239,10 +192,12 @@ title: Members
                     const tdName = document.createElement('td');
                     tdName.dataset.label = 'Member';
                     tdName.textContent = name;
+                    tdName.style.fontFamily = 'var(--font-body), sans-serif';
                     tr.appendChild(tdName);
 
                     const tdCountry = document.createElement('td');
                     tdCountry.dataset.label = 'Country';
+                    tdCountry.style.fontFamily = 'var(--font-body), sans-serif';
                     const spanFlag = document.createElement('span');
                     spanFlag.className = 'country-flag';
                     spanFlag.textContent = flagEmoji;
@@ -255,6 +210,8 @@ title: Members
                     const tdRoles = document.createElement('td');
                     tdRoles.dataset.label = 'Status';
                     const roleText = roles || 'Member';
+                    tdRoles.style.fontFamily = 'var(--font-body), sans-serif';
+
                     const roleChunks = roleText.split(/,|\/|\\|\s\/\s/).map(r => r.trim()).filter(Boolean);
                     if (roleChunks.length > 1) {
                         tdRoles.innerHTML = roleChunks.map((role, index) => {
@@ -282,9 +239,11 @@ title: Members
                 }
             })
             .catch(error => {
-                if (memberCountSpan) memberCountSpan.textContent = '0';
+                if (memberCountSpan) {
+                    memberCountSpan.textContent = '0';
+                }
                 if (tbody) {
-                    tbody.innerHTML = `<tr><td colspan="3" style="color: var(--text-muted); text-align: center; padding: 2rem;">⚠️ Error loading members: ${error.message}</td></tr>`;
+                    tbody.innerHTML = `<tr><td colspan="3" style="color: var(--text-muted); text-align: center; padding: 2rem; font-family: var(--font-body), sans-serif;">⚠️ Error loading members: ${error.message}</td></tr>`;
                 }
             });
     });
