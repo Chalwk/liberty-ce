@@ -1,62 +1,64 @@
-racing;cliffhanger;10
-racing;mystic_mod;10
-racing;highlow_race;10
 racing;atephobia__v2;10
 racing;bc_raceway_final_mp;5
-racing;lostcove_race;10
-racing;equinox_v2;10
-racing;prime_c3_race;10
-racing;Nervous_King;10
-racing;mongoose_point;15
-racing;grove_final;10
-racing;siege;10
-racing;dessication_pb1;10
-racing;timberland;10
-racing;New_Mombasa_Race_v2;10
-racing;hypothermia_race;10
-racing;wpitest1_race;15
-racing;gauntlet_race;10
-racing;islandthunder_race;10
 racing;camtrack-arena-race;10
-racing;liberty_hornets_nest;10
-racing;tlsstronghold;10
-racing;massacre_mountain_race_v2;10
 racing;cityscape-adrenaline;10
+racing;cliffhanger;10
+racing;dessication_pb1;10
+racing;equinox_v2;10
+racing;gauntlet_race;10
+racing;grove_final;10
+racing;highlow_race;10
+racing;hypothermia_race;10
+racing;islandthunder_race;10
 racing;liberty_blockfort_quad;10
+racing;liberty_hornets_nest;10
+racing;lostcove_race;10
+racing;massacre_mountain_race_v2;10
+racing;mongoose_point;15
+racing;mystic_mod;10
+racing;Nervous_King;10
+racing;New_Mombasa_Race_v2;10
+racing;prime_c3_race;10
 racing;race_me_now;5
-standard;liberty_bountygulch;CTF rox
-standard;liberty_longest;Oddball rox (2 skulls)
-standard;liberty_cyberdyne;Slayer 25 kill rox
-standard;liberty_tension;CTF rox
-standard;fragment_v2;CTF all weapons
-standard;oblivion;CTF all weapons
-standard;liberty_forgotten_market;Slayer 25 kill rox
-standard;liberty_dichotomy;CTF rox
-standard;forgotten_fortress_beta;Oddball rox (2 skulls)
-standard;liberty_battle_creek;CTF rox
+racing;siege;10
+racing;timberland;10
+racing;tlsstronghold;10
+racing;wpitest1_race;15
+
 standard;abandonment;KoH rox
-standard;liberty_chillout;CTF shotguns
-standard;liberty_silo_surprise2;Teamslayer 50 kill classic weapons
-standard;trainingday;Oddball shotguns (2 skulls)
-standard;cmt_g3_vestigial;CTF all weapons
-standard;liberty_hangem;CTF rox
-standard;bloodgulch;teamslayer 50 kill rox
-standard;tactics;CTF normal weapons
-standard;delta_ruined;CTF shotguns
-standard;liberty_snipercanyonredux;CTF rox (3 flags)
-standard;liberty_hornets_nest;CTF rox
+standard;bloodgulch;T-Slayer 50 kill rox
 standard;carousel;CTF rox
-standard;h2_zanzibar_v3;CTF all weapons
-standard;gephyrophobia;CTF rox
-standard;opavo;Slayer 25 kill rox
-standard;liberty_hangem;Oddball rox (2 skulls)
-standard;sidewinder;CTF rox
-standard;liberty_damnation;CTF rox
-standard;liberty_chillout;Slayer 25 kill rox
-standard;liberty_g3_augur;CTF rox
-standard;launch_bay;CTF rox
-standard;trainingday;CTF classic weapons
+standard;cmt_g3_vestigial;CTF all weapons
 standard;dangercanyon;CTF rox
+standard;delta_ruined;CTF shotguns
+standard;forgotten_fortress_beta;Oddball rox (2 skulls)
+standard;fragment_v2;CTF all weapons
+standard;h2_zanzibar_v3;CTF all weapons
 standard;ivory_tower_final;Slayer 25 kill rox
+standard;launch_bay;CTF rox
+standard;liberty_battle_creek;CTF rox
+standard;liberty_bountygulch;CTF rox
+standard;liberty_chillout;CTF shotguns
+standard;liberty_chillout;Slayer 25 kill rox
+standard;liberty_cyberdyne;Slayer 25 kill rox
+standard;liberty_damnation;CTF rox
+standard;liberty_dichotomy;CTF rox
+standard;liberty_forest_fight;CTF rox (3 flags)
+standard;liberty_forgotten_market;Slayer 25 kill rox
+standard;liberty_g3_augur;CTF rox
+standard;liberty_gephy;CTF rox
+standard;liberty_hangem;CTF rox
+standard;liberty_hangem;Oddball rox (2 skulls)
+standard;liberty_hornets_nest;CTF rox
+standard;liberty_longest;Oddball rox (2 skulls)
+standard;liberty_shrinking_man;CTF rox (3 flags)
+standard;liberty_silo_surprise2;T-Slayer 50 kill classic weapons
+standard;liberty_tension;CTF rox
+standard;liberty_the_cage;T-Slayer 50 kill rox
+standard;oblivion;CTF all weapons
+standard;opavo;Slayer 25 kill rox
+standard;sidewinder;CTF rox
+standard;tactics;CTF normal weapons
+standard;trainingday;CTF classic weapons
+standard;trainingday;Oddball shotguns (2 skulls)
 standard;triduct;CTF rox
-standard;liberty_the_cage;Teamslayer 50 kill rox
