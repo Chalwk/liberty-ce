@@ -25,40 +25,40 @@ racing;timberland;10
 racing;tlsstronghold;10
 racing;wpitest1_race;15
 
-standard;abandonment;KoH rox
-standard;bloodgulch;T-Slayer 50 kill rox
-standard;carousel;CTF rox
-standard;cmt_g3_vestigial;CTF all weapons
-standard;dangercanyon;CTF rox
-standard;delta_ruined;CTF shotguns
-standard;forgotten_fortress_beta;Oddball rox (2 skulls)
-standard;fragment_v2;CTF all weapons
-standard;h2_zanzibar_v3;CTF all weapons
-standard;ivory_tower_final;Slayer 25 kill rox
-standard;launch_bay;CTF rox
-standard;liberty_battle_creek;CTF rox
-standard;liberty_bountygulch;CTF rox
-standard;liberty_chillout;CTF shotguns
-standard;liberty_chillout;Slayer 25 kill rox
-standard;liberty_cyberdyne;Slayer 25 kill rox
-standard;liberty_damnation;CTF rox
-standard;liberty_dichotomy;CTF rox
-standard;liberty_forest_fight;CTF rox (3 flags)
-standard;liberty_forgotten_market;Slayer 25 kill rox
-standard;liberty_g3_augur;CTF rox
-standard;liberty_gephy;CTF rox
-standard;liberty_hangem;CTF rox
-standard;liberty_hangem;Oddball rox (2 skulls)
-standard;liberty_hornets_nest;CTF rox
-standard;liberty_longest;Oddball rox (2 skulls)
-standard;liberty_shrinking_man;CTF rox (3 flags)
-standard;liberty_silo_surprise2;T-Slayer 50 kill classic weapons
-standard;liberty_tension;CTF rox
-standard;liberty_the_cage;T-Slayer 50 kill rox
-standard;oblivion;CTF all weapons
-standard;opavo;Slayer 25 kill rox
-standard;sidewinder;CTF rox
-standard;tactics;CTF normal weapons
-standard;trainingday;CTF classic weapons
-standard;trainingday;Oddball shotguns (2 skulls)
-standard;triduct;CTF rox
+standard;abandonment;KING, rox
+standard;bloodgulch;T-Slayer, 50 kills, rox
+standard;carousel;CTF, rox
+standard;dangercanyon;CTF, rox
+standard;delta_ruined;CTF, shotguns
+standard;forgotten_fortress_beta;Oddball, rox, 2 skulls
+standard;fragment_v2;CTF, all weapons
+standard;h2_zanzibar_v3;CTF, all weapons
+standard;ivory_tower_final;Slayer, 25 kills, rox
+standard;liberty_battle_creek;CTF, rox
+standard;liberty_bountygulch;CTF, rox
+standard;liberty_chillout;CTF, shotguns
+standard;liberty_chillout;Slayer, 25 kills, rox
+standard;liberty_cyberdyne;Slayer, 25 kills, rox
+standard;liberty_damnation;CTF, rox
+standard;liberty_dichotomy;CTF, rox
+standard;liberty_forest_fight;CTF, rox, 3 flags
+standard;liberty_forgotten_market;Slayer, 25 kills, rox
+standard;liberty_g3_augur;CTF, rox
+standard;liberty_gephy;CTF, rox
+standard;liberty_hangem;CTF, rox
+standard;liberty_hangem;Oddball, rox, 2 skulls
+standard;liberty_hornets_nest;CTF, rox
+standard;liberty_longest;Oddball, rox, 2 skulls
+standard;liberty_shrinking_man;CTF, rox, 3 flags
+standard;liberty_silo_surprise2;T-Slayer, 50 kills, classic weaps
+standard;liberty_tension;CTF, rox
+standard;liberty_the_cage;T-Slayer, 50 kills, rox
+standard;oblivion;CTF, all weaps
+standard;liberty_opavo;Slayer, 25 kills, rox
+standard;liberty_close_combat;T-Slayer, 50 kills, classic weaps
+standard;sidewinder;CTF, rox
+standard;tactics;CTF, normal weaps
+standard;trainingday;CTF, classic weaps
+standard;trainingday;Oddball, shotguns, 2 skulls
+standard;triduct;CTF, rox
+standard;liberty_city_fight, Slayer, 25 kills, rox
