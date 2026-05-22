@@ -1,0 +1,100 @@
+name: Build Maps
+
+on:
+  push:
+    tags:
+      - 'maps-*'
+
+jobs:
+  download-and-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create map directories
+        run: |
+          mkdir -p liberty_maps mix_maps
+
+      - name: Download maps from HAC2 repo
+        run: |
+          # Read maps.txt line by line
+          while IFS=';' read -r type mapname rest; do
+            # Skip empty lines or comments
+            [[ -z "$type" || "$type" == \#* ]] && continue
+
+            # Trim whitespace
+            type=$(echo "$type" | xargs)
+            mapname=$(echo "$mapname" | xargs)
+
+            # Determine target directory and category name
+            case "$type" in
+              racing)
+                target_dir="liberty_maps"
+                category="Race"
+                ;;
+              standard)
+                target_dir="mix_maps"
+                category="Mix"
+                ;;
+              *)
+                echo "Unknown type '$type' - skipping line"
+                continue
+                ;;
+            esac
+
+            # Build download URL
+            url="https://maps.halonet.net/maps/${mapname}.zip"
+            output="${target_dir}/${mapname}.zip"
+
+            echo "Downloading $category map: $mapname from $url"
+
+            # Download with curl, follow redirects, fail on HTTP error but continue script
+            if curl -L --fail -o "$output" "$url"; then
+              echo "✅ Successfully downloaded $mapname"
+            else
+              echo "❌ Failed to download $mapname (HTTP error or file not found)"
+            fi
+
+          done < maps.txt
+
+      - name: Package RaceMaps.zip
+        run: |
+          cd liberty_maps
+
+          if [ -n "$(ls -A)" ]; then
+            zip -r ../RaceMaps.zip .
+            echo "RaceMaps.zip created with $(ls -1 | wc -l) maps"
+          else
+            echo "No race maps downloaded, creating empty archive"
+            zip -r ../RaceMaps.zip .
+          fi
+
+          cd ..
+
+      - name: Package MixMaps.zip
+        run: |
+          cd mix_maps
+
+          if [ -n "$(ls -A)" ]; then
+            zip -r ../MixMaps.zip .
+            echo "MixMaps.zip created with $(ls -1 | wc -l) maps"
+          else
+            echo "No mix maps downloaded, creating empty archive"
+            zip -r ../MixMaps.zip .
+          fi
+
+          cd ..
+
+      - name: Upload RaceMaps artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RaceMaps
+          path: RaceMaps.zip
+
+      - name: Upload MixMaps artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MixMaps
+          path: MixMaps.zip
