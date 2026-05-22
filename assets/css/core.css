@@ -187,11 +187,13 @@ a:hover {
     background: rgba(42, 169, 161, 0.2);
     transform: none;
     box-shadow: none;
+    border-radius: 30px;
 }
 
 .dropdown-menu a.active {
     background: var(--primary);
     color: var(--bg-dark);
+    border-radius: 30px;
 }
 
 @media (min-width: 769px) {
@@ -404,6 +406,11 @@ footer {
     .dropdown-menu a {
         padding-left: 2rem;
         font-size: 1rem;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a.active {
+        border-radius: 30px;
     }
 
     .header-top {
