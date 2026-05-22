@@ -15,6 +15,33 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Dropdown toggle for mobile (and prevent page jump)
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            const parentLi = this.closest('.dropdown');
+            if (parentLi) {
+                // Close other open dropdowns? (optional, better UX)
+                document.querySelectorAll('.dropdown.open').forEach(drop => {
+                    if (drop !== parentLi) drop.classList.remove('open');
+                });
+                parentLi.classList.toggle('open');
+            }
+        });
+    });
+
+    // On window resize above 768px, remove any .open classes to avoid stuck dropdowns
+    function handleResize() {
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.dropdown.open').forEach(drop => {
+                drop.classList.remove('open');
+            });
+        }
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
     const scrollBtn = document.createElement('button');
     scrollBtn.id = 'scrollToTopBtn';
     scrollBtn.className = 'scroll-to-top';

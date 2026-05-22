@@ -29,5 +29,14 @@
         </li>
         <li><a class="nav-link {% if page.url == '/pages/resources' %}active{% endif %}"
                href="{{ site.baseurl }}/pages/resources">Resources</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle nav-link">Game Info <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a class="nav-link {% if page.url == '/pages/race_stats' %}active{% endif %}"
+                       href="{{ site.baseurl }}/pages/race_stats">Race Stats</a></li>
+<!--                <li><a class="nav-link {% if page.url == '/pages/server-features' %}active{% endif %}"-->
+<!--                       href="{{ site.baseurl }}/pages/server-features">Server Features</a></li>-->
+            </ul>
+        </li>
     </ul>
 </nav>

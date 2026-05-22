@@ -1,0 +1,904 @@
+---
+layout: default
+title: Race Stats
+---
+
+<!--
+  Liberty Gaming - Halo CE Website
+  Developer: Jericho Crosby / Chalwk
+  Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
+  This file is part of the proprietary Liberty Gaming website.
+  Use, copying, or distribution without permission is strictly prohibited.
+-->
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<style>
+    :root {
+        --bg-panel: rgba(10, 12, 15, 0.8);
+        --bg-panel-light: rgba(20, 22, 26, 0.9);
+        --border-glow: rgba(42, 169, 161, 0.5);
+        --primary: #2aa9a1;
+        --primary-dark: #1e7e78;
+        --text-muted: #aaa;
+        --text-light: #fff;
+        --accent: #2aa9a1;
+        --danger: #e06c75;
+        --transition: all 0.2s ease;
+    }
+
+    main {
+        padding: 1rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .stats-header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .stats-header h1 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .stats-header p {
+        color: var(--text-muted);
+    }
+
+    .global-best-card {
+        background: rgba(10, 12, 15, 0.7);
+        border: 1px solid var(--border-glow);
+        border-radius: 20px;
+        padding: 1rem 1.5rem;
+        margin-bottom: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        backdrop-filter: blur(4px);
+    }
+
+    .global-best-card i {
+        color: gold;
+        font-size: 1.5rem;
+    }
+
+    .global-best-card span {
+        color: var(--text-light);
+        font-weight: 600;
+    }
+
+    .global-best-card .highlight {
+        color: var(--primary);
+        font-weight: 700;
+    }
+
+    .stats-tabs {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--border-glow);
+        padding-bottom: 0.5rem;
+    }
+
+    .tab-btn {
+        background: transparent;
+        border: none;
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        cursor: pointer;
+        border-radius: 40px;
+        transition: var(--transition);
+    }
+
+    .tab-btn i {
+        margin-right: 0.5rem;
+    }
+
+    .tab-btn.active {
+        background: var(--primary);
+        color: #fff;
+        box-shadow: 0 0 12px var(--primary);
+    }
+
+    .tab-btn:hover:not(.active) {
+        background: rgba(42, 169, 161, 0.2);
+        color: var(--text-light);
+    }
+
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        background: var(--bg-panel);
+        padding: 0.8rem 1.2rem;
+        border-radius: 60px;
+        border: 1px solid var(--border-glow);
+    }
+
+    .search-wrapper {
+        flex: 2;
+        min-width: 200px;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .search-wrapper i {
+        color: var(--text-muted);
+    }
+
+    .search-input {
+        flex: 1;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--border-glow);
+        border-radius: 40px;
+        padding: 0.6rem 1rem;
+        color: var(--text-light);
+        font-size: 0.9rem;
+        outline: none;
+        transition: var(--transition);
+    }
+
+    .search-input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 8px var(--primary);
+    }
+
+    .clear-search {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: var(--transition);
+    }
+
+    .clear-search:hover {
+        color: var(--danger);
+    }
+
+    .results-summary {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+
+    .stats-table-container {
+        overflow-x: auto;
+        border-radius: 20px;
+        background: var(--bg-panel);
+        border: 1px solid var(--border-glow);
+        padding: 0.2rem;
+    }
+
+    .stats-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
+
+    .stats-table th,
+    .stats-table td {
+        padding: 0.9rem 0.8rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(42, 169, 161, 0.2);
+    }
+
+    .stats-table th {
+        color: var(--primary);
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.3);
+        white-space: nowrap;
+    }
+
+    .stats-table tr:hover {
+        background: rgba(42, 169, 161, 0.08);
+    }
+
+    .stats-table td {
+        color: var(--text-light);
+    }
+
+    .map-name-cell,
+    .player-name-cell {
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .detail-btn {
+        background: transparent;
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        padding: 0.3rem 0.8rem;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 0.75rem;
+        transition: var(--transition);
+    }
+
+    .detail-btn:hover {
+        background: var(--primary);
+        color: #fff;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .page-btn {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-glow);
+        color: var(--text-light);
+        padding: 0.4rem 0.8rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        min-width: 38px;
+        text-align: center;
+    }
+
+    .page-btn.active-page {
+        background: var(--primary);
+        border-color: var(--primary);
+    }
+
+    .page-btn:hover:not(.active-page) {
+        background: rgba(42, 169, 161, 0.3);
+        border-color: var(--primary);
+    }
+
+    .page-btn.disabled {
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.2s, opacity 0.2s;
+    }
+
+    .modal-overlay.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .modal-container {
+        background: #0f1217;
+        border: 1px solid var(--primary);
+        border-radius: 24px;
+        width: 90%;
+        max-width: 750px;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 1.5rem;
+        position: relative;
+        box-shadow: 0 0 30px rgba(42, 169, 161, 0.3);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-glow);
+        padding-bottom: 0.7rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .modal-header h3 {
+        color: var(--primary);
+        margin: 0;
+    }
+
+    .close-modal {
+        background: transparent;
+        border: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+        color: var(--text-muted);
+        line-height: 1;
+    }
+
+    .close-modal:hover {
+        color: var(--danger);
+    }
+
+    .modal-stats-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+    }
+
+    .modal-stats-table th,
+    .modal-stats-table td {
+        padding: 0.5rem;
+        border-bottom: 1px solid rgba(42, 169, 161, 0.2);
+        text-align: left;
+    }
+
+    .modal-stats-table th {
+        color: var(--primary);
+    }
+
+    .loading-spinner {
+        text-align: center;
+        padding: 3rem;
+        color: var(--text-muted);
+    }
+
+    .error-msg {
+        text-align: center;
+        padding: 2rem;
+        color: #ff6b6b;
+    }
+
+    .no-results {
+        text-align: center;
+        padding: 2rem;
+        color: var(--text-muted);
+        font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+        .toolbar {
+            flex-direction: column;
+            align-items: stretch;
+            border-radius: 20px;
+        }
+
+        .stats-table th, .stats-table td {
+            padding: 0.6rem 0.4rem;
+            font-size: 0.8rem;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<div class="stats-header">
+    <h1><i class="fas fa-tachometer-alt"></i> Racing Statistics</h1>
+    <p>Track lap records, player best times, and map leaderboards</p>
+</div>
+
+<div class="global-best-card" id="global-best-placeholder" style="display: none;">
+    <i class="fas fa-trophy"></i>
+    <span>🌍 Global Best: <span id="global-map-name"></span> · <span id="global-player"></span> – <strong
+            id="global-time"></strong> seconds</span>
+</div>
+
+<div class="stats-tabs">
+    <button class="tab-btn active" data-tab="maps"><i class="fas fa-map"></i> Maps</button>
+    <button class="tab-btn" data-tab="players"><i class="fas fa-users"></i> Players</button>
+</div>
+
+<div class="toolbar">
+    <div class="search-wrapper">
+        <i class="fas fa-search"></i>
+        <label for="search-input"></label><input autocomplete="off" class="search-input" id="search-input"
+                                                 placeholder="Search map or player name..."
+                                                 type="text">
+        <button class="clear-search" id="clear-search" title="Clear"><i class="fas fa-times-circle"></i></button>
+    </div>
+    <div class="results-summary" id="results-summary">Loading data...</div>
+</div>
+
+<div class="panel active" id="maps-panel">
+    <div class="stats-table-container">
+        <table class="stats-table" id="maps-table">
+            <thead>
+            <tr>
+                <th>Map Name</th>
+                <th>Current Best Player</th>
+                <th>Best Time (s)</th>
+                <th>Total Players</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="maps-tbody">
+            <tr>
+                <td class="loading-spinner" colspan="5"><i class="fas fa-spinner fa-pulse"></i> Loading maps...</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="maps-pagination"></div>
+</div>
+
+<div class="panel" id="players-panel">
+    <div class="stats-table-container">
+        <table class="stats-table" id="players-table">
+            <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Overall Best (s)</th>
+                <th>Best Map</th>
+                <th>Maps Played</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="players-tbody">
+            <tr>
+                <td class="loading-spinner" colspan="5"><i class="fas fa-spinner fa-pulse"></i> Loading players...</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="players-pagination"></div>
+</div>
+
+<div class="modal-overlay" id="stats-modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3 id="modal-title">Details</h3>
+            <button class="close-modal" id="close-modal-btn">&times;</button>
+        </div>
+        <div id="modal-body" style="max-height: 65vh; overflow-y: auto;">
+            <div class="loading-spinner"><i class="fas fa-spinner fa-pulse"></i> Loading...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        let fullData = null;
+        let mapsList = [];
+        let playersAgg = [];
+        let activeTab = 'maps';
+        let mapsFilter = '';
+        let playersFilter = '';
+        let mapsCurrentPage = 1;
+        let playersCurrentPage = 1;
+        const PAGE_SIZE = 12;
+
+        const mapsPanel = document.getElementById('maps-panel');
+        const playersPanel = document.getElementById('players-panel');
+        const mapsTbody = document.getElementById('maps-tbody');
+        const playersTbody = document.getElementById('players-tbody');
+        const mapsPaginationDiv = document.getElementById('maps-pagination');
+        const playersPaginationDiv = document.getElementById('players-pagination');
+        const searchInput = document.getElementById('search-input');
+        const clearSearchBtn = document.getElementById('clear-search');
+        const resultsSummary = document.getElementById('results-summary');
+        const globalBestCard = document.getElementById('global-best-placeholder');
+        const globalMapSpan = document.getElementById('global-map-name');
+        const globalPlayerSpan = document.getElementById('global-player');
+        const globalTimeSpan = document.getElementById('global-time');
+
+        const modalOverlay = document.getElementById('stats-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        function formatTime(sec) {
+            if (sec === undefined || sec === null) return '—';
+            return sec.toFixed(2);
+        }
+
+        async function loadStats() {
+            try {
+                const response = await fetch('/data/race_stats.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                fullData = data;
+                processData(data);
+                renderGlobalBest(data);
+                renderMaps();
+                renderPlayers();
+                updateSearchPlaceholder();
+                updateResultsSummary();
+            } catch (err) {
+                console.error('Failed to load race_stats.json', err);
+                mapsTbody.innerHTML = '<tr><td colspan="5" class="error-msg"><i class="fas fa-exclamation-triangle"></i> Failed to load race data. Make sure race_stats.json exists in the data folder.</td></tr>';
+                playersTbody.innerHTML = '<tr><td colspan="5" class="error-msg"><i class="fas fa-exclamation-triangle"></i> Failed to load race data.</td></tr>';
+                resultsSummary.innerText = 'Error loading data';
+            }
+        }
+
+        function processData(data) {
+            const mapsTemp = [];
+            const playersMap = new Map();
+
+            for (const [mapName, mapInfo] of Object.entries(data)) {
+                if (mapName === 'global_best') continue;
+                if (!mapInfo.players || typeof mapInfo.players !== 'object') continue;
+
+                const playersObj = mapInfo.players;
+                const totalPlayers = Object.keys(playersObj).length;
+                let currentBestPlayer = '—';
+                let currentBestTime = null;
+                if (mapInfo.current_best && mapInfo.current_best.player) {
+                    currentBestPlayer = mapInfo.current_best.player;
+                    currentBestTime = parseFloat(mapInfo.current_best.time);
+                } else {
+                    let bestTime = Infinity;
+                    let bestPlayer = null;
+                    for (const [pName, pStats] of Object.entries(playersObj)) {
+                        if (pStats.best && pStats.best < bestTime) {
+                            bestTime = pStats.best;
+                            bestPlayer = pName;
+                        }
+                    }
+                    if (bestPlayer) {
+                        currentBestPlayer = bestPlayer;
+                        currentBestTime = bestTime;
+                    }
+                }
+
+                mapsTemp.push({
+                    name: mapName,
+                    currentBestPlayer: currentBestPlayer,
+                    currentBestTime: currentBestTime,
+                    totalPlayers: totalPlayers,
+                    playersObject: playersObj,
+                    rawCurrentBest: mapInfo.current_best
+                });
+
+                for (const [playerName, stats] of Object.entries(playersObj)) {
+                    if (!playersMap.has(playerName)) {
+                        playersMap.set(playerName, {
+                            name: playerName,
+                            overallBestTime: Infinity,
+                            bestMapName: null,
+                            mapsPlayed: 0,
+                            totalLaps: 0,
+                            mapDetails: []
+                        });
+                    }
+                    const playerEntry = playersMap.get(playerName);
+                    const bestOnThisMap = stats.best ? parseFloat(stats.best) : null;
+                    const lapsOnMap = stats.laps || 0;
+                    playerEntry.mapsPlayed += 1;
+                    playerEntry.totalLaps += lapsOnMap;
+
+                    if (bestOnThisMap !== null && bestOnThisMap < playerEntry.overallBestTime) {
+                        playerEntry.overallBestTime = bestOnThisMap;
+                        playerEntry.bestMapName = mapName;
+                    }
+
+                    playerEntry.mapDetails.push({
+                        mapName: mapName,
+                        best: bestOnThisMap,
+                        average: stats.average ? parseFloat(stats.average) : null,
+                        laps: lapsOnMap
+                    });
+                }
+            }
+
+            for (const [_, player] of playersMap.entries()) {
+                if (player.overallBestTime === Infinity) player.overallBestTime = null;
+                player.mapDetails.sort((a, b) => (a.best || Infinity) - (b.best || Infinity));
+                playersAgg.push(player);
+            }
+
+            playersAgg.sort((a, b) => {
+                if (a.overallBestTime === null && b.overallBestTime === null) return 0;
+                if (a.overallBestTime === null) return 1;
+                if (b.overallBestTime === null) return -1;
+                return a.overallBestTime - b.overallBestTime;
+            });
+
+            mapsList = mapsTemp.sort((a, b) => a.name.localeCompare(b.name));
+        }
+
+        function renderGlobalBest(data) {
+            if (data.global_best && data.global_best.map && data.global_best.player) {
+                globalMapSpan.innerText = data.global_best.map;
+                globalPlayerSpan.innerText = data.global_best.player;
+                globalTimeSpan.innerText = data.global_best.time.toFixed(2);
+                globalBestCard.style.display = 'inline-flex';
+            } else {
+                globalBestCard.style.display = 'none';
+            }
+        }
+
+        function updateSearchPlaceholder() {
+            searchInput.placeholder = activeTab === 'maps' ? 'Search map name...' : 'Search player name...';
+        }
+
+        function updateResultsSummary() {
+            if (activeTab === 'maps') {
+                const filtered = mapsList.filter(m => m.name.toLowerCase().includes(mapsFilter.toLowerCase()));
+                resultsSummary.innerText = `Showing ${filtered.length} map${filtered.length !== 1 ? 's' : ''}`;
+            } else {
+                const filtered = playersAgg.filter(p => p.name.toLowerCase().includes(playersFilter.toLowerCase()));
+                resultsSummary.innerText = `Showing ${filtered.length} player${filtered.length !== 1 ? 's' : ''}`;
+            }
+        }
+
+        function renderMaps() {
+            if (!mapsList.length) {
+                mapsTbody.innerHTML = '<tr><td colspan="5" class="loading-spinner">Loading map data...</td></tr>';
+                mapsPaginationDiv.innerHTML = '';
+                return;
+            }
+            const filtered = mapsList.filter(m => m.name.toLowerCase().includes(mapsFilter.toLowerCase()));
+            const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+            if (mapsCurrentPage > totalPages) mapsCurrentPage = Math.max(1, totalPages);
+            const start = (mapsCurrentPage - 1) * PAGE_SIZE;
+            const pageItems = filtered.slice(start, start + PAGE_SIZE);
+
+            if (pageItems.length === 0) {
+                mapsTbody.innerHTML = '<tr><td colspan="5" class="no-results"><i class="fas fa-search"></i> No maps match your search.</td></tr>';
+                mapsPaginationDiv.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+            for (const map of pageItems) {
+                html += `<tr>
+                    <td class="map-name-cell"><i class="fas fa-flag-checkered"></i> ${escapeHtml(map.name)}</td>
+                    <td>${escapeHtml(map.currentBestPlayer)}</td>
+                    <td>${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '—'}</td>
+                    <td>${map.totalPlayers}</td>
+                    <td><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Details</button></td>
+                </tr>`;
+            }
+            mapsTbody.innerHTML = html;
+            renderPagination(mapsPaginationDiv, totalPages, mapsCurrentPage, 'maps');
+            attachDetailButtons();
+        }
+
+        function renderPlayers() {
+            if (!playersAgg.length) {
+                playersTbody.innerHTML = '<tr><td colspan="5" class="loading-spinner">Loading player data...</td></tr>';
+                playersPaginationDiv.innerHTML = '';
+                return;
+            }
+            const filtered = playersAgg.filter(p => p.name.toLowerCase().includes(playersFilter.toLowerCase()));
+            const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+            if (playersCurrentPage > totalPages) playersCurrentPage = Math.max(1, totalPages);
+            const start = (playersCurrentPage - 1) * PAGE_SIZE;
+            const pageItems = filtered.slice(start, start + PAGE_SIZE);
+
+            if (pageItems.length === 0) {
+                playersTbody.innerHTML = '<tr><td colspan="5" class="no-results"><i class="fas fa-search"></i> No players match your search.</td></tr>';
+                playersPaginationDiv.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+            for (const player of pageItems) {
+                html += `<tr>
+                    <td class="player-name-cell"><i class="fas fa-user-astronaut"></i> ${escapeHtml(player.name)}</td>
+                    <td>${player.overallBestTime !== null ? formatTime(player.overallBestTime) : '—'}</td>
+                    <td>${player.bestMapName ? escapeHtml(player.bestMapName) : '—'}</td>
+                    <td>${player.mapsPlayed}</td>
+                    <td><button class="detail-btn" data-type="player" data-name="${escapeHtml(player.name)}"><i class="fas fa-chart-simple"></i> Details</button></td>
+                </tr>`;
+            }
+            playersTbody.innerHTML = html;
+            renderPagination(playersPaginationDiv, totalPages, playersCurrentPage, 'players');
+            attachDetailButtons();
+        }
+
+        function renderPagination(container, totalPages, current, type) {
+            if (totalPages <= 1) {
+                container.innerHTML = '';
+                return;
+            }
+            let btns = '';
+            btns += `<button class="page-btn ${current === 1 ? 'disabled' : ''}" data-page="prev" data-type="${type}"><i class="fas fa-chevron-left"></i></button>`;
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= current - 2 && i <= current + 2)) {
+                    btns += `<button class="page-btn ${i === current ? 'active-page' : ''}" data-page="${i}" data-type="${type}">${i}</button>`;
+                } else if (i === current - 3 || i === current + 3) {
+                    btns += `<button class="page-btn disabled" disabled>...</button>`;
+                }
+            }
+            btns += `<button class="page-btn ${current === totalPages ? 'disabled' : ''}" data-page="next" data-type="${type}"><i class="fas fa-chevron-right"></i></button>`;
+            container.innerHTML = btns;
+
+            container.querySelectorAll('.page-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const pageVal = btn.dataset.page;
+                    const btnType = btn.dataset.type;
+                    if (btnType !== type) return;
+                    if (btn.classList.contains('disabled')) return;
+                    let newPage = current;
+                    if (pageVal === 'prev') newPage = current - 1;
+                    else if (pageVal === 'next') newPage = current + 1;
+                    else newPage = parseInt(pageVal, 10);
+                    if (newPage >= 1 && newPage <= totalPages) {
+                        if (type === 'maps') {
+                            mapsCurrentPage = newPage;
+                            renderMaps();
+                        } else {
+                            playersCurrentPage = newPage;
+                            renderPlayers();
+                        }
+                        updateResultsSummary();
+                    }
+                });
+            });
+        }
+
+        function attachDetailButtons() {
+            document.querySelectorAll('.detail-btn').forEach(btn => {
+                btn.removeEventListener('click', handleDetailClick);
+                btn.addEventListener('click', handleDetailClick);
+            });
+        }
+
+        function handleDetailClick(e) {
+            const btn = e.currentTarget;
+            const type = btn.dataset.type;
+            const name = btn.dataset.name;
+            if (type === 'map') {
+                showMapDetails(name);
+            } else if (type === 'player') {
+                showPlayerDetails(name);
+            }
+        }
+
+        function showMapDetails(mapName) {
+            const map = mapsList.find(m => m.name === mapName);
+            if (!map) return;
+            modalTitle.innerText = `🏁 ${map.name} — Leaderboard`;
+            const players = Object.entries(map.playersObject);
+            if (players.length === 0) {
+                modalBody.innerHTML = '<div class="no-results">No player records found.</div>';
+                modalOverlay.classList.add('active');
+                return;
+            }
+            const sorted = players.map(([pName, stats]) => ({
+                name: pName,
+                best: stats.best ? parseFloat(stats.best) : null,
+                average: stats.average ? parseFloat(stats.average) : null,
+                laps: stats.laps || 0
+            })).filter(p => p.best !== null).sort((a, b) => a.best - b.best);
+
+            let html = `<table class="modal-stats-table">
+                <thead><tr><th>Rank</th><th>Player</th><th>Best Time (s)</th><th>Average (s)</th><th>Laps</th></tr></thead><tbody>`;
+            sorted.forEach((p, idx) => {
+                html += `<tr>
+                    <td>${idx + 1}</td>
+                    <td>${escapeHtml(p.name)}</td>
+                    <td>${formatTime(p.best)}</td>
+                    <td>${p.average ? formatTime(p.average) : '—'}</td>
+                    <td>${p.laps}</td>
+                </tr>`;
+            });
+            html += `</tbody></table>`;
+            modalBody.innerHTML = html;
+            modalOverlay.classList.add('active');
+        }
+
+        function showPlayerDetails(playerName) {
+            const player = playersAgg.find(p => p.name === playerName);
+            if (!player) return;
+            modalTitle.innerText = `🏎️ ${player.name} — Race History`;
+            if (!player.mapDetails.length) {
+                modalBody.innerHTML = '<div class="no-results">No map records for this player.</div>';
+                modalOverlay.classList.add('active');
+                return;
+            }
+            let html = `<table class="modal-stats-table">
+                <thead><tr><th>Map</th><th>Best Time (s)</th><th>Average (s)</th><th>Laps</th></tr></thead><tbody>`;
+            player.mapDetails.forEach(m => {
+                html += `<tr>
+                    <td>${escapeHtml(m.mapName)}</td>
+                    <td>${m.best ? formatTime(m.best) : '—'}</td>
+                    <td>${m.average ? formatTime(m.average) : '—'}</td>
+                    <td>${m.laps}</td>
+                </tr>`;
+            });
+            html += `</tbody></table>`;
+            modalBody.innerHTML = html;
+            modalOverlay.classList.add('active');
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function (m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+
+        function switchTab(tabId) {
+            activeTab = tabId;
+            if (tabId === 'maps') {
+                mapsPanel.classList.add('active');
+                playersPanel.classList.remove('active');
+                renderMaps();
+            } else {
+                playersPanel.classList.add('active');
+                mapsPanel.classList.remove('active');
+                renderPlayers();
+            }
+            updateSearchPlaceholder();
+            updateResultsSummary();
+            if (tabId === 'maps') {
+                searchInput.value = mapsFilter;
+            } else {
+                searchInput.value = playersFilter;
+            }
+        }
+
+        function handleSearch() {
+            const term = searchInput.value;
+            if (activeTab === 'maps') {
+                mapsFilter = term;
+                mapsCurrentPage = 1;
+                renderMaps();
+            } else {
+                playersFilter = term;
+                playersCurrentPage = 1;
+                renderPlayers();
+            }
+            updateResultsSummary();
+        }
+
+        function clearSearch() {
+            searchInput.value = '';
+            if (activeTab === 'maps') {
+                mapsFilter = '';
+                mapsCurrentPage = 1;
+                renderMaps();
+            } else {
+                playersFilter = '';
+                playersCurrentPage = 1;
+                renderPlayers();
+            }
+            updateResultsSummary();
+        }
+
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                switchTab(btn.dataset.tab);
+            });
+        });
+
+        searchInput.addEventListener('input', handleSearch);
+        clearSearchBtn.addEventListener('click', clearSearch);
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+
+        const stylePanel = document.createElement('style');
+        stylePanel.textContent = `.panel { display: none; } .panel.active { display: block; }`;
+        document.head.appendChild(stylePanel);
+
+        loadStats();
+    })();
+</script>
