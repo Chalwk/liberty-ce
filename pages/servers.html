@@ -34,8 +34,15 @@ title: Servers
                 <p>Standard Halo CE mix - CTF, Slayer, Oddball, KoH</p>
             </div>
         </div>
+
         <div class="server-meta">
             <button class="toggle-maps-button" type="button">View map rotation</button>
+
+            <a class="download-bundle-button"
+               download
+               href="https://github.com/Chalwk/liberty-ce/releases/download/maps-1.0.0/MixMaps.zip">
+                <i class="fas fa-download"></i> Download Map Pack
+            </a>
         </div>
     </div>
 
@@ -55,8 +62,15 @@ title: Servers
                 <p>Dedicated racing server - circuit and obstacle maps</p>
             </div>
         </div>
+
         <div class="server-meta">
             <button class="toggle-maps-button" type="button">View map rotation</button>
+
+            <a class="download-bundle-button"
+               download
+               href="https://github.com/Chalwk/liberty-ce/releases/download/maps-1.0.0/RaceMaps.zip">
+                <i class="fas fa-download"></i> Download Map Pack
+            </a>
         </div>
     </div>
 </div>
@@ -133,9 +147,11 @@ title: Servers
 
     .server-meta {
         display: flex;
-        gap: 1rem;
+        flex-direction: column;
+        gap: 0.8rem;
         align-items: center;
         justify-content: center;
+        width: 100%;
     }
 
     .toggle-maps-button {
@@ -147,10 +163,37 @@ title: Servers
         cursor: pointer;
         font-weight: 700;
         transition: background 0.2s, transform 0.2s;
+        width: 100%;
+        max-width: 260px;
     }
 
     .toggle-maps-button:hover {
         background: rgba(42, 169, 161, 0.85);
+        transform: translateY(-1px);
+    }
+
+    .download-bundle-button {
+        background: rgba(18, 21, 27, 0.95);
+        border: 1px solid rgba(42, 169, 161, 0.45);
+        color: #fff;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background 0.2s, transform 0.2s, border-color 0.2s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 260px;
+        box-sizing: border-box;
+    }
+
+    .download-bundle-button:hover {
+        background: rgba(42, 169, 161, 0.15);
+        border-color: var(--primary);
         transform: translateY(-1px);
     }
 
@@ -317,6 +360,7 @@ title: Servers
 
         document.querySelectorAll('.tracker-embed iframe').forEach(iframe => {
             const overlay = iframe.parentElement.querySelector('.loading-overlay');
+
             iframe.addEventListener('load', () => {
                 overlay.classList.add('hidden');
             });
@@ -334,17 +378,28 @@ title: Servers
 
                 lines.forEach(line => {
                     line = line.trim();
+
                     if (!line || line.startsWith('#')) return;
 
                     const parts = line.split(';');
+
                     if (parts.length < 3) return;
 
                     const server = parts[0].trim();
                     const mapname = parts[1].trim();
                     const info = parts[2].trim();
 
-                    if (server === 'standard') standard.push({map: mapname, gametype: info});
-                    else if (server === 'racing') racing.push({map: mapname, laps: info});
+                    if (server === 'standard') {
+                        standard.push({
+                            map: mapname,
+                            gametype: info
+                        });
+                    } else if (server === 'racing') {
+                        racing.push({
+                            map: mapname,
+                            laps: info
+                        });
+                    }
                 });
 
                 standardMaps = standard;
@@ -358,30 +413,53 @@ title: Servers
 
         function renderMapView(serverType) {
             if (!fetchCompleted) {
-                mapViewContainer.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading maps...</div>';
+                mapViewContainer.innerHTML =
+                    '<div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading maps...</div>';
                 return;
             }
 
-            const maps = serverType === 'standard' ? standardMaps : racingMaps;
+            const maps = serverType === 'standard'
+                ? standardMaps
+                : racingMaps;
+
             if (!maps.length) {
-                mapViewContainer.innerHTML = `<div class="error">No map data available for ${serverType} server.</div>`;
+                mapViewContainer.innerHTML =
+                    `<div class="error">No map data available for ${serverType} server.</div>`;
                 return;
             }
 
-            let html = `<button class="hide-maps-button" type="button"><i class="fas fa-arrow-left"></i> Back to Servers</button>`;
-            html += '<p class="note"><i class="fas fa-clock"></i> All games run for 20 minutes. Click a map name to download.</p>';
+            let html =
+                `<button class="hide-maps-button" type="button"><i class="fas fa-arrow-left"></i> Back to Servers</button>`;
+
+            html +=
+                '<p class="note"><i class="fas fa-clock"></i> All games run for 20 minutes. Click a map name to download.</p>';
+
             html += '<div class="maps-grid">';
+
             maps.forEach(item => {
                 const encoded = encodeURIComponent(item.map);
-                let gametype = serverType === 'standard' ? item.gametype : `${item.laps} lap${parseInt(item.laps) !== 1 ? 's' : ''}`;
+
+                const gametype = serverType === 'standard'
+                    ? item.gametype
+                    : `${item.laps} lap${parseInt(item.laps) !== 1 ? 's' : ''}`;
+
                 html += `
-        <div class="map-item">
-            <span class="map-name"><a href="${baseUrl}${encoded}.zip" target="_blank" title="Download ${item.map}">${item.map}</a></span>
-            <span class="map-gametype">${gametype}</span>
-        </div>
-    `;
+                    <div class="map-item">
+                        <span class="map-name">
+                            <a href="${baseUrl}${encoded}.zip"
+                               target="_blank"
+                               title="Download ${item.map}">
+                                ${item.map}
+                            </a>
+                        </span>
+
+                        <span class="map-gametype">${gametype}</span>
+                    </div>
+                `;
             });
+
             html += '</div>';
+
             mapViewContainer.innerHTML = html;
 
             const transitionDuration = 400;
@@ -393,8 +471,10 @@ title: Servers
             }, transitionDuration);
 
             const hideBtn = mapViewContainer.querySelector('.hide-maps-button');
+
             hideBtn.addEventListener('click', () => {
                 mapViewContainer.classList.remove('visible');
+
                 setTimeout(() => {
                     serverList.classList.remove('hidden');
                 }, transitionDuration);
@@ -409,10 +489,19 @@ title: Servers
             });
 
             const button = entry.querySelector('.toggle-maps-button');
+
             if (button) {
                 button.addEventListener('click', e => {
                     e.stopPropagation();
                     renderMapView(serverType);
+                });
+            }
+
+            const downloadButton = entry.querySelector('.download-bundle-button');
+
+            if (downloadButton) {
+                downloadButton.addEventListener('click', e => {
+                    e.stopPropagation();
                 });
             }
         });
