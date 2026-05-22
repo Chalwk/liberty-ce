@@ -61,4 +61,4 @@ standard;tactics;CTF, normal weaps
 standard;trainingday;CTF, classic weaps
 standard;trainingday;Oddball, shotguns, 2 skulls
 standard;triduct;CTF, rox
-standard;liberty_city_fight, Slayer, 25 kills, rox
+standard;liberty_city_fight;Slayer, 25 kills, rox
