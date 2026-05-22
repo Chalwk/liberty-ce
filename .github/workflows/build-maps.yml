@@ -87,14 +87,11 @@ jobs:
 
           cd ..
 
-      - name: Upload RaceMaps artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload assets to Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: RaceMaps
-          path: RaceMaps.zip
-
-      - name: Upload MixMaps artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: MixMaps
-          path: MixMaps.zip
+          files: |
+            RaceMaps.zip
+            MixMaps.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
