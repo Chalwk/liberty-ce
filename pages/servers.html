@@ -380,9 +380,7 @@ title: Servers
                     line = line.trim();
 
                     if (!line || line.startsWith('#')) return;
-
                     const parts = line.split(';');
-
                     if (parts.length < 3) return;
 
                     const server = parts[0].trim();
@@ -413,35 +411,23 @@ title: Servers
 
         function renderMapView(serverType) {
             if (!fetchCompleted) {
-                mapViewContainer.innerHTML =
-                    '<div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading maps...</div>';
+                mapViewContainer.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading maps...</div>';
                 return;
             }
 
-            const maps = serverType === 'MIX'
-                ? mixMaps
-                : racingMaps;
-
+            const maps = serverType === 'MIX' ? mixMaps : racingMaps;
             if (!maps.length) {
-                mapViewContainer.innerHTML =
-                    `<div class="error">No map data available for ${serverType} server.</div>`;
+                mapViewContainer.innerHTML = `<div class="error">No map data available for ${serverType} server.</div>`;
                 return;
             }
 
-            let html =
-                `<button class="hide-maps-button" type="button"><i class="fas fa-arrow-left"></i> Back to Servers</button>`;
-
-            html +=
-                '<p class="note"><i class="fas fa-clock"></i> All games run for 20 minutes. Click a map name to download.</p>';
-
+            let html = `<button class="hide-maps-button" type="button"><i class="fas fa-arrow-left"></i> Back to Servers</button>`;
+            html += '<p class="note"><i class="fas fa-clock"></i> All games run for 20 minutes. Click a map name to download.</p>';
             html += '<div class="maps-grid">';
 
             maps.forEach(item => {
                 const encoded = encodeURIComponent(item.map);
-
-                const gametype = serverType === 'MIX'
-                    ? item.gametype
-                    : `${item.laps} lap${parseInt(item.laps) !== 1 ? 's' : ''}`;
+                const gametype = serverType === 'MIX' ? item.gametype : `${item.laps} lap${parseInt(item.laps) !== 1 ? 's' : ''}`;
 
                 html += `
                     <div class="map-item">
@@ -459,11 +445,8 @@ title: Servers
             });
 
             html += '</div>';
-
             mapViewContainer.innerHTML = html;
-
             const transitionDuration = 400;
-
             serverList.classList.add('hidden');
 
             setTimeout(() => {
@@ -471,7 +454,6 @@ title: Servers
             }, transitionDuration);
 
             const hideBtn = mapViewContainer.querySelector('.hide-maps-button');
-
             hideBtn.addEventListener('click', () => {
                 mapViewContainer.classList.remove('visible');
 
@@ -489,7 +471,6 @@ title: Servers
             });
 
             const button = entry.querySelector('.toggle-maps-button');
-
             if (button) {
                 button.addEventListener('click', e => {
                     e.stopPropagation();
@@ -498,7 +479,6 @@ title: Servers
             }
 
             const downloadButton = entry.querySelector('.download-bundle-button');
-
             if (downloadButton) {
                 downloadButton.addEventListener('click', e => {
                     e.stopPropagation();
