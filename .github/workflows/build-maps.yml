@@ -32,11 +32,11 @@ jobs:
 
             # Determine target directory and category name
             case "$type" in
-              racing)
+              RACING)
                 target_dir="liberty_maps"
                 category="Race"
                 ;;
-              standard)
+              MIX)
                 target_dir="mix_maps"
                 category="Mix"
                 ;;

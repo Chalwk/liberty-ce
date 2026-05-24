@@ -18,7 +18,7 @@ title: Servers
 <div class="full-map-view" id="map-view-container"></div>
 
 <div class="server-list">
-    <div class="server-entry" data-server="standard">
+    <div class="server-entry" data-server="MIX">
         <div class="server-info">
             <div class="server-title">
                 <h3>! ++ LIBERTY - MIX ++ !</h3>
@@ -31,7 +31,7 @@ title: Servers
                             width="240">
                     </iframe>
                 </div>
-                <p>Standard Halo CE mix - CTF, Slayer, Oddball, KoH</p>
+                <p>MIX - CTF, Slayer, Oddball, KoH</p>
             </div>
         </div>
 
@@ -46,7 +46,7 @@ title: Servers
         </div>
     </div>
 
-    <div class="server-entry" data-server="racing">
+    <div class="server-entry" data-server="RACING">
         <div class="server-info">
             <div class="server-title">
                 <h3>! ++ LIBERTY - RACING ++ !</h3>
@@ -351,7 +351,7 @@ title: Servers
     (function () {
         const baseUrl = 'https://maps.halonet.net/maps/';
         const mapsTxtPath = '../maps.txt';
-        let standardMaps = [];
+        let mixMaps = [];
         let racingMaps = [];
         let fetchCompleted = false;
 
@@ -373,8 +373,8 @@ title: Servers
             })
             .then(data => {
                 const lines = data.split(/\r?\n/);
-                const standard = [];
-                const racing = [];
+                const MIX = [];
+                const RACING = [];
 
                 lines.forEach(line => {
                     line = line.trim();
@@ -386,24 +386,24 @@ title: Servers
                     if (parts.length < 3) return;
 
                     const server = parts[0].trim();
-                    const mapname = parts[1].trim();
+                    const map_name = parts[1].trim();
                     const info = parts[2].trim();
 
-                    if (server === 'standard') {
-                        standard.push({
-                            map: mapname,
+                    if (server === 'MIX') {
+                        MIX.push({
+                            map: map_name,
                             gametype: info
                         });
-                    } else if (server === 'racing') {
-                        racing.push({
-                            map: mapname,
+                    } else if (server === 'RACING') {
+                        RACING.push({
+                            map: map_name,
                             laps: info
                         });
                     }
                 });
 
-                standardMaps = standard;
-                racingMaps = racing;
+                mixMaps = MIX;
+                racingMaps = RACING;
                 fetchCompleted = true;
             })
             .catch(err => {
@@ -418,8 +418,8 @@ title: Servers
                 return;
             }
 
-            const maps = serverType === 'standard'
-                ? standardMaps
+            const maps = serverType === 'MIX'
+                ? mixMaps
                 : racingMaps;
 
             if (!maps.length) {
@@ -439,7 +439,7 @@ title: Servers
             maps.forEach(item => {
                 const encoded = encodeURIComponent(item.map);
 
-                const gametype = serverType === 'standard'
+                const gametype = serverType === 'MIX'
                     ? item.gametype
                     : `${item.laps} lap${parseInt(item.laps) !== 1 ? 's' : ''}`;
 
