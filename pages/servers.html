@@ -368,7 +368,7 @@ title: Servers
 
         fetch(mapsTxtPath)
             .then(res => {
-                if (!res.ok) throw new Error(`Failed to load maps.txt (${res.status})`);
+                if (!res.ok) throw new Error(`Failed to load data/maps.txt (${res.status})`);
                 return res.text();
             })
             .then(data => {

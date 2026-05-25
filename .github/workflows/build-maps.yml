@@ -21,7 +21,7 @@ jobs:
 
       - name: Download maps from HAC2 repo
         run: |
-          # Read maps.txt line by line
+          # Read data/maps.txt line by line
           while IFS=';' read -r type mapname rest; do
             # Skip empty lines or comments
             [[ -z "$type" || "$type" == \#* ]] && continue
