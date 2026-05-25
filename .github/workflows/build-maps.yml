@@ -59,7 +59,7 @@ jobs:
               echo "❌ Failed to download $mapname (HTTP error or file not found)"
             fi
 
-          done < maps.txt
+          done < data/maps.txt
 
       - name: Package RaceMaps.zip
         run: |
