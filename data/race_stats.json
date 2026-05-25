@@ -2951,6 +2951,11 @@
         "best": 104.77,
         "laps": 3
       },
+      "LIB-Chalwk": {
+        "average": 111.67,
+        "best": 111.67,
+        "laps": 5
+      },
       "LIB-Cyber": {
         "average": 154.72166666667,
         "best": 115.54,
@@ -5382,7 +5387,7 @@
         "best": 93.07,
         "laps": 5
       },
-      "Harbinge�": {
+      "Harbinge®": {
         "average": 186.945,
         "best": 141.56,
         "laps": 2
@@ -7620,9 +7625,9 @@
         "laps": 13
       },
       "LIB-Chalwk": {
-        "average": 69.566666666667,
+        "average": 70.292857142857,
         "best": 69.13,
-        "laps": 9
+        "laps": 7
       },
       "LIB-Cyber": {
         "average": 77.164444444444,
