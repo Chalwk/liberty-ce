@@ -1,4 +1,82 @@
 {
+  "Liberty_Luigi_Raceway": {
+    "current_best": {
+      "player": "{L�E�}Atom�",
+      "time": 79.54
+    },
+    "players": {
+      "Harbinge�": {
+        "average": 120.94833333333,
+        "best": 94.37,
+        "laps": 6
+      },
+      "LIB-Cyber": {
+        "average": 114.26571428571,
+        "best": 94.53,
+        "laps": 7
+      },
+      "LIB-Eddy": {
+        "average": 86.065555555556,
+        "best": 79.86,
+        "laps": 9
+      },
+      "LIB-Maja": {
+        "average": 108.605,
+        "best": 87.13,
+        "laps": 6
+      },
+      "LIB-Perico": {
+        "average": 90.26375,
+        "best": 80.2,
+        "laps": 8
+      },
+      "Mr Rjimenez": {
+        "average": 123.3,
+        "best": 111.9,
+        "laps": 2
+      },
+      "NI�O_OREJON": {
+        "average": 88.444444444444,
+        "best": 80.03,
+        "laps": 9
+      },
+      "[FAST]depri": {
+        "average": 84.008888888889,
+        "best": 80.8,
+        "laps": 9
+      },
+      "fraksillo2": {
+        "average": 99.8125,
+        "best": 81.3,
+        "laps": 8
+      },
+      "macx": {
+        "average": 158.03,
+        "best": 158.03,
+        "laps": 1
+      },
+      "polo": {
+        "average": 111.2,
+        "best": 105.8,
+        "laps": 2
+      },
+      "widek": {
+        "average": 81.784,
+        "best": 79.7,
+        "laps": 10
+      },
+      "{Hand}": {
+        "average": 81.767,
+        "best": 79.95,
+        "laps": 10
+      },
+      "{L�E�}Atom�": {
+        "average": 83.234444444444,
+        "best": 79.54,
+        "laps": 9
+      }
+    }
+  },
   "Massacre_Mountain_Race": {
     "current_best": {
       "player": "LIB-Perico",
@@ -154,9 +232,9 @@
         "laps": 2
       },
       "LIB-Jerico": {
-        "average": 70.8,
+        "average": 76.7,
         "best": 68.23,
-        "laps": 2
+        "laps": 1
       },
       "LIB-Maja": {
         "average": 84.002,
@@ -477,8 +555,8 @@
         "laps": 13
       },
       "LIB-Chalwk": {
-        "average": 62.78,
-        "best": 62.4,
+        "average": 62.18,
+        "best": 61.94,
         "laps": 3
       },
       "LIB-Cyber": {
@@ -793,9 +871,9 @@
         "laps": 9
       },
       "LIB-Chalwk": {
-        "average": 89.26,
-        "best": 89.26,
-        "laps": 1
+        "average": 80.143333333333,
+        "best": 77.6,
+        "laps": 3
       },
       "LIB-Cyber": {
         "average": 90.38,
@@ -808,9 +886,9 @@
         "laps": 5
       },
       "LIB-Jerico": {
-        "average": 87.55,
+        "average": 76.312,
         "best": 68.98,
-        "laps": 3
+        "laps": 5
       },
       "LIB-Maja": {
         "average": 105.29,
@@ -1016,9 +1094,9 @@
         "laps": 1
       },
       "LIB-Jerico": {
-        "average": 180.506,
+        "average": 146.06,
         "best": 141.8,
-        "laps": 5
+        "laps": 1
       },
       "LIB-Maja": {
         "average": 154.12333333333,
@@ -1930,9 +2008,9 @@
         "laps": 1
       },
       "LIB-Jerico": {
-        "average": 43.886666666667,
-        "best": 41.6,
-        "laps": 3
+        "average": 47.203333333333,
+        "best": 41.54,
+        "laps": 9
       },
       "LIB-Maja": {
         "average": 54.556666666667,
@@ -2223,14 +2301,14 @@
         "laps": 2
       },
       "LIB-Maja": {
-        "average": 116,
+        "average": 106.37,
         "best": 105.36,
-        "laps": 2
+        "laps": 1
       },
       "LIB-Perico": {
-        "average": 120.00222222222,
+        "average": 124.7,
         "best": 105.53,
-        "laps": 9
+        "laps": 2
       },
       "LIB-Rosie": {
         "average": 138.658,
@@ -2541,9 +2619,9 @@
         "laps": 4
       },
       "LIB-Jerico": {
-        "average": 119.47,
+        "average": 106.4975,
         "best": 101.33,
-        "laps": 6
+        "laps": 4
       },
       "LIB-Maja": {
         "average": 125.00285714286,
@@ -3167,9 +3245,9 @@
         "laps": 6
       },
       "LIB-Maja": {
-        "average": 100.165,
+        "average": 102.265,
         "best": 86.3,
-        "laps": 2
+        "laps": 3
       },
       "LIB-Perico": {
         "average": 152.92,
@@ -3370,9 +3448,9 @@
         "laps": 2
       },
       "LIB-Chalwk": {
-        "average": 61.97,
-        "best": 58.37,
-        "laps": 1
+        "average": 60.5025,
+        "best": 56.8,
+        "laps": 4
       },
       "LIB-Cyber": {
         "average": 93.524444444444,
@@ -3385,7 +3463,7 @@
         "laps": 3
       },
       "LIB-Jerico": {
-        "average": 61.3175,
+        "average": 55.0175,
         "best": 53.86,
         "laps": 4
       },
@@ -3881,9 +3959,9 @@
         "laps": 1
       },
       "LIB-Jerico": {
-        "average": 112.51,
+        "average": 113.03,
         "best": 94.4,
-        "laps": 3
+        "laps": 1
       },
       "LIB-Maja": {
         "average": 119.09666666667,
@@ -4977,9 +5055,9 @@
         "laps": 4
       },
       "LIB-Jerico": {
-        "average": 92.91,
-        "best": 91.77,
-        "laps": 5
+        "average": 91.885,
+        "best": 91.67,
+        "laps": 4
       },
       "LIB-Maja": {
         "average": 148.36,
@@ -5305,6 +5383,11 @@
         "laps": 5
       },
       "Harbinge�": {
+        "average": 186.945,
+        "best": 141.56,
+        "laps": 2
+      },
+      "Harbinge�": {
         "average": 165.728,
         "best": 94.14,
         "laps": 5
@@ -5355,7 +5438,7 @@
         "laps": 3
       },
       "LIB-Perico": {
-        "average": 90.034,
+        "average": 101.902,
         "best": 84.97,
         "laps": 10
       },
@@ -6372,9 +6455,9 @@
         "laps": 3
       },
       "LIB-Jerico": {
-        "average": 48.794285714286,
+        "average": 49.6425,
         "best": 39.7,
-        "laps": 7
+        "laps": 4
       },
       "LIB-Maja": {
         "average": 49.523333333333,
@@ -6632,6 +6715,11 @@
         "best": 120.21,
         "laps": 5
       },
+      "LIB-Chalwk": {
+        "average": 478.8,
+        "best": 373.2,
+        "laps": 2
+      },
       "LIB-Cyber": {
         "average": 143.585,
         "best": 131.94,
@@ -6648,17 +6736,17 @@
         "laps": 2
       },
       "LIB-Jerico": {
-        "average": 121.79,
+        "average": 129.13,
         "best": 119.63,
-        "laps": 4
+        "laps": 2
       },
       "LIB-Maja": {
-        "average": 126.77,
+        "average": 177.11333333333,
         "best": 121.63,
-        "laps": 1
+        "laps": 6
       },
       "LIB-Perico": {
-        "average": 139.4075,
+        "average": 145.025,
         "best": 121.4,
         "laps": 4
       },
@@ -6874,6 +6962,11 @@
         "average": 69.134,
         "best": 54.2,
         "laps": 5
+      },
+      "LIB-Chalwk": {
+        "average": 50.13,
+        "best": 49.63,
+        "laps": 2
       },
       "LIB-Cyber": {
         "average": 62.833333333333,
@@ -7194,9 +7287,9 @@
         "laps": 4
       },
       "LIB-Perico": {
-        "average": 55.728,
+        "average": 65.82,
         "best": 52.43,
-        "laps": 10
+        "laps": 3
       },
       "LIB-Rosie": {
         "average": 65.422,
@@ -7547,9 +7640,9 @@
         "laps": 5
       },
       "LIB-Jerico": {
-        "average": 69.295,
+        "average": 69.345,
         "best": 68.66,
-        "laps": 14
+        "laps": 8
       },
       "LIB-Maja": {
         "average": 71.472,

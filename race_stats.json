@@ -1,0 +1,3390 @@
+{
+  "Camtrack-Arena-Race": {
+    "current_best": {
+      "player": "LG",
+      "time": 91.37
+    },
+    "players": {
+      "Chalwk": {
+        "average": 105.94,
+        "best": 95.03,
+        "laps": 1
+      },
+      "Davichi": {
+        "average": 161.7,
+        "best": 161.7,
+        "laps": 1
+      },
+      "HLN���X3R�": {
+        "average": 110.00444444444,
+        "best": 96.37,
+        "laps": 9
+      },
+      "LG": {
+        "average": 110.4025,
+        "best": 91.37,
+        "laps": 4
+      },
+      "Pirate": {
+        "average": 110.42,
+        "best": 95.37,
+        "laps": 2
+      },
+      "{Hand}": {
+        "average": 95.4925,
+        "best": 93.83,
+        "laps": 4
+      }
+    }
+  },
+  "Cityscape-Adrenaline": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 73.27
+    },
+    "players": {
+      "Chalwk": {
+        "average": 73.505,
+        "best": 73.27,
+        "laps": 2
+      },
+      "Dread": {
+        "average": 314.5575,
+        "best": 174.13,
+        "laps": 4
+      },
+      "HLN���X3R�": {
+        "average": 85.973333333333,
+        "best": 75.4,
+        "laps": 9
+      }
+    }
+  },
+  "Gauntlet_Race": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 111.67
+    },
+    "players": {
+      "Chalwk": {
+        "average": 111.67,
+        "best": 111.67,
+        "laps": 1
+      },
+      "Howard": {
+        "average": 139.9,
+        "best": 139.9,
+        "laps": 1
+      }
+    }
+  },
+  "LostCove_Race": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 96.54
+    },
+    "players": {
+      "Chalwk": {
+        "average": 99.29,
+        "best": 96.54,
+        "laps": 3
+      },
+      "HLN���X3R�": {
+        "average": 149.58666666667,
+        "best": 101.03,
+        "laps": 3
+      },
+      "asahi": {
+        "average": 114.55,
+        "best": 100.13,
+        "laps": 4
+      },
+      "{L�E�}Atom�": {
+        "average": 243.185,
+        "best": 166,
+        "laps": 2
+      }
+    }
+  },
+  "Massacre_Mountain_Race": {
+    "current_best": {
+      "player": "LIB-Perico",
+      "time": 650.07
+    },
+    "players": {
+      "LIB-Perico": {
+        "average": 650.07,
+        "best": 650.07,
+        "laps": 2
+      }
+    }
+  },
+  "Mongoose_Point": {
+    "current_best": {
+      "player": "^jTINA^J<3",
+      "time": 44.8
+    },
+    "players": {
+      "Chalwk": {
+        "average": 56.07,
+        "best": 48.07,
+        "laps": 3
+      },
+      "HLN���X3R�": {
+        "average": 74.745555555556,
+        "best": 47.77,
+        "laps": 9
+      },
+      "^jTINA^J<3": {
+        "average": 52.035625,
+        "best": 44.8,
+        "laps": 16
+      }
+    }
+  },
+  "Nervous_King": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 68.37
+    },
+    "players": {
+      "+Beef": {
+        "average": 141.16666666667,
+        "best": 90.5,
+        "laps": 3
+      },
+      "CHABUMKUN": {
+        "average": 149.61,
+        "best": 91.63,
+        "laps": 3
+      },
+      "Chalwk": {
+        "average": 68.956666666667,
+        "best": 68.37,
+        "laps": 3
+      },
+      "F22 RAPTOR": {
+        "average": 258.67,
+        "best": 258.67,
+        "laps": 2
+      },
+      "Goat": {
+        "average": 87.603333333333,
+        "best": 71.47,
+        "laps": 3
+      },
+      "HLN���X3R�": {
+        "average": 82.903333333333,
+        "best": 70.63,
+        "laps": 6
+      },
+      "Harbinge®": {
+        "average": 172.85666666667,
+        "best": 82.97,
+        "laps": 3
+      },
+      "Hâlö Äzûl!!": {
+        "average": 135.9,
+        "best": 68.97,
+        "laps": 4
+      },
+      "LG": {
+        "average": 123.39666666667,
+        "best": 106.73,
+        "laps": 3
+      },
+      "LIB-JBomb": {
+        "average": 242.63,
+        "best": 242.63,
+        "laps": 2
+      },
+      "LIB-Jerico": {
+        "average": 84.86,
+        "best": 70.13,
+        "laps": 6
+      },
+      "LIB-Maja": {
+        "average": 88.9555,
+        "best": 70.4,
+        "laps": 20
+      },
+      "LIB-Perico": {
+        "average": 132.24416666667,
+        "best": 74.63,
+        "laps": 12
+      },
+      "LIB-Rosie": {
+        "average": 88.48,
+        "best": 71.4,
+        "laps": 10
+      },
+      "LIB-Spirou": {
+        "average": 94.6,
+        "best": 94.6,
+        "laps": 2
+      },
+      "MasterCard": {
+        "average": 87.723333333333,
+        "best": 81.37,
+        "laps": 6
+      },
+      "Michelin": {
+        "average": 92.83,
+        "best": 92.83,
+        "laps": 2
+      },
+      "New001": {
+        "average": 138.35333333333,
+        "best": 128.23,
+        "laps": 3
+      },
+      "SHE SO SEXY": {
+        "average": 131.31,
+        "best": 85.87,
+        "laps": 3
+      },
+      "STEVE": {
+        "average": 137.72,
+        "best": 128.3,
+        "laps": 3
+      },
+      "Terminator": {
+        "average": 187.67,
+        "best": 187.67,
+        "laps": 2
+      },
+      "Wilshire": {
+        "average": 108.725,
+        "best": 72.27,
+        "laps": 4
+      },
+      "XSKYLINEX": {
+        "average": 87.47,
+        "best": 87.47,
+        "laps": 2
+      },
+      "asahi": {
+        "average": 125.16666666667,
+        "best": 94.5,
+        "laps": 3
+      },
+      "new009": {
+        "average": 95.095,
+        "best": 81.93,
+        "laps": 6
+      },
+      "nuevoasesin": {
+        "average": 98.83,
+        "best": 98.83,
+        "laps": 2
+      },
+      "pq lademora": {
+        "average": 143.33333333333,
+        "best": 94.6,
+        "laps": 3
+      },
+      "røsie": {
+        "average": 88.3575,
+        "best": 72.43,
+        "laps": 4
+      },
+      "røsie?": {
+        "average": 82.945,
+        "best": 70.57,
+        "laps": 4
+      },
+      "{Hand}": {
+        "average": 98.371904761904,
+        "best": 69.5,
+        "laps": 21
+      },
+      "{L°E°}Atom®": {
+        "average": 94.693333333334,
+        "best": 79.73,
+        "laps": 6
+      },
+      "«(4nib4L)»": {
+        "average": 106.33666666667,
+        "best": 87.47,
+        "laps": 3
+      }
+    }
+  },
+  "New_Mombasa_Race_v2": {
+    "current_best": {
+      "player": "LIB-Jerico",
+      "time": 62
+    },
+    "players": {
+      "21700": {
+        "average": 86.9225,
+        "best": 62.33,
+        "laps": 4
+      },
+      "AAA Battery": {
+        "average": 79.403333333333,
+        "best": 62.67,
+        "laps": 3
+      },
+      "Chalwk": {
+        "average": 62.78,
+        "best": 62.4,
+        "laps": 2
+      },
+      "Davichi": {
+        "average": 72.666666666667,
+        "best": 65.23,
+        "laps": 3
+      },
+      "Frank": {
+        "average": 191.57,
+        "best": 191.57,
+        "laps": 2
+      },
+      "HLN���X3R�": {
+        "average": 106.465,
+        "best": 78.63,
+        "laps": 2
+      },
+      "Harbinge®": {
+        "average": 112.68,
+        "best": 76.9,
+        "laps": 3
+      },
+      "Hâlö Äzûl!!": {
+        "average": 218.8,
+        "best": 218.8,
+        "laps": 2
+      },
+      "LG": {
+        "average": 87.787692307692,
+        "best": 62.6,
+        "laps": 13
+      },
+      "LIB-Cyber": {
+        "average": 118.02714285714,
+        "best": 82.13,
+        "laps": 7
+      },
+      "LIB-Eddy": {
+        "average": 106.19666666667,
+        "best": 73.93,
+        "laps": 3
+      },
+      "LIB-Jerico": {
+        "average": 77.8175,
+        "best": 62,
+        "laps": 4
+      },
+      "LIB-Maja": {
+        "average": 79.450666666666,
+        "best": 63.6,
+        "laps": 15
+      },
+      "LIB-Perico": {
+        "average": 110.04142857142,
+        "best": 63.73,
+        "laps": 21
+      },
+      "LIB-Rosie": {
+        "average": 78.052857142857,
+        "best": 64.1,
+        "laps": 7
+      },
+      "LIB-Tina": {
+        "average": 94.456666666667,
+        "best": 71.03,
+        "laps": 3
+      },
+      "MasterCard": {
+        "average": 82.475,
+        "best": 65.97,
+        "laps": 4
+      },
+      "NostraFeraT": {
+        "average": 70.6,
+        "best": 70.6,
+        "laps": 1
+      },
+      "UkamHaram": {
+        "average": 149.97,
+        "best": 149.97,
+        "laps": 2
+      },
+      "[�] kingas": {
+        "average": 67.091666666667,
+        "best": 62.82,
+        "laps": 6
+      },
+      "^jTAFFY": {
+        "average": 68.906,
+        "best": 63.7,
+        "laps": 10
+      },
+      "^jTINA^J<3": {
+        "average": 71.198333333333,
+        "best": 63.8,
+        "laps": 6
+      },
+      "asahi": {
+        "average": 124.38,
+        "best": 64.6,
+        "laps": 3
+      },
+      "reaper": {
+        "average": 74.97,
+        "best": 74.97,
+        "laps": 1
+      },
+      "rosey?": {
+        "average": 82.55,
+        "best": 63.83,
+        "laps": 4
+      },
+      "røsie": {
+        "average": 112.49666666667,
+        "best": 110.13,
+        "laps": 3
+      },
+      "røsie?": {
+        "average": 79.472,
+        "best": 68.83,
+        "laps": 5
+      },
+      "stalker den": {
+        "average": 63.83,
+        "best": 63.83,
+        "laps": 2
+      },
+      "{Hand}": {
+        "average": 76.609166666667,
+        "best": 63.1,
+        "laps": 24
+      },
+      "{L°E°}Atom®": {
+        "average": 71.768235294118,
+        "best": 62.53,
+        "laps": 17
+      }
+    }
+  },
+  "Prime_C3_Race": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 42.43
+    },
+    "players": {
+      "Chalwk": {
+        "average": 44.785,
+        "best": 42.43,
+        "laps": 4
+      }
+    }
+  },
+  "TLSstronghold": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 53.23
+    },
+    "players": {
+      "Chalwk": {
+        "average": 54.79,
+        "best": 53.23,
+        "laps": 2
+      }
+    }
+  },
+  "bc_raceway_final_mp": {
+    "current_best": {
+      "player": "{L°E°}Atom®",
+      "time": 138.43
+    },
+    "players": {
+      "-db-Smack": {
+        "average": 273.93,
+        "best": 273.93,
+        "laps": 2
+      },
+      "CHABUMKUN": {
+        "average": 327.57,
+        "best": 327.57,
+        "laps": 2
+      },
+      "Chalwk": {
+        "average": 146.205,
+        "best": 143.57,
+        "laps": 2
+      },
+      "Davichi": {
+        "average": 210.47,
+        "best": 210.47,
+        "laps": 1
+      },
+      "EL GUAPO": {
+        "average": 358.57,
+        "best": 358.57,
+        "laps": 2
+      },
+      "Grumpy": {
+        "average": 173.15,
+        "best": 167.03,
+        "laps": 2
+      },
+      "HLN���X3R�": {
+        "average": 157.43,
+        "best": 157.43,
+        "laps": 1
+      },
+      "Hollywood": {
+        "average": 197.43,
+        "best": 197.43,
+        "laps": 2
+      },
+      "Hâlö Äzûl!!": {
+        "average": 183.21,
+        "best": 180.03,
+        "laps": 3
+      },
+      "Jack": {
+        "average": 204.65,
+        "best": 178.93,
+        "laps": 4
+      },
+      "LIB-Jerico": {
+        "average": 276.47,
+        "best": 266.07,
+        "laps": 3
+      },
+      "LIB-Maja": {
+        "average": 300.77,
+        "best": 166,
+        "laps": 9
+      },
+      "LIB-Perico": {
+        "average": 215.19999999999,
+        "best": 144.73,
+        "laps": 16
+      },
+      "LIB-Rosie": {
+        "average": 191.53,
+        "best": 191.53,
+        "laps": 2
+      },
+      "LIB-Spirou": {
+        "average": 315.57,
+        "best": 315.57,
+        "laps": 2
+      },
+      "MasterCard": {
+        "average": 161.47666666667,
+        "best": 155.63,
+        "laps": 3
+      },
+      "Michelin": {
+        "average": 146,
+        "best": 146,
+        "laps": 2
+      },
+      "Nude001": {
+        "average": 153.5,
+        "best": 150.93,
+        "laps": 2
+      },
+      "SHE SO SEXY": {
+        "average": 307.43,
+        "best": 307.43,
+        "laps": 2
+      },
+      "SID": {
+        "average": 211.47666666667,
+        "best": 176.83,
+        "laps": 3
+      },
+      "Sleepy": {
+        "average": 171.63,
+        "best": 171.63,
+        "laps": 1
+      },
+      "Stompy": {
+        "average": 183.37,
+        "best": 183.37,
+        "laps": 2
+      },
+      "Uberhood": {
+        "average": 324.96,
+        "best": 324.96,
+        "laps": 1
+      },
+      "Weasel": {
+        "average": 174.8,
+        "best": 163.93,
+        "laps": 3
+      },
+      "XSKYLINEX": {
+        "average": 193.77,
+        "best": 193.77,
+        "laps": 2
+      },
+      "[FAST]depri": {
+        "average": 187.33,
+        "best": 187.33,
+        "laps": 2
+      },
+      "asahi": {
+        "average": 207.67,
+        "best": 207.67,
+        "laps": 2
+      },
+      "init": {
+        "average": 141.91,
+        "best": 140.33,
+        "laps": 3
+      },
+      "røsie?": {
+        "average": 159.27,
+        "best": 159.27,
+        "laps": 2
+      },
+      "{Hand}": {
+        "average": 216.86363636364,
+        "best": 146.8,
+        "laps": 11
+      },
+      "{L°E°}Atom®": {
+        "average": 150.62,
+        "best": 138.43,
+        "laps": 5
+      },
+      "{L°E°}Kid": {
+        "average": 155.65666666667,
+        "best": 149.83,
+        "laps": 3
+      }
+    }
+  },
+  "bloodgulch": {
+    "current_best": {
+      "player": "HLN���X3R�",
+      "time": 61.83
+    },
+    "players": {
+      "HLN���X3R�": {
+        "average": 86.058,
+        "best": 61.83,
+        "laps": 5
+      }
+    }
+  },
+  "camtrack-arena-race": {
+    "current_best": {
+      "player": "21700",
+      "time": 90.87
+    },
+    "players": {
+      "21700": {
+        "average": 104.322,
+        "best": 90.87,
+        "laps": 5
+      },
+      "AAA Battery": {
+        "average": 132.3,
+        "best": 103.3,
+        "laps": 3
+      },
+      "F22 RAPTOR": {
+        "average": 136.13,
+        "best": 136.13,
+        "laps": 2
+      },
+      "FC7": {
+        "average": 304.9,
+        "best": 304.9,
+        "laps": 2
+      },
+      "Ghost": {
+        "average": 132.53,
+        "best": 128.93,
+        "laps": 3
+      },
+      "GrumpyGamer": {
+        "average": 121.2,
+        "best": 95.7,
+        "laps": 9
+      },
+      "Harbinge®": {
+        "average": 136.046,
+        "best": 103.03,
+        "laps": 5
+      },
+      "Hâlö Äzûl!!": {
+        "average": 157.01,
+        "best": 154.57,
+        "laps": 3
+      },
+      "King": {
+        "average": 125.86666666667,
+        "best": 100,
+        "laps": 3
+      },
+      "Kll": {
+        "average": 215.17,
+        "best": 215.17,
+        "laps": 2
+      },
+      "LG": {
+        "average": 151.92,
+        "best": 103.7,
+        "laps": 3
+      },
+      "LIB-Cyber": {
+        "average": 158.07666666667,
+        "best": 126.97,
+        "laps": 3
+      },
+      "LIB-Eddy": {
+        "average": 239.23,
+        "best": 239.23,
+        "laps": 2
+      },
+      "LIB-Maja": {
+        "average": 127.57,
+        "best": 93.5,
+        "laps": 10
+      },
+      "LIB-Perico": {
+        "average": 131.83,
+        "best": 98.07,
+        "laps": 12
+      },
+      "LIB-Rosie": {
+        "average": 139.39666666667,
+        "best": 123.33,
+        "laps": 3
+      },
+      "LIB-Spirou": {
+        "average": 147.77666666667,
+        "best": 109.73,
+        "laps": 3
+      },
+      "LIB-Vegeta": {
+        "average": 121.5575,
+        "best": 95.63,
+        "laps": 4
+      },
+      "MasterCard": {
+        "average": 140.37666666667,
+        "best": 136.03,
+        "laps": 3
+      },
+      "NUKE LATAM": {
+        "average": 227.1,
+        "best": 227.1,
+        "laps": 2
+      },
+      "Pirate": {
+        "average": 129.03,
+        "best": 129.03,
+        "laps": 2
+      },
+      "SID": {
+        "average": 123.46333333333,
+        "best": 106.13,
+        "laps": 3
+      },
+      "STEVE": {
+        "average": 212.23,
+        "best": 212.23,
+        "laps": 2
+      },
+      "TecateLight": {
+        "average": 157.1,
+        "best": 157.1,
+        "laps": 2
+      },
+      "Terminator": {
+        "average": 226.43,
+        "best": 226.43,
+        "laps": 2
+      },
+      "carlos maes": {
+        "average": 151.57666666667,
+        "best": 147.33,
+        "laps": 3
+      },
+      "røsie": {
+        "average": 118.285,
+        "best": 110.43,
+        "laps": 4
+      },
+      "wewe(n)": {
+        "average": 157.47666666667,
+        "best": 137.17,
+        "laps": 3
+      },
+      "{Hand}": {
+        "average": 118.546,
+        "best": 93.7,
+        "laps": 15
+      },
+      "{L°E°}Atom®": {
+        "average": 124.14545454545,
+        "best": 90.9,
+        "laps": 11
+      }
+    }
+  },
+  "cityscape-adrenaline": {
+    "current_best": {
+      "player": "{L°E°}Atom®",
+      "time": 73
+    },
+    "players": {
+      "AAA Battery": {
+        "average": 86.033333333333,
+        "best": 82.5,
+        "laps": 3
+      },
+      "Davichi": {
+        "average": 83.62,
+        "best": 76.47,
+        "laps": 4
+      },
+      "GrumpyGamer": {
+        "average": 80.226666666667,
+        "best": 74.73,
+        "laps": 6
+      },
+      "GrumpyGit": {
+        "average": 87.092,
+        "best": 74.8,
+        "laps": 5
+      },
+      "Harbinge®": {
+        "average": 132.39666666667,
+        "best": 127.93,
+        "laps": 3
+      },
+      "Hâlö Äzûl!!": {
+        "average": 75.77,
+        "best": 75.77,
+        "laps": 2
+      },
+      "IO--OI": {
+        "average": 243.73,
+        "best": 243.73,
+        "laps": 2
+      },
+      "LG": {
+        "average": 130.63666666667,
+        "best": 94.57,
+        "laps": 3
+      },
+      "LIB-Cyber": {
+        "average": 168.15666666667,
+        "best": 153.47,
+        "laps": 3
+      },
+      "LIB-Maja": {
+        "average": 117.84692307692,
+        "best": 74.57,
+        "laps": 13
+      },
+      "LIB-Perico": {
+        "average": 95.270666666667,
+        "best": 74.17,
+        "laps": 15
+      },
+      "LIB-Rosie": {
+        "average": 95.18,
+        "best": 77.7,
+        "laps": 5
+      },
+      "Michelin": {
+        "average": 75.73,
+        "best": 75.73,
+        "laps": 2
+      },
+      "SHE SO SEXY": {
+        "average": 82.505,
+        "best": 73.97,
+        "laps": 8
+      },
+      "Terminator": {
+        "average": 157.63,
+        "best": 157.63,
+        "laps": 2
+      },
+      "[FAST]depri": {
+        "average": 116.53,
+        "best": 116.53,
+        "laps": 2
+      },
+      "asahi": {
+        "average": 76.613333333333,
+        "best": 74.3,
+        "laps": 9
+      },
+      "{Hand}": {
+        "average": 103.46933333333,
+        "best": 74.07,
+        "laps": 15
+      },
+      "{L°E°}Atom®": {
+        "average": 85.471428571429,
+        "best": 73,
+        "laps": 14
+      },
+      "{L°E°}Kid": {
+        "average": 139.87,
+        "best": 139.87,
+        "laps": 2
+      }
+    }
+  },
+  "cliffhanger": {
+    "current_best": {
+      "player": "SHE SO SEXY",
+      "time": 41.13
+    },
+    "players": {
+      "=puerco=": {
+        "average": 63.82,
+        "best": 47.2,
+        "laps": 3
+      },
+      "AAA Battery": {
+        "average": 49.325,
+        "best": 42.67,
+        "laps": 4
+      },
+      "Butcher": {
+        "average": 79.17,
+        "best": 48.17,
+        "laps": 3
+      },
+      "Chalwk": {
+        "average": 71.083333333333,
+        "best": 45.3,
+        "laps": 6
+      },
+      "Davichi": {
+        "average": 232.13,
+        "best": 232.13,
+        "laps": 2
+      },
+      "Frank": {
+        "average": 82.6,
+        "best": 82.6,
+        "laps": 2
+      },
+      "GrumpyGamer": {
+        "average": 138.51,
+        "best": 128.87,
+        "laps": 3
+      },
+      "GrumpyGit": {
+        "average": 80.29,
+        "best": 47.43,
+        "laps": 4
+      },
+      "Harbinge®": {
+        "average": 133.87,
+        "best": 133.87,
+        "laps": 2
+      },
+      "Hâlö Äzûl!!": {
+        "average": 59.36,
+        "best": 45.17,
+        "laps": 4
+      },
+      "Killer": {
+        "average": 50.347777777778,
+        "best": 44.43,
+        "laps": 9
+      },
+      "LG": {
+        "average": 101.21333333333,
+        "best": 52.1,
+        "laps": 3
+      },
+      "LIB-Cyber": {
+        "average": 99.086666666667,
+        "best": 95.23,
+        "laps": 3
+      },
+      "LIB-Maja": {
+        "average": 58.234210526316,
+        "best": 44,
+        "laps": 19
+      },
+      "LIB-Perico": {
+        "average": 73.863437500001,
+        "best": 44.23,
+        "laps": 32
+      },
+      "LIB-Rosie": {
+        "average": 82.23,
+        "best": 58.07,
+        "laps": 6
+      },
+      "Nuevo666": {
+        "average": 104.8,
+        "best": 104.8,
+        "laps": 2
+      },
+      "SHE SO SEXY": {
+        "average": 78.503,
+        "best": 41.13,
+        "laps": 10
+      },
+      "XSKYLINEX": {
+        "average": 116.1,
+        "best": 116.1,
+        "laps": 2
+      },
+      "[FAST]depri": {
+        "average": 85.674,
+        "best": 51.27,
+        "laps": 5
+      },
+      "røsie": {
+        "average": 80.663333333333,
+        "best": 46.33,
+        "laps": 3
+      },
+      "røsie?": {
+        "average": 55.476666666667,
+        "best": 45.77,
+        "laps": 9
+      },
+      "wewe(n)": {
+        "average": 103.8,
+        "best": 79.07,
+        "laps": 4
+      },
+      "{BK}DaNtE": {
+        "average": 127.73,
+        "best": 127.73,
+        "laps": 2
+      },
+      "{Hand}": {
+        "average": 55.765714285714,
+        "best": 44,
+        "laps": 14
+      },
+      "{L°E°}Atom®": {
+        "average": 53.237692307692,
+        "best": 41.47,
+        "laps": 13
+      },
+      "{L°E°}Kid": {
+        "average": 83.07,
+        "best": 83.07,
+        "laps": 2
+      }
+    }
+  },
+  "dangercanyon": {
+    "current_best": {
+      "player": "^0Ri4nTh1",
+      "time": 173.07
+    },
+    "players": {
+      "^0Ri4nTh1": {
+        "average": 173.07,
+        "best": 173.07,
+        "laps": 1
+      }
+    }
+  },
+  "dessication_pb1": {
+    "current_best": {
+      "player": "Hâlö Äzûl!!",
+      "time": 102.37
+    },
+    "players": {
+      "+Beef": {
+        "average": 142.08,
+        "best": 120.9,
+        "laps": 3
+      },
+      "21700": {
+        "average": 120.462,
+        "best": 103.07,
+        "laps": 5
+      },
+      "CHABUMKUN": {
+        "average": 149.57,
+        "best": 149.57,
+        "laps": 2
+      },
+      "Chalwk": {
+        "average": 105.016,
+        "best": 104.07,
+        "laps": 5
+      },
+      "EL GUAPO": {
+        "average": 288.1,
+        "best": 288.1,
+        "laps": 2
+      },
+      "Frank": {
+        "average": 192.93,
+        "best": 192.93,
+        "laps": 2
+      },
+      "HLN-Hardy": {
+        "average": 142.05333333333,
+        "best": 141.7,
+        "laps": 3
+      },
+      "HLN���X3R�": {
+        "average": 188.12857142857,
+        "best": 111.87,
+        "laps": 7
+      },
+      "Harbinge®": {
+        "average": 186.94666666667,
+        "best": 122.97,
+        "laps": 6
+      },
+      "Hâlö Äzûl!!": {
+        "average": 124.34,
+        "best": 102.37,
+        "laps": 5
+      },
+      "LG": {
+        "average": 145.51,
+        "best": 135.33,
+        "laps": 3
+      },
+      "LIB-Cyber": {
+        "average": 178.34153846154,
+        "best": 131.4,
+        "laps": 13
+      },
+      "LIB-JBomb": {
+        "average": 230.43,
+        "best": 190.43,
+        "laps": 3
+      },
+      "LIB-Jerico": {
+        "average": 116.84666666667,
+        "best": 102.77,
+        "laps": 6
+      },
+      "LIB-Maja": {
+        "average": 144.95307692308,
+        "best": 110.43,
+        "laps": 13
+      },
+      "LIB-Perico": {
+        "average": 183.21909090909,
+        "best": 110.7,
+        "laps": 11
+      },
+      "LIB-Rosie": {
+        "average": 138.658,
+        "best": 114.33,
+        "laps": 5
+      },
+      "LIB-Spirou": {
+        "average": 158.67,
+        "best": 158.67,
+        "laps": 2
+      },
+      "MasterCard": {
+        "average": 134.41333333333,
+        "best": 105.9,
+        "laps": 3
+      },
+      "SHE SO SEXY": {
+        "average": 199.44333333333,
+        "best": 152.47,
+        "laps": 3
+      },
+      "STEVE": {
+        "average": 154.1825,
+        "best": 128.5,
+        "laps": 4
+      },
+      "asahi": {
+        "average": 127.5,
+        "best": 123.27,
+        "laps": 1
+      },
+      "ed": {
+        "average": 116.88454545455,
+        "best": 103.7,
+        "laps": 11
+      },
+      "reaper": {
+        "average": 128.34,
+        "best": 128.34,
+        "laps": 1
+      },
+      "røsie": {
+        "average": 159.94333333333,
+        "best": 116.17,
+        "laps": 3
+      },
+      "stalker den": {
+        "average": 145.0425,
+        "best": 125.83,
+        "laps": 4
+      },
+      "{Hand}": {
+        "average": 126.77894736842,
+        "best": 104.43,
+        "laps": 19
+      },
+      "{L°E°}Atom®": {
+        "average": 121.38769230769,
+        "best": 102.7,
+        "laps": 13
+      }
+    }
+  },
+  "equinox_v2": {
+    "current_best": {
+      "player": "SHE SO SEXY",
+      "time": 102.6
+    },
+    "players": {
+      "+Beef": {
+        "average": 141.36666666667,
+        "best": 127.7,
+        "laps": 3
+      },
+      "CHABUMKUN": {
+        "average": 123.915,
+        "best": 112.67,
+        "laps": 4
+      },
+      "Chalwk": {
+        "average": 108.465,
+        "best": 104.53,
+        "laps": 2
+      },
+      "Cysera®": {
+        "average": 271.8,
+        "best": 271.8,
+        "laps": 2
+      },
+      "Davichi": {
+        "average": 161.74666666667,
+        "best": 130.9,
+        "laps": 3
+      },
+      "F22 RAPTOR": {
+        "average": 128.93,
+        "best": 128.93,
+        "laps": 2
+      },
+      "GhostFire": {
+        "average": 295.57,
+        "best": 295.57,
+        "laps": 2
+      },
+      "HLN-Hardy": {
+        "average": 188.7,
+        "best": 188.7,
+        "laps": 2
+      },
+      "Harbinge®": {
+        "average": 167.93,
+        "best": 167.93,
+        "laps": 2
+      },
+      "Hâlö Äzûl!!": {
+        "average": 138.22428571429,
+        "best": 103.67,
+        "laps": 7
+      },
+      "LG": {
+        "average": 125.1775,
+        "best": 107.3,
+        "laps": 4
+      },
+      "LIB-Cyber": {
+        "average": 166.47125,
+        "best": 121.67,
+        "laps": 8
+      },
+      "LIB-Jerico": {
+        "average": 113.228,
+        "best": 103.73,
+        "laps": 5
+      },
+      "LIB-Maja": {
+        "average": 149.86736842106,
+        "best": 109.13,
+        "laps": 19
+      },
+      "LIB-Perico": {
+        "average": 176.13,
+        "best": 110.03,
+        "laps": 15
+      },
+      "LIB-Rosie": {
+        "average": 135.13333333334,
+        "best": 107.1,
+        "laps": 9
+      },
+      "LIB-Spirou": {
+        "average": 130.98,
+        "best": 122.03,
+        "laps": 4
+      },
+      "LIB-Tina": {
+        "average": 144.14333333333,
+        "best": 131.63,
+        "laps": 3
+      },
+      "MasterCard": {
+        "average": 121.625,
+        "best": 108.07,
+        "laps": 4
+      },
+      "Michelin": {
+        "average": 116.73,
+        "best": 116.73,
+        "laps": 2
+      },
+      "SHE SO SEXY": {
+        "average": 132.8125,
+        "best": 102.6,
+        "laps": 8
+      },
+      "SID": {
+        "average": 213.534,
+        "best": 120.53,
+        "laps": 5
+      },
+      "STEVE": {
+        "average": 141.37,
+        "best": 141.37,
+        "laps": 2
+      },
+      "XSKYLINEX": {
+        "average": 102.6,
+        "best": 102.6,
+        "laps": 2
+      },
+      "^jTaffy": {
+        "average": 126.5,
+        "best": 126.5,
+        "laps": 2
+      },
+      "albatross": {
+        "average": 134.87,
+        "best": 118.07,
+        "laps": 3
+      },
+      "asahi": {
+        "average": 138.42333333333,
+        "best": 128.93,
+        "laps": 3
+      },
+      "pq lademora": {
+        "average": 152.93666666667,
+        "best": 138.27,
+        "laps": 3
+      },
+      "røsie": {
+        "average": 139.32333333333,
+        "best": 110.97,
+        "laps": 3
+      },
+      "røsie?": {
+        "average": 160.74666666667,
+        "best": 121.3,
+        "laps": 3
+      },
+      "{BK}DaNtE": {
+        "average": 128.37,
+        "best": 128.37,
+        "laps": 2
+      },
+      "{Hand}": {
+        "average": 118.5375,
+        "best": 104.23,
+        "laps": 16
+      },
+      "{L°E°}Atom®": {
+        "average": 139.97571428571,
+        "best": 103.63,
+        "laps": 7
+      },
+      "{LºEº}þig®": {
+        "average": 130.9,
+        "best": 130.9,
+        "laps": 2
+      }
+    }
+  },
+  "gauntlet_race": {
+    "current_best": {
+      "player": "{L°E°}Atom®",
+      "time": 94.1
+    },
+    "players": {
+      "21700": {
+        "average": 114.3,
+        "best": 100.77,
+        "laps": 4
+      },
+      "AAA Battery": {
+        "average": 126.96,
+        "best": 103.47,
+        "laps": 4
+      },
+      "Frank": {
+        "average": 259.30333333333,
+        "best": 190.57,
+        "laps": 3
+      },
+      "Harbinge®": {
+        "average": 216.756,
+        "best": 122.97,
+        "laps": 5
+      },
+      "Hâlö Äzûl!!": {
+        "average": 148.2975,
+        "best": 110.43,
+        "laps": 4
+      },
+      "Jack": {
+        "average": 133.55,
+        "best": 117.4,
+        "laps": 6
+      },
+      "KXMIKXZE": {
+        "average": 175.03,
+        "best": 175.03,
+        "laps": 2
+      },
+      "LG": {
+        "average": 173.55333333333,
+        "best": 114.4,
+        "laps": 3
+      },
+      "LIB-Cyber": {
+        "average": 167.12714285714,
+        "best": 129.47,
+        "laps": 7
+      },
+      "LIB-Jerico": {
+        "average": 121.76571428571,
+        "best": 101,
+        "laps": 7
+      },
+      "LIB-Maja": {
+        "average": 160.86428571429,
+        "best": 104.27,
+        "laps": 14
+      },
+      "LIB-Perico": {
+        "average": 156.99857142857,
+        "best": 102.67,
+        "laps": 14
+      },
+      "LIB-Rosie": {
+        "average": 210.21,
+        "best": 102.67,
+        "laps": 6
+      },
+      "LIB-Vegeta": {
+        "average": 143.27,
+        "best": 143.27,
+        "laps": 2
+      },
+      "MasterCard": {
+        "average": 114.5,
+        "best": 100.93,
+        "laps": 4
+      },
+      "NUKE LATAM": {
+        "average": 225.52333333333,
+        "best": 170.63,
+        "laps": 3
+      },
+      "STEVE": {
+        "average": 423.83,
+        "best": 423.83,
+        "laps": 2
+      },
+      "Saucy": {
+        "average": 139.235,
+        "best": 104.57,
+        "laps": 4
+      },
+      "Sneak": {
+        "average": 164.39,
+        "best": 145.17,
+        "laps": 3
+      },
+      "Terminator": {
+        "average": 374.73,
+        "best": 374.73,
+        "laps": 2
+      },
+      "UkamHaram": {
+        "average": 175.17666666667,
+        "best": 118.93,
+        "laps": 3
+      },
+      "XSKYLINEX": {
+        "average": 118.806,
+        "best": 96.83,
+        "laps": 5
+      },
+      "carlos maes": {
+        "average": 208.66333333333,
+        "best": 151.13,
+        "laps": 3
+      },
+      "røsie?": {
+        "average": 128.935,
+        "best": 116.17,
+        "laps": 4
+      },
+      "wewe(n)": {
+        "average": 290.1,
+        "best": 290.1,
+        "laps": 2
+      },
+      "{Hand}": {
+        "average": 136.185625,
+        "best": 103.5,
+        "laps": 16
+      },
+      "{L°E°}Atom®": {
+        "average": 127.67133333333,
+        "best": 94.1,
+        "laps": 15
+      }
+    }
+  },
+  "global_best": {
+    "map": "Prime_C3_Race",
+    "player": "Chalwk",
+    "time": 42.43
+  },
+  "grove_final": {
+    "current_best": {
+      "player": "{L°E°}Atom®",
+      "time": 82.8
+    },
+    "players": {
+      "+Beef": {
+        "average": 134.594,
+        "best": 111.8,
+        "laps": 5
+      },
+      "Harbinge®": {
+        "average": 208.12,
+        "best": 172.5,
+        "laps": 3
+      },
+      "LIB-Perico": {
+        "average": 98.1925,
+        "best": 82.8,
+        "laps": 4
+      },
+      "LIB-Spirou": {
+        "average": 172.5,
+        "best": 172.5,
+        "laps": 2
+      },
+      "squonker": {
+        "average": 120.57,
+        "best": 120.57,
+        "laps": 2
+      },
+      "{L°E°}Atom®": {
+        "average": 104.56333333333,
+        "best": 82.8,
+        "laps": 6
+      }
+    }
+  },
+  "hornets_nest": {
+    "current_best": {
+      "player": "{L°E°}Atom®",
+      "time": 95.63
+    },
+    "players": {
+      "AAA Battery": {
+        "average": 107.598,
+        "best": 96.13,
+        "laps": 5
+      },
+      "Blastman": {
+        "average": 96.13,
+        "best": 96.13,
+        "laps": 2
+      },
+      "FC7": {
+        "average": 299.17,
+        "best": 299.17,
+        "laps": 2
+      },
+      "GrumpyGamer": {
+        "average": 104.642,
+        "best": 97.13,
+        "laps": 5
+      },
+      "GrumpyGit": {
+        "average": 133.96333333333,
+        "best": 128.23,
+        "laps": 3
+      },
+      "Harbinge®": {
+        "average": 212,
+        "best": 191.4,
+        "laps": 3
+      },
+      "Hâlö Äzûl!!": {
+        "average": 190.77,
+        "best": 190.77,
+        "laps": 3
+      },
+      "LIB-Cyber": {
+        "average": 105.5,
+        "best": 98.9,
+        "laps": 3
+      },
+      "LIB-Maja": {
+        "average": 159.67222222222,
+        "best": 99.67,
+        "laps": 9
+      },
+      "LIB-Perico": {
+        "average": 123.3675,
+        "best": 99.33,
+        "laps": 8
+      },
+      "LIB-Rosie": {
+        "average": 146.8075,
+        "best": 108.8,
+        "laps": 4
+      },
+      "Nuevo666": {
+        "average": 136.0325,
+        "best": 102.33,
+        "laps": 4
+      },
+      "SID": {
+        "average": 174.93,
+        "best": 174.93,
+        "laps": 2
+      },
+      "Terminator": {
+        "average": 188.03333333333,
+        "best": 180.6,
+        "laps": 3
+      },
+      "UkamHaram": {
+        "average": 134.14333333333,
+        "best": 104.77,
+        "laps": 3
+      },
+      "[FAST]depri": {
+        "average": 123.04333333333,
+        "best": 104.13,
+        "laps": 3
+      },
+      "asahi": {
+        "average": 156.27,
+        "best": 156.27,
+        "laps": 2
+      },
+      "pLaYeR1": {
+        "average": 192.89666666667,
+        "best": 131.43,
+        "laps": 3
+      },
+      "røsie": {
+        "average": 156.27666666667,
+        "best": 145.97,
+        "laps": 3
+      },
+      "wewe(n)": {
+        "average": 114.326,
+        "best": 105.53,
+        "laps": 5
+      },
+      "{Hand}": {
+        "average": 108.5475,
+        "best": 96.5,
+        "laps": 8
+      },
+      "{L°E°}Atom®": {
+        "average": 119.64333333334,
+        "best": 95.63,
+        "laps": 9
+      }
+    }
+  },
+  "hypothermia_race": {
+    "current_best": {
+      "player": "XSKYLINEX",
+      "time": 92.33
+    },
+    "players": {
+      "21700": {
+        "average": 105.1525,
+        "best": 103.6,
+        "laps": 4
+      },
+      "AAA Battery": {
+        "average": 113.45666666667,
+        "best": 96.63,
+        "laps": 3
+      },
+      "Frank": {
+        "average": 227.5,
+        "best": 227.5,
+        "laps": 2
+      },
+      "HLN-Hardy": {
+        "average": 136.5,
+        "best": 130.1,
+        "laps": 3
+      },
+      "Harbinge®": {
+        "average": 161.44333333333,
+        "best": 125.93,
+        "laps": 3
+      },
+      "Howard": {
+        "average": 148.04333333333,
+        "best": 147,
+        "laps": 3
+      },
+      "Hâlö Äzûl!!": {
+        "average": 118.036,
+        "best": 102.07,
+        "laps": 5
+      },
+      "KXMIKXZE": {
+        "average": 112.53,
+        "best": 112.53,
+        "laps": 2
+      },
+      "LG": {
+        "average": 172.26,
+        "best": 138.7,
+        "laps": 5
+      },
+      "LIB-Cyber": {
+        "average": 136.4,
+        "best": 136.4,
+        "laps": 2
+      },
+      "LIB-Eddy": {
+        "average": 162.23,
+        "best": 162.23,
+        "laps": 2
+      },
+      "LIB-Jerico": {
+        "average": 120.42333333333,
+        "best": 107.73,
+        "laps": 3
+      },
+      "LIB-Maja": {
+        "average": 150.8625,
+        "best": 109.33,
+        "laps": 12
+      },
+      "LIB-Perico": {
+        "average": 179.738,
+        "best": 117.57,
+        "laps": 10
+      },
+      "LIB-Rosie": {
+        "average": 137.722,
+        "best": 105.07,
+        "laps": 5
+      },
+      "LIB-Tina": {
+        "average": 138.67,
+        "best": 138.67,
+        "laps": 2
+      },
+      "LIB-Vegeta": {
+        "average": 237.97,
+        "best": 237.97,
+        "laps": 2
+      },
+      "MasterCard": {
+        "average": 131.84666666667,
+        "best": 122.6,
+        "laps": 3
+      },
+      "SHE SO SEXY": {
+        "average": 156.90333333333,
+        "best": 138.57,
+        "laps": 3
+      },
+      "UkamHaram": {
+        "average": 233.93,
+        "best": 233.93,
+        "laps": 2
+      },
+      "Witcher": {
+        "average": 198.5,
+        "best": 151.03,
+        "laps": 4
+      },
+      "XSKYLINEX": {
+        "average": 104.562,
+        "best": 92.33,
+        "laps": 10
+      },
+      "albatross": {
+        "average": 252.93,
+        "best": 252.93,
+        "laps": 2
+      },
+      "chiefster": {
+        "average": 166.81,
+        "best": 160.83,
+        "laps": 3
+      },
+      "nuevoasesin": {
+        "average": 329.87,
+        "best": 329.87,
+        "laps": 2
+      },
+      "røsie": {
+        "average": 165.36333333333,
+        "best": 145.03,
+        "laps": 3
+      },
+      "stalker den": {
+        "average": 148.18,
+        "best": 119.53,
+        "laps": 4
+      },
+      "{Hand}": {
+        "average": 165.29666666667,
+        "best": 93.27,
+        "laps": 3
+      },
+      "{L°E°}Atom®": {
+        "average": 152.17545454545,
+        "best": 107.27,
+        "laps": 11
+      }
+    }
+  },
+  "icefields": {
+    "current_best": {
+      "player": "Stompy",
+      "time": 69.13
+    },
+    "players": {
+      "+_Vibes": {
+        "average": 131.32333333333,
+        "best": 115.3,
+        "laps": 3
+      },
+      "Chalwk": {
+        "average": 142.03,
+        "best": 142.03,
+        "laps": 1
+      },
+      "Stompy": {
+        "average": 88.818,
+        "best": 69.13,
+        "laps": 5
+      }
+    }
+  },
+  "infinity": {
+    "current_best": {
+      "player": "Dread",
+      "time": 917.1
+    },
+    "players": {
+      "Dread": {
+        "average": 917.1,
+        "best": 917.1,
+        "laps": 1
+      }
+    }
+  },
+  "islandthunder_race": {
+    "current_best": {
+      "player": "AAA Battery",
+      "time": 60.93
+    },
+    "players": {
+      "21700": {
+        "average": 71.7275,
+        "best": 62.7,
+        "laps": 4
+      },
+      "AAA Battery": {
+        "average": 69.05,
+        "best": 60.93,
+        "laps": 4
+      },
+      "Chalwk": {
+        "average": 96.57,
+        "best": 96.57,
+        "laps": 1
+      },
+      "Crazy": {
+        "average": 104.88,
+        "best": 67.3,
+        "laps": 3
+      },
+      "DerNait": {
+        "average": 176.27,
+        "best": 176.27,
+        "laps": 1
+      },
+      "Goat": {
+        "average": 106.23,
+        "best": 106.23,
+        "laps": 2
+      },
+      "GrumpyGamer": {
+        "average": 68.538,
+        "best": 62.73,
+        "laps": 10
+      },
+      "HLN���X3R�": {
+        "average": 83.3475,
+        "best": 64.53,
+        "laps": 12
+      },
+      "Harbinge®": {
+        "average": 120.468,
+        "best": 93.93,
+        "laps": 5
+      },
+      "LG": {
+        "average": 86.325,
+        "best": 74.5,
+        "laps": 4
+      },
+      "LIB-Cyber": {
+        "average": 141.474,
+        "best": 113.4,
+        "laps": 5
+      },
+      "LIB-Jerico": {
+        "average": 90.293333333333,
+        "best": 62.37,
+        "laps": 15
+      },
+      "LIB-Maja": {
+        "average": 84.662307692308,
+        "best": 63.3,
+        "laps": 13
+      },
+      "LIB-Perico": {
+        "average": 105.3,
+        "best": 69.5,
+        "laps": 1
+      },
+      "LIB-Rosie": {
+        "average": 89.407692307693,
+        "best": 70.37,
+        "laps": 13
+      },
+      "LIB-Spirou": {
+        "average": 136.6075,
+        "best": 77.4,
+        "laps": 4
+      },
+      "LIB-Vegeta": {
+        "average": 119.84666666667,
+        "best": 97.6,
+        "laps": 3
+      },
+      "MasterCard": {
+        "average": 75.8525,
+        "best": 65.9,
+        "laps": 4
+      },
+      "NUKE LATAM": {
+        "average": 107.82,
+        "best": 84.6,
+        "laps": 3
+      },
+      "Prancer": {
+        "average": 120.21,
+        "best": 94.03,
+        "laps": 3
+      },
+      "STEVE": {
+        "average": 133.1,
+        "best": 133.1,
+        "laps": 2
+      },
+      "Terminator": {
+        "average": 221.03,
+        "best": 221.03,
+        "laps": 2
+      },
+      "The Bear": {
+        "average": 94.39,
+        "best": 72.23,
+        "laps": 3
+      },
+      "Tooth": {
+        "average": 80.948571428571,
+        "best": 63.83,
+        "laps": 7
+      },
+      "Topsi": {
+        "average": 259.07,
+        "best": 259.07,
+        "laps": 1
+      },
+      "UkamHaram": {
+        "average": 153.37,
+        "best": 153.37,
+        "laps": 2
+      },
+      "Wilshire": {
+        "average": 82.843333333333,
+        "best": 72.13,
+        "laps": 3
+      },
+      "Witcher": {
+        "average": 89.9,
+        "best": 75.9,
+        "laps": 2
+      },
+      "[FAST]depri": {
+        "average": 89.38,
+        "best": 77.8,
+        "laps": 3
+      },
+      "[�] kingas": {
+        "average": 62.505,
+        "best": 61.97,
+        "laps": 2
+      },
+      "carlos maes": {
+        "average": 118.17,
+        "best": 94.77,
+        "laps": 3
+      },
+      "røsie": {
+        "average": 95.546666666667,
+        "best": 70.9,
+        "laps": 3
+      },
+      "{Hand}": {
+        "average": 82.633076923078,
+        "best": 61.37,
+        "laps": 13
+      },
+      "{L°E°}Atom®": {
+        "average": 89.312352941178,
+        "best": 61.07,
+        "laps": 17
+      }
+    }
+  },
+  "lostcove_race": {
+    "current_best": {
+      "player": "XSKYLINEX",
+      "time": 92.43
+    },
+    "players": {
+      "+Beef": {
+        "average": 157.55666666667,
+        "best": 114.67,
+        "laps": 3
+      },
+      "CHABUMKUN": {
+        "average": 220.13,
+        "best": 220.13,
+        "laps": 2
+      },
+      "DVH MarK": {
+        "average": 318.8,
+        "best": 318.8,
+        "laps": 2
+      },
+      "Darling": {
+        "average": 120.468,
+        "best": 99.1,
+        "laps": 5
+      },
+      "Davichi": {
+        "average": 174.57666666667,
+        "best": 162.33,
+        "laps": 3
+      },
+      "Dr_sexo": {
+        "average": 292.13,
+        "best": 292.13,
+        "laps": 2
+      },
+      "HLN-Hardy": {
+        "average": 152.20333333333,
+        "best": 101.67,
+        "laps": 3
+      },
+      "Harbinge®": {
+        "average": 131.58,
+        "best": 103,
+        "laps": 3
+      },
+      "Hollywood": {
+        "average": 144.63,
+        "best": 144.63,
+        "laps": 2
+      },
+      "Hâlö Äzûl!!": {
+        "average": 115.0075,
+        "best": 94.43,
+        "laps": 4
+      },
+      "JHOSTIN": {
+        "average": 177.27,
+        "best": 177.27,
+        "laps": 2
+      },
+      "King": {
+        "average": 144.3,
+        "best": 144.3,
+        "laps": 2
+      },
+      "LG": {
+        "average": 236.6,
+        "best": 236.6,
+        "laps": 2
+      },
+      "LIB-Cyber": {
+        "average": 378.27,
+        "best": 378.27,
+        "laps": 2
+      },
+      "LIB-JBomb": {
+        "average": 195.725,
+        "best": 137.77,
+        "laps": 4
+      },
+      "LIB-Jerico": {
+        "average": 127.3,
+        "best": 96.5,
+        "laps": 4
+      },
+      "LIB-Maja": {
+        "average": 118.45555555556,
+        "best": 95.3,
+        "laps": 27
+      },
+      "LIB-Perico": {
+        "average": 131.59111111111,
+        "best": 96.87,
+        "laps": 9
+      },
+      "LIB-Rosie": {
+        "average": 130.9,
+        "best": 130.9,
+        "laps": 2
+      },
+      "LIB-Spirou": {
+        "average": 118.0775,
+        "best": 99.77,
+        "laps": 4
+      },
+      "LIB-Tina": {
+        "average": 200.8,
+        "best": 200.8,
+        "laps": 2
+      },
+      "MasterCard": {
+        "average": 118.942,
+        "best": 100.07,
+        "laps": 5
+      },
+      "Michelin": {
+        "average": 120.61,
+        "best": 97.43,
+        "laps": 3
+      },
+      "New001": {
+        "average": 150.37,
+        "best": 150.37,
+        "laps": 2
+      },
+      "SHE SO SEXY": {
+        "average": 131.15142857143,
+        "best": 93.13,
+        "laps": 7
+      },
+      "SID": {
+        "average": 123.85,
+        "best": 101.33,
+        "laps": 6
+      },
+      "Shadow": {
+        "average": 138.3,
+        "best": 138.3,
+        "laps": 2
+      },
+      "Snake": {
+        "average": 128.05666666667,
+        "best": 127.6,
+        "laps": 3
+      },
+      "Terminator": {
+        "average": 325.6,
+        "best": 325.6,
+        "laps": 2
+      },
+      "Weasel": {
+        "average": 142.51333333333,
+        "best": 107.2,
+        "laps": 3
+      },
+      "XSKYLINEX": {
+        "average": 122.37625,
+        "best": 92.43,
+        "laps": 8
+      },
+      "[FAST]depri": {
+        "average": 127.88666666667,
+        "best": 125.8,
+        "laps": 3
+      },
+      "asahi": {
+        "average": 112.51,
+        "best": 96.47,
+        "laps": 3
+      },
+      "el marino": {
+        "average": 142.45,
+        "best": 111.23,
+        "laps": 4
+      },
+      "insect003": {
+        "average": 172.3,
+        "best": 172.3,
+        "laps": 2
+      },
+      "nelson": {
+        "average": 124.61333333333,
+        "best": 98.1,
+        "laps": 3
+      },
+      "nuevoasesin": {
+        "average": 199.47,
+        "best": 199.47,
+        "laps": 2
+      },
+      "{Hand}": {
+        "average": 129.94923076923,
+        "best": 95.83,
+        "laps": 13
+      },
+      "{L°E°}Atom®": {
+        "average": 131.06,
+        "best": 95.37,
+        "laps": 6
+      },
+      "{LºEº}þig®": {
+        "average": 136.24666666667,
+        "best": 127.2,
+        "laps": 3
+      }
+    }
+  },
+  "luigi_raceway": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 68.97
+    },
+    "players": {
+      "Chalwk": {
+        "average": 69.37,
+        "best": 68.97,
+        "laps": 2
+      },
+      "�halwk": {
+        "average": 382.03,
+        "best": 382.03,
+        "laps": 1
+      }
+    }
+  },
+  "massacre_mountain_race_v2": {
+    "current_best": {
+      "player": "Michelin",
+      "time": 83.53
+    },
+    "players": {
+      "?IS#K9999??": {
+        "average": 241.2,
+        "best": 241.2,
+        "laps": 1
+      },
+      "AAA Battery": {
+        "average": 106.408,
+        "best": 85.27,
+        "laps": 5
+      },
+      "Chalwk": {
+        "average": 87.67,
+        "best": 86.3,
+        "laps": 1
+      },
+      "Gavan-B811": {
+        "average": 221.83,
+        "best": 221.83,
+        "laps": 2
+      },
+      "GrumpyGamer": {
+        "average": 96.09,
+        "best": 87.57,
+        "laps": 6
+      },
+      "GrumpyGit": {
+        "average": 116.854,
+        "best": 93.07,
+        "laps": 5
+      },
+      "Hâlö Äzûl!!": {
+        "average": 270.93,
+        "best": 270.93,
+        "laps": 2
+      },
+      "LG": {
+        "average": 121.67666666667,
+        "best": 91.43,
+        "laps": 3
+      },
+      "LIB-Eddy": {
+        "average": 295.72,
+        "best": 201.1,
+        "laps": 3
+      },
+      "LIB-Maja": {
+        "average": 144.61636363636,
+        "best": 92.07,
+        "laps": 11
+      },
+      "LIB-Perico": {
+        "average": 125.86714285714,
+        "best": 86.87,
+        "laps": 14
+      },
+      "MasterCard": {
+        "average": 112.53,
+        "best": 112.53,
+        "laps": 2
+      },
+      "Michelin": {
+        "average": 112.818,
+        "best": 83.53,
+        "laps": 5
+      },
+      "SHE SO SEXY": {
+        "average": 105.99384615385,
+        "best": 84.5,
+        "laps": 13
+      },
+      "[FAST]depri": {
+        "average": 202.97666666667,
+        "best": 166.6,
+        "laps": 3
+      },
+      "_New009": {
+        "average": 213.07,
+        "best": 213.07,
+        "laps": 2
+      },
+      "_juice": {
+        "average": 149.22333333333,
+        "best": 147.53,
+        "laps": 3
+      },
+      "asahi": {
+        "average": 93.3725,
+        "best": 85.63,
+        "laps": 4
+      },
+      "wewe(n)": {
+        "average": 317.93,
+        "best": 317.93,
+        "laps": 2
+      },
+      "{Hand}": {
+        "average": 122.76777777778,
+        "best": 98.37,
+        "laps": 9
+      },
+      "{L°E°}Atom®": {
+        "average": 109.39285714286,
+        "best": 84,
+        "laps": 14
+      }
+    }
+  },
+  "mercury_falling": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 103.86
+    },
+    "players": {
+      "Chalwk": {
+        "average": 103.86,
+        "best": 103.86,
+        "laps": 1
+      }
+    }
+  },
+  "mongoose_point": {
+    "current_best": {
+      "player": "{L°E°}Atom®",
+      "time": 43.2
+    },
+    "players": {
+      "+Beef": {
+        "average": 87.215,
+        "best": 48.53,
+        "laps": 4
+      },
+      "CHABUMKUN": {
+        "average": 70.094,
+        "best": 59.83,
+        "laps": 5
+      },
+      "Chalwk": {
+        "average": 152.05666666667,
+        "best": 65.17,
+        "laps": 3
+      },
+      "HLN-Hardy": {
+        "average": 63.8425,
+        "best": 55.7,
+        "laps": 4
+      },
+      "Harbinge®": {
+        "average": 101.07,
+        "best": 63.87,
+        "laps": 3
+      },
+      "Hâlö Äzûl!!": {
+        "average": 55.975714285714,
+        "best": 44.3,
+        "laps": 7
+      },
+      "KXMIKXZE": {
+        "average": 43.7,
+        "best": 43.7,
+        "laps": 2
+      },
+      "LG": {
+        "average": 88.4425,
+        "best": 68.8,
+        "laps": 4
+      },
+      "LIB-Cyber": {
+        "average": 85.987692307692,
+        "best": 57.83,
+        "laps": 13
+      },
+      "LIB-JBomb": {
+        "average": 221.97,
+        "best": 221.97,
+        "laps": 2
+      },
+      "LIB-Jerico": {
+        "average": 50.186,
+        "best": 44.07,
+        "laps": 5
+      },
+      "LIB-Maja": {
+        "average": 57.559210526316,
+        "best": 43.9,
+        "laps": 38
+      },
+      "LIB-Perico": {
+        "average": 65.374375,
+        "best": 44.07,
+        "laps": 48
+      },
+      "LIB-Rosie": {
+        "average": 71.763846153846,
+        "best": 47.07,
+        "laps": 13
+      },
+      "LIB-Spirou": {
+        "average": 57.832,
+        "best": 45.73,
+        "laps": 5
+      },
+      "LIB-Tina": {
+        "average": 65.09,
+        "best": 53.93,
+        "laps": 4
+      },
+      "LIB-Vegeta": {
+        "average": 66.603333333333,
+        "best": 47.87,
+        "laps": 3
+      },
+      "MasterCard": {
+        "average": 54.60875,
+        "best": 46.67,
+        "laps": 8
+      },
+      "SHE SO SEXY": {
+        "average": 70.6025,
+        "best": 51.57,
+        "laps": 4
+      },
+      "STEVE": {
+        "average": 61.122,
+        "best": 52.27,
+        "laps": 5
+      },
+      "Terminator": {
+        "average": 172.3,
+        "best": 172.3,
+        "laps": 2
+      },
+      "XSKYLINEX": {
+        "average": 53.558,
+        "best": 45.73,
+        "laps": 5
+      },
+      "^jTAFFY": {
+        "average": 62.82,
+        "best": 53.6,
+        "laps": 3
+      },
+      "albatross": {
+        "average": 102.76333333333,
+        "best": 61.23,
+        "laps": 3
+      },
+      "asahi": {
+        "average": 57.82875,
+        "best": 48.9,
+        "laps": 8
+      },
+      "pq lademora": {
+        "average": 107.01,
+        "best": 94.63,
+        "laps": 3
+      },
+      "røsie": {
+        "average": 66.2,
+        "best": 59.8,
+        "laps": 4
+      },
+      "røsie?": {
+        "average": 53.52125,
+        "best": 45.17,
+        "laps": 8
+      },
+      "{Hand}": {
+        "average": 230.2,
+        "best": 46.9,
+        "laps": 6
+      },
+      "{L°E°}Atom®": {
+        "average": 52.252,
+        "best": 43.2,
+        "laps": 20
+      }
+    }
+  },
+  "mystic_mod": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 77.27
+    },
+    "players": {
+      "Chalwk": {
+        "average": 89.27,
+        "best": 77.27,
+        "laps": 2
+      },
+      "Dread": {
+        "average": 170.852,
+        "best": 119.11,
+        "laps": 5
+      },
+      "EL GUAPO": {
+        "average": 295.57,
+        "best": 295.57,
+        "laps": 2
+      },
+      "GrumpyGamer": {
+        "average": 97.800000000001,
+        "best": 78,
+        "laps": 8
+      },
+      "HLN���X3R�": {
+        "average": 90.412,
+        "best": 79.17,
+        "laps": 10
+      },
+      "Hambone": {
+        "average": 121.32333333333,
+        "best": 99.77,
+        "laps": 3
+      },
+      "Hâlö Äzûl!!": {
+        "average": 107.55,
+        "best": 77.6,
+        "laps": 6
+      },
+      "LG": {
+        "average": 92.826,
+        "best": 78.13,
+        "laps": 5
+      },
+      "LIB-Jerico": {
+        "average": 184.53,
+        "best": 184.53,
+        "laps": 2
+      },
+      "LIB-Maja": {
+        "average": 111.00625,
+        "best": 77.8,
+        "laps": 16
+      },
+      "LIB-Perico": {
+        "average": 96.577272727273,
+        "best": 78.03,
+        "laps": 22
+      },
+      "LIB-Rosie": {
+        "average": 110.33,
+        "best": 110.33,
+        "laps": 2
+      },
+      "LIB-Spirou": {
+        "average": 268.37,
+        "best": 268.37,
+        "laps": 2
+      },
+      "MasterCard": {
+        "average": 114.87,
+        "best": 114.87,
+        "laps": 2
+      },
+      "Michelin": {
+        "average": 129.63,
+        "best": 78.63,
+        "laps": 3
+      },
+      "SID": {
+        "average": 78.9,
+        "best": 78.9,
+        "laps": 2
+      },
+      "The Bear": {
+        "average": 110.32,
+        "best": 78.5,
+        "laps": 3
+      },
+      "XSKYLINEX": {
+        "average": 169.83,
+        "best": 169.83,
+        "laps": 2
+      },
+      "[FAST]depri": {
+        "average": 117.32333333333,
+        "best": 97.43,
+        "laps": 3
+      },
+      "^jTAFFY": {
+        "average": 95.278333333333,
+        "best": 79.67,
+        "laps": 6
+      },
+      "__": {
+        "average": 149.885,
+        "best": 85.57,
+        "laps": 4
+      },
+      "asahi": {
+        "average": 104.44666666667,
+        "best": 78,
+        "laps": 3
+      },
+      "røsie": {
+        "average": 164.234,
+        "best": 125.97,
+        "laps": 5
+      },
+      "røsie?": {
+        "average": 96.702857142857,
+        "best": 80.53,
+        "laps": 7
+      },
+      "wewe(n)": {
+        "average": 617.17,
+        "best": 617.17,
+        "laps": 2
+      },
+      "{Hand}": {
+        "average": 120.197,
+        "best": 77.77,
+        "laps": 10
+      },
+      "{L°E°}Atom®": {
+        "average": 129.94833333333,
+        "best": 77.8,
+        "laps": 6
+      },
+      "{L°E°}Kid": {
+        "average": 117.10333333333,
+        "best": 79.57,
+        "laps": 3
+      }
+    }
+  },
+  "prime_c3_race": {
+    "current_best": {
+      "player": "Hâlö Äzûl!!",
+      "time": 39.77
+    },
+    "players": {
+      "+Beef": {
+        "average": 164.1,
+        "best": 164.1,
+        "laps": 2
+      },
+      "=puerco=": {
+        "average": 78.3,
+        "best": 78.3,
+        "laps": 2
+      },
+      "CHABUMKUN": {
+        "average": 112.37,
+        "best": 51.97,
+        "laps": 3
+      },
+      "F22 RAPTOR": {
+        "average": 107.8,
+        "best": 107.8,
+        "laps": 2
+      },
+      "Harbinge®": {
+        "average": 68.285,
+        "best": 42.5,
+        "laps": 4
+      },
+      "Hâlö Äzûl!!": {
+        "average": 55.22125,
+        "best": 39.77,
+        "laps": 8
+      },
+      "KXMIKXZE": {
+        "average": 76.286666666667,
+        "best": 60.53,
+        "laps": 3
+      },
+      "LG": {
+        "average": 108.17666666667,
+        "best": 97.53,
+        "laps": 3
+      },
+      "LIB-Cyber": {
+        "average": 91.153333333333,
+        "best": 89.93,
+        "laps": 3
+      },
+      "LIB-Eddy": {
+        "average": 195.5,
+        "best": 195.5,
+        "laps": 2
+      },
+      "LIB-Jerico": {
+        "average": 86.113333333333,
+        "best": 39.8,
+        "laps": 3
+      },
+      "LIB-Maja": {
+        "average": 73.451428571429,
+        "best": 43.67,
+        "laps": 14
+      },
+      "LIB-Perico": {
+        "average": 77.103529411765,
+        "best": 43.37,
+        "laps": 17
+      },
+      "LIB-Rosie": {
+        "average": 57.554482758621,
+        "best": 40.9,
+        "laps": 29
+      },
+      "MasterCard": {
+        "average": 51.916666666667,
+        "best": 40.1,
+        "laps": 6
+      },
+      "Michelin": {
+        "average": 61.735,
+        "best": 40.07,
+        "laps": 4
+      },
+      "Nuevo666": {
+        "average": 71.92,
+        "best": 68.83,
+        "laps": 3
+      },
+      "SHE SO SEXY": {
+        "average": 90.11,
+        "best": 44.53,
+        "laps": 3
+      },
+      "SID": {
+        "average": 71,
+        "best": 71,
+        "laps": 2
+      },
+      "STEVE": {
+        "average": 90.143333333333,
+        "best": 52.37,
+        "laps": 3
+      },
+      "asahi": {
+        "average": 58.032,
+        "best": 42.5,
+        "laps": 5
+      },
+      "pq lademora": {
+        "average": 80.21,
+        "best": 49.37,
+        "laps": 3
+      },
+      "røsie": {
+        "average": 55.563333333333,
+        "best": 47.23,
+        "laps": 3
+      },
+      "røsie?": {
+        "average": 65.025,
+        "best": 42.1,
+        "laps": 4
+      },
+      "{Hand}": {
+        "average": 66.264705882353,
+        "best": 40.47,
+        "laps": 17
+      },
+      "{L°E°}Atom®": {
+        "average": 71.208571428571,
+        "best": 40.43,
+        "laps": 7
+      },
+      "«(4nib4L)»": {
+        "average": 84.61,
+        "best": 69.23,
+        "laps": 3
+      }
+    }
+  },
+  "secrets_of_egypt": {
+    "current_best": {
+      "player": "Chalwk",
+      "time": 143
+    },
+    "players": {
+      "Chalwk": {
+        "average": 143,
+        "best": 143,
+        "laps": 1
+      },
+      "LIB-Perico": {
+        "average": 200.73,
+        "best": 200.73,
+        "laps": 1
+      }
+    }
+  },
+  "timberland": {
+    "current_best": {
+      "player": "{Hand}",
+      "time": 48.03
+    },
+    "players": {
+      "+_Vibes": {
+        "average": 172.515,
+        "best": 56.23,
+        "laps": 2
+      },
+      "21700": {
+        "average": 67.6425,
+        "best": 48.17,
+        "laps": 4
+      },
+      "60fps": {
+        "average": 231.03,
+        "best": 65.23,
+        "laps": 2
+      },
+      "AAA Battery": {
+        "average": 64.356666666667,
+        "best": 48.93,
+        "laps": 3
+      },
+      "Chalwk": {
+        "average": 80.365,
+        "best": 48.14,
+        "laps": 2
+      },
+      "Hambone": {
+        "average": 67.763333333333,
+        "best": 49.43,
+        "laps": 3
+      },
+      "Harbinge®": {
+        "average": 70.75,
+        "best": 51.33,
+        "laps": 4
+      },
+      "LG": {
+        "average": 69.134,
+        "best": 54.2,
+        "laps": 5
+      },
+      "LIB-Cyber": {
+        "average": 97.86,
+        "best": 61.7,
+        "laps": 13
+      },
+      "LIB-Jerico": {
+        "average": 57.604,
+        "best": 48.23,
+        "laps": 5
+      },
+      "LIB-Maja": {
+        "average": 74.591875,
+        "best": 49.8,
+        "laps": 16
+      },
+      "LIB-Perico": {
+        "average": 61.124999999999,
+        "best": 49,
+        "laps": 18
+      },
+      "LIB-Rosie": {
+        "average": 67.571428571429,
+        "best": 49.5,
+        "laps": 7
+      },
+      "LIB-Vegeta": {
+        "average": 82.17,
+        "best": 57.37,
+        "laps": 3
+      },
+      "SID": {
+        "average": 94.83,
+        "best": 67.83,
+        "laps": 3
+      },
+      "STEVE": {
+        "average": 81.043333333333,
+        "best": 50.07,
+        "laps": 3
+      },
+      "Terminator": {
+        "average": 115.2,
+        "best": 115.2,
+        "laps": 2
+      },
+      "UkamHaram": {
+        "average": 76.956666666667,
+        "best": 67.93,
+        "laps": 3
+      },
+      "XSKYLINEX": {
+        "average": 81.93,
+        "best": 81.93,
+        "laps": 2
+      },
+      "^jTAFFY": {
+        "average": 80.37,
+        "best": 80.37,
+        "laps": 1
+      },
+      "rosey?": {
+        "average": 60.575,
+        "best": 50.43,
+        "laps": 4
+      },
+      "røsie": {
+        "average": 74,
+        "best": 59.2,
+        "laps": 3
+      },
+      "{Hand}": {
+        "average": 61.868709677419,
+        "best": 48.03,
+        "laps": 31
+      },
+      "{L°E°}Atom®": {
+        "average": 69.5425,
+        "best": 49.47,
+        "laps": 8
+      }
+    }
+  },
+  "tlsstronghold": {
+    "current_best": {
+      "player": "SHE SO SEXY",
+      "time": 51.33
+    },
+    "players": {
+      "AAA Battery": {
+        "average": 62.53,
+        "best": 52.13,
+        "laps": 3
+      },
+      "Chalwk": {
+        "average": 73.12,
+        "best": 59.47,
+        "laps": 4
+      },
+      "Disco": {
+        "average": 69.323333333333,
+        "best": 53.97,
+        "laps": 3
+      },
+      "GrumpyGamer": {
+        "average": 62.31,
+        "best": 54.3,
+        "laps": 6
+      },
+      "GrumpyGit": {
+        "average": 64.901666666667,
+        "best": 54.47,
+        "laps": 6
+      },
+      "Harbinge®": {
+        "average": 73.296666666667,
+        "best": 61.23,
+        "laps": 3
+      },
+      "Hâlö Äzûl!!": {
+        "average": 78.453333333333,
+        "best": 58.1,
+        "laps": 3
+      },
+      "LIB-Cyber": {
+        "average": 83.379090909091,
+        "best": 55.07,
+        "laps": 11
+      },
+      "LIB-Eddy": {
+        "average": 92.86,
+        "best": 58.17,
+        "laps": 4
+      },
+      "LIB-Maja": {
+        "average": 69.892666666667,
+        "best": 54,
+        "laps": 15
+      },
+      "LIB-Perico": {
+        "average": 72.568461538462,
+        "best": 53.37,
+        "laps": 13
+      },
+      "LIB-Rosie": {
+        "average": 65.422,
+        "best": 52.27,
+        "laps": 5
+      },
+      "MasterCard": {
+        "average": 65.296666666667,
+        "best": 57.83,
+        "laps": 3
+      },
+      "Michelin": {
+        "average": 70.2,
+        "best": 70.2,
+        "laps": 2
+      },
+      "NUKE LATAM": {
+        "average": 114.36666666667,
+        "best": 68.3,
+        "laps": 3
+      },
+      "SHE SO SEXY": {
+        "average": 60.492,
+        "best": 51.33,
+        "laps": 5
+      },
+      "[FAST]depri": {
+        "average": 78.19,
+        "best": 59.37,
+        "laps": 3
+      },
+      "røsie": {
+        "average": 97.5,
+        "best": 97.5,
+        "laps": 2
+      },
+      "wewe(n)": {
+        "average": 82.728,
+        "best": 64.73,
+        "laps": 5
+      },
+      "{Hand}": {
+        "average": 71.786666666667,
+        "best": 55.13,
+        "laps": 6
+      },
+      "{L°E°}Atom®": {
+        "average": 67.01,
+        "best": 52.47,
+        "laps": 4
+      }
+    }
+  },
+  "wpitest1_race": {
+    "current_best": {
+      "player": "{Hand}",
+      "time": 68.8
+    },
+    "players": {
+      "21700": {
+        "average": 76.305,
+        "best": 69.4,
+        "laps": 6
+      },
+      "AAA Battery": {
+        "average": 85.22,
+        "best": 70,
+        "laps": 3
+      },
+      "Chalwk": {
+        "average": 69.566666666667,
+        "best": 69.13,
+        "laps": 3
+      },
+      "Davichi": {
+        "average": 112.88,
+        "best": 80.77,
+        "laps": 5
+      },
+      "Dread": {
+        "average": 209.426,
+        "best": 149.77,
+        "laps": 5
+      },
+      "Frank": {
+        "average": 102.14333333333,
+        "best": 72.17,
+        "laps": 3
+      },
+      "Ghost": {
+        "average": 75.885714285714,
+        "best": 70.07,
+        "laps": 7
+      },
+      "HLN-Hardy": {
+        "average": 104.275,
+        "best": 87.2,
+        "laps": 4
+      },
+      "HLN���X3R�": {
+        "average": 104.62888888889,
+        "best": 72.47,
+        "laps": 9
+      },
+      "Harbinge®": {
+        "average": 139.715,
+        "best": 74.93,
+        "laps": 6
+      },
+      "HolyFlame�": {
+        "average": 122.17,
+        "best": 122.17,
+        "laps": 1
+      },
+      "Hâlö Äzûl!!": {
+        "average": 89.436666666667,
+        "best": 69,
+        "laps": 6
+      },
+      "KURKO": {
+        "average": 85.03,
+        "best": 75.63,
+        "laps": 3
+      },
+      "KXMIKXZE": {
+        "average": 97.703333333333,
+        "best": 97.57,
+        "laps": 3
+      },
+      "LG": {
+        "average": 77.482307692308,
+        "best": 69.57,
+        "laps": 13
+      },
+      "LIB-Eddy": {
+        "average": 148.7175,
+        "best": 89.6,
+        "laps": 4
+      },
+      "LIB-Maja": {
+        "average": 80.7725,
+        "best": 69.67,
+        "laps": 24
+      },
+      "LIB-Perico": {
+        "average": 88.835000000001,
+        "best": 69.8,
+        "laps": 24
+      },
+      "LIB-Rosie": {
+        "average": 82.175,
+        "best": 71.07,
+        "laps": 4
+      },
+      "LIB-Spirou": {
+        "average": 87.006,
+        "best": 71.17,
+        "laps": 5
+      },
+      "LIB-Vegeta": {
+        "average": 220.07,
+        "best": 220.07,
+        "laps": 2
+      },
+      "MasterCard": {
+        "average": 77.714,
+        "best": 70.13,
+        "laps": 5
+      },
+      "New001": {
+        "average": 79.118,
+        "best": 70.43,
+        "laps": 5
+      },
+      "STEVE": {
+        "average": 184.63,
+        "best": 184.63,
+        "laps": 2
+      },
+      "Sleepy": {
+        "average": 81.874,
+        "best": 70.03,
+        "laps": 10
+      },
+      "Stompy": {
+        "average": 69.87,
+        "best": 69.87,
+        "laps": 1
+      },
+      "Terminator": {
+        "average": 282.6,
+        "best": 282.6,
+        "laps": 2
+      },
+      "UkamHaram": {
+        "average": 83.052,
+        "best": 71.1,
+        "laps": 5
+      },
+      "Vai": {
+        "average": 78.36,
+        "best": 69.87,
+        "laps": 5
+      },
+      "Walla Walla": {
+        "average": 81.4,
+        "best": 70.73,
+        "laps": 4
+      },
+      "Witcher": {
+        "average": 84.266666666667,
+        "best": 73.4,
+        "laps": 3
+      },
+      "XSKYLINEX": {
+        "average": 77.416666666667,
+        "best": 68.93,
+        "laps": 6
+      },
+      "^jTAFFY": {
+        "average": 81.02,
+        "best": 72.47,
+        "laps": 9
+      },
+      "aj_urbano": {
+        "average": 102.6,
+        "best": 102.6,
+        "laps": 2
+      },
+      "albatross": {
+        "average": 108.2275,
+        "best": 82,
+        "laps": 4
+      },
+      "asahi": {
+        "average": 76.406,
+        "best": 71.13,
+        "laps": 5
+      },
+      "carlos maes": {
+        "average": 227.83,
+        "best": 227.83,
+        "laps": 2
+      },
+      "chiefster": {
+        "average": 91.493333333333,
+        "best": 75.63,
+        "laps": 6
+      },
+      "rootCompute": {
+        "average": 101.57,
+        "best": 101.57,
+        "laps": 1
+      },
+      "røsie": {
+        "average": 83.86,
+        "best": 71.7,
+        "laps": 4
+      },
+      "røsie?": {
+        "average": 75.07125,
+        "best": 69.57,
+        "laps": 8
+      },
+      "stalker den": {
+        "average": 109.85,
+        "best": 97.23,
+        "laps": 4
+      },
+      "wewe(n)": {
+        "average": 116.18666666667,
+        "best": 77.1,
+        "laps": 3
+      },
+      "{Hand}": {
+        "average": 80.717894736842,
+        "best": 68.8,
+        "laps": 38
+      },
+      "{L°E°}Atom®": {
+        "average": 81.776875,
+        "best": 69.03,
+        "laps": 16
+      }
+    }
+  }
+}
