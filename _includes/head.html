@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="UTF-8">
-    {% assign scale = site.mobile_initial_scale | default: 0.65 %}
+    {% assign scale = site.mobile_initial_scale | default: 0.75 %}
     <meta name="viewport" content="width=device-width, initial-scale={{ scale }}, user-scalable=yes, viewport-fit=cover">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link href="{{ site.baseurl }}/assets/css/core.css" rel="stylesheet">
