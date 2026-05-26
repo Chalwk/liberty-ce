@@ -4,13 +4,13 @@
 # This file is part of the proprietary Liberty Gaming website.
 # Use, copying, or distribution without permission is strictly prohibited.
 
-# Site settings
 title: Liberty Gaming - Halo CE
 description: Official website for Liberty Gaming Halo CE community.
 baseurl: ""
 url: "https://liberty-ce.net"
-# Build settings:
 
-incremental: true       # only build changed files
+mobile_initial_scale: 0.75
+
+incremental: true
 sass:
-  style: compressed     # smaller CSS
+  style: compressed
