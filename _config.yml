@@ -9,7 +9,7 @@ description: Official website for Liberty Gaming Halo CE community.
 baseurl: ""
 url: "https://liberty-ce.net"
 
-mobile_initial_scale: 0.75
+mobile_initial_scale: 0.65
 
 incremental: true
 sass:
