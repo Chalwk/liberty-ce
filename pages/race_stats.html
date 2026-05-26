@@ -636,6 +636,8 @@ title: Race Stats
         const modalBody = document.getElementById('modal-body');
         const closeModalBtn = document.getElementById('close-modal-btn');
 
+        document.body.appendChild(modalOverlay);
+
         function formatTime(sec) {
             if (sec === undefined || sec === null) return '—';
             return sec.toFixed(2);
