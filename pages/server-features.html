@@ -115,54 +115,153 @@ title: Features & Commands
         font-size: 1.6rem;
     }
 
-    .commands-table-wrapper {
-        overflow-x: auto;
-        margin: 1.5rem 0;
-        border-radius: 16px;
-        background: rgba(0, 0, 0, 0.2);
-        padding: 0.2rem;
+    .command-section {
+        margin: 1.5rem 0 0;
     }
 
-    .commands-table {
-        width: 100%;
-        border-collapse: collapse;
-        background: var(--bg-panel-light);
-        border-radius: 16px;
-        font-size: 0.9rem;
+    .command-section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.85rem;
     }
 
-    .commands-table th,
-    .commands-table td {
-        padding: 0.9rem 1rem;
-        text-align: left;
-        border-bottom: 1px solid rgba(42, 169, 161, 0.2);
-        vertical-align: top;
-    }
-
-    .commands-table th {
-        background: rgba(42, 169, 161, 0.2);
+    .command-section-title {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
         color: var(--primary);
+        font-size: 1.25rem;
         font-weight: 700;
-        font-size: 1rem;
     }
 
-    .commands-table td {
-        color: #e0e0e0;
-    }
-
-    .commands-table code, .commands-table kbd {
-        background: #0a0c0f;
-        padding: 0.2rem 0.5rem;
-        border-radius: 8px;
-        font-family: 'Courier New', monospace;
-        color: #f0f0f0;
-        border: 1px solid #2a5f5a;
-        font-size: 0.85rem;
+    .server-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid rgba(42, 169, 161, 0.45);
+        background: rgba(42, 169, 161, 0.12);
+        color: #c9fffb;
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
         white-space: nowrap;
     }
 
-    .commands-table kbd {
+    .command-group {
+        background: var(--bg-panel-light);
+        border: 1px solid rgba(42, 169, 161, 0.18);
+        border-radius: 18px;
+        padding: 1rem;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
+    }
+
+    .command-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0.9rem;
+    }
+
+    .command-card {
+        background: rgba(10, 12, 15, 0.72);
+        border: 1px solid rgba(42, 169, 161, 0.22);
+        border-radius: 16px;
+        padding: 0.95rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        min-width: 0;
+    }
+
+    .command-card:hover {
+        border-color: rgba(42, 169, 161, 0.5);
+        box-shadow: 0 0 10px rgba(42, 169, 161, 0.12);
+    }
+
+    .command-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .command-name {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        align-items: center;
+        min-width: 0;
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.98rem;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    .command-name code,
+    .command-name kbd {
+        background: #0a0c0f;
+        padding: 0.18rem 0.45rem;
+        border-radius: 8px;
+        border: 1px solid #2a5f5a;
+        color: #f0f0f0;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .command-name kbd {
         background: #1e2a2a;
+    }
+
+    .command-meta {
+        flex: 0 0 auto;
+        font-size: 0.8rem;
+        color: #cfeceb;
+        padding: 0.22rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(42, 169, 161, 0.16);
+        border: 1px solid rgba(42, 169, 161, 0.22);
+        white-space: nowrap;
+    }
+
+    .command-description {
+        color: #e0e0e0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .command-usage {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        border-top: 1px dashed rgba(42, 169, 161, 0.18);
+        padding-top: 0.65rem;
+        overflow-wrap: anywhere;
+    }
+
+    .command-usage code,
+    .command-usage kbd {
+        background: #0a0c0f;
+        padding: 0.16rem 0.42rem;
+        border-radius: 7px;
+        border: 1px solid #2a5f5a;
+        color: #f4f4f4;
+        font-family: 'Courier New', monospace;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .command-legend {
+        color: var(--text-muted);
+        font-size: 0.92rem;
+        margin-top: 0.75rem;
     }
 
     .info-box {
@@ -185,21 +284,40 @@ title: Features & Commands
     }
 
     @media (max-width: 700px) {
-        .commands-table th, .commands-table td {
-            padding: 0.6rem;
-        }
-
-        .commands-table code {
-            white-space: normal;
-            word-break: break-all;
-        }
-
         .feature-card {
             padding: 1rem;
         }
 
         main {
             padding: 1rem;
+        }
+
+        .command-group {
+            padding: 0.75rem;
+            border-radius: 14px;
+        }
+
+        .command-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .command-card {
+            padding: 0.85rem 0.9rem;
+        }
+
+        .command-header {
+            align-items: flex-start;
+        }
+
+        .command-meta {
+            white-space: normal;
+        }
+
+        .command-name,
+        .command-description,
+        .command-usage {
+            overflow-wrap: anywhere;
+            word-break: normal;
         }
     }
 </style>
@@ -240,7 +358,7 @@ title: Features & Commands
     </div>
 
     <div class="feature-card">
-        <h2><i class="fas fa-server"></i> MIX‑Server Exclusive Scripts</h2>
+        <h2><i class="fas fa-server"></i> MIX-Server Exclusive Scripts</h2>
         <ul>
             <li><strong>Name Ban</strong> - Automatically kicks players who join with a disallowed name (e.g.,
                 "Butcher", "Nigga", "LIB-Descono", etc.).
@@ -255,7 +373,7 @@ title: Features & Commands
     </div>
 
     <div class="feature-card">
-        <h2><i class="fas fa-flag-checkered"></i> Racing‑Server Exclusive Scripts</h2>
+        <h2><i class="fas fa-flag-checkered"></i> Racing-Server Exclusive Scripts</h2>
         <ul>
             <li><strong>Track Master</strong> - Advanced racing tracker &amp; leaderboard. Records personal bests,
                 map records, global rankings, checkpoint validation, and lap time announcements. Commands:
@@ -265,7 +383,7 @@ title: Features & Commands
             <li><strong>Race Assistant</strong> - Enforces vehicle usage in race modes. Grants a grace period then
                 issues escalating penalties (kill, kick) if players remain on foot.
             </li>
-            <li><strong>Vehicle Spawner</strong> - Map‑aware vehicle spawning with custom keywords per
+            <li><strong>Vehicle Spawner</strong> - Map-aware vehicle spawning with custom keywords per
                 track (e.g., <code>hog</code>, <code>rhog</code>, <code>quad</code>). See <code>/vlist</code> for
                 available vehicles.
             </li>
@@ -276,154 +394,201 @@ title: Features & Commands
 </div>
 
 <h2>📋 Complete Command Reference</h2>
+<p class="command-legend">Server availability is labeled on each group. Commands not listed below are available on both
+    servers.</p>
 
-<div class="commands-table-wrapper">
-    <table class="commands-table">
-        <thead>
-        <tr>
-            <th>Command / Trigger</th>
-            <th>Description</th>
-            <th>Required Level</th>
-            <th>Usage Example</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- AFK SYSTEM -->
-        <tr>
-            <td><code>/afk</code></td>
-            <td>Toggle manual AFK mode (invincible, hidden, auto-teleport on return)</td>
-            <td>3</td>
-            <td><code>/afk</code></td>
-        </tr>
-        <tr>
-            <td><code>/afklist</code></td>
-            <td>List all currently AFK players</td>
-            <td>3</td>
-            <td><code>/afklist</code></td>
-        </tr>
-        <!-- ALIAS SYSTEM -->
-        <tr>
-            <td><code>/alias hash &lt;player_id&gt; [page]</code></td>
-            <td>Show aliases linked to a player's game hash</td>
-            <td>3</td>
-            <td><code>/alias hash 2</code></td>
-        </tr>
-        <tr>
-            <td><code>/alias ip &lt;player_id&gt; [page]</code></td>
-            <td>Show aliases linked to a player's IP address</td>
-            <td>3</td>
-            <td><code>/alias ip 4</code></td>
-        </tr>
-        <tr>
-            <td><code>/alias hash_lookup &lt;hash&gt; [page]</code></td>
-            <td>Direct lookup by MD5 hash (32 chars)</td>
-            <td>3</td>
-            <td><code>/alias hash_lookup 5d41402abc4b2a76b9719d911017c592</code></td>
-        </tr>
-        <tr>
-            <td><code>/alias ip_lookup &lt;IP&gt; [page]</code></td>
-            <td>Direct lookup by IP address</td>
-            <td>3</td>
-            <td><code>/alias ip_lookup 192.168.1.100</code></td>
-        </tr>
-        <tr>
-            <td><code>/alias search &lt;partial_name&gt; [page]</code></td>
-            <td>Fuzzy search for names containing text</td>
-            <td>3</td>
-            <td><code>/alias search "John"</code></td>
-        </tr>
-        <tr>
-            <td><code>/alias help</code></td>
-            <td>Show alias command usage summary</td>
-            <td>3</td>
-            <td><code>/alias help</code></td>
-        </tr>
-        <!-- NEXT GAME -->
-        <tr>
-            <td><code>/next_game</code></td>
-            <td>Force the server to advance to the next map immediately</td>
-            <td>4</td>
-            <td><code>/next_game</code></td>
-        </tr>
-        <!-- TEAM SHUFFLER -->
-        <tr>
-            <td><code>/shuffle</code></td>
-            <td>Manually shuffle and rebalance teams (team games only)</td>
-            <td>3</td>
-            <td><code>/shuffle</code></td>
-        </tr>
-        <!-- UBER -->
-        <tr>
-            <td><code>uber</code> / <code>taxi</code> / <code>cab</code> / <code>taxo</code></td>
-            <td>Call a nearby teammate's vehicle (driver seat required). Cooldown and call limits apply.</td>
-            <td>None</td>
-            <td>Type <code>uber</code> in chat</td>
-        </tr>
-        <tr>
-            <td><code>/accept</code> / <code>/reject</code></td>
-            <td>Driver responds to incoming Uber requests (if accept/reject mode enabled)</td>
-            <td>None (must be driver)</td>
-            <td><code>/accept</code></td>
-        </tr>
-        <!-- DEPLOYABLE MINES (No command) -->
-        <tr>
-            <td><kbd>Flashlight key</kbd> (default F)</td>
-            <td>Deploy a proximity mine from an allowed vehicle (driver seat). Mines last ~30 seconds and explode on
-                enemy proximity.
-            </td>
-            <td>None</td>
-            <td>Press <kbd>F</kbd> while driving a compatible vehicle</td>
-        </tr>
-        <!-- VEHICLE SPAWNER (common & racing) -->
-        <tr>
-            <td><code>/vlist</code></td>
-            <td>List all available vehicle spawn keywords for the current map (e.g., hog, rhog, quad).</td>
-            <td>None</td>
-            <td><code>/vlist</code></td>
-        </tr>
-        <tr>
-            <td><code>hog</code>, <code>rhog</code>, <code>quad</code> (and map‑specific variants)</td>
-            <td>Spawn a vehicle in front of you and automatically enter the driver seat. Cooldown ~7 seconds,
-                despawn after 7s when empty.
-            </td>
-            <td>None</td>
-            <td>Type <code>hog</code> in chat</td>
-        </tr>
-        <!-- TRACK MASTER (racing) -->
-        <tr>
-            <td><code>/stats [player|all]</code></td>
-            <td>Show your personal best lap, average lap time on current map. Optionally view another player's stats
-                or all online players.
-            </td>
-            <td>None</td>
-            <td><code>/stats</code> or <code>/stats all</code> or <code>/stats Chalwk</code></td>
-        </tr>
-        <tr>
-            <td><code>/top [page]</code></td>
-            <td>Display paginated leaderboard of best lap times on the current map.</td>
-            <td>None</td>
-            <td><code>/top</code> or <code>/top 2</code></td>
-        </tr>
-        <tr>
-            <td><code>/global [page]</code></td>
-            <td>Show global overall player rankings across all race maps (weighted score: map records, global
-                record, performance).
-            </td>
-            <td>None</td>
-            <td><code>/global</code> or <code>/global 3</code></td>
-        </tr>
-        <tr>
-            <td><code>/reset</code></td>
-            <td>Reset your current checkpoint progress on the race track (useful if stuck or glitched).</td>
-            <td>None</td>
-            <td><code>/reset</code></td>
-        </tr>
-        </tbody>
-    </table>
+<div class="command-section">
+    <div class="command-section-header">
+        <div class="command-section-title"><i class="fas fa-server"></i>Available on both servers</div>
+        <span class="server-badge">MIX + RACING</span>
+    </div>
+    <div class="command-group">
+        <div class="command-grid">
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/afk</code></div>
+                    <div class="command-meta">Level 3</div>
+                </div>
+                <div class="command-description">Toggle manual AFK mode (invincible, hidden, auto-teleport on return).
+                </div>
+                <div class="command-usage">Usage: <code>/afk</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/afklist</code></div>
+                    <div class="command-meta">Level 3</div>
+                </div>
+                <div class="command-description">List all currently AFK players.</div>
+                <div class="command-usage">Usage: <code>/afklist</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/alias hash &lt;player_id&gt; [page]</code></div>
+                    <div class="command-meta">Level 3</div>
+                </div>
+                <div class="command-description">Show aliases linked to a player's game hash.</div>
+                <div class="command-usage">Usage: <code>/alias hash 2</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/alias ip &lt;player_id&gt; [page]</code></div>
+                    <div class="command-meta">Level 3</div>
+                </div>
+                <div class="command-description">Show aliases linked to a player's IP address.</div>
+                <div class="command-usage">Usage: <code>/alias ip 4</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/alias hash_lookup &lt;hash&gt; [page]</code></div>
+                    <div class="command-meta">Level 3</div>
+                </div>
+                <div class="command-description">Direct lookup by MD5 hash (32 chars).</div>
+                <div class="command-usage">Usage: <code>/alias hash_lookup 5d41402abc4b2a76b9719d911017c592</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/alias ip_lookup &lt;IP&gt; [page]</code></div>
+                    <div class="command-meta">Level 3</div>
+                </div>
+                <div class="command-description">Direct lookup by IP address.</div>
+                <div class="command-usage">Usage: <code>/alias ip_lookup 192.168.1.100</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/alias search &lt;partial_name&gt; [page]</code></div>
+                    <div class="command-meta">Level 3</div>
+                </div>
+                <div class="command-description">Fuzzy search for names containing text.</div>
+                <div class="command-usage">Usage: <code>/alias search "John"</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/alias help</code></div>
+                    <div class="command-meta">Level 3</div>
+                </div>
+                <div class="command-description">Show alias command usage summary.</div>
+                <div class="command-usage">Usage: <code>/alias help</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/next_game</code></div>
+                    <div class="command-meta">Level 4</div>
+                </div>
+                <div class="command-description">Force the server to advance to the next map immediately.</div>
+                <div class="command-usage">Usage: <code>/next_game</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/shuffle</code></div>
+                    <div class="command-meta">Level 3</div>
+                </div>
+                <div class="command-description">Manually shuffle and rebalance teams (team games only).</div>
+                <div class="command-usage">Usage: <code>/shuffle</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>uber</code> / <code>taxi</code> / <code>cab</code> /
+                        <code>taxo</code></div>
+                    <div class="command-meta">Chat trigger</div>
+                </div>
+                <div class="command-description">Call a nearby teammate's vehicle (driver seat required). Cooldown and
+                    call limits apply.
+                </div>
+                <div class="command-usage">Usage: Type <code>uber</code> in chat</div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/accept</code> / <code>/reject</code></div>
+                    <div class="command-meta">Driver only</div>
+                </div>
+                <div class="command-description">Driver responds to incoming Uber requests (if accept/reject mode
+                    enabled).
+                </div>
+                <div class="command-usage">Usage: <code>/accept</code></div>
+            </article>
+        </div>
+    </div>
 </div>
 
+<div class="command-section">
+    <div class="command-section-header">
+        <div class="command-section-title"><i class="fas fa-flag-checkered"></i>Racing-server exclusive commands</div>
+        <span class="server-badge">RACING only</span>
+    </div>
+    <div class="command-group">
+        <div class="command-grid">
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><kbd>Flashlight key</kbd></div>
+                    <div class="command-meta">Trigger</div>
+                </div>
+                <div class="command-description">Deploy a proximity mine from an allowed vehicle while in the driver
+                    seat.
+                </div>
+                <div class="command-usage">Usage: Press <kbd>F</kbd> while driving a compatible vehicle</div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/vlist</code></div>
+                    <div class="command-meta">Racing only</div>
+                </div>
+                <div class="command-description">List all available vehicle spawn keywords for the current map.</div>
+                <div class="command-usage">Usage: <code>/vlist</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>hog</code>, <code>rhog</code>, <code>quad</code></div>
+                    <div class="command-meta">Racing only</div>
+                </div>
+                <div class="command-description">Spawn a vehicle in front of you and automatically enter the driver
+                    seat. Map-specific variants may also be available.
+                </div>
+                <div class="command-usage">Usage: Type <code>hog</code> in chat</div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/stats [player|all]</code></div>
+                    <div class="command-meta">Racing only</div>
+                </div>
+                <div class="command-description">Show your personal best lap, average lap time on the current map, or
+                    view another player's stats.
+                </div>
+                <div class="command-usage">Usage: <code>/stats</code>, <code>/stats all</code>, or <code>/stats
+                    Chalwk</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/top [page]</code></div>
+                    <div class="command-meta">Racing only</div>
+                </div>
+                <div class="command-description">Display the paginated leaderboard of best lap times on the current
+                    map.
+                </div>
+                <div class="command-usage">Usage: <code>/top</code> or <code>/top 2</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/global [page]</code></div>
+                    <div class="command-meta">Racing only</div>
+                </div>
+                <div class="command-description">Show global overall player rankings across all race maps.</div>
+                <div class="command-usage">Usage: <code>/global</code> or <code>/global 3</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/reset</code></div>
+                    <div class="command-meta">Racing only</div>
+                </div>
+                <div class="command-description">Reset your current checkpoint progress on the race track if you are
+                    stuck or glitched.
+                </div>
+                <div class="command-usage">Usage: <code>/reset</code></div>
+            </article>
+        </div>
+    </div>
+</div>
 <div class="info-box">
-    <i class="fas fa-lightbulb"></i> <strong>Admin Tips:</strong>
+    <i class="fas fa-lightbulb"></i> <strong>Note for Admins:</strong>
     <ul>
         <li>Alias database persists across server restarts (saved to <code>sapp/aliases.json</code>).</li>
         <li>Uber transport respects team rules - you can only call vehicles from teammates.</li>
@@ -438,7 +603,7 @@ title: Features & Commands
             → kick. Forgiveness period of 30 seconds of continuous racing resets violations.
         </li>
         <li>Vehicle spawner cooldown is shared across all keywords; despawn timer starts when the vehicle is empty.
-            Use <code>/vlist</code> to discover map‑specific vehicles (e.g., custom hogs on
+            Use <code>/vlist</code> to discover map-specific vehicles (e.g., custom hogs on
             <code>bc_raceway_final_mp</code>).
         </li>
     </ul>

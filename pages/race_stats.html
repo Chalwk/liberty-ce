@@ -366,20 +366,158 @@ title: Race Stats
     }
 
     @media (max-width: 768px) {
+        main {
+            padding: 0.75rem;
+        }
+
+        .stats-header h1 {
+            font-size: 1.6rem;
+        }
+
+        .stats-tabs {
+            flex-direction: column;
+            gap: 0.75rem;
+            border-bottom: none;
+        }
+
+        .tab-btn {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+        }
+
         .toolbar {
             flex-direction: column;
             align-items: stretch;
             border-radius: 20px;
+            padding: 1rem;
         }
 
-        .stats-table th, .stats-table td {
-            padding: 0.6rem 0.4rem;
-            font-size: 0.8rem;
+        .search-wrapper {
+            min-width: 100%;
         }
 
-        .tab-btn {
-            padding: 0.5rem 1rem;
+        .results-summary {
+            text-align: center;
+        }
+
+        .stats-table-container {
+            overflow: visible;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        .stats-table,
+        .stats-table thead,
+        .stats-table tbody,
+        .stats-table th,
+        .stats-table td,
+        .stats-table tr {
+            display: block;
+            width: 100%;
+        }
+
+        .stats-table thead {
+            display: none;
+        }
+
+        .stats-table tbody {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .stats-table tr {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-glow);
+            border-radius: 18px;
+            padding: 0.4rem;
+            overflow: hidden;
+        }
+
+        .stats-table td {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.75rem 0.9rem;
+            border-bottom: 1px solid rgba(42, 169, 161, 0.15);
             font-size: 0.85rem;
+            text-align: right;
+        }
+
+        .stats-table td:last-child {
+            border-bottom: none;
+        }
+
+        .stats-table td::before {
+            content: attr(data-label);
+            color: var(--primary);
+            font-weight: 700;
+            text-align: left;
+            flex: 0 0 45%;
+        }
+
+        .map-name-cell,
+        .player-name-cell {
+            font-size: 0.95rem;
+        }
+
+        .detail-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .global-best-card {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .modal-container {
+            width: 95%;
+            padding: 1rem;
+        }
+
+        .modal-stats-table {
+            font-size: 0.78rem;
+        }
+
+        .modal-stats-table th,
+        .modal-stats-table td {
+            padding: 0.45rem;
+        }
+
+        .pagination {
+            gap: 0.35rem;
+        }
+
+        .page-btn {
+            min-width: 34px;
+            padding: 0.4rem 0.6rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .stats-table td {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            gap: 0.35rem;
+        }
+
+        .stats-table td::before {
+            flex: none;
+        }
+
+        .detail-btn {
+            width: 100%;
+        }
+
+        .search-input {
+            font-size: 16px;
         }
     }
 </style>
@@ -656,11 +794,11 @@ title: Race Stats
             for (const map of pageItems) {
                 html += `
                 <tr>
-                    <td class="map-name-cell"><i class="fas fa-flag-checkered"></i> ${escapeHtml(map.name)}</td>
-                    <td>${escapeHtml(map.currentBestPlayer)}</td>
-                    <td>${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '—'}</td>
-                    <td>${map.totalPlayers}</td>
-                    <td><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Details</button></td>
+                    <td class="map-name-cell" data-label="Map Name"><i class="fas fa-flag-checkered"></i> ${escapeHtml(map.name)}</td>
+                    <td data-label="Current Best Player">${escapeHtml(map.currentBestPlayer)}</td>
+                    <td data-label="Best Time (s)">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '—'}</td>
+                    <td data-label="Total Players">${map.totalPlayers}</td>
+                    <td data-label="Actions"><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Details</button></td>
                 </tr>`;
             }
             mapsTbody.innerHTML = html;
@@ -689,11 +827,11 @@ title: Race Stats
             let html = '';
             for (const player of pageItems) {
                 html += `<tr>
-                    <td class="player-name-cell"><i class="fas fa-user-astronaut"></i> ${escapeHtml(player.name)}</td>
-                    <td>${player.overallBestTime !== null ? formatTime(player.overallBestTime) : '—'}</td>
-                    <td>${player.bestMapName ? escapeHtml(player.bestMapName) : '—'}</td>
-                    <td>${player.mapsPlayed}</td>
-                    <td><button class="detail-btn" data-type="player" data-name="${escapeHtml(player.name)}"><i class="fas fa-chart-simple"></i> Details</button></td>
+                    <td class="player-name-cell" data-label="Player Name"><i class="fas fa-user-astronaut"></i> ${escapeHtml(player.name)}</td>
+                    <td data-label="Overall Best (s)">${player.overallBestTime !== null ? formatTime(player.overallBestTime) : '—'}</td>
+                    <td data-label="Best Map">${player.bestMapName ? escapeHtml(player.bestMapName) : '—'}</td>
+                    <td data-label="Maps Played">${player.mapsPlayed}</td>
+                    <td data-label="Actions"><button class="detail-btn" data-type="player" data-name="${escapeHtml(player.name)}"><i class="fas fa-chart-simple"></i> Details</button></td>
                 </tr>`;
             }
             playersTbody.innerHTML = html;
