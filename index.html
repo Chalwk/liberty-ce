@@ -61,26 +61,40 @@ title: Home
     </div>
 </div>
 
-<div class="join-section">
-    <h3><i class="fas fa-envelope"></i> Interested in Joining Liberty?</h3>
-    <p>If you're ready to become a part of our Halo CE community, we'd love to hear from you. Please review our <a
-            href="https://liberty-ce.net/pages/community-rules" class="rules-link">Community Rules</a> to ensure a
-        respectful and enjoyable experience for everyone.</p>
-    <p><strong>How to format your name:</strong> Choose a <strong>7-character</strong> identifier that will become part
-        of your full 11-character Halo nametag. For example: <code>LIB-MyNames</code> (total 11 characters).</p>
-    <p>Email your request to: <a href="mailto:libertyclan2024@gmail.com"
-                                 class="email-link">libertyclan2024@gmail.com</a></p>
-    <p>Once we receive your email, we’ll reply with further instructions. Welcome to Liberty! 👍 😎</p>
+<h2><i class="fab fa-discord"></i> Connect With Us</h2>
+<div class="community-hub">
+    <div class="community-card">
+        <i class="fab fa-discord"></i>
+        <h3>Discord</h3>
+        <p>Chat with players, get server alerts, and organize games.</p>
+        <a class="btn" href="https://discord.gg/3J2Zppghz5" target="_blank">Join Discord</a>
+    </div>
+    <div class="community-card">
+        <i class="fab fa-facebook-f"></i>
+        <h3>Facebook</h3>
+        <p>Join our Facebook page for updates, discussions, and Halo content.</p>
+        <a class="btn" href="https://www.facebook.com/LibertyClan" target="_blank">Visit Page</a>
+    </div>
+    <div class="community-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>Have questions? Reach out to us directly.</p>
+        <a class="btn" href="mailto:libertyclan2024@gmail.com">libertyclan2024@gmail.com</a>
+    </div>
 </div>
 
-<div class="cta-section">
-    <h3><i class="fab fa-discord"></i> Hang out with us</h3>
-    <p style="margin-bottom: 1rem; color: var(--text-light);">Join our Discord to get server alerts, organize games,
-        and meet fellow Spartans.</p>
-    <a class="btn" href="https://discord.gg/3J2Zppghz5" target="_blank">Join Discord</a>
-    <a class="btn" href="pages/community"
-       style="background: transparent; border: 1px solid var(--primary); color: var(--primary); margin-left: 1rem;">Explore
-        Community</a>
+<div class="join-section">
+    <h3><i class="fas fa-user-plus"></i> Interested in Joining Liberty?</h3>
+    <p>If you're ready to become a part of our Halo CE community, we'd love to hear from you. Please review our <a
+            class="rules-link" href="pages/community-rules">Community Rules</a> to ensure a respectful and enjoyable
+        experience for everyone.</p>
+    <p><strong>How to format your name:</strong> Choose a <strong>7-character</strong> identifier that becomes part of
+        your full 11‑character Halo nametag.<br>
+        Example: <code>LIB-MyNames</code> (total 11 characters).</p>
+    <p>Email your request to: <a class="email-link"
+                                 href="mailto:libertyclan2024@gmail.com">libertyclan2024@gmail.com</a>
+    </p>
+    <p>Once we receive your email, we’ll reply with further instructions. Welcome to Liberty! 👍 😎</p>
 </div>
 
 <style>
@@ -207,25 +221,68 @@ title: Home
         line-height: 1.5;
     }
 
-    .cta-section {
-        text-align: center;
-        background: rgba(42, 169, 161, 0.1);
-        border-radius: 40px;
-        padding: 2.5rem;
-        margin: 2rem 0 1rem;
-        border: 1px dashed var(--primary);
+    .community-hub {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        margin: 2rem 0 3rem;
     }
 
-    .cta-section h3 {
-        font-size: 2rem;
+    .community-card {
+        background: rgba(10, 12, 15, 0.8);
+        border: 1px solid var(--border-glow);
+        border-radius: 30px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        transition: var(--transition);
+        /* Equal width and height */
+        flex: 1 1 280px;
+        max-width: 320px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .community-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--primary);
+        box-shadow: 0 0 20px var(--primary);
+    }
+
+    .community-card i {
+        font-size: 3.5rem;
         color: var(--primary);
         margin-bottom: 1rem;
     }
 
-    .cta-section .btn {
-        font-size: 1.2rem;
-        padding: 0.8rem 2rem;
-        margin-top: 1rem;
+    .community-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+        color: var(--accent);
+    }
+
+    .community-card p {
+        color: var(--text-muted);
+        margin-bottom: 1.2rem;
+        font-size: 0.95rem;
+        flex-grow: 1;
+    }
+
+    .community-card .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        overflow-x: auto;
+        display: inline-block;
+        margin-top: auto;
+        text-align: center;
+    }
+
+    @media (max-width: 550px) {
+        .community-card .btn {
+            white-space: normal;
+            word-break: break-all;
+        }
     }
 
     .join-section {
@@ -272,7 +329,7 @@ title: Home
         font-size: 1rem;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         .hero h2 {
             font-size: 2rem;
         }
@@ -289,23 +346,18 @@ title: Home
             font-size: 1.5rem;
         }
 
-        .cta-section h3,
-        .join-section h3 {
-            font-size: 1.6rem;
-        }
-
-        .cta-section .btn {
-            display: block;
-            width: 100%;
-            margin: 0.5rem 0;
-        }
-
-        .cta-section a.btn:last-child {
-            margin-left: 0 !important;
+        .community-card {
+            flex: 1 1 260px;
+            max-width: 300px;
+            padding: 1.5rem;
         }
 
         .join-section {
             padding: 1.5rem;
+        }
+
+        .join-section h3 {
+            font-size: 1.6rem;
         }
 
         .join-section .email-link,
