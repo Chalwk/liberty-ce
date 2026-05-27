@@ -1,0 +1,42 @@
+# Liberty Gaming - Halo CE Website
+# Developer: Jericho Crosby / Chalwk
+# Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
+# This file is part of the proprietary Liberty Gaming website.
+# Use, copying, or distribution without permission is strictly prohibited.
+
+name: 🎮 Join Request
+description: Apply to become a member of Liberty Gaming - Halo CE
+title: "[Join] "
+labels: [ "join-request" ]
+assignees: [ ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in joining **Liberty Gaming - Halo CE**!
+        
+        Please read our [Community Rules](https://liberty-ce.net/pages/community-rules) carefully before submitting this request.
+        By filling out this form you agree to abide by all the rules, both in-game and on our Discord.
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Rule Agreement
+      description: Confirm you have read and accepted our community rules.
+      options:
+        - label: I have read the [Community Rules](https://liberty-ce.net/pages/community-rules) and agree to follow them.
+          required: true
+  - type: input
+    id: gamertag
+    attributes:
+      label: Halo CE Gamer Tag
+      description: Your in‑game name (maximum 11 characters).
+      placeholder: e.g. LIB-ArcWolf
+    validations:
+      required: true
+      max_length: 11
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        _After submitting, an admin will review your request. You will be contacted via a reply on this issue.
+        Thank you for choosing Liberty Gaming – play smart, respect others, and have fun!_
