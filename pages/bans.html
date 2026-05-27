@@ -1,8 +1,4 @@
----
-layout: default
-title: Community Rules
----
-
+<!DOCTYPE html>
 <!--
   Liberty Gaming - Halo CE Website
   Developer: Jericho Crosby / Chalwk
@@ -199,16 +195,17 @@ title: Community Rules
         border-radius: 24px;
         background: var(--bg-panel);
         border: 1px solid var(--border-glow);
-        margin: 1rem 0;
+        margin: 1rem 0 0.5rem 0;
         scrollbar-width: thin;
         scrollbar-color: var(--primary) rgba(42, 169, 161, 0.2);
+        -webkit-overflow-scrolling: touch;
     }
 
     @media (max-width: 768px) {
         .table-wrapper {
             overflow-x: scroll;
             -webkit-overflow-scrolling: touch;
-            padding-bottom: 8px;
+            padding-bottom: 0px;
         }
     }
 
@@ -242,6 +239,32 @@ title: Community Rules
             scrollbar-width: thin;
             scrollbar-color: var(--primary) #1a1e26;
         }
+    }
+
+    .custom-scroll-indicator {
+        margin-top: 12px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        cursor: pointer;
+        backdrop-filter: blur(2px);
+        transition: height 0.1s;
+    }
+
+    .custom-scroll-indicator:hover {
+        height: 8px;
+    }
+
+    .scroll-progress {
+        width: 0%;
+        height: 100%;
+        background: var(--primary);
+        border-radius: 10px;
+        transition: width 0.08s linear;
+        box-shadow: 0 0 4px var(--primary);
     }
 
     .ban-table {
@@ -344,6 +367,13 @@ title: Community Rules
         font-weight: 600;
         color: var(--primary);
     }
+
+    .note {
+        text-align: center;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 1rem;
+    }
 </style>
 
 <div class="ban-header-section">
@@ -409,13 +439,17 @@ title: Community Rules
     </table>
 </div>
 
+<div class="custom-scroll-indicator" id="customScrollIndicator">
+    <div class="scroll-progress" id="scrollProgress"></div>
+</div>
+
 <div class="pagination" id="paginationControls">
     <button class="page-btn" id="prevPageBtn">◀ Prev</button>
     <span id="pageInfo">Page 0</span>
     <button class="page-btn" id="nextPageBtn">Next ▶</button>
 </div>
 
-<p class="note" style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 1rem;">
+<p class="note">
     <i class="fas fa-info-circle"></i> Ban records apply to Liberty Gaming Halo CE servers (MIX / RACING) and official
     Discord. Status is automatically determined by admin actions.
 </p>
@@ -430,11 +464,39 @@ title: Community Rules
         const refreshBtn = document.getElementById('refreshBtn');
         const statusMsgSpan = document.getElementById('statusMsg');
 
+        const tableWrapper = document.querySelector('.table-wrapper');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const customIndicator = document.getElementById('customScrollIndicator');
+
         let allBans = [];
         let filteredBans = [];
         let currentPage = 1;
         let pageSize = 10;
         let searchTerm = '';
+
+        function updateScrollProgress() {
+            if (!tableWrapper || !scrollProgress) return;
+            const scrollLeft = tableWrapper.scrollLeft;
+            const maxScroll = tableWrapper.scrollWidth - tableWrapper.clientWidth;
+            if (maxScroll <= 0) {
+                scrollProgress.style.width = '0%';
+                return;
+            }
+            const percent = (scrollLeft / maxScroll) * 100;
+            scrollProgress.style.width = percent + '%';
+        }
+
+        function handleIndicatorClick(e) {
+            if (!tableWrapper || !customIndicator) return;
+            const rect = customIndicator.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const ratio = clickX / rect.width;
+            const maxScroll = tableWrapper.scrollWidth - tableWrapper.clientWidth;
+            if (maxScroll > 0) {
+                tableWrapper.scrollLeft = ratio * maxScroll;
+                updateScrollProgress();
+            }
+        }
 
         function getStatusClass(statusRaw) {
             const upper = String(statusRaw).toUpperCase();
@@ -466,6 +528,7 @@ title: Community Rules
             if (!filteredBans.length) {
                 tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:2rem;"><i class="fas fa-ban"></i> No ban records match your filters.</td></tr>';
                 updatePaginationUI();
+                updateScrollProgress();
                 return;
             }
 
@@ -482,18 +545,19 @@ title: Community Rules
                 const statusDisplay = formatStatusText(ban.status);
 
                 html += `<tr>
-                <td><code>${escapeHtml(ban.banID)}</code></td>
-                <td>${escapeHtml(ban.userID)}</td>
-                <td>${escapeHtml(ban.serverID)}</td>
-                <td style="max-width:260px; white-space:normal;">${escapeHtml(ban.reason)}</td>
-                <td>${escapeHtml(ban.banDateTime)}</td>
-                <td>${escapeHtml(ban.banLength)}</td>
-                <td><span class="status-badge ${statusClass}">${statusDisplay}</span></td>
-            </tr>`;
+                    <td><code>${escapeHtml(ban.banID)}</code></td>
+                    <td>${escapeHtml(ban.userID)}</td>
+                    <td>${escapeHtml(ban.serverID)}</td>
+                    <td style="max-width:260px; white-space:normal;">${escapeHtml(ban.reason)}</td>
+                    <td>${escapeHtml(ban.banDateTime)}</td>
+                    <td>${escapeHtml(ban.banLength)}</td>
+                    <td><span class="status-badge ${statusClass}">${statusDisplay}</span></td>
+                </tr>`;
             }
 
             tbody.innerHTML = html;
             updatePaginationUI();
+            updateScrollProgress();
         }
 
         function updatePaginationUI() {
@@ -528,14 +592,12 @@ title: Community Rules
 
         function updateGlobalCounters(bans) {
             let active = 0, expired = 0, revoked = 0;
-
             for (const ban of bans) {
                 const s = String(ban.status).toUpperCase();
                 if (s === 'ACTIVE') active++;
                 else if (s === 'EXPIRED') expired++;
                 else if (s === 'REVOKED') revoked++;
             }
-
             activeSpan.innerText = active;
             expiredSpan.innerText = expired;
             revokedSpan.innerText = revoked;
@@ -544,16 +606,12 @@ title: Community Rules
         function parseBanFile(text) {
             const lines = text.split(/\r?\n/);
             const bans = [];
-
             for (let line of lines) {
                 line = line.trim();
                 if (!line || line.startsWith('#')) continue;
-
                 const parts = line.split(';');
                 if (parts.length < 7) continue;
-
                 const status = (parts[6] || '').toUpperCase();
-
                 bans.push({
                     banID: parts[0]?.trim() || '',
                     userID: parts[1]?.trim() || '',
@@ -571,12 +629,10 @@ title: Community Rules
         async function loadAndRender() {
             try {
                 statusMsgSpan.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Fetching bans...';
-
                 tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:2rem;">Loading bans...</td></tr>';
 
                 const res = await fetch('../data/bans.txt?t=' + Date.now());
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
                 const text = await res.text();
 
                 allBans = parseBanFile(text);
@@ -584,28 +640,23 @@ title: Community Rules
 
                 document.getElementById('searchInput').value = '';
                 applySearchFilter();
-
                 updateGlobalCounters(allBans);
-
-                lastUpdatedSpan.innerHTML =
-                    `<i class="far fa-calendar-alt"></i> ${new Date().toLocaleString()}`;
-
-                statusMsgSpan.innerHTML =
-                    `<i class="fas fa-check-circle"></i> Loaded ${allBans.length} ban records`;
-
+                lastUpdatedSpan.innerHTML = `<i class="far fa-calendar-alt"></i> ${new Date().toLocaleString()}`;
+                statusMsgSpan.innerHTML = `<i class="fas fa-check-circle"></i> Loaded ${allBans.length} ban records`;
+                setTimeout(() => updateScrollProgress(), 20);
             } catch (err) {
                 console.error(err);
 
                 tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:2rem; color:#ffa2a2;">
                 Failed to load bans.txt<br>
                 <small>${escapeHtml(err.message)}</small>
-            </td></tr>`;
+             </td></tr>`;
 
                 allBans = [];
                 filteredBans = [];
                 updateGlobalCounters([]);
-
                 statusMsgSpan.innerHTML = '❌ Failed to load bans';
+                updateScrollProgress();
             }
         }
 
@@ -614,26 +665,22 @@ title: Community Rules
                 searchTerm = e.target.value;
                 applySearchFilter();
             });
-
             document.getElementById('clearFiltersBtn').addEventListener('click', () => {
                 searchTerm = '';
                 document.getElementById('searchInput').value = '';
                 applySearchFilter();
             });
-
             document.getElementById('pageSizeSelect').addEventListener('change', e => {
                 pageSize = parseInt(e.target.value, 10);
                 currentPage = 1;
                 renderTable();
             });
-
             document.getElementById('prevPageBtn').addEventListener('click', () => {
                 if (currentPage > 1) {
                     currentPage--;
                     renderTable();
                 }
             });
-
             document.getElementById('nextPageBtn').addEventListener('click', () => {
                 const total = Math.ceil(filteredBans.length / pageSize);
                 if (currentPage < total) {
@@ -645,11 +692,22 @@ title: Community Rules
             refreshBtn.addEventListener('click', () => {
                 loadAndRender();
             });
+
+            if (tableWrapper) {
+                tableWrapper.addEventListener('scroll', updateScrollProgress);
+                window.addEventListener('resize', () => {
+                    updateScrollProgress();
+                });
+            }
+            if (customIndicator) {
+                customIndicator.addEventListener('click', handleIndicatorClick);
+            }
         }
 
         function init() {
             attachEvents();
             loadAndRender();
+            setTimeout(updateScrollProgress, 100);
         }
 
         init();

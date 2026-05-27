@@ -4,7 +4,7 @@
 # This file is part of the proprietary Liberty Gaming website.
 # Use, copying, or distribution without permission is strictly prohibited.
 
-name: 🎮 Join Request
+name: Join Request
 description: Apply to become a member of Liberty Gaming - Halo CE
 title: "Join Request for: <name>"
 labels: [ "join-request" ]

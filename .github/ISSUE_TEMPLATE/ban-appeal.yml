@@ -13,17 +13,17 @@ body:
   - type: markdown
     attributes:
       value: |
-        **🔍 Find Your Ban ID**
+        **Find Your Ban ID**
         > Before submitting, locate your ban in the [Ban Registry](https://liberty-ce.net/pages/bans).
         > You will need your **Ban ID** to complete this form. The Ban ID is shown in the first column of the table.
         >
-        > **📌 Describe the reason for your ban**
+        > **Describe the reason for your ban**
         > Provide a clear and concise description of the events leading to your ban.
         > Use headers (`#`) or lists (`-`) to organize your thoughts.
   - type: input
     id: ban-id
     attributes:
-      label: 🆔 Ban ID
+      label: Ban ID
       description: Your unique Ban ID as shown in the Liberty Gaming Ban Registry.
       placeholder: "e.g., 001"
     validations:
@@ -31,7 +31,7 @@ body:
   - type: textarea
     id: why-should-we-unban-you
     attributes:
-      label: 🔍 Why should we unban you?
+      label: Why should we unban you?
       description: Explain why you believe you should be reinstated on the Liberty Gaming Halo servers or Discord.
       placeholder: "Write your reason here"
     validations:
@@ -39,7 +39,7 @@ body:
   - type: input
     id: contact-info
     attributes:
-      label: ✔️ Contact Information
+      label: Contact Info
       description: Provide your Discord username and Halo gamertag/username for verification.
       placeholder: "Discord: YourUsername | Halo: YourGamertag"
     validations:
@@ -47,9 +47,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        **📷 Screenshots or Logs**
+        **Screenshots or Logs**
         > Include any relevant screenshots, logs, or evidence that may support your appeal.
         >
-        > 🙌 Thank you
+        > Thank you
         >
         > **We appreciate your effort in appealing your ban from Liberty Gaming. Your input helps us maintain a fair and enjoyable environment for everyone.**
