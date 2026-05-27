@@ -61,10 +61,18 @@ title: Bans
         font-size: 0.95rem;
     }
 
+    /* Button container - left aligned */
+    .appeal-buttons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
     .appeal-btn {
         background: #c44536;
         border: none;
-        padding: 0.6rem 1.6rem;
+        padding: 0.6rem 1.2rem;
         border-radius: 40px;
         font-weight: 600;
         font-size: 0.85rem;
@@ -75,11 +83,31 @@ title: Bans
         display: inline-flex;
         align-items: center;
         gap: 8px;
+        white-space: nowrap;
     }
 
     .appeal-btn:hover {
         background: #a03426;
         transform: scale(1.02);
+    }
+
+    /* Email button specific style + hover fix */
+    .appeal-btn.email-btn {
+        background: #2aa9a1;
+    }
+
+    .appeal-btn.email-btn:hover {
+        background: #1e7e78 !important;
+        color: white !important;
+    }
+
+    /* OR separator */
+    .appeal-or {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary);
+        background: transparent;
+        padding: 0 0.25rem;
     }
 
     .summary-card {
@@ -328,11 +356,14 @@ title: Bans
 
 <div class="appeal-banner">
     <p><i class="fas fa-scale-balanced"></i> <strong>Dispute a ban?</strong> If you believe you've been banned unfairly
-        from Liberty Gaming servers or Discord, please contact our admin team.</p>
-    <a class="appeal-btn" href="https://github.com/Chalwk/liberty-ce/issues/new?template=ban-appeal.yml"
-       target="_blank">
-        ✉️ Submit Ban Appeal
-    </a>
+        from Liberty Gaming servers or Discord, please contact our admin team via GitHub or email.</p>
+    <div class="appeal-buttons">
+        <a class="appeal-btn" href="https://github.com/Chalwk/liberty-ce/issues/new?template=ban-appeal.yml"
+           target="_blank"><i class="fab fa-github"></i> Appeal via GitHub</a>
+        <span class="appeal-or">OR</span>
+        <a class="appeal-btn email-btn" href="mailto:LIBERTYCLAN202@GMAIL.COM"><i class="fas fa-envelope"></i> Email:
+            LIBERTYCLAN202@GMAIL.COM</a>
+    </div>
 </div>
 
 <div class="summary-card">
@@ -604,7 +635,7 @@ title: Bans
                 tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:2rem; color:#ffa2a2;">
                 Failed to load bans.txt<br>
                 <small>${escapeHtml(err.message)}</small>
-             </td></tr>`;
+              </td></tr>`;
 
                 allBans = [];
                 filteredBans = [];
