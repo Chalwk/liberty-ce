@@ -4,7 +4,7 @@
 # This file is part of the proprietary Liberty Gaming website.
 # Use, copying, or distribution without permission is strictly prohibited.
 
-name: 🚫 Ban Appeal
+name: Ban Appeal
 description: Submit an appeal to contest a ban from Liberty Gaming – Halo CE servers or Discord.
 title: "Ban Appeal for: <name>"
 labels: [ "ban-appeal" ]
