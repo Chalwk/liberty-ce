@@ -26,13 +26,14 @@ title: Home
     <div class="server-card">
         <h3>! ++ LIBERTY - MIX ++ !</h3>
         <span class="ip">185.107.96.224:2302</span>
-        <p>Classic & custom mix - CTF, Slayer, Oddball, KoH. 20 min games.</p>
+        <p>Classic & custom mix - CTF, Slayer, Oddball, KoH.</p>
         <a class="btn" href="pages/servers">View Rotation</a>
     </div>
+
     <div class="server-card">
         <h3>! ++ LIBERTY - RACING ++ !</h3>
         <span class="ip">185.107.96.219:2302</span>
-        <p>Dedicated racing - circuit tracks, obstacle courses, and more.</p>
+        <p>Dedicated racing - custom maps, race stats, leaderboards, and more.</p>
         <a class="btn" href="pages/servers">View Rotation</a>
     </div>
 </div>
@@ -61,40 +62,45 @@ title: Home
     </div>
 </div>
 
-<h2><i class="fab fa-discord"></i> Connect With Us</h2>
-<div class="community-hub">
-    <div class="community-card">
-        <i class="fab fa-discord"></i>
-        <h3>Discord</h3>
-        <p>Chat with players, get server alerts, and organize games.</p>
-        <a class="btn" href="https://discord.gg/3J2Zppghz5" target="_blank">Join Discord</a>
-    </div>
-    <div class="community-card">
-        <i class="fab fa-facebook-f"></i>
-        <h3>Facebook</h3>
-        <p>Join our Facebook page for updates, discussions, and Halo content.</p>
-        <a class="btn" href="https://www.facebook.com/LibertyClan" target="_blank">Visit Page</a>
-    </div>
-    <div class="community-card">
-        <i class="fas fa-envelope"></i>
-        <h3>Email</h3>
-        <p>Have questions? Reach out to us directly.</p>
-        <a class="btn" href="mailto:libertyclan2024@gmail.com">libertyclan2024@gmail.com</a>
-    </div>
-</div>
-
 <div class="join-section">
     <h3><i class="fas fa-user-plus"></i> Interested in Joining Liberty?</h3>
-    <p>If you're ready to become a part of our Halo CE community, we'd love to hear from you. Please review our <a
-            class="rules-link" href="pages/community-rules">Community Rules</a> to ensure a respectful and enjoyable
-        experience for everyone.</p>
-    <p><strong>How to format your name:</strong> Choose a <strong>7-character</strong> identifier that becomes part of
-        your full 11‑character Halo nametag.<br>
-        Example: <code>LIB-MyNames</code> (total 11 characters).</p>
-    <p>Email your request to: <a class="email-link"
-                                 href="mailto:libertyclan2024@gmail.com">libertyclan2024@gmail.com</a>
+    <p>
+        If you're ready to become a part of our Halo CE community, we'd love to hear from you.
     </p>
-    <p>Once we receive your email, we’ll reply with further instructions. Welcome to Liberty! 👍 😎</p>
+    <p>
+        Please review our <a class="rules-link" href="pages/community-rules">Community Rules</a> to ensure a respectful
+        and enjoyable experience for everyone.
+    </p>
+    <p>
+        <strong>How to format your name:</strong>
+        Choose a <strong>7-character</strong> identifier that becomes part of your full 11-character Halo nametag.<br>
+        Example: <strong>LIB-MyNames</strong> (total 11 characters).
+    </p>
+    <p>
+        Email your request to: <a class="email-link"
+                                  href="mailto:libertyclan2024@gmail.com">libertyclan2024@gmail.com</a>
+    </p>
+    <p>Once we receive your email, we'll reply with further instructions. Welcome to Liberty! 👍 😎</p>
+
+    <h2 class="connect">Connect With Us</h2>
+    <div class="community-hub">
+        <a class="community-card" href="https://discord.gg/3J2Zppghz5" rel="noopener noreferrer" target="_blank">
+            <i class="fab fa-discord"></i>
+            <h3>Discord</h3>
+            <p>Chat with players, get server alerts, and organize games.</p>
+        </a>
+        <a class="community-card" href="https://www.facebook.com/LibertyClan" rel="noopener noreferrer" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+            <h3>Facebook</h3>
+            <p>Join our Facebook page for updates, discussions, and Halo content.</p>
+        </a>
+        <a class="community-card" href="mailto:libertyclan2024@gmail.com">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>libertyclan2024@gmail</p>
+        </a>
+
+    </div>
 </div>
 
 <style>
@@ -221,70 +227,6 @@ title: Home
         line-height: 1.5;
     }
 
-    .community-hub {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-        margin: 2rem 0 3rem;
-    }
-
-    .community-card {
-        background: rgba(10, 12, 15, 0.8);
-        border: 1px solid var(--border-glow);
-        border-radius: 30px;
-        padding: 2rem 1.5rem;
-        text-align: center;
-        transition: var(--transition);
-        /* Equal width and height */
-        flex: 1 1 280px;
-        max-width: 320px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .community-card:hover {
-        transform: translateY(-6px);
-        border-color: var(--primary);
-        box-shadow: 0 0 20px var(--primary);
-    }
-
-    .community-card i {
-        font-size: 3.5rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-    }
-
-    .community-card h3 {
-        font-size: 1.6rem;
-        margin-bottom: 0.8rem;
-        color: var(--accent);
-    }
-
-    .community-card p {
-        color: var(--text-muted);
-        margin-bottom: 1.2rem;
-        font-size: 0.95rem;
-        flex-grow: 1;
-    }
-
-    .community-card .btn {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-        white-space: nowrap;
-        overflow-x: auto;
-        display: inline-block;
-        margin-top: auto;
-        text-align: center;
-    }
-
-    @media (max-width: 550px) {
-        .community-card .btn {
-            white-space: normal;
-            word-break: break-all;
-        }
-    }
-
     .join-section {
         text-align: center;
         background: rgba(26, 30, 36, 0.8);
@@ -312,12 +254,21 @@ title: Home
     .join-section .email-link,
     .join-section .rules-link {
         font-weight: bold;
-        background: var(--bg-panel);
-        padding: 0.2rem 0.8rem;
-        border-radius: 30px;
-        border: 1px solid var(--primary);
-        display: inline-block;
+        color: var(--primary);
+        text-decoration: none;
+        background: none;
+        border: none;
+        padding: 0;
         margin: 0 0.2rem;
+        display: inline;
+        transition: color 0.2s;
+    }
+
+    .join-section .email-link:hover,
+    .join-section .rules-link:hover {
+        color: var(--accent);
+        background: none;
+        border: none;
     }
 
     .join-section code {
@@ -327,6 +278,74 @@ title: Home
         font-family: monospace;
         color: var(--primary);
         font-size: 1rem;
+    }
+
+    .join-section .connect {
+        font-size: 1.8rem;
+        margin: 2rem 0 1.2rem;
+        border-left: none;
+        text-align: center;
+        padding-left: 0;
+        color: var(--primary);
+    }
+
+    .join-section .community-hub {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .join-section .community-card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+
+        padding: 0.8rem;
+        text-align: center;
+        transition: transform 0.2s ease;
+
+        flex: 1 1 170px;
+        max-width: 200px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .join-section .community-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .join-section .community-card i {
+        font-size: 2.5rem;
+        color: var(--primary);
+        transition: color 0.2s, text-shadow 0.2s;
+        margin-bottom: 0.6rem;
+    }
+
+    .join-section .community-card:hover i {
+        color: var(--accent);
+        text-shadow: 0 0 6px var(--accent);
+    }
+
+    .join-section .community-card h3 {
+        font-size: 1.3rem;
+        margin: 0.2rem 0 0.4rem;
+        color: var(--accent);
+    }
+
+    .join-section .community-card p {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-bottom: 0;
+        line-height: 1.3;
     }
 
     @media (max-width: 700px) {
@@ -346,12 +365,6 @@ title: Home
             font-size: 1.5rem;
         }
 
-        .community-card {
-            flex: 1 1 260px;
-            max-width: 300px;
-            padding: 1.5rem;
-        }
-
         .join-section {
             padding: 1.5rem;
         }
@@ -360,10 +373,22 @@ title: Home
             font-size: 1.6rem;
         }
 
-        .join-section .email-link,
-        .join-section .rules-link {
-            font-size: 1rem;
-            padding: 0.2rem 0.6rem;
+        .join-section .community-card {
+            flex: 1 1 140px;
+            max-width: 160px;
+            padding: 0.8rem 0.5rem;
+        }
+
+        .join-section .community-card i {
+            font-size: 2rem;
+        }
+
+        .join-section .community-card h3 {
+            font-size: 1.1rem;
+        }
+
+        .join-section .connect {
+            font-size: 1.5rem;
         }
     }
 </style>
