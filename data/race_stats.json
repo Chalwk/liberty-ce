@@ -871,9 +871,9 @@
         "laps": 9
       },
       "LIB-Chalwk": {
-        "average": 80.143333333333,
-        "best": 77.6,
-        "laps": 3
+        "average": 77.1,
+        "best": 77.1,
+        "laps": 1
       },
       "LIB-Cyber": {
         "average": 90.38,
@@ -1267,11 +1267,6 @@
         "average": 155.65666666667,
         "best": 149.83,
         "laps": 3
-      },
-      "{L�E�}Atom�": {
-        "average": 157.06,
-        "best": 138.66,
-        "laps": 4
       }
     }
   },
@@ -2823,20 +2818,10 @@
         "best": 103.63,
         "laps": 7
       },
-      "{LºEº}þig®": {
-        "average": 130.9,
-        "best": 130.9,
-        "laps": 2
-      },
       "{L�E�}Atom�": {
         "average": 104.3,
         "best": 102.63,
         "laps": 1
-      },
-      "{L�E�}�ig�": {
-        "average": 134.19,
-        "best": 112.14,
-        "laps": 3
       }
     }
   },
@@ -3458,9 +3443,9 @@
         "laps": 2
       },
       "LIB-Chalwk": {
-        "average": 60.5025,
+        "average": 59.03,
         "best": 56.8,
-        "laps": 4
+        "laps": 2
       },
       "LIB-Cyber": {
         "average": 93.524444444444,
