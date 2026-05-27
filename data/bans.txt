@@ -1,6 +1,6 @@
 001;TᑌᗰᗷᗩᑕᑌᒪOᔕ;*;Dossing servers, ban evasion, language, cheats;-;ACTIVE
 002;MAJA CUNT;*;-;2024-12-28 23:11:09;ACTIVE
-003;HORUS;MIX;-;2025-08-23 21:42:22;ACTIVE
+003;HORUS;MIX;Walling/Aimbotting;2025-08-23 21:42:22;ACTIVE
 004;LIB-Descono;RACE;Unauthorized clan tag use.;2025-09-19 22:33:29;ACTIVE
 005;=`)))((((:;RACE;-;-;ACTIVE
 006;EL-NEGRO;RACE;-;-;ACTIVE
