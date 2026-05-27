@@ -6,27 +6,20 @@
 
 title: Liberty Gaming - Halo CE
 description: Official website for Liberty Gaming Halo CE community.
-
 url: "https://liberty-ce.net"
 baseurl: ""
-
 locale: en_GB
 timezone: Europe/London
-
 social:
   name: Liberty Gaming - Halo CE
   links:
     - https://discord.gg/invite/aQXhJy8UTT
     - https://www.facebook.com/LibertyClan
-    - LIBERTYCLAN202@GMAIL.COM
-
+    - LIBERTYCLAN2024@GMAIL.COM
 site_scale: 0.65
-
 sass:
   style: compressed
-
 incremental: true
-
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
