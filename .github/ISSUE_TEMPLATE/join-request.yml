@@ -6,7 +6,7 @@
 
 name: 🎮 Join Request
 description: Apply to become a member of Liberty Gaming - Halo CE
-title: "[Join] "
+title: "Join Request for: <name>"
 labels: [ "join-request" ]
 assignees: [ ]
 body:

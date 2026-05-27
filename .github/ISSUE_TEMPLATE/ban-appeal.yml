@@ -1,0 +1,55 @@
+# Liberty Gaming - Halo CE Website
+# Developer: Jericho Crosby / Chalwk
+# Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
+# This file is part of the proprietary Liberty Gaming website.
+# Use, copying, or distribution without permission is strictly prohibited.
+
+name: 🚫 Ban Appeal
+description: Submit an appeal to contest a ban from Liberty Gaming – Halo CE servers or Discord.
+title: "Ban Appeal for: <name>"
+labels: [ "ban-appeal" ]
+assignees: [ ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **🔍 Find Your Ban ID**
+        > Before submitting, locate your ban in the [Ban Registry](https://liberty-ce.net/pages/bans).
+        > You will need your **Ban ID** to complete this form. The Ban ID is shown in the first column of the table.
+        >
+        > **📌 Describe the reason for your ban**
+        > Provide a clear and concise description of the events leading to your ban.
+        > Use headers (`#`) or lists (`-`) to organize your thoughts.
+  - type: input
+    id: ban-id
+    attributes:
+      label: 🆔 Ban ID
+      description: Your unique Ban ID as shown in the Liberty Gaming Ban Registry.
+      placeholder: "e.g., 001"
+    validations:
+      required: true
+  - type: textarea
+    id: why-should-we-unban-you
+    attributes:
+      label: 🔍 Why should we unban you?
+      description: Explain why you believe you should be reinstated on the Liberty Gaming Halo servers or Discord.
+      placeholder: "Write your reason here"
+    validations:
+      required: true
+  - type: input
+    id: contact-info
+    attributes:
+      label: ✔️ Contact Information
+      description: Provide your Discord username and Halo gamertag/username for verification.
+      placeholder: "Discord: YourUsername | Halo: YourGamertag"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        **📷 Screenshots or Logs**
+        > Include any relevant screenshots, logs, or evidence that may support your appeal.
+        >
+        > 🙌 Thank you
+        >
+        > **We appreciate your effort in appealing your ban from Liberty Gaming. Your input helps us maintain a fair and enjoyable environment for everyone.**
