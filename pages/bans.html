@@ -200,6 +200,48 @@ title: Community Rules
         background: var(--bg-panel);
         border: 1px solid var(--border-glow);
         margin: 1rem 0;
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary) rgba(42, 169, 161, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .table-wrapper {
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 8px;
+        }
+    }
+
+    .table-wrapper::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+        background-color: rgba(20, 22, 26, 0.95);
+        border-radius: 20px;
+    }
+
+    .table-wrapper::-webkit-scrollbar-track {
+        background: #1a1e26;
+        border-radius: 20px;
+        margin: 0 4px;
+        border: 1px solid rgba(42, 169, 161, 0.3);
+    }
+
+    .table-wrapper::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 20px;
+        transition: 0.1s;
+    }
+
+    .table-wrapper::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-dark);
+        cursor: pointer;
+    }
+
+    @supports (scrollbar-width: thin) {
+        .table-wrapper {
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) #1a1e26;
+        }
     }
 
     .ban-table {
