@@ -11,8 +11,6 @@ community, which runs Halo: Custom Edition servers.
 
 The following files are dynamically maintained and consumed by different parts of the site and build system:
 
-## Dynamic Data Files
-
 | File                                           | Description                                                  | Used by                                                                                                                 |
 |------------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | [/data/maps.txt](/data/maps.txt)               | Dynamic map list used across the build system                | - [servers.html](/pages/servers.html)<br>- [build-maps.yml](.github/workflows/build-maps.yml) (GitHub Actions workflow) |
