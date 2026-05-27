@@ -213,64 +213,6 @@ title: Bans
         }
     }
 
-    .table-wrapper::-webkit-scrollbar {
-        height: 10px;
-        width: 10px;
-        background-color: rgba(20, 22, 26, 0.95);
-        border-radius: 20px;
-    }
-
-    .table-wrapper::-webkit-scrollbar-track {
-        background: #1a1e26;
-        border-radius: 20px;
-        margin: 0 4px;
-        border: 1px solid rgba(42, 169, 161, 0.3);
-    }
-
-    .table-wrapper::-webkit-scrollbar-thumb {
-        background: var(--primary);
-        border-radius: 20px;
-        transition: 0.1s;
-    }
-
-    .table-wrapper::-webkit-scrollbar-thumb:hover {
-        background: var(--primary-dark);
-        cursor: pointer;
-    }
-
-    @supports (scrollbar-width: thin) {
-        .table-wrapper {
-            scrollbar-width: thin;
-            scrollbar-color: var(--primary) #1a1e26;
-        }
-    }
-
-    .custom-scroll-indicator {
-        margin-top: 12px;
-        height: 6px;
-        background: rgba(255, 255, 255, 0.12);
-        border-radius: 10px;
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        cursor: pointer;
-        backdrop-filter: blur(2px);
-        transition: height 0.1s;
-    }
-
-    .custom-scroll-indicator:hover {
-        height: 8px;
-    }
-
-    .scroll-progress {
-        width: 0%;
-        height: 100%;
-        background: var(--primary);
-        border-radius: 10px;
-        transition: width 0.08s linear;
-        box-shadow: 0 0 4px var(--primary);
-    }
-
     .ban-table {
         width: 100%;
         border-collapse: collapse;
@@ -424,18 +366,17 @@ title: Bans
     <table class="ban-table" id="banTable">
         <thead>
         <tr>
-            <th>Ban ID</th>
+            <th>BID</th>
             <th>PID</th>
             <th>SID</th>
             <th>Reason</th>
             <th>Date & Time</th>
-            <th>Ban Length</th>
             <th>Status</th>
         </tr>
         </thead>
         <tbody id="banTableBody">
         <tr class="loading-row">
-            <td colspan="7" style="text-align:center; padding:2rem;">
+            <td colspan="6" style="text-align:center; padding:2rem;">
                 <i class="fas fa-spinner fa-pulse"></i> Loading bans from Liberty database...
             </td>
         </tr>
@@ -522,17 +463,15 @@ title: Bans
             if (!str) return '—';
             return String(str).replace(/[&<>]/g, m => {
                 if (m === '&') return '&amp;';
-                if (m === '<') return '&lt;';
                 if (m === '>') return '&gt;';
+                if (m === '<') return '&lt;';
                 return m;
             }) || '—';
         }
 
         function renderTable() {
             if (!filteredBans.length) {
-                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:2rem;"><i class="fas fa-ban"></i> No ban records match your filters.</td></tr>';
-                updatePaginationUI();
-                updateScrollProgress();
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:2rem;"><i class="fas fa-ban"></i> No ban records match your filters.</td></tr>';
                 return;
             }
 
@@ -554,7 +493,6 @@ title: Bans
                     <td>${escapeHtml(ban.serverID)}</td>
                     <td style="max-width:260px; white-space:normal;">${escapeHtml(ban.reason)}</td>
                     <td>${escapeHtml(ban.banDateTime)}</td>
-                    <td>${escapeHtml(ban.banLength)}</td>
                     <td><span class="status-badge ${statusClass}">${statusDisplay}</span></td>
                 </tr>`;
             }
@@ -610,20 +548,32 @@ title: Bans
         function parseBanFile(text) {
             const lines = text.split(/\r?\n/);
             const bans = [];
+
             for (let line of lines) {
                 line = line.trim();
                 if (!line || line.startsWith('#')) continue;
-                const parts = line.split(';');
-                if (parts.length < 7) continue;
-                const status = (parts[6] || '').toUpperCase();
+
+                const parts = line.split(';').map(p => p.trim());
+                if (parts.length < 6) continue;
+
+                const banID = parts[0] || '';
+                const userID = parts[1] || '';
+                const serverID = parts[2] || '';
+                const reason = parts[3] || '';
+                const banDateTime = parts[4] || '';
+                const statusRaw = parts[parts.length - 1] || '';
+                const status = ['ACTIVE', 'EXPIRED', 'REVOKED'].includes(statusRaw.toUpperCase())
+                    ? statusRaw.toUpperCase()
+                    : 'UNKNOWN';
+                const banLength = parts.length >= 7 ? parts[5] : '';
                 bans.push({
-                    banID: parts[0]?.trim() || '',
-                    userID: parts[1]?.trim() || '',
-                    serverID: parts[2]?.trim() || '',
-                    reason: parts[3]?.trim() || '',
-                    banDateTime: parts[4]?.trim() || '',
-                    banLength: parts[5]?.trim() || '',
-                    status: ['ACTIVE', 'EXPIRED', 'REVOKED'].includes(status) ? status : 'UNKNOWN'
+                    banID,
+                    userID,
+                    serverID,
+                    reason,
+                    banDateTime,
+                    banLength,
+                    status
                 });
             }
 
@@ -633,7 +583,7 @@ title: Bans
         async function loadAndRender() {
             try {
                 statusMsgSpan.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Fetching bans...';
-                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:2rem;">Loading bans...</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:2rem;">Loading bans...</td></tr>';
 
                 const res = await fetch('../data/bans.txt?t=' + Date.now());
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -651,7 +601,7 @@ title: Bans
             } catch (err) {
                 console.error(err);
 
-                tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:2rem; color:#ffa2a2;">
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:2rem; color:#ffa2a2;">
                 Failed to load bans.txt<br>
                 <small>${escapeHtml(err.message)}</small>
              </td></tr>`;

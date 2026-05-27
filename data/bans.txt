@@ -1,9 +1,9 @@
-001;TᑌᗰᗷᗩᑕᑌᒪOᔕ;*;Persistent dossing of Halo servers, ban evasion, explicit language and using cheats;-;Permanent;ACTIVE
-002;=`)))((((:;RACE;-;-;Permanent;ACTIVE
-003;EL-NEGRO;RACE;-;-;Permanent;ACTIVE
-004;Timmy!;RACE;-;-;Permanent;ACTIVE
-005;MAJA CUNT;RACE;-;-;Permanent;ACTIVE
-006;{BK}DaNtE;RACE;-;-;Permanent;ACTIVE
-007;[héhé];RACE;-;-;Permanent;ACTIVE
-008;LIB-Descono;RACE;-;-;Permanent;ACTIVE
-009;{LºEº}Sero;RACE;-;-;Permanent;ACTIVE
+001;TᑌᗰᗷᗩᑕᑌᒪOᔕ;*;Dossing servers, ban evasion, language, cheats;-;ACTIVE
+002;=`)))((((:;RACE;-;-;ACTIVE
+003;EL-NEGRO;RACE;-;-;ACTIVE
+004;Timmy!;RACE;-;-;ACTIVE
+005;MAJA CUNT;RACE;-;-;ACTIVE
+006;{BK}DaNtE;RACE;-;-;ACTIVE
+007;[héhé];RACE;-;-;ACTIVE
+008;LIB-Descono;RACE;-;-;ACTIVE
+009;{LºEº}Sero;RACE;-;-;ACTIVE
