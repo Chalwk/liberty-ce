@@ -11,18 +11,14 @@ community, which runs Halo: Custom Edition servers.
 
 The following files are dynamically maintained and consumed by different parts of the site and build system:
 
-- [/data/maps.txt](/data/maps.txt)  
-  Used by:
-    - [servers.html](./pages/servers.html)
-    - [build-maps.yml](.github/workflows/build-maps.yml) - GitHub Actions workflow
+## Dynamic Data Files
 
-- [/data/members.txt](/data/members.txt) - Active member list used across the site.
-
-- [/data/race_stats.json](/data/race_stats.json)  
-  Used by:
-    - [race_stats.html](./pages/race_stats.html)
-
-- [/data/bans.txt](/data/bans.txt) - Ban list used for server moderation (Discord + Halo Servers)
+| File                                           | Description                                                  | Used by                                                                                                                 |
+|------------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| [/data/maps.txt](/data/maps.txt)               | Dynamic map list used across the build system                | - [servers.html](/pages/servers.html)<br>- [build-maps.yml](.github/workflows/build-maps.yml) (GitHub Actions workflow) |
+| [/data/members.txt](/data/members.txt)         | Active member list used across the site                      | -                                                                                                                       |
+| [/data/race_stats.json](/data/race_stats.json) | Race statistics data file                                    | - [race_stats.html](/pages/race_stats.html)                                                                             |
+| [/data/bans.txt](/data/bans.txt)               | Ban list used for server moderation (Discord + Halo Servers) | -                                                                                                                       |
 
 ---
 
