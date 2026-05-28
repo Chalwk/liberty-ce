@@ -7,4 +7,4 @@
 007;Timmy!;RACE;-;-;ACTIVE
 008;{BK}DaNtE;RACE;-;-;ACTIVE
 009;[héhé];RACE;-;-;ACTIVE
-010;{LºEº}Sero;RACE;-;-;ACTIVE
+010;{LºEº}Sero;RACE;Server Poaching;-;ACTIVE
