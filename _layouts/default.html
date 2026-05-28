@@ -7,16 +7,17 @@
 -->
 
 <!DOCTYPE html>
+
 <html lang="en">
 {% include head.html %}
 <body>
-<header class="header">
-    {% include header.html %}
-</header>
-<main>
-    {{ content }}
-</main>
+
+<header class="header">{% include header.html %} </header>
+
+<main>{{ content }}</main>
+
 {% include footer.html %}
+
 <script defer src="{{ site.baseurl }}/assets/js/scripts.js"></script>
 </body>
 </html>
