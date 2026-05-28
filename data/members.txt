@@ -1,20 +1,20 @@
 LIB-Akuma;🇮🇹 Italy;Member
 LIB-Ales;🇵🇦 Panama;Member
 LIB-AMouse;🇳🇱 Netherlands;Member
-LIB-Chalwk;🇳🇿 New Zealand;Member
-LIB-Cyber;🇦🇹 Austria;Founder
+LIB-Chalwk;🇳🇿 New Zealand;Member,Server Admin,Discord Admin
+LIB-Cyber;🇦🇹 Austria;Founder,Discord Admin
 LIB-Easy;🇳🇱 Netherlands;Member
 LIB-Eddy;🇪🇹 Ethiopia;Member
 LIB-Epic;🇺🇸 United States;Member
 LIB-JBomb;🇬🇧 United Kingdom;Member
-LIB-Maja;🇩🇪 Germany;Founder
+LIB-Maja;🇩🇪 Germany;Founder,Server Admin,Discord Admin
 LIB-Mina;🇨🇴 Colombia;Member
 LIB-Nasio;🇪🇸 Spain;Member
 LIB-Oldi;🇩🇪 Germany;Member
-LIB-Perico;🇬🇧 United Kingdom;Founder
+LIB-Perico;🇬🇧 United Kingdom;Founder,Server Admin,Discord Admin
 LIB-Renard;🇲🇽 Mexico;Member
-LIB-Rookie;🇺🇸 United States;Member
+LIB-Rookie;🇺🇸 United States;Member,Server Admin
 LIB-Spark;🇷🇸 Serbia;Member
 LIB-Spirou;🇳🇱 Netherlands;Member
 LIB-Thors;🇺🇸 United States;Member
-LIB-Vegeta;🇪🇸 Spain;Member
+LIB-Vegeta;🇪🇸 Spain;Member,Server Admin

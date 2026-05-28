@@ -114,19 +114,19 @@ title: Members
         display: inline-block;
     }
 
-    .role-founder {
+    .member-role {
         color: var(--primary);
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        background: rgba(42, 169, 161, 0.15);
-        border: 1px solid rgba(42, 169, 161, 0.5);
-        border-radius: 30px;
-        padding: 0.2rem 0.65rem;
-        font-size: 0.7rem;
-        line-height: 1;
-        display: inline-block;
+        font-size: 0.72rem;
         white-space: nowrap;
+    }
+
+    .member-role + .member-role::before {
+        content: " • ";
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 400;
     }
 
     .status-text {
@@ -229,30 +229,21 @@ title: Members
             });
         }
 
-        function formatRoleText(roleRaw) {
-            if (!roleRaw) return '<span class="status-text">Member</span>';
-            const roleChunks = roleRaw.split(/,|\/|\\|\s\/\s/).map(r => r.trim()).filter(Boolean);
-            if (roleChunks.length === 0) return '<span class="status-text">Member</span>';
+        function parseRoles(roleRaw) {
+            if (!roleRaw) return ['Member'];
 
-            if (roleChunks.length > 1) {
-                const parts = roleChunks.map((role, idx) => {
-                    if (/\bFounder\b/i.test(role)) {
-                        return `<span class="role-founder">${escapeHtml(role)}</span>`;
-                    }
-                    return `<span class="status-text">${escapeHtml(role)}</span>`;
-                });
-                return parts.reduce((prev, curr, i) => {
-                    if (i === 0) return curr;
-                    return prev + ', ' + curr;
-                }, '');
-            } else {
-                const singleRole = roleChunks[0];
-                if (/\bFounder\b/i.test(singleRole)) {
-                    return `<span class="role-founder">${escapeHtml(singleRole)}</span>`;
-                } else {
-                    return `<span class="status-text">${escapeHtml(singleRole)}</span>`;
-                }
-            }
+            return roleRaw
+                .split(/[,/\\|]+/)
+                .map(role => role.trim())
+                .filter(Boolean);
+        }
+
+        function formatRoleText(roleRaw) {
+            const roles = parseRoles(roleRaw);
+
+            return roles.map(role => {
+                return `<span class="member-role">${escapeHtml(role)}</span>`;
+            }).join('');
         }
 
         fetch('../data/members.txt')
@@ -276,7 +267,6 @@ title: Members
                 for (const line of lines) {
                     const parts = line.split(';').map(s => s.trim());
                     if (parts.length < 3) continue;
-
                     const [name, flagCountry, roles] = parts;
                     let flagEmoji = flagCountry;
                     let countryName = '';
@@ -294,22 +284,22 @@ title: Members
 
                     const tdCountry = document.createElement('td');
                     tdCountry.setAttribute('data-label', 'Country');
+
                     const flagSpan = document.createElement('span');
                     flagSpan.className = 'country-flag';
                     flagSpan.textContent = flagEmoji;
                     tdCountry.appendChild(flagSpan);
+
                     if (countryName) {
                         tdCountry.appendChild(document.createTextNode(' ' + countryName));
-                    } else if (flagEmoji && !countryName) {
-                        tdCountry.appendChild(document.createTextNode(''));
                     }
+
                     tr.appendChild(tdCountry);
 
                     const tdRoles = document.createElement('td');
                     tdRoles.setAttribute('data-label', 'Status');
                     tdRoles.innerHTML = formatRoleText(roles);
                     tr.appendChild(tdRoles);
-
                     tbody.appendChild(tr);
                     validCount++;
                 }
@@ -317,9 +307,9 @@ title: Members
                 if (memberCountSpan) {
                     memberCountSpan.textContent = validCount.toString();
                 }
-
                 if (validCount === 0 && tbody.children.length === 0) {
-                    tbody.innerHTML = '<tr class="no-results-row"><td colspan="3"><i class="fas fa-search"></i> No valid member entries.</td></tr>';
+                    tbody.innerHTML =
+                        '<tr class="no-results-row"><td colspan="3"><i class="fas fa-search"></i> No valid member entries.</td></tr>';
                 }
             })
             .catch(error => {
@@ -328,11 +318,8 @@ title: Members
                     memberCountSpan.textContent = '0';
                 }
                 if (tbody) {
-                    tbody.innerHTML = `<tr class="error-row"><td colspan="3" style="color: #ff8a7a; text-align: center;"><i class="fas fa-exclamation-triangle"></i> Failed to load member data. Make sure members.txt exists in the data folder.</td></tr>`;
-                }
-                const badgeSpan = document.getElementById('total-member-count-badge');
-                if (badgeSpan) {
-
+                    tbody.innerHTML =
+                        `<tr class="error-row"><td colspan="3" style="color: #ff8a7a; text-align: center;"><i class="fas fa-exclamation-triangle"></i> Failed to load member data. Make sure members.txt exists in the data folder.</td></tr>`;
                 }
             });
     });
