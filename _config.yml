@@ -4,22 +4,40 @@
 # This file is part of the proprietary Liberty Gaming website.
 # Use, copying, or distribution without permission is strictly prohibited.
 
+
 title: Liberty Gaming - Halo CE
 description: Official website for Liberty Gaming Halo CE community.
+
 url: "https://liberty-ce.net"
 baseurl: ""
 locale: en_GB
 timezone: Europe/London
-social:
-  name: Liberty Gaming - Halo CE
-  links:
-    - https://discord.gg/invite/aQXhJy8UTT
-    - https://www.facebook.com/LibertyClan
-    - LIBERTYCLAN2024@GMAIL.COM
 site_scale: 0.65
+
+author:
+  name: Liberty Gaming
+  url: https://github.com/Chalwk
+
+image: /assets/images/avatar.png
+favicon: favicon.ico
+
+links:
+  email: LIBERTYCLAN2024@GMAIL.COM
+  discord: https://discord.gg/invite/aQXhJy8UTT
+  facebook: https://www.facebook.com/LibertyClan
+  ban_appeal: https://github.com/Chalwk/liberty-ce/issues/new?template=ban-appeal.yml
+  join_request: https://github.com/Chalwk/liberty-ce/issues/new?template=join-request.yml
+
 sass:
   style: compressed
+
 incremental: true
+plugins_cache: true
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+relative_links:
+  enabled: true
+  collections: true
