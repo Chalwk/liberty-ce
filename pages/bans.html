@@ -491,13 +491,13 @@ description: View all current bans and appeals.
         }
 
         function escapeHtml(str) {
-            if (!str) return '—';
+            if (!str) return '-';
             return String(str).replace(/[&<>]/g, m => {
                 if (m === '&') return '&amp;';
                 if (m === '>') return '&gt;';
                 if (m === '<') return '&lt;';
                 return m;
-            }) || '—';
+            }) || '-';
         }
 
         function renderTable() {

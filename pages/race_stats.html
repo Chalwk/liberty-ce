@@ -657,7 +657,7 @@ description: Liberty Gaming's race server statistics
         document.body.appendChild(modalOverlay);
 
         function formatTime(sec) {
-            if (sec === undefined || sec === null) return '—';
+            if (sec === undefined || sec === null) return '-';
             return sec.toFixed(2);
         }
 
@@ -691,7 +691,7 @@ description: Liberty Gaming's race server statistics
 
                 const playersObj = mapInfo.players;
                 const totalPlayers = Object.keys(playersObj).length;
-                let currentBestPlayer = '—';
+                let currentBestPlayer = '-';
                 let currentBestTime = null;
                 if (mapInfo.current_best && mapInfo.current_best.player) {
                     currentBestPlayer = mapInfo.current_best.player;
@@ -816,7 +816,7 @@ description: Liberty Gaming's race server statistics
                 <tr>
                     <td class="map-name-cell" data-label="Map Name"><i class="fas fa-flag-checkered"></i> ${escapeHtml(map.name)}</td>
                     <td data-label="Current Best Player">${escapeHtml(map.currentBestPlayer)}</td>
-                    <td data-label="Best Time (s)">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '—'}</td>
+                    <td data-label="Best Time (s)">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '-'}</td>
                     <td data-label="Total Players">${map.totalPlayers}</td>
                     <td data-label="Actions"><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Details</button></td>
                 </tr>`;
@@ -848,8 +848,8 @@ description: Liberty Gaming's race server statistics
             for (const player of pageItems) {
                 html += `<tr>
                     <td class="player-name-cell" data-label="Player Name"><i class="fas fa-user-astronaut"></i> ${escapeHtml(player.name)}</td>
-                    <td data-label="Overall Best (s)">${player.overallBestTime !== null ? formatTime(player.overallBestTime) : '—'}</td>
-                    <td data-label="Best Map">${player.bestMapName ? escapeHtml(player.bestMapName) : '—'}</td>
+                    <td data-label="Overall Best (s)">${player.overallBestTime !== null ? formatTime(player.overallBestTime) : '-'}</td>
+                    <td data-label="Best Map">${player.bestMapName ? escapeHtml(player.bestMapName) : '-'}</td>
                     <td data-label="Maps Played">${player.mapsPlayed}</td>
                     <td data-label="Actions"><button class="detail-btn" data-type="player" data-name="${escapeHtml(player.name)}"><i class="fas fa-chart-simple"></i> Details</button></td>
                 </tr>`;
@@ -922,7 +922,7 @@ description: Liberty Gaming's race server statistics
         function showMapDetails(mapName) {
             const map = mapsList.find(m => m.name === mapName);
             if (!map) return;
-            modalTitle.innerText = `🏁 ${map.name} — Leaderboard`;
+            modalTitle.innerText = `🏁 ${map.name} - Leaderboard`;
             const players = Object.entries(map.playersObject);
             if (players.length === 0) {
                 modalBody.innerHTML = '<div class="no-results">No player records found.</div>';
@@ -943,7 +943,7 @@ description: Liberty Gaming's race server statistics
                     <td>${idx + 1}</td>
                     <td>${escapeHtml(p.name)}</td>
                     <td>${formatTime(p.best)}</td>
-                    <td>${p.average ? formatTime(p.average) : '—'}</td>
+                    <td>${p.average ? formatTime(p.average) : '-'}</td>
                     <td>${p.laps}</td>
                 </tr>`;
             });
@@ -955,7 +955,7 @@ description: Liberty Gaming's race server statistics
         function showPlayerDetails(playerName) {
             const player = playersAgg.find(p => p.name === playerName);
             if (!player) return;
-            modalTitle.innerText = `🏎️ ${player.name} — Race History`;
+            modalTitle.innerText = `🏎️ ${player.name} - Race History`;
             if (!player.mapDetails.length) {
                 modalBody.innerHTML = '<div class="no-results">No map records for this player.</div>';
                 modalOverlay.classList.add('active');
@@ -966,8 +966,8 @@ description: Liberty Gaming's race server statistics
             player.mapDetails.forEach(m => {
                 html += `<tr>
                     <td>${escapeHtml(m.mapName)}</td>
-                    <td>${m.best ? formatTime(m.best) : '—'}</td>
-                    <td>${m.average ? formatTime(m.average) : '—'}</td>
+                    <td>${m.best ? formatTime(m.best) : '-'}</td>
+                    <td>${m.average ? formatTime(m.average) : '-'}</td>
                     <td>${m.laps}</td>
                 </tr>`;
             });
