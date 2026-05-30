@@ -1,6 +1,6 @@
 Darling;0;10;0;Recruit;1
 y!Gi;0;3;-15;Recruit;1
-Plâyê???wØ®;104;127;1485;Recruit;1
+Plâyê???wØ®;247;313;3666;Apprentice;1
 Might;21;0;343;Recruit;1
 ANSARI;2;0;21;Recruit;1
 Noob4U2Kill;1;1;15;Recruit;1
@@ -8,10 +8,11 @@ kevim;5;0;411;Recruit;1
 walter;0;1;-2;Recruit;1
 _Mr Pigeon;38;15;845;Recruit;1
 Fields;36;70;157;Recruit;1
-Frank;2;10;20;Recruit;1
+Frank;2;13;20;Recruit;1
 ~VÄ›Ã­Ã‡ER~;74;68;533;Recruit;1
    ~FaTuM~;7;12;94;Recruit;1
 Cremoux;1;0;44;Recruit;1
+msalerno®;5;8;56;Recruit;1
 navidad;3;0;101;Recruit;1
 LIB-Akuma;0;0;0;Recruit;1
 _juice;26;0;243;Recruit;1
@@ -70,7 +71,7 @@ Davichi;0;1;0;Recruit;1
 ^jTINA^J<3;24;23;138;Recruit;1
 Anonimo;0;0;0;Recruit;1
 LIB-Oldi;0;0;0;Recruit;1
-Harbinge®;106;154;1485;Recruit;1
+Harbinge®;158;225;2234;Recruit;1
 i love YOU;3;0;31;Recruit;1
 aj_urbano;10;53;51;Recruit;1
 North;9;10;58;Recruit;1
@@ -80,23 +81,25 @@ Whisp;0;6;0;Recruit;1
 DON CHEMA;0;1;-2;Recruit;1
 HitMan;2;7;40;Recruit;1
 LIB-Jerico;0;0;0;Recruit;1
-arangio;1;4;15;Recruit;1
+arangio;3;14;45;Recruit;1
 LIB-Vegeta;0;0;0;Recruit;1
 Erve Nao;0;0;0;Recruit;1
 Maury;0;0;0;Recruit;1
 LIB-Eddy;0;0;0;Recruit;1
 SID;42;44;555;Recruit;1
 ZEROCOOL;1;0;34;Recruit;1
-FUCK-ICE;1;0;18;Recruit;1
-albatross;5;1;75;Recruit;1
-noobi;45;34;652;Recruit;1
 asahi;31;27;448;Recruit;1
-[FAST]depri;8;16;91;Recruit;1
+FUCK-ICE;1;0;18;Recruit;1
+son goku;3;7;45;Recruit;1
+albatross;53;57;800;Recruit;1
+noobi;196;216;2873;Recruit;1
+SEXMADREH?O;0;3;0;Recruit;1
+[FAST]depri;161;185;2362;Recruit;1
 {?}Nokotan;9;48;47;Recruit;1
-LIB-Maja;0;0;0;Recruit;1
+LIB-Maja;126;147;1833;Recruit;1
 HIAEJHAPO;3;3;45;Recruit;1
 R-Fiyer;13;22;141;Recruit;1
-{L°E°}Atom®;160;109;2324;Recruit;1
+{L°E°}Atom®;384;272;5676;Apprentice;1
 MATAGAYS;18;23;128;Recruit;1
 MoIogueto;0;2;-4;Recruit;1
 Logan5;5;29;145;Recruit;1
@@ -112,9 +115,9 @@ iutwcbzokyt;0;0;150;Recruit;1
 HALO CE 7;7;7;55;Recruit;1
 ALEX;0;0;0;Recruit;1
 {LÅŸEÅŸ}Kimbo;24;21;132;Recruit;1
-LIB-Perico;98;144;1382;Recruit;1
+LIB-Perico;205;328;2978;Recruit;1
 Glashuts;1;3;9;Recruit;1
-Kom Ol Lee;128;114;1849;Recruit;1
+Kom Ol Lee;235;158;3490;Apprentice;1
 LIB-Renard;0;0;0;Recruit;1
 LIB-Spirou;0;0;0;Recruit;1
 {LÂ°EÂ°}Fa7aL;1;0;20;Recruit;1
@@ -134,4 +137,4 @@ no_one_here;0;0;0;Recruit;1
 King Kong;0;1;0;Recruit;1
 Arclite S08;0;0;0;Recruit;1
 Nathanael;17;31;155;Recruit;1
-{BK}Ax2'E;126;98;1812;Recruit;1
+{BK}Ax2'E;395;280;5935;Apprentice;1
