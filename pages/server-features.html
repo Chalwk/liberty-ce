@@ -352,8 +352,12 @@ description: Liberty Gaming's server features and commands
                 moves
                 passengers to gunner seat when a driver is present.
             </li>
+            <li><strong>Rank System</strong> - Full progression system (Recruit → General). Earn credits per kill, lose
+                credits on death. Streak bonuses, first blood bonus, and rank announcements. Persistent stats saved
+                between games.
+            </li>
         </ul>
-        <p class="note"><i class="fas fa-info-circle"></i> Racing server omits these two scripts for a pure racing
+        <p class="note"><i class="fas fa-info-circle"></i> Racing server omits these scripts for a pure racing
             experience.</p>
     </div>
 
@@ -496,6 +500,52 @@ description: Liberty Gaming's server features and commands
 
 <div class="command-section">
     <div class="command-section-header">
+        <div class="command-section-title"><i class="fas fa-server"></i> MIX-server exclusive commands</div>
+    </div>
+    <div class="command-group">
+        <div class="command-grid">
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/rank</code></div>
+                    <div class="command-meta">Level 0</div>
+                </div>
+                <div class="command-description">Show your current rank, grade, credits, kills/deaths/KDR, and progress
+                    to next rank.
+                </div>
+                <div class="command-usage">Usage: <code>/rank</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/ranks</code></div>
+                    <div class="command-meta">Level 0</div>
+                </div>
+                <div class="command-description">List all available ranks and their credit thresholds (Recruit through
+                    General).
+                </div>
+                <div class="command-usage">Usage: <code>/ranks</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/top</code></div>
+                    <div class="command-meta">Level 0</div>
+                </div>
+                <div class="command-description">Show top players by total credits earned (MIX leaderboard).</div>
+                <div class="command-usage">Usage: <code>/top</code></div>
+            </article>
+            <article class="command-card">
+                <div class="command-header">
+                    <div class="command-name"><code>/setrank &lt;id&gt; &lt;rank_id&gt; &lt;grade&gt;</code></div>
+                    <div class="command-meta">Level 4+</div>
+                </div>
+                <div class="command-description">Admin command: manually set a player's rank and grade.</div>
+                <div class="command-usage">Usage: <code>/setrank 2 7 3</code></div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<div class="command-section">
+    <div class="command-section-header">
         <div class="command-section-title"><i class="fas fa-flag-checkered"></i>Racing-server exclusive commands</div>
     </div>
     <div class="command-group">
@@ -588,6 +638,9 @@ description: Liberty Gaming's server features and commands
         <li>Vehicle spawner cooldown is shared across all keywords; despawn timer starts when the vehicle is empty.
             Use <code>/vlist</code> to discover map-specific vehicles (e.g., custom hogs on
             <code>bc_raceway_final_mp</code>).
+        </li>
+        <li>Rank system saves stats to <code>sapp/ranks.txt</code>. Credits are earned per kill (12-20), lost on death
+            (5-10). Streak bonuses up to +50. Top leaderboard shown at game end.
         </li>
     </ul>
 </div>
