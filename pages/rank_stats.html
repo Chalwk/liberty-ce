@@ -43,6 +43,51 @@ description: Rank Progression & Leaderboard
         color: var(--text-muted);
     }
 
+    .refresh-note {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--border-glow);
+        border-radius: 40px;
+        padding: 0.6rem 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+        backdrop-filter: blur(4px);
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .refresh-note i {
+        color: var(--primary);
+        margin-right: 0.5rem;
+    }
+
+    .refresh-note kbd {
+        background: #1e1e2e;
+        border-radius: 6px;
+        padding: 0.2rem 0.5rem;
+        font-family: monospace;
+        font-size: 0.8rem;
+        color: #f5f5f5;
+        border: 1px solid var(--border-glow);
+        margin: 0 0.1rem;
+    }
+
+    .refresh-keys {
+        white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+        .refresh-note {
+            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .refresh-keys {
+            display: inline-block;
+            margin-top: 0.2rem;
+        }
+    }
+
     .global-best-card {
         background: rgba(10, 12, 15, 0.8);
         border: 1px solid var(--border-glow);
@@ -492,6 +537,13 @@ description: Rank Progression & Leaderboard
     <h1>Rank Stats</h1>
     <p>Credits, ranks & grades - track your climb to General</p>
     <p>Leaderboard Updated Daily</p>
+
+    <div class="refresh-note">
+        <i class="fas fa-sync-alt"></i> <strong>Page not refreshing stats? Try this:</strong><br>
+        <span class="refresh-keys">Soft Refresh: <kbd>CTRL + R</kbd> (Windows/Linux) / <kbd>CMD + R</kbd> (macOS)</span>
+        <span style="margin: 0 0.5rem">|</span>
+        <span class="refresh-keys">Hard Refresh: <kbd>CTRL + SHIFT + R</kbd> / <kbd>CMD + SHIFT + R</kbd></span>
+    </div>
 </div>
 
 <div class="global-best-card" id="global-best-card" style="display: none;">
