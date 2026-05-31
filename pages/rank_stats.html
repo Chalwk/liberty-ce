@@ -755,7 +755,7 @@ description: Rank Progression & Leaderboard
             const name = e.currentTarget.dataset.playername;
             const player = playersList.find(p => p.name === name);
             if (!player) return;
-            modalTitle.innerText = `📊 ${escapeHtml(player.name)} · Combat & Rank`;
+            modalTitle.innerText = `${escapeHtml(player.name)} · Stats`;
             const rankObj = player.rankInfo;
             const progressPercent = rankObj.progressPercent;
             const currentThres = rankObj.currentThreshold.toLocaleString();
