@@ -13,19 +13,6 @@ community, which runs Halo: Custom Edition servers.
 
 ---
 
-## Dynamic Data Files
-
-The following files are dynamically maintained and consumed by different parts of the site and build system:
-
-| File                                           | Description                                                  | Used by                                                                                                                 |
-|------------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
-| [/data/maps.txt](/data/maps.txt)               | Dynamic map list used across the build system                | - [servers.html](/pages/servers.html)<br>- [build-maps.yml](.github/workflows/build-maps.yml) (GitHub Actions workflow) |
-| [/data/members.txt](/data/members.txt)         | Active member list used across the site                      | -                                                                                                                       |
-| [/data/race_stats.json](/data/race_stats.json) | Race statistics data file                                    | - [race_stats.html](/pages/race_stats.html)                                                                             |
-| [/data/bans.txt](/data/bans.txt)               | Ban list used for server moderation (Discord + Halo Servers) | -                                                                                                                       |
-
----
-
 ## License
 
 © 2026 Liberty Gaming - Halo CE. All rights reserved.
