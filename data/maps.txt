@@ -19,7 +19,6 @@ RACING;mystic_mod;10
 RACING;Nervous_King;10
 RACING;New_Mombasa_Race_v2;10
 RACING;Prime_C3_Race;10
-RACING;race_me_now;5
 RACING;siege;10
 RACING;timberland;10
 RACING;TLSstronghold;10
@@ -33,24 +32,19 @@ MIX;fragment_v2;CTF, all weapons
 MIX;H2_Zanzibar_v3;CTF, all weapons
 MIX;ivory_tower_final;Slayer, 25 kills, rox
 MIX;liberty_battle_creek;CTF, rox
-MIX;liberty_bountygulch;CTF, rox
-MIX;liberty_chillout;CTF, shotguns
-MIX;liberty_chillout;Slayer, 25 kills, rox
+MIX;liberty_chillout;CTF, shotguns | Slayer, 25 kills, rox
 MIX;liberty_city_fight;Slayer, 25 kills, rox
 MIX;liberty_cyberdyne;Slayer, 25 kills, rox
 MIX;liberty_damnation;CTF, rox
 MIX;liberty_dichotomy;CTF, rox
 MIX;liberty_forest_fight;CTF, rox, 3 flags
 MIX;liberty_forgotten_market;Slayer, 25 kills, rox
-MIX;liberty_g3_augur;CTF, rox
 MIX;liberty_gephy;CTF, rox
-MIX;liberty_hangem;CTF, rox
-MIX;liberty_hangem;Oddball, rox, 2 skulls
+MIX;liberty_hangem;CTF, rox | Oddball, rox, 2 skulls
 MIX;liberty_hornets_nest;CTF, rox
 MIX;liberty_hung_higher;Oddball, rox, 2 skulls
 MIX;liberty_longest;Oddball, rox, 2 skulls
 MIX;liberty_opavo;Slayer, 25 kills, rox
-MIX;liberty_paintball;Slayer, 25 kills, classic weaps
 MIX;liberty_ratrace;CTF, shotguns, 5 flags
 MIX;liberty_shrinking_man;CTF, rox, 3 flags
 MIX;liberty_silo_surprise2;T-Slayer, 50 kills, classic weaps
@@ -59,6 +53,5 @@ MIX;liberty_the_cage;T-Slayer, 50 kills, rox
 MIX;Oblivion;CTF, all weaps
 MIX;sidewinder;CTF, rox
 MIX;tactics;CTF, normal weaps
-MIX;TrainingDay;CTF, classic weaps
-MIX;TrainingDay;Oddball, shotguns, 2 skulls
+MIX;TrainingDay;CTF, classic weaps | Oddball, shotguns, 2 skulls
 MIX;triduct;CTF, rox
