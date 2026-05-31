@@ -100,14 +100,6 @@ description: Liberty Gaming's server features and commands
         border: 1px solid #3a3f44;
     }
 
-    .note {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        margin-top: 1rem;
-        border-top: 1px dashed #2c3e3a;
-        padding-top: 0.8rem;
-    }
-
     h2 {
         color: var(--primary);
         border-left: 4px solid var(--primary);
@@ -225,14 +217,6 @@ description: Liberty Gaming's server features and commands
         overflow-wrap: anywhere;
     }
 
-    .command-usage {
-        font-size: 0.88rem;
-        color: var(--text-muted);
-        border-top: 1px dashed rgba(42, 169, 161, 0.18);
-        padding-top: 0.65rem;
-        overflow-wrap: anywhere;
-    }
-
     .command-usage code,
     .command-usage kbd {
         background: #0a0c0f;
@@ -243,31 +227,6 @@ description: Liberty Gaming's server features and commands
         font-family: 'Courier New', monospace;
         white-space: normal;
         overflow-wrap: anywhere;
-    }
-
-    .command-legend {
-        color: var(--text-muted);
-        font-size: 0.92rem;
-        margin-top: 0.75rem;
-    }
-
-    .info-box {
-        background: rgba(10, 30, 35, 0.7);
-        border-left: 4px solid var(--primary);
-        border-radius: 14px;
-        padding: 1.2rem 1.8rem;
-        margin: 2rem 0;
-        backdrop-filter: blur(2px);
-    }
-
-    .info-box i {
-        color: var(--primary);
-        margin-right: 0.5rem;
-    }
-
-    .info-box ul {
-        margin: 0.5rem 0 0 1.2rem;
-        color: #ccc;
     }
 
     @media (max-width: 700px) {
@@ -301,8 +260,7 @@ description: Liberty Gaming's server features and commands
         }
 
         .command-name,
-        .command-description,
-        .command-usage {
+        .command-description {
             overflow-wrap: anywhere;
             word-break: normal;
         }
@@ -310,82 +268,55 @@ description: Liberty Gaming's server features and commands
 </style>
 
 <h1>Server Features &amp; Command Reference</h1>
-<p>Both Liberty servers (MIX and RACING) run a suite of advanced Lua scripts to enhance gameplay, moderation, and team
-    management. Below you will find a complete list of features, player commands, and admin tools. Additional scripts
-    are active only on the MIX or Racing server as noted.</p>
-
 <div class="features-grid">
     <div class="feature-card">
-        <h2><i class="fas fa-code-branch"></i> Shared Server Scripts</h2>
+        <h2><i class="fas fa-code-branch"></i>MIX SERVER</h2>
         <ul>
-            <li><strong>AFK System</strong> - Auto-detects idle players, issues warnings, and kicks after timeout.
-                Manual AFK toggle with immunity for higher admins.
-            </li>
-            <li><strong>Alias System</strong> - Tracks player aliases by IP and game hash. Supports fuzzy name
-                search
-                and pirate detection.
-            </li>
-            <li><strong>Deployable Mines</strong> - Press <kbd>Flashlight</kbd> (default F) to plant proximity mines
-                from allowed vehicles (driver seat). Mines explode on enemy contact.
-            </li>
-            <li><strong>Grenade Capacity</strong> - Dynamically adjusts max/starting grenades per map and gametype
-                (e.g., limits shotguns to 1 frag).
-            </li>
-            <li><strong>Next Game</strong> - Instantly cycles to the next map in rotation.</li>
-            <li><strong>Team Shuffler</strong> - Auto-balances teams after a set number of games. Manual shuffle
-                command
-                available.
-            </li>
-            <li><strong>Uber Transport</strong> - Call a ride from teammates by typing <code>uber</code>,
-                <code>taxi</code>, <code>cab</code>, or <code>taxo</code> in chat. Driver approval optional.
-            </li>
-        </ul>
-    </div>
-
-    <div class="feature-card">
-        <h2><i class="fas fa-server"></i> MIX-Only Scripts</h2>
-        <ul>
-            <li><strong>Name Ban</strong> - Automatically kicks players who join with a disallowed name (e.g.,
-                "Butcher", "Nigga", "LIB-Descono", etc.).
-            </li>
-            <li><strong>Seat Mod</strong> - Allows gunners or passengers to take the driver seat when empty and
-                moves
-                passengers to gunner seat when a driver is present.
-            </li>
-            <li><strong>Rank System</strong> - Full progression system (Recruit → General). Earn credits per kill, lose
+            <li>
+                <strong>Rank System</strong>
+                <a href="https://liberty-ce.net/pages/rank_stats">(View Leaderboard)</a>
+                <br>
+                Progression system (Recruit → General). Earn credits per kill, lose
                 credits on death. Streak bonuses, first blood bonus, and rank announcements. Persistent stats saved
                 between games.
             </li>
+            <li>
+                <strong>Uber Transport</strong><br>
+                Call a ride from teammates.
+            </li>
+            <li>
+                <strong>Game Modes</strong><br>
+                Team Slayer, CTF, King of the Hill, Oddball with varying kill limits,
+                flag captures, and weapon sets (rockets, shotguns, classic, all weapons).
+            </li>
         </ul>
-        <p class="note"><i class="fas fa-info-circle"></i> Racing server omits these scripts for a pure racing
-            experience.</p>
+        <a href="https://liberty-ce.net/pages/servers">Click to see map rotation</a>
     </div>
-
     <div class="feature-card">
-        <h2><i class="fas fa-flag-checkered"></i> Racing-Only Scripts</h2>
+        <h2><i class="fas fa-code-branch"></i>RACE SERVER</h2>
         <ul>
-            <li><strong>Track Master</strong> - Advanced racing tracker &amp; leaderboard. Records personal bests,
-                map records, global rankings, checkpoint validation, and lap time announcements. Commands:
-                <code>/stats</code>,
-                <code>/top</code>, <code>/global</code>, <code>/reset</code>.
+            <li>
+                <strong>Track Master</strong>
+                <a href="https://liberty-ce.net/pages/race_stats">(View Leaderboard)</a>
+                <br>
+                Advanced racing tracker &amp; leaderboard. Records personal bests, map records, global rankings,
+                checkpoint validation, and lap time announcements.
             </li>
-            <li><strong>Race Assistant</strong> - Enforces vehicle usage in race modes. Grants a grace period then
-                issues escalating penalties (kill, kick) if players remain on foot.
+            <li>
+                <strong>Uber Transport</strong><br>
+                Call a ride from teammates.
             </li>
-            <li><strong>Vehicle Spawner</strong> - Map-aware vehicle spawning with custom keywords per
-                track (e.g., <code>hog</code>, <code>rhog</code>, <code>quad</code>). See <code>/vlist</code> for
-                available vehicles.
+            <li><strong>Proximity Mines</strong></li>
+            <li><strong>Laps to Win</strong><br>
+                Races require 5, 10, or 15 laps depending on track.
             </li>
         </ul>
-        <p class="note"><i class="fas fa-info-circle"></i> These scripts make the racing server competitive and fair -
-            no name bans or seat swapping.</p>
+
+        <a href="https://liberty-ce.net/pages/servers">Click to see map rotation</a>
     </div>
 </div>
 
 <h2>📋 Command Reference</h2>
-<p class="command-legend">Server availability is labeled on each group. Commands not listed below are available on both
-    servers.</p>
-
 <div class="command-section">
     <div class="command-section-header">
         <div class="command-section-title"><i class="fas fa-server"></i>Available on both servers</div>
@@ -394,105 +325,16 @@ description: Liberty Gaming's server features and commands
         <div class="command-grid">
             <article class="command-card">
                 <div class="command-header">
-                    <div class="command-name"><code>/afk</code></div>
-                    <div class="command-meta">Level 3</div>
-                </div>
-                <div class="command-description">Toggle manual AFK mode (invincible, hidden, auto-teleport on return).
-                </div>
-                <div class="command-usage">Usage: <code>/afk</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/afklist</code></div>
-                    <div class="command-meta">Level 3</div>
-                </div>
-                <div class="command-description">List all currently AFK players.</div>
-                <div class="command-usage">Usage: <code>/afklist</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/alias hash &lt;player_id&gt; [page]</code></div>
-                    <div class="command-meta">Level 3</div>
-                </div>
-                <div class="command-description">Show aliases linked to a player's game hash.</div>
-                <div class="command-usage">Usage: <code>/alias hash 2</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/alias ip &lt;player_id&gt; [page]</code></div>
-                    <div class="command-meta">Level 3</div>
-                </div>
-                <div class="command-description">Show aliases linked to a player's IP address.</div>
-                <div class="command-usage">Usage: <code>/alias ip 4</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/alias hash_lookup &lt;hash&gt; [page]</code></div>
-                    <div class="command-meta">Level 3</div>
-                </div>
-                <div class="command-description">Direct lookup by MD5 hash (32 chars).</div>
-                <div class="command-usage">Usage: <code>/alias hash_lookup 5d41402abc4b2a76b9719d911017c592</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/alias ip_lookup &lt;IP&gt; [page]</code></div>
-                    <div class="command-meta">Level 3</div>
-                </div>
-                <div class="command-description">Direct lookup by IP address.</div>
-                <div class="command-usage">Usage: <code>/alias ip_lookup 192.168.1.100</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/alias search &lt;partial_name&gt; [page]</code></div>
-                    <div class="command-meta">Level 3</div>
-                </div>
-                <div class="command-description">Fuzzy search for names containing text.</div>
-                <div class="command-usage">Usage: <code>/alias search "John"</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/alias help</code></div>
-                    <div class="command-meta">Level 3</div>
-                </div>
-                <div class="command-description">Show alias command usage summary.</div>
-                <div class="command-usage">Usage: <code>/alias help</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/next_game</code></div>
-                    <div class="command-meta">Level 4</div>
-                </div>
-                <div class="command-description">Force the server to advance to the next map immediately.</div>
-                <div class="command-usage">Usage: <code>/next_game</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/shuffle</code></div>
-                    <div class="command-meta">Level 3</div>
-                </div>
-                <div class="command-description">Manually shuffle and rebalance teams (team games only).</div>
-                <div class="command-usage">Usage: <code>/shuffle</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>uber</code> / <code>taxi</code> / <code>cab</code> /
-                        <code>taxo</code></div>
+                    <div class="command-name">
+                        <code>uber</code>, <code>taxi</code>, <code>cab</code>, <code>taxo</code>
+                    </div>
                     <div class="command-meta">Chat trigger</div>
                 </div>
-                <div class="command-description">Call a nearby teammate's vehicle (driver seat required). Cooldown and
-                    call limits apply.
+                <div class="command-description">
+                    Call a nearby teammate's vehicle (driver required) by <strong>typing keyword in chat</strong>.
+                    Cooldown and call
+                    limits apply.
                 </div>
-                <div class="command-usage">Usage: Type <code>uber</code> in chat</div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/accept</code> / <code>/reject</code></div>
-                    <div class="command-meta">Driver only</div>
-                </div>
-                <div class="command-description">Driver responds to incoming Uber requests (if accept/reject mode
-                    enabled).
-                </div>
-                <div class="command-usage">Usage: <code>/accept</code></div>
             </article>
         </div>
     </div>
@@ -507,38 +349,24 @@ description: Liberty Gaming's server features and commands
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><code>/rank</code></div>
-                    <div class="command-meta">Level 0</div>
                 </div>
                 <div class="command-description">Show your current rank, grade, credits, kills/deaths/KDR, and progress
                     to next rank.
                 </div>
-                <div class="command-usage">Usage: <code>/rank</code></div>
             </article>
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><code>/ranks</code></div>
-                    <div class="command-meta">Level 0</div>
                 </div>
                 <div class="command-description">List all available ranks and their credit thresholds (Recruit through
                     General).
                 </div>
-                <div class="command-usage">Usage: <code>/ranks</code></div>
             </article>
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><code>/top</code></div>
-                    <div class="command-meta">Level 0</div>
                 </div>
                 <div class="command-description">Show top players by total credits earned (MIX leaderboard).</div>
-                <div class="command-usage">Usage: <code>/top</code></div>
-            </article>
-            <article class="command-card">
-                <div class="command-header">
-                    <div class="command-name"><code>/setrank &lt;id&gt; &lt;rank_id&gt; &lt;grade&gt;</code></div>
-                    <div class="command-meta">Level 4+</div>
-                </div>
-                <div class="command-description">Admin command: manually set a player's rank and grade.</div>
-                <div class="command-usage">Usage: <code>/setrank 2 7 3</code></div>
             </article>
         </div>
     </div>
@@ -553,94 +381,63 @@ description: Liberty Gaming's server features and commands
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><kbd>Flashlight key</kbd></div>
-                    <div class="command-meta">Trigger</div>
+                    <div class="command-meta">KEY</div>
                 </div>
-                <div class="command-description">Deploy a proximity mine from an allowed vehicle while in the driver
-                    seat.
+                <div class="command-description">
+                    Deploy a proximity mine from a vehicle while in the driver seat.
                 </div>
-                <div class="command-usage">Usage: Press <kbd>F</kbd> while driving a compatible vehicle</div>
             </article>
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><code>/vlist</code></div>
-                    <div class="command-meta">Racing only</div>
+                    <div class="command-meta">CMD</div>
                 </div>
                 <div class="command-description">List all available vehicle spawn keywords for the current map.</div>
-                <div class="command-usage">Usage: <code>/vlist</code></div>
             </article>
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><code>hog</code>, <code>rhog</code>, <code>quad</code></div>
-                    <div class="command-meta">Racing only</div>
+                    <div class="command-meta">CHAT</div>
                 </div>
-                <div class="command-description">Spawn a vehicle in front of you and automatically enter the driver
-                    seat. Map-specific variants may also be available.
+                <div class="command-description">
+                    Summon a vehicle and automatically enter the driver seat by <strong>typing keyword in chat</strong>.
+                    Some maps have specific keywords. Use <kbd>/vlist</kbd> to view available keywords.
                 </div>
-                <div class="command-usage">Usage: Type <code>hog</code> in chat</div>
             </article>
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><code>/stats [player|all]</code></div>
-                    <div class="command-meta">Racing only</div>
+                    <div class="command-meta">CMD</div>
                 </div>
-                <div class="command-description">Show your personal best lap, average lap time on the current map, or
-                    view another player's stats.
+                <div class="command-description">
+                    Show your personal best lap, average lap time on the current map, or view another player's stats.
                 </div>
-                <div class="command-usage">Usage: <code>/stats</code>, <code>/stats all</code>, or <code>/stats
-                    Chalwk</code></div>
             </article>
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><code>/top [page]</code></div>
-                    <div class="command-meta">Racing only</div>
+                    <div class="command-meta">CMD</div>
                 </div>
-                <div class="command-description">Display the paginated leaderboard of best lap times on the current
-                    map.
+                <div class="command-description">
+                    Display the paginated leaderboard of best lap times on the current map.
                 </div>
-                <div class="command-usage">Usage: <code>/top</code> or <code>/top 2</code></div>
             </article>
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><code>/global [page]</code></div>
-                    <div class="command-meta">Racing only</div>
+                    <div class="command-meta">CMD</div>
                 </div>
                 <div class="command-description">Show global overall player rankings across all race maps.</div>
-                <div class="command-usage">Usage: <code>/global</code> or <code>/global 3</code></div>
             </article>
             <article class="command-card">
                 <div class="command-header">
                     <div class="command-name"><code>/reset</code></div>
-                    <div class="command-meta">Racing only</div>
+                    <div class="command-meta">CMD</div>
                 </div>
                 <div class="command-description">Reset your current checkpoint progress on the race track if you are
                     stuck or glitched.
                 </div>
-                <div class="command-usage">Usage: <code>/reset</code></div>
             </article>
         </div>
     </div>
-</div>
-<div class="info-box">
-    <i class="fas fa-lightbulb"></i> <strong>Note for Admins:</strong>
-    <ul>
-        <li>Alias database persists across server restarts (saved to <code>sapp/aliases.json</code>).</li>
-        <li>Uber transport respects team rules - you can only call vehicles from teammates.</li>
-        <li>Deployable mines: requires <code>vehicle_only</code> mode (default) - works in warthogs, ghosts, rocket
-            hogs, mongooses, and many custom vehicles.
-        </li>
-        <li>Team shuffler works only on team-based games.</li>
-        <li>Track Master global rankings use a weighted system: map record +200, global record +300, performance up
-            to +50, and top finishes as tiebreakers. Players with fewer than 3 maps played receive a 50% penalty.
-        </li>
-        <li>Race assistant gives 30 seconds to enter a vehicle; after violations, it escalates from warnings → kill
-            → kick. Forgiveness period of 30 seconds of continuous racing resets violations.
-        </li>
-        <li>Vehicle spawner cooldown is shared across all keywords; despawn timer starts when the vehicle is empty.
-            Use <code>/vlist</code> to discover map-specific vehicles (e.g., custom hogs on
-            <code>bc_raceway_final_mp</code>).
-        </li>
-        <li>Rank system saves stats to <code>sapp/ranks.txt</code>. Credits are earned per kill (12-20), lost on death
-            (5-10). Streak bonuses up to +50. Top leaderboard shown at game end.
-        </li>
-    </ul>
 </div>
