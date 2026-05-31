@@ -375,16 +375,6 @@ description: Rank Progression & Leaderboard
     }
 
     @media (max-width: 768px) {
-        .stats-table,
-        .stats-table thead,
-        .stats-table tbody,
-        .stats-table th,
-        .stats-table td,
-        .stats-table tr {
-            display: block;
-            width: 100%;
-        }
-
         .stats-table thead {
             display: none;
         }
@@ -396,29 +386,44 @@ description: Rank Progression & Leaderboard
         }
 
         .stats-table tr {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto auto;
+            grid-template-areas: "player rank actions";
+            align-items: center;
+            gap: 0.75rem;
             background: var(--bg-panel);
             border: 1px solid var(--border-glow);
             border-radius: 18px;
-            padding: 0.3rem;
+            padding: 0.8rem 0.9rem;
         }
 
         .stats-table td {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.7rem 0.9rem;
-            border-bottom: 1px solid rgba(42, 169, 161, 0.15);
-            text-align: right;
-            gap: 0.5rem;
-            flex-wrap: wrap;
+            display: none;
+            padding: 0;
+            border-bottom: none;
+            text-align: left;
+        }
+
+        .stats-table td.player-name-cell {
+            display: block;
+            grid-area: player;
+            font-size: 1rem;
+        }
+
+        .stats-table td[data-label="Rank & Grade"] {
+            display: block;
+            grid-area: rank;
+            justify-self: start;
+        }
+
+        .stats-table td[data-label="Actions"] {
+            display: block;
+            grid-area: actions;
+            justify-self: end;
         }
 
         .stats-table td::before {
-            content: attr(data-label);
-            color: var(--primary);
-            font-weight: 700;
-            flex: 1;
-            text-align: left;
+            content: none;
         }
 
         .stats-tabs {
@@ -444,15 +449,26 @@ description: Rank Progression & Leaderboard
     }
 
     @media (max-width: 480px) {
-        .stats-table td {
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-            gap: 0.25rem;
+        .stats-table tr {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "player"
+                "rank"
+                "actions";
         }
 
-        .stats-table td::before {
-            flex: none;
+        .stats-table td.player-name-cell,
+        .stats-table td[data-label="Rank & Grade"],
+        .stats-table td[data-label="Actions"] {
+            justify-self: start;
+        }
+
+        .stats-table td.player-name-cell {
+            font-weight: 700;
+        }
+
+        .stats-table td[data-label="Actions"] {
+            justify-self: start;
         }
     }
 </style>
@@ -700,7 +716,7 @@ description: Rank Progression & Leaderboard
                         <td data-label="K/D">${player.kdFormatted}</td>
                         <td data-label="Credits"><strong class="highlight">${player.credits.toLocaleString()}</strong></td>
                         <td data-label="Rank & Grade"><span class="rank-badge">${player.rankGradeStr}</span></td>
-                        <td data-label="Actions"><button class="detail-btn" data-playername="${escapeHtml(player.name)}"><i class="fas fa-chart-line"></i> Stats</button></td>
+                        <td data-label="Actions"><button class="detail-btn" data-playername="${escapeHtml(player.name)}"><i class="fas fa-chart-line"></i> Full Stats</button></td>
                     </tr>
                 `;
             }

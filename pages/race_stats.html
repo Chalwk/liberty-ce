@@ -497,6 +497,68 @@ description: Liberty Gaming's race server statistics
             min-width: 34px;
             padding: 0.4rem 0.6rem;
         }
+
+        #maps-table tr {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) auto auto;
+            grid-template-areas: "map player time actions";
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        #maps-table td {
+            display: none;
+            padding: 0;
+            border-bottom: none;
+            text-align: left;
+            min-width: 0;
+        }
+
+        #maps-table td::before {
+            content: none;
+        }
+
+        #maps-table td[data-label="Map Name"] {
+            display: block;
+            grid-area: map;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        #maps-table td[data-label="Map Name"] i {
+            display: none;
+        }
+
+        #maps-table td[data-label="Current Best Player"] {
+            display: block;
+            grid-area: player;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        #maps-table td[data-label="Best Time (s)"] {
+            display: block;
+            grid-area: time;
+            white-space: nowrap;
+        }
+
+        #maps-table td[data-label="Actions"] {
+            display: block;
+            grid-area: actions;
+            justify-self: end;
+        }
+
+        #maps-table td[data-label="Total Players"] {
+            display: none;
+        }
+
+        #maps-table .detail-btn {
+            width: auto;
+            padding: 0.35rem 0.7rem;
+            white-space: nowrap;
+        }
     }
 
     @media (max-width: 480px) {
@@ -517,6 +579,26 @@ description: Liberty Gaming's race server statistics
 
         .search-input {
             font-size: 16px;
+        }
+
+        #maps-table tr {
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto auto;
+            gap: 0.45rem;
+        }
+
+        #maps-table td[data-label="Map Name"],
+        #maps-table td[data-label="Current Best Player"],
+        #maps-table td[data-label="Best Time (s)"] {
+            font-size: 0.82rem;
+        }
+
+        #maps-table td[data-label="Actions"] {
+            justify-self: end;
+        }
+
+        #maps-table .detail-btn {
+            padding: 0.32rem 0.62rem;
+            font-size: 0.72rem;
         }
     }
 
@@ -796,7 +878,7 @@ description: Liberty Gaming's race server statistics
                     <td data-label="Current Best Player">${escapeHtml(map.currentBestPlayer)}</td>
                     <td data-label="Best Time (s)">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '-'}</td>
                     <td data-label="Total Players">${map.totalPlayers}</td>
-                    <td data-label="Actions"><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Details</button></td>
+                    <td data-label="Actions"><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Full Stats</button></td>
                 </tr>`;
             }
             mapsTbody.innerHTML = html;
