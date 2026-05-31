@@ -43,51 +43,6 @@ description: Rank Progression & Leaderboard
         color: var(--text-muted);
     }
 
-    .refresh-note {
-        background: rgba(0, 0, 0, 0.5);
-        border: 1px solid var(--border-glow);
-        border-radius: 40px;
-        padding: 0.6rem 1.2rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        display: inline-block;
-        backdrop-filter: blur(4px);
-        font-size: 0.85rem;
-        text-align: center;
-    }
-
-    .refresh-note i {
-        color: var(--primary);
-        margin-right: 0.5rem;
-    }
-
-    .refresh-note kbd {
-        background: #1e1e2e;
-        border-radius: 6px;
-        padding: 0.2rem 0.5rem;
-        font-family: monospace;
-        font-size: 0.8rem;
-        color: #f5f5f5;
-        border: 1px solid var(--border-glow);
-        margin: 0 0.1rem;
-    }
-
-    .refresh-keys {
-        white-space: nowrap;
-    }
-
-    @media (max-width: 768px) {
-        .refresh-note {
-            font-size: 0.75rem;
-            padding: 0.5rem 1rem;
-        }
-
-        .refresh-keys {
-            display: inline-block;
-            margin-top: 0.2rem;
-        }
-    }
-
     .global-best-card {
         background: rgba(10, 12, 15, 0.8);
         border: 1px solid var(--border-glow);
@@ -542,13 +497,6 @@ description: Rank Progression & Leaderboard
     <h1>Rank Stats</h1>
     <p>Credits, ranks & grades - track your climb to General</p>
     <p>Leaderboard Updated Daily</p>
-
-    <div class="refresh-note">
-        <i class="fas fa-sync-alt"></i> <strong>Page not refreshing stats? Try this:</strong><br>
-        <span class="refresh-keys">Soft Refresh: <kbd>CTRL + R</kbd> (Windows/Linux) / <kbd>CMD + R</kbd> (macOS)</span>
-        <span style="margin: 0 0.5rem">|</span>
-        <span class="refresh-keys">Hard Refresh: <kbd>CTRL + SHIFT + R</kbd> / <kbd>CMD + SHIFT + R</kbd></span>
-    </div>
 </div>
 
 <div class="global-best-card" id="global-best-card" style="display: none;">
@@ -602,16 +550,14 @@ description: Rank Progression & Leaderboard
             <thead>
             <tr>
                 <th>Rank</th>
-                <th>Grade</th>
-                <th>Minimum Credits</th>
-                <th>Next Grade / Rank Threshold</th>
+                <th>Credit Thresholds (Grades I–IV)</th>
             </tr>
             </thead>
             <tbody id="ranks-tbody"></tbody>
         </table>
     </div>
-    <div class="results-summary" style="margin-top: 1rem; text-align: center;"><i class="fas fa-info-circle"></i> Climb
-        through grades by earning credits
+    <div class="results-summary" style="margin-top: 1rem; text-align: center;"><i class="fas fa-info-circle"></i>
+        Each rank lists all grade thresholds. Progress to next grade by earning credits.
     </div>
 </div>
 
@@ -715,6 +661,22 @@ description: Rank Progression & Leaderboard
             });
         }
 
+        function renderRanksTable() {
+            let html = '';
+            for (let i = 0; i < rankThresholds.length; i++) {
+                const rank = rankThresholds[i];
+                const grades = rank.grades;
+                const formattedThresholds = grades.map(c => c.toLocaleString()).join(', ');
+                html += `
+                    <tr>
+                        <td data-label="Rank"><strong>${rank.name}</strong></td>
+                        <td data-label="Credit Thresholds">${formattedThresholds}</td>
+                    </tr>
+                `;
+            }
+            ranksTbody.innerHTML = html;
+        }
+
         async function loadRankData() {
             try {
                 const response = await fetch('/data/ranks.txt');
@@ -769,28 +731,6 @@ description: Rank Progression & Leaderboard
             globalBestCard.style.display = 'inline-flex';
         }
 
-        function renderRanksTable() {
-            let html = '';
-            for (let i = 0; i < rankThresholds.length; i++) {
-                const rank = rankThresholds[i];
-                const grades = rank.grades;
-                for (let g = 0; g < grades.length; g++) {
-                    const minCred = grades[g];
-                    let nextText = '';
-                    if (g + 1 < grades.length) nextText = `${rank.name} Grade ${g + 2} (${grades[g + 1]} credits)`;
-                    else if (i + 1 < rankThresholds.length) nextText = `${rankThresholds[i + 1].name} Grade 1 (${rankThresholds[i + 1].grades[0]} credits)`;
-                    else nextText = 'Max Rank (General IV)';
-                    html += `<tr>
-                        <td data-label="Rank">${rank.name}</td>
-                        <td data-label="Grade">${g + 1}</td>
-                        <td data-label="Minimum Credits">${minCred.toLocaleString()}</td>
-                        <td data-label="Next Threshold">${nextText}</td>
-                    </tr>`;
-                }
-            }
-            ranksTbody.innerHTML = html;
-        }
-
         function getFilteredPlayers() {
             if (!leaderboardFilter) return [...playersList];
             return playersList.filter(p => p.name.toLowerCase().includes(leaderboardFilter.toLowerCase()));
@@ -810,15 +750,15 @@ description: Rank Progression & Leaderboard
             let htmlRows = '';
             for (const player of pageItems) {
                 htmlRows += `
-                <tr>
-                    <td class="player-name-cell" data-label="Player"><i class="fas fa-user-helmet-safety"></i> ${escapeHtml(player.name)}</td>
-                    <td data-label="Kills">${player.kills.toLocaleString()}</td>
-                    <td data-label="Deaths">${player.deaths.toLocaleString()}</td>
-                    <td data-label="K/D">${player.kdFormatted}</td>
-                    <td data-label="Credits"><strong class="highlight">${player.credits.toLocaleString()}</strong></td>
-                    <td data-label="Rank & Grade"><span class="rank-badge">${player.rankGradeStr}</span></td>
-                    <td data-label="Actions"><button class="detail-btn" data-playername="${escapeHtml(player.name)}"><i class="fas fa-chart-line"></i> Stats</button></td>
-                </tr>
+                    <tr>
+                        <td class="player-name-cell" data-label="Player"><i class="fas fa-user-helmet-safety"></i> ${escapeHtml(player.name)}</td>
+                        <td data-label="Kills">${player.kills.toLocaleString()}</td>
+                        <td data-label="Deaths">${player.deaths.toLocaleString()}</td>
+                        <td data-label="K/D">${player.kdFormatted}</td>
+                        <td data-label="Credits"><strong class="highlight">${player.credits.toLocaleString()}</strong></td>
+                        <td data-label="Rank & Grade"><span class="rank-badge">${player.rankGradeStr}</span></td>
+                        <td data-label="Actions"><button class="detail-btn" data-playername="${escapeHtml(player.name)}"><i class="fas fa-chart-line"></i> Stats</button></td>
+                    </tr>
                 `;
             }
             leaderboardTbody.innerHTML = htmlRows;
