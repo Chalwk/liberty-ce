@@ -546,12 +546,6 @@ description: Liberty Gaming's race server statistics
     <p>Leaderboard Updated Daily</p>
 </div>
 
-<div class="global-best-card" id="global-best-placeholder" style="display: none;">
-    <i class="fas fa-trophy"></i>
-    <span>🌍 Global Best: <span id="global-map-name"></span> · <span id="global-player"></span> - <strong
-            id="global-time"></strong> seconds</span>
-</div>
-
 <div class="stats-tabs">
     <button class="tab-btn active" data-tab="maps"><i class="fas fa-map"></i> Maps</button>
     <button class="tab-btn" data-tab="players"><i class="fas fa-users"></i> Players</button>
@@ -644,10 +638,6 @@ description: Liberty Gaming's race server statistics
         const searchInput = document.getElementById('search-input');
         const clearSearchBtn = document.getElementById('clear-search');
         const resultsSummary = document.getElementById('results-summary');
-        const globalBestCard = document.getElementById('global-best-placeholder');
-        const globalMapSpan = document.getElementById('global-map-name');
-        const globalPlayerSpan = document.getElementById('global-player');
-        const globalTimeSpan = document.getElementById('global-time');
 
         const modalOverlay = document.getElementById('stats-modal');
         const modalTitle = document.getElementById('modal-title');
@@ -668,7 +658,6 @@ description: Liberty Gaming's race server statistics
                 const data = await response.json();
                 fullData = data;
                 processData(data);
-                renderGlobalBest(data);
                 renderMaps();
                 renderPlayers();
                 updateSearchPlaceholder();
@@ -765,17 +754,6 @@ description: Liberty Gaming's race server statistics
             });
 
             mapsList = mapsTemp.sort((a, b) => a.name.localeCompare(b.name));
-        }
-
-        function renderGlobalBest(data) {
-            if (data.global_best && data.global_best.map && data.global_best.player) {
-                globalMapSpan.innerText = data.global_best.map;
-                globalPlayerSpan.innerText = data.global_best.player;
-                globalTimeSpan.innerText = data.global_best.time.toFixed(2);
-                globalBestCard.style.display = 'inline-flex';
-            } else {
-                globalBestCard.style.display = 'none';
-            }
         }
 
         function updateSearchPlaceholder() {

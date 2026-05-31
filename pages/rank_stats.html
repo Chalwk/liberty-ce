@@ -43,36 +43,6 @@ description: Rank Progression & Leaderboard
         color: var(--text-muted);
     }
 
-    .global-best-card {
-        background: rgba(10, 12, 15, 0.8);
-        border: 1px solid var(--border-glow);
-        border-radius: 60px;
-        padding: 0.8rem 1.8rem;
-        margin-bottom: 2rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 1.2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        backdrop-filter: blur(6px);
-        box-shadow: 0 0 12px rgba(42, 169, 161, 0.2);
-    }
-
-    .global-best-card i {
-        color: var(--gold);
-        font-size: 1.7rem;
-    }
-
-    .global-best-card span {
-        color: var(--text-light);
-        font-weight: 500;
-    }
-
-    .global-best-card .highlight {
-        color: var(--primary);
-        font-weight: 800;
-    }
-
     .stats-tabs {
         display: flex;
         gap: 0.5rem;
@@ -451,12 +421,6 @@ description: Rank Progression & Leaderboard
             text-align: left;
         }
 
-        .global-best-card {
-            width: 100%;
-            justify-content: center;
-            text-align: center;
-        }
-
         .stats-tabs {
             flex-direction: column;
             gap: 0.6rem;
@@ -497,13 +461,6 @@ description: Rank Progression & Leaderboard
     <h1>Rank Stats</h1>
     <p>Credits, ranks & grades - track your climb to General</p>
     <p>Leaderboard Updated Daily</p>
-</div>
-
-<div class="global-best-card" id="global-best-card" style="display: none;">
-    <i class="fas fa-crown"></i>
-    <span>🏆 Top Player · <span id="top-player-name"></span> </span>
-    <span><strong id="top-credits"></strong> credits</span>
-    <span class="highlight" id="top-rank-grade"></span>
 </div>
 
 <div class="stats-tabs">
@@ -639,10 +596,6 @@ description: Rank Progression & Leaderboard
         const searchInput = document.getElementById('search-input');
         const clearSearchBtn = document.getElementById('clear-search');
         const resultsSummary = document.getElementById('results-summary');
-        const globalBestCard = document.getElementById('global-best-card');
-        const topPlayerSpan = document.getElementById('top-player-name');
-        const topCreditsSpan = document.getElementById('top-credits');
-        const topRankGradeSpan = document.getElementById('top-rank-grade');
         const ranksTbody = document.getElementById('ranks-tbody');
         const modalOverlay = document.getElementById('stats-modal');
         const modalTitle = document.getElementById('modal-title');
@@ -712,7 +665,6 @@ description: Rank Progression & Leaderboard
                 });
                 playersList.sort((a, b) => b.credits - a.credits);
                 renderLeaderboard();
-                renderGlobalBest();
                 renderRanksTable();
                 updateResultsSummaryText();
             } catch (err) {
@@ -720,15 +672,6 @@ description: Rank Progression & Leaderboard
                 leaderboardTbody.innerHTML = `<tr><td colspan="7" class="error-msg"><i class="fas fa-exclamation-triangle"></i> Failed to load ranks.txt. Ensure file exists in /data/</td></tr>`;
                 resultsSummary.innerText = 'Error loading data';
             }
-        }
-
-        function renderGlobalBest() {
-            if (playersList.length === 0) return;
-            const top = playersList[0];
-            topPlayerSpan.innerText = escapeHtml(top.name);
-            topCreditsSpan.innerText = top.credits;
-            topRankGradeSpan.innerText = `${top.rankGradeStr}`;
-            globalBestCard.style.display = 'inline-flex';
         }
 
         function getFilteredPlayers() {
@@ -821,14 +764,14 @@ description: Rank Progression & Leaderboard
             else progressHtml += `<div class="rank-detail-text">${player.credits.toLocaleString()} / ${rankObj.nextThreshold.toLocaleString()} credits (${progressPercent.toFixed(1)}%)</div>`;
             modalBody.innerHTML = `
                 <table class="modal-stats-table" style="width:100%">
-                    <tr><th>Kills</th><td>${player.kills.toLocaleString()}</td></tr>
-                    <tr><th>Deaths</th><td>${player.deaths.toLocaleString()}</td></tr>
-                    <tr><th>K/D Ratio</th><td>${player.kdFormatted}</td></tr>
-                    <tr><th>Credits</th><td><strong>${player.credits.toLocaleString()}</strong></td></tr>
-                    <tr><th>Current Rank</th><td><span class="rank-badge">${player.rankGradeStr}</span></td></tr>
-                    <tr><th>Rank Threshold</th><td>${currentThres} → ${rankObj.nextThreshold ? rankObj.nextThreshold.toLocaleString() : '∞'}</td></tr>
-                    <tr><th>Progress</th><td>${progressHtml}</td></tr>
-                    <tr><th>Next Promotion</th><td>${rankObj.nextThreshold ? `Requires ${(rankObj.nextThreshold - player.credits).toLocaleString()} more credits` : 'Max rank achieved'}</td></tr>
+                    <tr><th>Kills</th><td>${player.kills.toLocaleString()}</td>
+                    <tr><th>Deaths</th><td>${player.deaths.toLocaleString()}</td>
+                    <tr><th>K/D Ratio</th><td>${player.kdFormatted}</td>
+                    <tr><th>Credits</th><td><strong>${player.credits.toLocaleString()}</strong></td>
+                    <tr><th>Current Rank</th><td><span class="rank-badge">${player.rankGradeStr}</span></td>
+                    <tr><th>Rank Threshold</th><td>${currentThres} → ${rankObj.nextThreshold ? rankObj.nextThreshold.toLocaleString() : '∞'}</td>
+                    <tr><th>Progress</th><td>${progressHtml}</td>
+                    <tr><th>Next Promotion</th><td>${rankObj.nextThreshold ? `Requires ${(rankObj.nextThreshold - player.credits).toLocaleString()} more credits` : 'Max rank achieved'}</td>
                 </table>
             `;
             modalOverlay.classList.add('active');
