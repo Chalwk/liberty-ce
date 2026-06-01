@@ -1,21 +1,13 @@
 LIB-Akuma;🇮🇹 Italy;Member,Server Admin
-LIB-Ales;🇵🇦 Panama;Member
-LIB-AMouse;🇳🇱 Netherlands;Member
 LIB-Chalwk;🇳🇿 New Zealand;Member,Server Admin,Discord Admin
 LIB-Cyber;🇦🇹 Austria;Founder,Server Admin,Discord Admin
-LIB-Easy;🇳🇱 Netherlands;Member
-LIB-Eddy;🇪🇹 Ethiopia;Member,Server Admin
-LIB-Epic;🇺🇸 United States;Member
 LIB-JBomb;🇬🇧 United Kingdom;Member
 LIB-Jerico;🇪🇸 Spain;Member,Server Admin
 LIB-Maja;🇩🇪 Germany;Founder,Server Admin,Discord Admin
-LIB-Mina;🇨🇴 Colombia;Member
 LIB-Nasio;🇪🇸 Spain;Member,Server Admin
 LIB-Oldi;🇩🇪 Germany;Member,Server Admin
 LIB-Perico;🇬🇧 United Kingdom;Founder,Server Admin,Discord Admin
 LIB-Renard;🇲🇽 Mexico;Member,Server Admin
-LIB-Rookie;🇺🇸 United States;Member,Server Admin
 LIB-Spark;🇷🇸 Serbia;Member,Server Admin
 LIB-Spirou;🇳🇱 Netherlands;Member,Server Admin
-LIB-Thors;🇺🇸 United States;Member
 LIB-Vegeta;🇪🇸 Spain;Member,Server Admin
