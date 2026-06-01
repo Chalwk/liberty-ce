@@ -1,7 +1,7 @@
 LIB-Akuma;🇮🇹 Italy;Member,Server Admin
 LIB-Chalwk;🇳🇿 New Zealand;Member,Server Admin,Discord Admin
 LIB-Cyber;🇦🇹 Austria;Founder,Server Admin,Discord Admin
-LIB-JBomb;🇬🇧 United Kingdom;Member (junior member)
+LIB-JBomb;🇬🇧 United Kingdom;Member
 LIB-Jerico;🇪🇸 Spain;Member,Server Admin
 LIB-Maja;🇩🇪 Germany;Founder,Server Admin,Discord Admin
 LIB-Nasio;🇪🇸 Spain;Member,Server Admin
