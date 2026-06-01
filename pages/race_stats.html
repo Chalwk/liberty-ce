@@ -48,33 +48,115 @@ description: Liberty Gaming's race server statistics
         color: var(--text-muted);
     }
 
-    .global-best-card {
+    .global-best-container {
         background: rgba(10, 12, 15, 0.7);
         border: 1px solid var(--border-glow);
-        border-radius: 20px;
-        padding: 1rem 1.5rem;
+        border-radius: 24px;
         margin-bottom: 2rem;
-        display: inline-flex;
+        backdrop-filter: blur(4px);
+        overflow: hidden;
+    }
+
+    .global-best-header {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid var(--border-glow);
+        display: flex;
         align-items: center;
         gap: 1rem;
         flex-wrap: wrap;
-        justify-content: center;
-        backdrop-filter: blur(4px);
+        justify-content: space-between;
     }
 
-    .global-best-card i {
+    .global-best-header h3 {
+        margin: 0;
         color: gold;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
-    .global-best-card span {
-        color: var(--text-light);
-        font-weight: 600;
+    .global-best-header h3 i {
+        margin-right: 0.5rem;
     }
 
-    .global-best-card .highlight {
+    .view-all-btn {
+        background: transparent;
+        border: 1px solid var(--primary);
         color: var(--primary);
-        font-weight: 700;
+        padding: 0.4rem 1rem;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: var(--transition);
+    }
+
+    .view-all-btn:hover {
+        background: var(--primary);
+        color: #fff;
+    }
+
+    .global-best-podium {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .podium-card {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+        padding: 1rem 1.5rem;
+        min-width: 220px;
+        text-align: center;
+        border: 1px solid var(--border-glow);
+        transition: transform 0.2s;
+    }
+
+    .podium-card:hover {
+        transform: translateY(-5px);
+        border-color: gold;
+    }
+
+    .podium-rank {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .podium-rank.gold {
+        color: gold;
+    }
+
+    .podium-rank.silver {
+        color: #c0c0c0;
+    }
+
+    .podium-rank.bronze {
+        color: #cd7f32;
+    }
+
+    .podium-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-light);
+    }
+
+    .podium-score {
+        font-size: 1rem;
+        color: var(--primary);
+        font-family: monospace;
+        margin: 0.5rem 0;
+    }
+
+    .podium-time {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+
+    .podium-map {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 0.25rem;
     }
 
     .stats-tabs {
@@ -293,7 +375,7 @@ description: Liberty Gaming's race server statistics
         border: 1px solid var(--primary);
         border-radius: 24px;
         width: 90%;
-        max-width: 750px;
+        max-width: 850px;
         max-height: 85vh;
         overflow-y: auto;
         padding: 1.5rem;
@@ -469,11 +551,45 @@ description: Liberty Gaming's race server statistics
             margin-top: 0.5rem;
         }
 
-        .global-best-card {
-            width: 100%;
+        /* --- FIX: podium side-by-side on mobile --- */
+        .global-best-podium {
+            flex-direction: row;
             justify-content: center;
-            text-align: center;
+            gap: 0.5rem;
             padding: 1rem;
+        }
+
+        .podium-card {
+            min-width: 0;
+            flex: 1;
+            padding: 0.5rem;
+            max-width: 30%;
+        }
+
+        .podium-rank {
+            font-size: 1.2rem;
+        }
+
+        .podium-name {
+            font-size: 0.8rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .podium-score {
+            font-size: 0.7rem;
+        }
+
+        .podium-time {
+            font-size: 0.65rem;
+        }
+
+        .podium-map {
+            font-size: 0.6rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .modal-container {
@@ -500,18 +616,6 @@ description: Liberty Gaming's race server statistics
         }
     }
 
-    #maps-panel .stats-table td,
-    #maps-panel .stats-table th,
-    #players-panel .stats-table td,
-    #players-panel .stats-table th {
-        padding: 0.5rem 0.8rem;
-    }
-
-    .modal-stats-table td,
-    .modal-stats-table th {
-        padding: 0.4rem 0.5rem;
-    }
-
     @media (max-width: 480px) {
         .stats-table td {
             flex-direction: column;
@@ -531,11 +635,17 @@ description: Liberty Gaming's race server statistics
         .search-input {
             font-size: 16px;
         }
+
+        /* Ensure text can wrap on very small screens */
+        .podium-name,
+        .podium-map {
+            white-space: normal;
+            word-break: break-word;
+        }
     }
 
     #modal-body {
-        overflow-y: scroll !important;
-        -webkit-overflow-scrolling: auto !important;
+        overflow-y: auto !important;
     }
 
     #modal-body::-webkit-scrollbar {
@@ -557,6 +667,20 @@ description: Liberty Gaming's race server statistics
     <h1>Racing Stats</h1>
     <p>Track lap records, player best times, and map leaderboards</p>
     <p>Leaderboard Updated Daily</p>
+</div>
+
+<div class="global-best-container" id="global-best-container">
+    <div class="global-best-header">
+        <h3><i class="fas fa-trophy"></i> Global Leaderboard</h3>
+        <button class="view-all-btn" id="view-all-global-btn"><i class="fas fa-list"></i> View Full Leaderboard</button>
+    </div>
+    <div class="global-best-podium" id="global-best-podium">
+        <div class="loading-spinner" style="padding: 1rem;"><i class="fas fa-spinner fa-pulse"></i> Loading top
+            players...
+        </div>
+    </div>
+    <div id="global-note"
+         style="text-align: center; padding: 0 1rem 1rem 1rem; font-size: 0.9rem; color: var(--text-muted);"></div>
 </div>
 
 <div class="stats-tabs">
@@ -588,7 +712,7 @@ description: Liberty Gaming's race server statistics
             </thead>
             <tbody id="maps-tbody">
             <tr>
-                <td class="loading-spinner" colspan="5"><i class="fas fa-spinner fa-pulse"></i> Loading maps...</td>
+                <td class="loading-spinner" colspan="5"><i class="fas fa-spinner fa-pulse"></i> Loading maps...<\/td>
             </tr>
             </tbody>
         </table>
@@ -610,7 +734,7 @@ description: Liberty Gaming's race server statistics
             </thead>
             <tbody id="players-tbody">
             <tr>
-                <td class="loading-spinner" colspan="5"><i class="fas fa-spinner fa-pulse"></i> Loading players...</td>
+                <td class="loading-spinner" colspan="5"><i class="fas fa-spinner fa-pulse"></i> Loading players...<\/td>
             </tr>
             </tbody>
         </table>
@@ -641,6 +765,7 @@ description: Liberty Gaming's race server statistics
         let mapsCurrentPage = 1;
         let playersCurrentPage = 1;
         const PAGE_SIZE = 10;
+        const MIN_MAPS_FOR_GLOBAL = 10;
 
         const mapsPanel = document.getElementById('maps-panel');
         const playersPanel = document.getElementById('players-panel');
@@ -657,6 +782,12 @@ description: Liberty Gaming's race server statistics
         const modalBody = document.getElementById('modal-body');
         const closeModalBtn = document.getElementById('close-modal-btn');
 
+        const noteDiv = document.getElementById('global-note');
+        if (noteDiv) {
+            noteDiv.innerHTML = `<i class="fas fa-chart-line"></i> <strong>Score = avg(player time ÷ map record). Lower is better.</strong><br>
+                                 <i class="fas fa-info-circle"></i> Global leaderboard requires at least <strong>${MIN_MAPS_FOR_GLOBAL} maps played</strong>.`;
+        }
+
         document.body.appendChild(modalOverlay);
 
         function formatTime(sec) {
@@ -671,21 +802,38 @@ description: Liberty Gaming's race server statistics
                 const data = await response.json();
                 fullData = data;
                 processData(data);
+                renderGlobalBest();
                 renderMaps();
                 renderPlayers();
                 updateSearchPlaceholder();
                 updateResultsSummary();
             } catch (err) {
                 console.error('Failed to load race_stats.json', err);
-                mapsTbody.innerHTML = '<tr><td colspan="5" class="error-msg"><i class="fas fa-exclamation-triangle"></i> Failed to load race data. Make sure race_stats.json exists in the data folder.</td></tr>';
-                playersTbody.innerHTML = '<tr><td colspan="5" class="error-msg"><i class="fas fa-exclamation-triangle"></i> Failed to load race data.</td></tr>';
+                mapsTbody.innerHTML = '<tr><td colspan="5" class="error-msg"><i class="fas fa-exclamation-triangle"></i> Failed to load race data. Make sure race_stats.json exists in the data folder.<\/td><\/tr>';
+                playersTbody.innerHTML = '<tr><td colspan="5" class="error-msg"><i class="fas fa-exclamation-triangle"></i> Failed to load race data.<\/td><\/tr>';
                 resultsSummary.innerText = 'Error loading data';
+                const podiumDiv = document.getElementById('global-best-podium');
+                if (podiumDiv) podiumDiv.innerHTML = '<div class="error-msg">Failed to load global data.</div>';
             }
         }
 
         function processData(data) {
             const mapsTemp = [];
             const playersMap = new Map();
+            const mapRecords = new Map();
+            for (const [mapName, mapInfo] of Object.entries(data)) {
+                if (mapName === 'global_best') continue;
+                if (!mapInfo.players || typeof mapInfo.players !== 'object') continue;
+                let mapBest = Infinity;
+                for (const [pName, pStats] of Object.entries(mapInfo.players)) {
+                    if (pStats.best && pStats.best < mapBest) {
+                        mapBest = parseFloat(pStats.best);
+                    }
+                }
+                if (mapBest !== Infinity) {
+                    mapRecords.set(mapName, mapBest);
+                }
+            }
 
             for (const [mapName, mapInfo] of Object.entries(data)) {
                 if (mapName === 'global_best') continue;
@@ -722,6 +870,9 @@ description: Liberty Gaming's race server statistics
                     rawCurrentBest: mapInfo.current_best
                 });
 
+                const mapRecord = mapRecords.get(mapName);
+                if (!mapRecord) continue;
+
                 for (const [playerName, stats] of Object.entries(playersObj)) {
                     if (!playersMap.has(playerName)) {
                         playersMap.set(playerName, {
@@ -730,7 +881,9 @@ description: Liberty Gaming's race server statistics
                             bestMapName: null,
                             mapsPlayed: 0,
                             totalLaps: 0,
-                            mapDetails: []
+                            mapDetails: [],
+                            normalizedScoreSum: 0,
+                            normalizedScoreCount: 0
                         });
                     }
                     const playerEntry = playersMap.get(playerName);
@@ -744,22 +897,39 @@ description: Liberty Gaming's race server statistics
                         playerEntry.bestMapName = mapName;
                     }
 
+                    let normScore = null;
+                    if (bestOnThisMap !== null && mapRecord) {
+                        normScore = bestOnThisMap / mapRecord;
+                        playerEntry.normalizedScoreSum += normScore;
+                        playerEntry.normalizedScoreCount += 1;
+                    }
+
                     playerEntry.mapDetails.push({
                         mapName: mapName,
                         best: bestOnThisMap,
                         average: stats.average ? parseFloat(stats.average) : null,
-                        laps: lapsOnMap
+                        laps: lapsOnMap,
+                        normalizedScore: normScore
                     });
                 }
             }
 
             for (const [_, player] of playersMap.entries()) {
                 if (player.overallBestTime === Infinity) player.overallBestTime = null;
+                if (player.normalizedScoreCount > 0) {
+                    player.normalizedScore = player.normalizedScoreSum / player.normalizedScoreCount;
+                } else {
+                    player.normalizedScore = null;
+                }
                 player.mapDetails.sort((a, b) => (a.best || Infinity) - (b.best || Infinity));
                 playersAgg.push(player);
             }
 
             playersAgg.sort((a, b) => {
+                if (a.normalizedScore === null && b.normalizedScore === null) return 0;
+                if (a.normalizedScore === null) return 1;
+                if (b.normalizedScore === null) return -1;
+                if (a.normalizedScore !== b.normalizedScore) return a.normalizedScore - b.normalizedScore;
                 if (a.overallBestTime === null && b.overallBestTime === null) return 0;
                 if (a.overallBestTime === null) return 1;
                 if (b.overallBestTime === null) return -1;
@@ -767,6 +937,65 @@ description: Liberty Gaming's race server statistics
             });
 
             mapsList = mapsTemp.sort((a, b) => a.name.localeCompare(b.name));
+        }
+
+        function renderGlobalBest() {
+            const podiumDiv = document.getElementById('global-best-podium');
+            if (!podiumDiv) return;
+
+            const qualifiedPlayers = playersAgg.filter(p => p.normalizedScore !== null && p.mapsPlayed >= MIN_MAPS_FOR_GLOBAL);
+            if (qualifiedPlayers.length === 0) {
+                podiumDiv.innerHTML = `<div class="no-results">No qualified players (need at least ${MIN_MAPS_FOR_GLOBAL} maps played).</div>`;
+                return;
+            }
+
+            const top3 = qualifiedPlayers.slice(0, 3);
+            const medals = ['gold', 'silver', 'bronze'];
+            let html = '';
+            top3.forEach((player, idx) => {
+                html += `
+                    <div class="podium-card">
+                        <div class="podium-rank ${medals[idx]}">${idx === 0 ? '🥇' : idx === 1 ? '🥈' : '🥉'}</div>
+                        <div class="podium-name">${escapeHtml(player.name)}</div>
+                        <div class="podium-score">Score: ${player.normalizedScore.toFixed(4)}</div>
+                        <div class="podium-time">Best raw: ${formatTime(player.overallBestTime)}s</div>
+                        <div class="podium-map">🏁 ${escapeHtml(player.bestMapName || 'Unknown')}</div>
+                        <div class="podium-map">📊 ${player.mapsPlayed} maps played</div>
+                    </div>
+                `;
+            });
+            podiumDiv.innerHTML = html;
+        }
+
+        function showGlobalLeaderboard() {
+            const qualifiedPlayers = playersAgg.filter(p => p.normalizedScore !== null && p.mapsPlayed >= MIN_MAPS_FOR_GLOBAL);
+            if (qualifiedPlayers.length === 0) {
+                modalTitle.innerText = 'Global Leaderboard';
+                modalBody.innerHTML = `<div class="no-results">No qualified players (need at least ${MIN_MAPS_FOR_GLOBAL} maps played).</div>`;
+                modalOverlay.classList.add('active');
+                return;
+            }
+
+            let html = `<table class="modal-stats-table">
+                <thead>
+                    <tr><th>RANK</th><th>PLAYER</th><th>NORM SCORE</th><th>BEST RAW (s)</th><th>MAP</th><th>MAPS PLAYED</th></tr>
+                </thead><tbody>`;
+            qualifiedPlayers.forEach((player, idx) => {
+                html += `
+                    <tr>
+                        <td>${idx + 1}</td>
+                        <td>${escapeHtml(player.name)}</td>
+                        <td>${player.normalizedScore.toFixed(4)}</td>
+                        <td>${formatTime(player.overallBestTime)}</td>
+                        <td>${escapeHtml(player.bestMapName || '-')}</td>
+                        <td>${player.mapsPlayed}</td>
+                    </tr>
+                `;
+            });
+            html += `</tbody></table>`;
+            modalTitle.innerText = 'Global Leaderboard';
+            modalBody.innerHTML = html;
+            modalOverlay.classList.add('active');
         }
 
         function updateSearchPlaceholder() {
@@ -785,7 +1014,7 @@ description: Liberty Gaming's race server statistics
 
         function renderMaps() {
             if (!mapsList.length) {
-                mapsTbody.innerHTML = '<tr><td colspan="5" class="loading-spinner">Loading map data...</td></tr>';
+                mapsTbody.innerHTML = '<tr><td colspan="5" class="loading-spinner">Loading map data...<\/td><\/tr>';
                 mapsPaginationDiv.innerHTML = '';
                 return;
             }
@@ -796,7 +1025,7 @@ description: Liberty Gaming's race server statistics
             const pageItems = filtered.slice(start, start + PAGE_SIZE);
 
             if (pageItems.length === 0) {
-                mapsTbody.innerHTML = '<tr><td colspan="5" class="no-results"><i class="fas fa-search"></i> No maps match your search.</td></tr>';
+                mapsTbody.innerHTML = '<tr><td colspan="5" class="no-results"><i class="fas fa-search"></i> No maps match your search.<\/td><\/tr>';
                 mapsPaginationDiv.innerHTML = '';
                 return;
             }
@@ -805,12 +1034,12 @@ description: Liberty Gaming's race server statistics
             for (const map of pageItems) {
                 html += `
                 <tr>
-                    <td class="map-name-cell" data-label="MAP NAME">${escapeHtml(map.name)}</td>
-                    <td data-label="TOP PLAYER">${escapeHtml(map.currentBestPlayer)}</td>
-                    <td data-label="BEST TIME">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '-'}</td>
-                    <td data-label="TOTAL PLAYERS">${map.totalPlayers}</td>
-                    <td data-label="ACTION"><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Full Map Stats</button></td>
-                </tr>`;
+                    <td class="map-name-cell" data-label="MAP NAME">${escapeHtml(map.name)}<\/td>
+                    <td data-label="TOP PLAYER">${escapeHtml(map.currentBestPlayer)}<\/td>
+                    <td data-label="BEST TIME">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '-'}<\/td>
+                    <td data-label="TOTAL PLAYERS">${map.totalPlayers}<\/td>
+                    <td data-label="ACTION"><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Full Map Stats<\/button><\/td>
+                <\/tr>`;
             }
             mapsTbody.innerHTML = html;
             renderPagination(mapsPaginationDiv, totalPages, mapsCurrentPage, 'maps');
@@ -819,7 +1048,7 @@ description: Liberty Gaming's race server statistics
 
         function renderPlayers() {
             if (!playersAgg.length) {
-                playersTbody.innerHTML = '<tr><td colspan="5" class="loading-spinner">Loading player data...</td></tr>';
+                playersTbody.innerHTML = '<tr><td colspan="5" class="loading-spinner">Loading player data...<\/td><\/tr>';
                 playersPaginationDiv.innerHTML = '';
                 return;
             }
@@ -830,7 +1059,7 @@ description: Liberty Gaming's race server statistics
             const pageItems = filtered.slice(start, start + PAGE_SIZE);
 
             if (pageItems.length === 0) {
-                playersTbody.innerHTML = '<tr><td colspan="5" class="no-results"><i class="fas fa-search"></i> No players match your search.</td></tr>';
+                playersTbody.innerHTML = '<tr><td colspan="5" class="no-results"><i class="fas fa-search"></i> No players match your search.<\/td><\/tr>';
                 playersPaginationDiv.innerHTML = '';
                 return;
             }
@@ -838,12 +1067,12 @@ description: Liberty Gaming's race server statistics
             let html = '';
             for (const player of pageItems) {
                 html += `<tr>
-                    <td class="player-name-cell" data-label="Player Name">${escapeHtml(player.name)}</td>
-                    <td data-label="Overall Best (s)">${player.overallBestTime !== null ? formatTime(player.overallBestTime) : '-'}</td>
-                    <td data-label="Best Map">${player.bestMapName ? escapeHtml(player.bestMapName) : '-'}</td>
-                    <td data-label="Maps Played">${player.mapsPlayed}</td>
-                    <td data-label="Actions"><button class="detail-btn" data-type="player" data-name="${escapeHtml(player.name)}"><i class="fas fa-chart-simple"></i> Stats</button></td>
-                </tr>`;
+                    <td class="player-name-cell" data-label="Player Name">${escapeHtml(player.name)}<\/td>
+                    <td data-label="Overall Best (s)">${player.overallBestTime !== null ? formatTime(player.overallBestTime) : '-'}<\/td>
+                    <td data-label="Best Map">${player.bestMapName ? escapeHtml(player.bestMapName) : '-'}<\/td>
+                    <td data-label="Maps Played">${player.mapsPlayed}<\/td>
+                    <td data-label="Actions"><button class="detail-btn" data-type="player" data-name="${escapeHtml(player.name)}"><i class="fas fa-chart-simple"></i> Stats<\/button><\/td>
+                <\/tr>`;
             }
             playersTbody.innerHTML = html;
             renderPagination(playersPaginationDiv, totalPages, playersCurrentPage, 'players');
@@ -936,7 +1165,7 @@ description: Liberty Gaming's race server statistics
                     <td>${formatTime(p.best)}</td>
                     <td>${p.average ? formatTime(p.average) : '-'}</td>
                     <td>${p.laps}</td>
-                </tr>`;
+                <\/tr>`;
             });
             html += `</tbody></table>`;
             modalBody.innerHTML = html;
@@ -953,14 +1182,15 @@ description: Liberty Gaming's race server statistics
                 return;
             }
             let html = `<table class="modal-stats-table">
-                <thead><tr><th>MAP</th><th>BEST TIME</th><th>AVERAGE</th><th>LAPS</th></tr></thead><tbody>`;
+                <thead><tr><th>MAP</th><th>BEST TIME</th><th>AVERAGE</th><th>LAPS</th><th>NORM SCORE</th></tr></thead><tbody>`;
             player.mapDetails.forEach(m => {
                 html += `<tr>
                     <td>${escapeHtml(m.mapName)}</td>
                     <td>${m.best ? formatTime(m.best) : '-'}</td>
                     <td>${m.average ? formatTime(m.average) : '-'}</td>
                     <td>${m.laps}</td>
-                </tr>`;
+                    <td>${m.normalizedScore ? m.normalizedScore.toFixed(4) : '-'}</td>
+                <\/tr>`;
             });
             html += `</tbody></table>`;
             modalBody.innerHTML = html;
@@ -1044,6 +1274,11 @@ description: Liberty Gaming's race server statistics
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) closeModal();
         });
+
+        const viewAllBtn = document.getElementById('view-all-global-btn');
+        if (viewAllBtn) {
+            viewAllBtn.addEventListener('click', showGlobalLeaderboard);
+        }
 
         const stylePanel = document.createElement('style');
         stylePanel.textContent = `.panel { display: none; } .panel.active { display: block; }`;
