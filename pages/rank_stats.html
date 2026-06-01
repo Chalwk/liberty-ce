@@ -552,50 +552,7 @@ description: Rank Progression & Leaderboard
             {name: "General", grades: [47000, 48000, 49000, 50000]}
         ];
 
-        function getRankInfo(credits) {
-            let rawCredits = credits;
-            if (isNaN(rawCredits)) rawCredits = 0;
-            if (rawCredits < 0) rawCredits = 0;
-            let currentRank = null, currentGrade = null, currentThreshold = 0, nextThreshold = null;
-            for (let i = 0; i < rankThresholds.length; i++) {
-                const rank = rankThresholds[i];
-                const grades = rank.grades;
-                for (let g = 0; g < grades.length; g++) {
-                    if (rawCredits >= grades[g]) {
-                        currentRank = rank.name;
-                        currentGrade = g + 1;
-                        currentThreshold = grades[g];
-                        if (g + 1 < grades.length) nextThreshold = grades[g + 1];
-                        else if (i + 1 < rankThresholds.length) nextThreshold = rankThresholds[i + 1].grades[0];
-                        else nextThreshold = null;
-                    } else break;
-                }
-            }
-            if (!currentRank) {
-                currentRank = "Recruit";
-                currentGrade = 1;
-                currentThreshold = 0;
-                nextThreshold = rankThresholds[0].grades[0] || 3000;
-            }
-            let progressPercent = 0;
-            if (nextThreshold !== null && nextThreshold > currentThreshold) {
-                progressPercent = ((rawCredits - currentThreshold) / (nextThreshold - currentThreshold)) * 100;
-                progressPercent = Math.min(100, Math.max(0, progressPercent));
-            } else if (nextThreshold === null) progressPercent = 100;
-            return {rankName: currentRank, grade: currentGrade, currentThreshold, nextThreshold, progressPercent};
-        }
-
-        function formatRankGrade(rankName, grade) {
-            const roman = ['', 'I', 'II', 'III', 'IV'];
-            const romanGrade = (grade >= 1 && grade <= 4) ? roman[grade] : grade;
-            return `${rankName} ${romanGrade}`;
-        }
-
-        let rawPlayers = [];
-        let playersList = [];
-        let currentTab = 'leaderboard';
-        let leaderboardFilter = '';
-        let currentPage = 1;
+        const romanNumerals = ['', 'I', 'II', 'III', 'IV'];
         const PAGE_SIZE = 10;
 
         const leaderboardTbody = document.getElementById('leaderboard-tbody');
@@ -608,69 +565,216 @@ description: Rank Progression & Leaderboard
         const modalTitle = document.getElementById('modal-title');
         const modalBody = document.getElementById('modal-body');
         const closeModalBtn = document.getElementById('close-modal-btn');
+        const leaderboardPanel = document.getElementById('leaderboard-panel');
+        const ranksPanel = document.getElementById('ranks-panel');
+        const leaderboardToolbar = document.getElementById('leaderboard-toolbar');
 
         document.body.appendChild(modalOverlay);
 
+        let rawPlayers = [];
+        let playersList = [];
+        let leaderboardFilter = '';
+        let currentPage = 1;
+
         function escapeHtml(str) {
-            if (!str) return '';
-            return str.replace(/[&<>]/g, function (m) {
-                if (m === '&') return '&amp;';
-                if (m === '<') return '&lt;';
-                if (m === '>') return '&gt;';
-                return m;
-            });
+            return String(str ?? '').replace(/[&<>"']/g, (character) => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            })[character]);
+        }
+
+        function formatRankGrade(rankName, grade) {
+            return `${rankName} ${grade >= 1 && grade <= 4 ? romanNumerals[grade] : grade}`;
+        }
+
+        function getRankInfo(credits) {
+            let rawCredits = Number(credits);
+            if (!Number.isFinite(rawCredits) || rawCredits < 0) rawCredits = 0;
+
+            let currentRank = 'Recruit';
+            let currentGrade = 1;
+            let currentThreshold = 0;
+            let nextThreshold = rankThresholds[0]?.grades[0] ?? null;
+
+            for (let i = 0; i < rankThresholds.length; i++) {
+                const rank = rankThresholds[i];
+                for (let g = 0; g < rank.grades.length; g++) {
+                    const threshold = rank.grades[g];
+                    if (rawCredits < threshold) break;
+
+                    currentRank = rank.name;
+                    currentGrade = g + 1;
+                    currentThreshold = threshold;
+                    nextThreshold = g + 1 < rank.grades.length
+                        ? rank.grades[g + 1]
+                        : (rankThresholds[i + 1]?.grades[0] ?? null);
+                }
+            }
+
+            const progressPercent = nextThreshold !== null && nextThreshold > currentThreshold
+                ? Math.min(100, Math.max(0, ((rawCredits - currentThreshold) / (nextThreshold - currentThreshold)) * 100))
+                : 100;
+
+            return {rankName: currentRank, grade: currentGrade, currentThreshold, nextThreshold, progressPercent};
         }
 
         function renderRanksTable() {
-            let html = '';
-            for (let i = 0; i < rankThresholds.length; i++) {
-                const rank = rankThresholds[i];
-                const grades = rank.grades;
-                const formattedThresholds = grades.map(c => c.toLocaleString()).join(', ');
-                html += `
+            ranksTbody.innerHTML = rankThresholds.map((rank) => {
+                const formattedThresholds = rank.grades.map((c) => c.toLocaleString()).join(', ');
+                return `
                     <tr>
                         <td data-label="Rank"><strong>${rank.name}</strong></td>
                         <td data-label="Credit Thresholds">${formattedThresholds}</td>
                     </tr>
                 `;
+            }).join('');
+        }
+
+        function getFilteredPlayers() {
+            const term = leaderboardFilter.trim().toLowerCase();
+            return term ? playersList.filter((player) => player.name.toLowerCase().includes(term)) : [...playersList];
+        }
+
+        function updateResultsSummaryText(filteredCount = getFilteredPlayers().length) {
+            resultsSummary.innerText = `👥 ${filteredCount} player${filteredCount !== 1 ? 's' : ''} • Page ${currentPage}`;
+        }
+
+        function renderPagination(totalPages) {
+            if (totalPages <= 1) {
+                leaderboardPagination.innerHTML = '';
+                return;
             }
-            ranksTbody.innerHTML = html;
+
+            const buttons = [`<button class="page-btn ${currentPage === 1 ? 'disabled' : ''}" data-page="prev"><i class="fas fa-chevron-left"></i></button>`];
+
+            for (let page = 1; page <= totalPages; page++) {
+                const shouldShow = page === 1 || page === totalPages || (page >= currentPage - 2 && page <= currentPage + 2);
+                if (shouldShow) {
+                    buttons.push(`<button class="page-btn ${page === currentPage ? 'active-page' : ''}" data-page="${page}">${page}</button>`);
+                } else if (page === currentPage - 3 || page === currentPage + 3) {
+                    buttons.push('<button class="page-btn disabled" disabled>...</button>');
+                }
+            }
+
+            buttons.push(`<button class="page-btn ${currentPage === totalPages ? 'disabled' : ''}" data-page="next"><i class="fas fa-chevron-right"></i></button>`);
+            leaderboardPagination.innerHTML = buttons.join('');
+        }
+
+        function renderLeaderboard() {
+            const filtered = getFilteredPlayers();
+            const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+
+            currentPage = Math.min(currentPage, totalPages);
+            const startIndex = (currentPage - 1) * PAGE_SIZE;
+            const pageItems = filtered.slice(startIndex, startIndex + PAGE_SIZE);
+
+            if (!pageItems.length) {
+                leaderboardTbody.innerHTML = `<tr><td colspan="7" class="no-results"><i class="fas fa-search"></i> No players match search</td></tr>`;
+                leaderboardPagination.innerHTML = '';
+                updateResultsSummaryText(0);
+                return;
+            }
+
+            leaderboardTbody.innerHTML = pageItems.map((player) => `
+                <tr>
+                    <td class="player-name-cell" data-label="Player"><i class="fas fa-user-helmet-safety"></i> ${escapeHtml(player.name)}</td>
+                    <td data-label="KILLS">${player.kills.toLocaleString()}</td>
+                    <td data-label="DEATHS">${player.deaths.toLocaleString()}</td>
+                    <td data-label="K/D">${player.kdFormatted}</td>
+                    <td data-label="CREDITS (cR)"><strong class="highlight">${player.credits.toLocaleString()}</strong></td>
+                    <td data-label="RANK & GRADE"><span class="rank-badge">${player.rankGradeStr}</span></td>
+                    <td data-label="ACTION"><button class="detail-btn" data-playername="${escapeHtml(player.name)}"><i class="fas fa-chart-line"></i> Full Stats</button></td>
+                </tr>
+            `).join('');
+
+            renderPagination(totalPages);
+            updateResultsSummaryText(filtered.length);
+        }
+
+        function buildProgressHtml(player, rankInfo) {
+            if (rankInfo.nextThreshold === null) {
+                return `
+                    <div class="progress-container"><div class="progress-fill" style="width: 100%; background: gold;"></div></div>
+                    <div class="rank-detail-text">🏅 Maximum rank achieved - General IV</div>
+                `;
+            }
+
+            return `
+                <div class="progress-container"><div class="progress-fill" style="width: ${rankInfo.progressPercent}%;"></div></div>
+                <div class="rank-detail-text">${player.credits.toLocaleString()} / ${rankInfo.nextThreshold.toLocaleString()} credits (${rankInfo.progressPercent.toFixed(1)}%)</div>
+            `;
+        }
+
+        function handleDetail(name) {
+            const player = playersList.find((entry) => entry.name === name);
+            if (!player) return;
+
+            const rankInfo = player.rankInfo;
+            modalTitle.innerText = `${escapeHtml(player.name)} · Stats`;
+            modalBody.innerHTML = `
+                <table class="modal-stats-table" style="width:100%">
+                    <tr><th>KILLS</th><td>${player.kills.toLocaleString()}</td></tr>
+                    <tr><th>DEATHS</th><td>${player.deaths.toLocaleString()}</td></tr>
+                    <tr><th>K/D</th><td>${player.kdFormatted}</td></tr>
+                    <tr><th>CREDITS (cR)</th><td><strong>${player.credits.toLocaleString()}</strong></td></tr>
+                    <tr><th>RANK</th><td><span class="rank-badge">${player.rankGradeStr}</span></td></tr>
+                    <tr><th>RANK THRESHOLD</th><td>${rankInfo.currentThreshold.toLocaleString()} → ${rankInfo.nextThreshold !== null ? rankInfo.nextThreshold.toLocaleString() : '∞'}</td></tr>
+                    <tr><th>PROGRESS</th><td>${buildProgressHtml(player, rankInfo)}</td></tr>
+                    <tr><th>NEXT PROMOTION</th><td>${rankInfo.nextThreshold !== null ? `Requires ${(rankInfo.nextThreshold - player.credits).toLocaleString()} more credits` : 'Max rank achieved'}</td></tr>
+                </table>
+            `;
+            modalOverlay.classList.add('active');
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
         }
 
         async function loadRankData() {
             try {
                 const response = await fetch('/data/ranks.txt');
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                const text = await response.text();
-                const lines = text.split(/\r?\n/);
+
                 const playersMap = new Map();
-                for (let line of lines) {
-                    line = line.trim();
-                    if (!line) continue;
-                    const parts = line.split(';');
+                for (const line of (await response.text()).split(/\r?\n/)) {
+                    const trimmed = line.trim();
+                    if (!trimmed) continue;
+
+                    const parts = trimmed.split(';');
                     if (parts.length < 6) continue;
+
                     const name = parts[0].trim();
-                    const kills = parseInt(parts[1], 10) || 0;
-                    const deaths = parseInt(parts[2], 10) || 0;
-                    let credits = parseInt(parts[3], 10) || 0;
                     if (!name) continue;
-                    playersMap.set(name, {name, kills, deaths, credits});
+
+                    playersMap.set(name, {
+                        name,
+                        kills: Number.parseInt(parts[1], 10) || 0,
+                        deaths: Number.parseInt(parts[2], 10) || 0,
+                        credits: Number.parseInt(parts[3], 10) || 0
+                    });
                 }
-                rawPlayers = Array.from(playersMap.values());
-                playersList = rawPlayers.map(p => {
-                    const kd = p.deaths === 0 ? p.kills : (p.kills / p.deaths);
-                    const rankObj = getRankInfo(p.credits);
-                    return {
-                        ...p,
-                        kd: kd,
-                        kdFormatted: kd.toFixed(2),
-                        rankName: rankObj.rankName,
-                        grade: rankObj.grade,
-                        rankGradeStr: formatRankGrade(rankObj.rankName, rankObj.grade),
-                        rankInfo: rankObj
-                    };
-                });
-                playersList.sort((a, b) => b.credits - a.credits);
+
+                rawPlayers = [...playersMap.values()];
+                playersList = rawPlayers
+                    .map((player) => {
+                        const kd = player.deaths === 0 ? player.kills : player.kills / player.deaths;
+                        const rankInfo = getRankInfo(player.credits);
+
+                        return {
+                            ...player,
+                            kd,
+                            kdFormatted: kd.toFixed(2),
+                            rankName: rankInfo.rankName,
+                            grade: rankInfo.grade,
+                            rankGradeStr: formatRankGrade(rankInfo.rankName, rankInfo.grade),
+                            rankInfo
+                        };
+                    })
+                    .sort((a, b) => b.credits - a.credits);
+
                 renderLeaderboard();
                 renderRanksTable();
                 updateResultsSummaryText();
@@ -681,165 +785,68 @@ description: Rank Progression & Leaderboard
             }
         }
 
-        function getFilteredPlayers() {
-            if (!leaderboardFilter) return [...playersList];
-            return playersList.filter(p => p.name.toLowerCase().includes(leaderboardFilter.toLowerCase()));
+        function switchTab(tabId) {
+            const isLeaderboard = tabId === 'leaderboard';
+            leaderboardPanel.classList.toggle('active', isLeaderboard);
+            ranksPanel.classList.toggle('active', !isLeaderboard);
+            leaderboardToolbar.style.display = isLeaderboard ? 'flex' : 'none';
+
+            if (isLeaderboard) {
+                renderLeaderboard();
+                updateResultsSummaryText();
+            } else if (!ranksTbody.children.length) {
+                renderRanksTable();
+            }
         }
 
-        function renderLeaderboard() {
-            const filtered = getFilteredPlayers();
-            const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
-            if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
-            const start = (currentPage - 1) * PAGE_SIZE;
-            const pageItems = filtered.slice(start, start + PAGE_SIZE);
-            if (pageItems.length === 0) {
-                leaderboardTbody.innerHTML = `<tr><td colspan="7" class="no-results"><i class="fas fa-search"></i> No players match search</td></tr>`;
-                leaderboardPagination.innerHTML = '';
-                return;
-            }
-            let htmlRows = '';
-            for (const player of pageItems) {
-                htmlRows += `
-                    <tr>
-                        <td class="player-name-cell" data-label="Player"><i class="fas fa-user-helmet-safety"></i> ${escapeHtml(player.name)}</td>
-                        <td data-label="KILLS">${player.kills.toLocaleString()}</td>
-                        <td data-label="DEATHS">${player.deaths.toLocaleString()}</td>
-                        <td data-label="K/D">${player.kdFormatted}</td>
-                        <td data-label="CREDITS (cR)"><strong class="highlight">${player.credits.toLocaleString()}</strong></td>
-                        <td data-label="RANK & GRADE"><span class="rank-badge">${player.rankGradeStr}</span></td>
-                        <td data-label="ACTION"><button class="detail-btn" data-playername="${escapeHtml(player.name)}"><i class="fas fa-chart-line"></i> Full Stats</button></td>
-                    </tr>
-                `;
-            }
-            leaderboardTbody.innerHTML = htmlRows;
-            renderPagination(totalPages);
-            attachDetailEvents();
-        }
-
-        function renderPagination(totalPages) {
-            if (totalPages <= 1) {
-                leaderboardPagination.innerHTML = '';
-                return;
-            }
-            let btns = '';
-            btns += `<button class="page-btn ${currentPage === 1 ? 'disabled' : ''}" data-page="prev"><i class="fas fa-chevron-left"></i></button>`;
-            for (let i = 1; i <= totalPages; i++) {
-                if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
-                    btns += `<button class="page-btn ${i === currentPage ? 'active-page' : ''}" data-page="${i}">${i}</button>`;
-                } else if (i === currentPage - 3 || i === currentPage + 3) {
-                    btns += `<button class="page-btn disabled" disabled>...</button>`;
-                }
-            }
-            btns += `<button class="page-btn ${currentPage === totalPages ? 'disabled' : ''}" data-page="next"><i class="fas fa-chevron-right"></i></button>`;
-            leaderboardPagination.innerHTML = btns;
-            document.querySelectorAll('#leaderboard-pagination .page-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    if (btn.classList.contains('disabled')) return;
-                    let newPage = currentPage;
-                    const pageVal = btn.dataset.page;
-                    if (pageVal === 'prev') newPage--;
-                    else if (pageVal === 'next') newPage++;
-                    else newPage = parseInt(pageVal, 10);
-                    const filteredLen = getFilteredPlayers().length;
-                    const maxPage = Math.ceil(filteredLen / PAGE_SIZE);
-                    if (newPage >= 1 && newPage <= maxPage) {
-                        currentPage = newPage;
-                        renderLeaderboard();
-                        updateResultsSummaryText();
-                    }
-                });
+        document.querySelectorAll('.tab-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach((tab) => tab.classList.remove('active'));
+                button.classList.add('active');
+                switchTab(button.dataset.tab);
             });
-        }
+        });
 
-        function attachDetailEvents() {
-            document.querySelectorAll('.detail-btn').forEach(btn => {
-                btn.removeEventListener('click', handleDetail);
-                btn.addEventListener('click', handleDetail);
-            });
-        }
-
-        function handleDetail(e) {
-            const name = e.currentTarget.dataset.playername;
-            const player = playersList.find(p => p.name === name);
-            if (!player) return;
-            modalTitle.innerText = `${escapeHtml(player.name)} · Stats`;
-            const rankObj = player.rankInfo;
-            const progressPercent = rankObj.progressPercent;
-            const currentThres = rankObj.currentThreshold.toLocaleString();
-            let progressHtml = `<div class="progress-container"><div class="progress-fill" style="width: ${progressPercent}%;"></div></div>`;
-            if (rankObj.nextThreshold === null) progressHtml = `<div class="progress-container"><div class="progress-fill" style="width: 100%; background: gold;"></div></div><div class="rank-detail-text">🏅 Maximum rank achieved - General IV</div>`;
-            else progressHtml += `<div class="rank-detail-text">${player.credits.toLocaleString()} / ${rankObj.nextThreshold.toLocaleString()} credits (${progressPercent.toFixed(1)}%)</div>`;
-            modalBody.innerHTML = `
-                <table class="modal-stats-table" style="width:100%">
-                    <tr><th>KILLS</th><td>${player.kills.toLocaleString()}</td>
-                    <tr><th>DEATHS</th><td>${player.deaths.toLocaleString()}</td>
-                    <tr><th>K/D</th><td>${player.kdFormatted}</td>
-                    <tr><th>CREDITS (cR)</th><td><strong>${player.credits.toLocaleString()}</strong></td>
-                    <tr><th>RANK</th><td><span class="rank-badge">${player.rankGradeStr}</span></td>
-                    <tr><th>RANK THRESHOLD</th><td>${currentThres} → ${rankObj.nextThreshold ? rankObj.nextThreshold.toLocaleString() : '∞'}</td>
-                    <tr><th>PROGRESS</th><td>${progressHtml}</td>
-                    <tr><th>NEXT PROMOTION</th><td>${rankObj.nextThreshold ? `Requires ${(rankObj.nextThreshold - player.credits).toLocaleString()} more credits` : 'Max rank achieved'}</td>
-                </table>
-            `;
-            modalOverlay.classList.add('active');
-        }
-
-        function updateResultsSummaryText() {
-            const filtered = getFilteredPlayers();
-            resultsSummary.innerText = `👥 ${filtered.length} player${filtered.length !== 1 ? 's' : ''} • Page ${currentPage}`;
-        }
-
-        function handleSearch() {
+        searchInput.addEventListener('input', () => {
             leaderboardFilter = searchInput.value;
             currentPage = 1;
             renderLeaderboard();
-            updateResultsSummaryText();
-        }
+        });
 
-        function clearSearch() {
+        clearSearchBtn.addEventListener('click', () => {
             searchInput.value = '';
             leaderboardFilter = '';
             currentPage = 1;
             renderLeaderboard();
-            updateResultsSummaryText();
-        }
-
-        function switchTab(tabId) {
-            currentTab = tabId;
-            const leaderboardPanel = document.getElementById('leaderboard-panel');
-            const ranksPanel = document.getElementById('ranks-panel');
-            const toolbar = document.getElementById('leaderboard-toolbar');
-            if (tabId === 'leaderboard') {
-                leaderboardPanel.classList.add('active');
-                ranksPanel.classList.remove('active');
-                toolbar.style.display = 'flex';
-                renderLeaderboard();
-                updateResultsSummaryText();
-            } else {
-                leaderboardPanel.classList.remove('active');
-                ranksPanel.classList.add('active');
-                toolbar.style.display = 'none';
-                if (ranksTbody.children.length === 0) renderRanksTable();
-            }
-        }
-
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                switchTab(btn.dataset.tab);
-            });
         });
-        searchInput.addEventListener('input', handleSearch);
-        clearSearchBtn.addEventListener('click', clearSearch);
 
-        function closeModal() {
-            modalOverlay.classList.remove('active');
-        }
+        leaderboardPagination.addEventListener('click', (event) => {
+            const button = event.target.closest('.page-btn');
+            if (!button || button.classList.contains('disabled')) return;
+
+            const filteredLength = getFilteredPlayers().length;
+            const maxPage = Math.max(1, Math.ceil(filteredLength / PAGE_SIZE));
+            let nextPage = currentPage;
+
+            if (button.dataset.page === 'prev') nextPage -= 1;
+            else if (button.dataset.page === 'next') nextPage += 1;
+            else nextPage = Number.parseInt(button.dataset.page, 10);
+
+            if (nextPage >= 1 && nextPage <= maxPage) {
+                currentPage = nextPage;
+                renderLeaderboard();
+            }
+        });
+
+        leaderboardTbody.addEventListener('click', (event) => {
+            const button = event.target.closest('.detail-btn');
+            if (!button) return;
+            handleDetail(button.dataset.playername);
+        });
 
         closeModalBtn.addEventListener('click', closeModal);
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) closeModal();
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) closeModal();
         });
 
         loadRankData();
