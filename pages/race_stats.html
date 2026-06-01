@@ -805,11 +805,11 @@ description: Liberty Gaming's race server statistics
             for (const map of pageItems) {
                 html += `
                 <tr>
-                    <td class="map-name-cell" data-label="Map Name">${escapeHtml(map.name)}</td>
-                    <td data-label="Current Best Player">${escapeHtml(map.currentBestPlayer)}</td>
-                    <td data-label="Best Time">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '-'}</td>
-                    <td data-label="Total Players">${map.totalPlayers}</td>
-                    <td data-label="Actions"><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Full Map Stats</button></td>
+                    <td class="map-name-cell" data-label="MAP NAME">${escapeHtml(map.name)}</td>
+                    <td data-label="TOP PLAYER">${escapeHtml(map.currentBestPlayer)}</td>
+                    <td data-label="BEST TIME">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '-'}</td>
+                    <td data-label="TOTAL PLAYERS">${map.totalPlayers}</td>
+                    <td data-label="ACTION"><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Full Map Stats</button></td>
                 </tr>`;
             }
             mapsTbody.innerHTML = html;
