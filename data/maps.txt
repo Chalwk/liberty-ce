@@ -42,6 +42,7 @@ MIX;liberty_forgotten_market;Slayer, 25 kills, rox
 MIX;liberty_gephy;CTF, rox
 MIX;liberty_hangem;CTF, rox | Oddball, rox, 2 skulls
 MIX;liberty_hornets_nest;CTF, rox
+MIX;liberty_paintball_final;Slayer, 25 kills, classic weaps
 MIX;liberty_hung_higher;Oddball, rox, 2 skulls
 MIX;liberty_longest;Oddball, rox, 2 skulls
 MIX;liberty_opavo;Slayer, 25 kills, rox
