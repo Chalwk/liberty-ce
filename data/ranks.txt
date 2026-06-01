@@ -51,7 +51,7 @@ LIB-Rookie;0;0;0;Recruit;1
 NostraFeraT;1;0;34;Recruit;1
 LIB-Thors;0;0;0;Recruit;1
 zug zug;0;0;0;Recruit;1
-LIB-Chalwk;270;235;1585;Recruit;1
+LIB-Chalwk;277;246;1673;Recruit;1
 Leonel Game;22;32;140;Recruit;1
 Misantrophy;2;0;30;Recruit;1
 Mortz!;5;4;34;Recruit;1
@@ -71,7 +71,7 @@ etesech;16;13;106;Recruit;1
 Davichi;0;1;0;Recruit;1
 ^jTINA^J<3;24;23;138;Recruit;1
 {L°E°}Fa7aL;1;0;20;Recruit;1
-LIB-Oldi;61;77;870;Recruit;1
+LIB-Oldi;88;111;1266;Recruit;1
 Harbinge�;103;149;1463;Recruit;1
 i love YOU;3;0;31;Recruit;1
 aj_urbano;10;53;51;Recruit;1
@@ -87,7 +87,7 @@ LIB-Vegeta;0;0;0;Recruit;1
 Erve Nao;0;0;0;Recruit;1
 Maury;0;0;0;Recruit;1
 LIB-Eddy;0;0;0;Recruit;1
-SID;172;164;2464;Recruit;1
+SID;219;205;3126;Apprentice;1
 Pl�y�???wخ;247;313;3666;Apprentice;1
 X-Woman;9;6;124;Recruit;1
 Mrman499;1;3;15;Recruit;1
@@ -107,7 +107,7 @@ Might;21;0;343;Recruit;1
 SEXMADREH?O;0;3;0;Recruit;1
 [FAST]depri;161;185;2362;Recruit;1
 LIB-Spirou;0;0;0;Recruit;1
-LIB-Maja;270;292;3979;Apprentice;1
+LIB-Maja;305;337;4547;Apprentice;1
 HIAEJHAPO;3;3;45;Recruit;1
 son goku;3;7;45;Recruit;1
 sexyPRO;0;4;-5;Recruit;1
@@ -131,7 +131,7 @@ Anonimo;0;0;0;Recruit;1
 Glashuts;1;3;9;Recruit;1
 albatross;53;57;800;Recruit;1
 ~FaTuM~;7;12;94;Recruit;1
-LIB-Perico;404;584;6032;Apprentice;2
+LIB-Perico;428;621;6347;Apprentice;2
 Wild-EyE;46;59;326;Recruit;1
 Fields;36;70;157;Recruit;1
 cardanol;1;0;36;Recruit;1
