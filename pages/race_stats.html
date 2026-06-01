@@ -97,30 +97,37 @@ description: Liberty Gaming's race server statistics
     .global-best-podium {
         display: flex;
         justify-content: center;
-        gap: 1rem;
-        padding: 1.5rem;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 1rem 1.15rem 1.15rem;
         flex-wrap: wrap;
     }
 
     .podium-card {
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 20px;
-        padding: 1rem 1.5rem;
-        min-width: 220px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.48), rgba(10, 12, 15, 0.66));
+        border-radius: 16px;
+        padding: 0.72rem 0.9rem;
+        width: clamp(160px, 24vw, 220px);
+        min-width: 0;
+        max-width: 220px;
         text-align: center;
-        border: 1px solid var(--border-glow);
-        transition: transform 0.2s;
+        border: 1px solid rgba(42, 169, 161, 0.34);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(6px);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .podium-card:hover {
-        transform: translateY(-5px);
-        border-color: gold;
+        transform: translateY(-3px);
+        border-color: rgba(255, 215, 0, 0.8);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
     }
 
     .podium-rank {
-        font-size: 1.8rem;
+        font-size: 1.45rem;
         font-weight: bold;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.35rem;
+        line-height: 1;
     }
 
     .podium-rank.gold {
@@ -136,27 +143,34 @@ description: Liberty Gaming's race server statistics
     }
 
     .podium-name {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
         font-weight: 600;
         color: var(--text-light);
+        line-height: 1.15;
+        margin-bottom: 0.22rem;
     }
 
     .podium-score {
-        font-size: 1rem;
+        font-size: 0.92rem;
         color: var(--primary);
         font-family: monospace;
-        margin: 0.5rem 0;
+        margin: 0.28rem 0;
+        line-height: 1.15;
     }
 
     .podium-time {
-        font-size: 0.85rem;
+        font-size: 0.78rem;
         color: var(--text-muted);
+        line-height: 1.15;
+        margin-top: 0.1rem;
     }
 
     .podium-map {
-        font-size: 0.8rem;
+        font-size: 0.72rem;
         color: var(--text-muted);
-        margin-top: 0.25rem;
+        margin-top: 0.22rem;
+        line-height: 1.15;
+        overflow-wrap: anywhere;
     }
 
     .stats-tabs {
@@ -551,23 +565,24 @@ description: Liberty Gaming's race server statistics
             margin-top: 0.5rem;
         }
 
-        /* --- FIX: podium side-by-side on mobile --- */
         .global-best-podium {
             flex-direction: row;
             justify-content: center;
             gap: 0.5rem;
-            padding: 1rem;
+            padding: 0.85rem;
         }
 
         .podium-card {
-            min-width: 0;
-            flex: 1;
-            padding: 0.5rem;
-            max-width: 30%;
+            width: calc(33.333% - 0.35rem);
+            max-width: none;
+            padding: 0.52rem 0.45rem;
+            border-radius: 14px;
+            flex: 1 1 0;
         }
 
         .podium-rank {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
+            margin-bottom: 0.28rem;
         }
 
         .podium-name {
@@ -578,11 +593,12 @@ description: Liberty Gaming's race server statistics
         }
 
         .podium-score {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
+            margin: 0.22rem 0;
         }
 
         .podium-time {
-            font-size: 0.65rem;
+            font-size: 0.64rem;
         }
 
         .podium-map {
@@ -636,11 +652,35 @@ description: Liberty Gaming's race server statistics
             font-size: 16px;
         }
 
-        /* Ensure text can wrap on very small screens */
-        .podium-name,
+        .global-best-podium {
+            gap: 0.45rem;
+            padding: 0.75rem;
+        }
+
+        .podium-card {
+            width: calc(33.333% - 0.3rem);
+            padding: 0.45rem 0.35rem;
+            border-radius: 12px;
+        }
+
+        .podium-rank {
+            font-size: 1rem;
+        }
+
+        .podium-name {
+            font-size: 0.72rem;
+        }
+
+        .podium-score {
+            font-size: 0.62rem;
+        }
+
+        .podium-time {
+            font-size: 0.58rem;
+        }
+
         .podium-map {
-            white-space: normal;
-            word-break: break-word;
+            font-size: 0.54rem;
         }
     }
 
@@ -665,8 +705,7 @@ description: Liberty Gaming's race server statistics
 
 <div class="stats-header">
     <h1>Racing Stats</h1>
-    <p>Track lap records, player best times, and map leaderboards</p>
-    <p>Leaderboard Updated Daily</p>
+    <p>Track lap records, best times, and map leaderboards</p>
 </div>
 
 <div class="global-best-container" id="global-best-container">
