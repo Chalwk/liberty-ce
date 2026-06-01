@@ -1390,7 +1390,7 @@
     }
   },
   "cityscape-adrenaline": {
-    "current_best": {},
+    "current_best": [],
     "players": {
       "722 SLR": {
         "average": 92.97,
@@ -1726,9 +1726,9 @@
         "laps": 3
       },
       "LIB-Chalwk": {
-        "average": 42.488,
+        "average": 42.8325,
         "best": 41.43,
-        "laps": 5
+        "laps": 4
       },
       "LIB-Cyber": {
         "average": 134.57,
@@ -1989,9 +1989,9 @@
         "laps": 2
       },
       "LIB-Chalwk": {
-        "average": 105.27,
+        "average": 106.195,
         "best": 104.07,
-        "laps": 1
+        "laps": 2
       },
       "LIB-Cyber": {
         "average": 118.22333333333,
@@ -4721,6 +4721,11 @@
         "best": 49.76,
         "laps": 3
       },
+      "HolyFlame�": {
+        "average": 49.93,
+        "best": 49.93,
+        "laps": 1
+      },
       "Hâlö Äzûl!!": {
         "average": 55.975714285714,
         "best": 44.3,
@@ -4742,9 +4747,9 @@
         "laps": 4
       },
       "LIB-Chalwk": {
-        "average": 49.5,
-        "best": 49.5,
-        "laps": 1
+        "average": 46.992857142857,
+        "best": 44.5,
+        "laps": 7
       },
       "LIB-Cyber": {
         "average": 84.668,
@@ -5075,9 +5080,9 @@
         "laps": 4
       },
       "LIB-Chalwk": {
-        "average": 78.015555555556,
+        "average": 77.803333333333,
         "best": 76.9,
-        "laps": 9
+        "laps": 6
       },
       "LIB-Cyber": {
         "average": 147.12,
@@ -5388,9 +5393,9 @@
         "laps": 4
       },
       "LIB-Chalwk": {
-        "average": 42.59,
-        "best": 41.44,
-        "laps": 2
+        "average": 40,
+        "best": 40,
+        "laps": 1
       },
       "LIB-Cyber": {
         "average": 59.78,
