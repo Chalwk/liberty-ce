@@ -320,6 +320,13 @@ description: Rank Progression & Leaderboard
         color: var(--primary);
     }
 
+    #ranks-panel .stats-table td,
+    #ranks-panel .stats-table th,
+    #leaderboard-panel .stats-table td,
+    #leaderboard-panel .stats-table th {
+        padding: 0.5rem 0.8rem;
+    }
+
     .progress-container {
         background: #1e2229;
         border-radius: 30px;
@@ -482,13 +489,13 @@ description: Rank Progression & Leaderboard
         <table class="stats-table" id="rank-table">
             <thead>
             <tr>
-                <th>Player</th>
-                <th>Kills</th>
-                <th>Deaths</th>
+                <th>PLAYER NAME</th>
+                <th>KILLS</th>
+                <th>DEATHS</th>
                 <th>K/D</th>
-                <th>Credits</th>
-                <th>Rank & Grade</th>
-                <th>Actions</th>
+                <th>CREDITS (cR)</th>
+                <th>RANK & GRADE</th>
+                <th>ACTION</th>
             </tr>
             </thead>
             <tbody id="leaderboard-tbody">
@@ -506,8 +513,8 @@ description: Rank Progression & Leaderboard
         <table class="stats-table">
             <thead>
             <tr>
-                <th>Rank</th>
-                <th>Credit Thresholds (Grades I–IV)</th>
+                <th>RANK</th>
+                <th>GRADE THRESHOLDS (I–IV)</th>
             </tr>
             </thead>
             <tbody id="ranks-tbody"></tbody>
@@ -695,12 +702,12 @@ description: Rank Progression & Leaderboard
                 htmlRows += `
                     <tr>
                         <td class="player-name-cell" data-label="Player"><i class="fas fa-user-helmet-safety"></i> ${escapeHtml(player.name)}</td>
-                        <td data-label="Kills">${player.kills.toLocaleString()}</td>
-                        <td data-label="Deaths">${player.deaths.toLocaleString()}</td>
+                        <td data-label="KILLS">${player.kills.toLocaleString()}</td>
+                        <td data-label="DEATHS">${player.deaths.toLocaleString()}</td>
                         <td data-label="K/D">${player.kdFormatted}</td>
-                        <td data-label="Credits"><strong class="highlight">${player.credits.toLocaleString()}</strong></td>
-                        <td data-label="Rank & Grade"><span class="rank-badge">${player.rankGradeStr}</span></td>
-                        <td data-label="Actions"><button class="detail-btn" data-playername="${escapeHtml(player.name)}"><i class="fas fa-chart-line"></i> Full Stats</button></td>
+                        <td data-label="CREDITS (cR)"><strong class="highlight">${player.credits.toLocaleString()}</strong></td>
+                        <td data-label="RANK & GRADE"><span class="rank-badge">${player.rankGradeStr}</span></td>
+                        <td data-label="ACTION"><button class="detail-btn" data-playername="${escapeHtml(player.name)}"><i class="fas fa-chart-line"></i> Full Stats</button></td>
                     </tr>
                 `;
             }
@@ -764,14 +771,14 @@ description: Rank Progression & Leaderboard
             else progressHtml += `<div class="rank-detail-text">${player.credits.toLocaleString()} / ${rankObj.nextThreshold.toLocaleString()} credits (${progressPercent.toFixed(1)}%)</div>`;
             modalBody.innerHTML = `
                 <table class="modal-stats-table" style="width:100%">
-                    <tr><th>Kills</th><td>${player.kills.toLocaleString()}</td>
-                    <tr><th>Deaths</th><td>${player.deaths.toLocaleString()}</td>
-                    <tr><th>K/D Ratio</th><td>${player.kdFormatted}</td>
-                    <tr><th>Credits</th><td><strong>${player.credits.toLocaleString()}</strong></td>
-                    <tr><th>Current Rank</th><td><span class="rank-badge">${player.rankGradeStr}</span></td>
-                    <tr><th>Rank Threshold</th><td>${currentThres} → ${rankObj.nextThreshold ? rankObj.nextThreshold.toLocaleString() : '∞'}</td>
-                    <tr><th>Progress</th><td>${progressHtml}</td>
-                    <tr><th>Next Promotion</th><td>${rankObj.nextThreshold ? `Requires ${(rankObj.nextThreshold - player.credits).toLocaleString()} more credits` : 'Max rank achieved'}</td>
+                    <tr><th>KILLS</th><td>${player.kills.toLocaleString()}</td>
+                    <tr><th>DEATHS</th><td>${player.deaths.toLocaleString()}</td>
+                    <tr><th>K/D</th><td>${player.kdFormatted}</td>
+                    <tr><th>CREDITS (cR)</th><td><strong>${player.credits.toLocaleString()}</strong></td>
+                    <tr><th>RANK</th><td><span class="rank-badge">${player.rankGradeStr}</span></td>
+                    <tr><th>RANK THRESHOLD</th><td>${currentThres} → ${rankObj.nextThreshold ? rankObj.nextThreshold.toLocaleString() : '∞'}</td>
+                    <tr><th>PROGRESS</th><td>${progressHtml}</td>
+                    <tr><th>NEXT PROMOTION</th><td>${rankObj.nextThreshold ? `Requires ${(rankObj.nextThreshold - player.credits).toLocaleString()} more credits` : 'Max rank achieved'}</td>
                 </table>
             `;
             modalOverlay.classList.add('active');

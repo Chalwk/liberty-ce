@@ -500,6 +500,18 @@ description: Liberty Gaming's race server statistics
         }
     }
 
+    #maps-panel .stats-table td,
+    #maps-panel .stats-table th,
+    #players-panel .stats-table td,
+    #players-panel .stats-table th {
+        padding: 0.5rem 0.8rem;
+    }
+
+    .modal-stats-table td,
+    .modal-stats-table th {
+        padding: 0.4rem 0.5rem;
+    }
+
     @media (max-width: 480px) {
         .stats-table td {
             flex-direction: column;
@@ -567,11 +579,11 @@ description: Liberty Gaming's race server statistics
         <table class="stats-table" id="maps-table">
             <thead>
             <tr>
-                <th>Map Name</th>
-                <th>Current Best Player</th>
-                <th>Best Time (s)</th>
-                <th>Total Players</th>
-                <th>Actions</th>
+                <th>MAP NAME</th>
+                <th>TOP PLAYER</th>
+                <th>BEST TIME</th>
+                <th>TOTAL PLAYERS</th>
+                <th>ACTION</th>
             </tr>
             </thead>
             <tbody id="maps-tbody">
@@ -589,11 +601,11 @@ description: Liberty Gaming's race server statistics
         <table class="stats-table" id="players-table">
             <thead>
             <tr>
-                <th>Player Name</th>
-                <th>Overall Best (s)</th>
-                <th>Best Map</th>
-                <th>Maps Played</th>
-                <th>Actions</th>
+                <th>PLAYER NAME</th>
+                <th>BEST TIME</th>
+                <th>MAP</th>
+                <th>MAPS PLAYED</th>
+                <th>ACTION</th>
             </tr>
             </thead>
             <tbody id="players-tbody">
@@ -795,7 +807,7 @@ description: Liberty Gaming's race server statistics
                 <tr>
                     <td class="map-name-cell" data-label="Map Name">${escapeHtml(map.name)}</td>
                     <td data-label="Current Best Player">${escapeHtml(map.currentBestPlayer)}</td>
-                    <td data-label="Best Time (s)">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '-'}</td>
+                    <td data-label="Best Time">${map.currentBestTime !== null ? formatTime(map.currentBestTime) : '-'}</td>
                     <td data-label="Total Players">${map.totalPlayers}</td>
                     <td data-label="Actions"><button class="detail-btn" data-type="map" data-name="${escapeHtml(map.name)}"><i class="fas fa-chart-simple"></i> Full Map Stats</button></td>
                 </tr>`;
@@ -830,7 +842,7 @@ description: Liberty Gaming's race server statistics
                     <td data-label="Overall Best (s)">${player.overallBestTime !== null ? formatTime(player.overallBestTime) : '-'}</td>
                     <td data-label="Best Map">${player.bestMapName ? escapeHtml(player.bestMapName) : '-'}</td>
                     <td data-label="Maps Played">${player.mapsPlayed}</td>
-                    <td data-label="Actions"><button class="detail-btn" data-type="player" data-name="${escapeHtml(player.name)}"><i class="fas fa-chart-simple"></i> Player Stats</button></td>
+                    <td data-label="Actions"><button class="detail-btn" data-type="player" data-name="${escapeHtml(player.name)}"><i class="fas fa-chart-simple"></i> Stats</button></td>
                 </tr>`;
             }
             playersTbody.innerHTML = html;
@@ -916,7 +928,7 @@ description: Liberty Gaming's race server statistics
             })).filter(p => p.best !== null).sort((a, b) => a.best - b.best);
 
             let html = `<table class="modal-stats-table">
-                <thead><tr><th>Rank</th><th>Player</th><th>Best Time (s)</th><th>Average (s)</th><th>Laps</th></tr></thead><tbody>`;
+                <thead><tr><th>RANK</th><th>NAME</th><th>BEST TIME</th><th>AVERAGE</th><th>LAPS</th></tr></thead><tbody>`;
             sorted.forEach((p, idx) => {
                 html += `<tr>
                     <td>${idx + 1}</td>
@@ -941,7 +953,7 @@ description: Liberty Gaming's race server statistics
                 return;
             }
             let html = `<table class="modal-stats-table">
-                <thead><tr><th>Map</th><th>Best Time (s)</th><th>Average (s)</th><th>Laps</th></tr></thead><tbody>`;
+                <thead><tr><th>MAP</th><th>BEST TIME</th><th>AVERAGE</th><th>LAPS</th></tr></thead><tbody>`;
             player.mapDetails.forEach(m => {
                 html += `<tr>
                     <td>${escapeHtml(m.mapName)}</td>
