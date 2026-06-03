@@ -881,47 +881,46 @@ description: Liberty Gaming's race server statistics
             state.maps = [];
             state.players = [];
 
-            const mapRecords = new Map();
+            const mapRecords = new Map(); // mapName -> best time (record)
             const playersMap = new Map();
 
-            for (const [mapName, mapInfo] of Object.entries(data)) {
-                if (mapName === 'global_best' || !mapInfo || typeof mapInfo.players !== 'object') continue;
+            // First pass: compute map records (best time per map)
+            for (const [mapName, mapData] of Object.entries(data)) {
+                if (mapName === 'global_best' || typeof mapData !== 'object' || mapData === null) continue;
                 let bestTime = Infinity;
-                for (const stats of Object.values(mapInfo.players)) {
-                    const value = toNumber(stats?.best);
+                for (const [playerName, playerStats] of Object.entries(mapData)) {
+                    if (typeof playerStats !== 'object' || playerStats === null) continue;
+                    const value = toNumber(playerStats?.best);
                     if (value !== null && value < bestTime) bestTime = value;
                 }
                 if (bestTime !== Infinity) mapRecords.set(mapName, bestTime);
             }
 
-            for (const [mapName, mapInfo] of Object.entries(data)) {
-                if (mapName === 'global_best' || !mapInfo || typeof mapInfo.players !== 'object') continue;
+            // Second pass: build maps and player aggregates
+            for (const [mapName, mapData] of Object.entries(data)) {
+                if (mapName === 'global_best' || typeof mapData !== 'object' || mapData === null) continue;
 
-                const playersObj = mapInfo.players;
+                const playersObj = mapData;
                 const totalPlayers = Object.keys(playersObj).length;
 
-                let currentBestPlayer = '-';
-                let currentBestTime = null;
-
-                if (mapInfo.current_best?.player) {
-                    currentBestPlayer = mapInfo.current_best.player;
-                    currentBestTime = toNumber(mapInfo.current_best.time);
-                } else {
-                    let bestTime = Infinity;
-                    for (const [playerName, stats] of Object.entries(playersObj)) {
-                        const value = toNumber(stats?.best);
-                        if (value !== null && value < bestTime) {
-                            bestTime = value;
-                            currentBestPlayer = playerName;
-                        }
+                // Find best player on this map
+                let bestPlayer = '-';
+                let bestTime = null;
+                let bestRaw = Infinity;
+                for (const [playerName, stats] of Object.entries(playersObj)) {
+                    if (typeof stats !== 'object' || stats === null) continue;
+                    const value = toNumber(stats?.best);
+                    if (value !== null && value < bestRaw) {
+                        bestRaw = value;
+                        bestPlayer = playerName;
                     }
-                    if (bestTime !== Infinity) currentBestTime = bestTime;
                 }
+                if (bestRaw !== Infinity) bestTime = bestRaw;
 
                 state.maps.push({
                     name: mapName,
-                    currentBestPlayer,
-                    currentBestTime,
+                    currentBestPlayer: bestPlayer,
+                    currentBestTime: bestTime,
                     totalPlayers,
                     playersObject: playersObj
                 });
@@ -930,6 +929,7 @@ description: Liberty Gaming's race server statistics
                 if (!mapRecord) continue;
 
                 for (const [playerName, stats] of Object.entries(playersObj)) {
+                    if (typeof stats !== 'object' || stats === null) continue;
                     if (!playersMap.has(playerName)) {
                         playersMap.set(playerName, {
                             name: playerName,
