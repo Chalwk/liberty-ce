@@ -936,6 +936,7 @@ description: Liberty Gaming's race server statistics
                             overallBestTime: Infinity,
                             bestMapName: null,
                             mapsPlayed: 0,
+                            totalLaps: 0,
                             mapDetails: [],
                             normalizedScoreSum: 0,
                             normalizedScoreCount: 0
@@ -945,8 +946,10 @@ description: Liberty Gaming's race server statistics
                     const player = playersMap.get(playerName);
                     const bestOnMap = toNumber(stats?.best);
                     const averageOnMap = toNumber(stats?.average);
+                    const laps = stats?.laps || 0;
 
                     player.mapsPlayed += 1;
+                    player.totalLaps += laps;
 
                     if (bestOnMap !== null && bestOnMap < player.overallBestTime) {
                         player.overallBestTime = bestOnMap;
@@ -964,6 +967,7 @@ description: Liberty Gaming's race server statistics
                         mapName,
                         best: bestOnMap,
                         average: averageOnMap,
+                        laps,
                         normalizedScore
                     });
                 }
@@ -1144,7 +1148,8 @@ description: Liberty Gaming's race server statistics
             const rows = Object.entries(map.playersObject || {}).map(([name, stats]) => ({
                 name,
                 best: toNumber(stats?.best),
-                average: toNumber(stats?.average)
+                average: toNumber(stats?.average),
+                laps: stats?.laps || 0
             })).filter((entry) => entry.best !== null).sort((a, b) => a.best - b.best);
 
             if (!rows.length) {
@@ -1155,7 +1160,7 @@ description: Liberty Gaming's race server statistics
 
             modalBody.innerHTML = `
                 <table class="modal-stats-table">
-                    <thead><tr><th>RANK</th><th>NAME</th><th>BEST TIME</th><th>AVERAGE</th></tr></thead>
+                    <thead><tr><th>RANK</th><th>NAME</th><th>BEST TIME</th><th>AVERAGE</th><th>LAPS</th></tr></thead>
                     <tbody>
                         ${rows.map((player, idx) => `
                             <tr>
@@ -1163,6 +1168,7 @@ description: Liberty Gaming's race server statistics
                                 <td>${escapeHtml(player.name)}</td>
                                 <td>${formatTime(player.best)}</td>
                                 <td>${player.average !== null ? formatTime(player.average) : '-'}</td>
+                                <td>${player.laps}</td>
                             </tr>
                         `).join('')}
                     </tbody>
@@ -1184,13 +1190,14 @@ description: Liberty Gaming's race server statistics
 
             modalBody.innerHTML = `
                 <table class="modal-stats-table">
-                    <thead><tr><th>MAP</th><th>BEST TIME</th><th>AVERAGE</th><th>NORM SCORE</th></tr></thead>
+                    <thead><tr><th>MAP</th><th>BEST TIME</th><th>AVERAGE</th><th>LAPS</th><th>NORM SCORE</th></tr></thead>
                     <tbody>
                         ${player.mapDetails.map((map) => `
                             <tr>
                                 <td>${escapeHtml(map.mapName)}</td>
                                 <td>${map.best !== null ? formatTime(map.best) : '-'}</td>
                                 <td>${map.average !== null ? formatTime(map.average) : '-'}</td>
+                                <td>${map.laps}</td>
                                 <td>${map.normalizedScore !== null ? map.normalizedScore.toFixed(4) : '-'}</td>
                             </tr>
                         `).join('')}
