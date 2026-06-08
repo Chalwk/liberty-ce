@@ -5,10 +5,10 @@ LIB-JBomb;🇬🇧 United Kingdom;Member
 LIB-Jerico;🇪🇸 Spain;Member,Server Admin
 LIB-Maja;🇩🇪 Germany;Founder,Server Admin,Discord Admin
 LIB-Nasio;🇪🇸 Spain;Member,Server Admin
+LIB-Nk~Chic;🇺🇸 United Stats; Server Admin
 LIB-Oldi;🇩🇪 Germany;Member,Server Admin
 LIB-Perico;🇬🇧 United Kingdom;Founder,Server Admin,Discord Admin
 LIB-Renard;🇲🇽 Mexico;Member,Server Admin
 LIB-Spark;🇷🇸 Serbia;Member,Server Admin
-LIB-Nk~Chic;🇺🇸 United Stats; Server Admin
 LIB-Spirou;🇳🇱 Netherlands;Member,Server Admin
 LIB-Vegeta;🇪🇸 Spain;Member,Server Admin
