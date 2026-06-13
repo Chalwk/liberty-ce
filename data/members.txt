@@ -1,6 +1,7 @@
 LIB-Akuma;it Italy;Member,Server Admin
 LIB-Chalwk;nz New Zealand;Member,Server Admin,Discord Admin
 LIB-Cyber;at Austria;Founder,Server Admin,Discord Admin
+LIB-Dread;nz New Zealand;Member
 LIB-Eddy;et Ethiopia;Member
 LIB-JBomb;gb United Kingdom;Member
 LIB-Jerico;es Spain;Member
