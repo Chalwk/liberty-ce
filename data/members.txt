@@ -1,14 +1,15 @@
 LIB-Akuma;it Italy;Member,Server Admin
 LIB-Chalwk;nz New Zealand;Member,Server Admin,Discord Admin
 LIB-Cyber;at Austria;Founder,Server Admin,Discord Admin
+LIB-Eddy;et Ethiopia;Member
 LIB-JBomb;gb United Kingdom;Member
-LIB-Jerico;es Spain;Member,Server Admin
+LIB-Jerico;es Spain;Member
 LIB-Maja;de Germany;Founder,Server Admin,Discord Admin
-LIB-Nasio;es Spain;Member,Server Admin
+LIB-Nasio;es Spain;Member
 LIB-Nk~Chic;us United States;Member, Server Admin
-LIB-Oldi;de Germany;Member,Server Admin
+LIB-Oldi;de Germany;Member
 LIB-Perico;gb United Kingdom;Founder,Server Admin,Discord Admin
-LIB-Renard;mx Mexico;Member,Server Admin
-LIB-Spark;rs Serbia;Member,Server Admin
-LIB-Spirou;nl Netherlands;Member,Server Admin
+LIB-Renard;mx Mexico;Member
+LIB-Spark;rs Serbia;Member
+LIB-Spirou;nl Netherlands;Member
 LIB-Vegeta;es Spain;Member,Server Admin
