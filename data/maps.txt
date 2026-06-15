@@ -49,7 +49,7 @@ RACING;LostCove_Race;10
 RACING;massacre_mountain_race_v2;10
 RACING;Mongoose_Point;15
 RACING;mystic_mod;10
-RACING;Nervous_King;10
+RACING;liberty_nervous_king;10
 RACING;New_Mombasa_Race_v2;10
 RACING;Prime_C3_Race;10
 RACING;siege;10
