@@ -38,10 +38,8 @@ RACING;Cityscape-Adrenaline;10
 RACING;cliffhanger;10
 RACING;dessication_pb1;10
 RACING;equinox_v2;10
-RACING;Gauntlet_Race;10
 RACING;grove_final;10
 RACING;highlow_race;10
-RACING;hypothermia_race;10
 RACING;islandthunder_race;10
 RACING;liberty_blockfort_quad;10
 RACING;liberty_hornets_nest;10
@@ -52,7 +50,9 @@ RACING;Mongoose_Point;15
 RACING;mystic_mod;10
 RACING;New_Mombasa_Race_v2;10
 RACING;Prime_C3_Race;10
+RACING;secrets_of_egypt;10
 RACING;siege;10
 RACING;timberland;10
 RACING;TLSstronghold;10
 RACING;wpitest1_race;15
+RACING;Yoyorast_Island;10
