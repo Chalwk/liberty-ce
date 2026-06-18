@@ -42,6 +42,7 @@ RACING;grove_final;10
 RACING;highlow_race;10
 RACING;islandthunder_race;10
 RACING;liberty_blockfort_quad;10
+RACING;liberty_green_grove;15
 RACING;liberty_hornets_nest;10
 RACING;liberty_nervous_king;10
 RACING;LostCove_Race;10
