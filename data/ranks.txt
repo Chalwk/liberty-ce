@@ -43,7 +43,7 @@ ReCuPeRaDoR;34;59;496;Recruit;1
 SPARTAN LOL;34;84;120;Recruit;1
 ACHTUNG!!;72;36;1191;Recruit;1
 NostraFeraT;1;0;34;Recruit;1
-LIB-Chalwk;312;395;2180;Recruit;1
+LIB-Chalwk;312;396;2172;Recruit;1
 Leonel Game;22;32;140;Recruit;1
 Misantrophy;2;0;30;Recruit;1
 Mortz!;5;4;34;Recruit;1
