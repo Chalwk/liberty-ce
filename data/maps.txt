@@ -26,18 +26,17 @@ MIX;liberty_shrinking_man;Slayer, 25 kills, classic weaps
 MIX;liberty_silo_surprise2;T-Slayer, 50 kills, classic weaps
 MIX;liberty_tension;CTF, rox
 MIX;liberty_the_cage;T-Slayer, 50 kills, rox
+MIX;liberty_wartorncov;CTF, rox, 3 flags
 MIX;Oblivion;CTF, all weaps
 MIX;sidewinder;CTF, rox
 MIX;tactics;CTF, normal weaps
 MIX;TrainingDay;CTF, classic weaps | Oddball, shotguns, 2 skulls
 MIX;triduct;CTF, rox
-MIX;liberty_wartorncov;CTF, rox, 3 flags
 RACING;atephobia__V2;10
 RACING;bc_raceway_final_mp;5
 RACING;Camtrack-Arena-Race;10
 RACING;Cityscape-Adrenaline;10
 RACING;cliffhanger;10
-RACING;liberty_koopa_race2;15
 RACING;equinox_v2;10
 RACING;grove_final;10
 RACING;highlow_race;10
@@ -45,6 +44,7 @@ RACING;islandthunder_race;10
 RACING;liberty_blockfort_quad;10
 RACING;liberty_green_grove;15
 RACING;liberty_hornets_nest;10
+RACING;liberty_koopa_race2;15
 RACING;liberty_nervous_king;10
 RACING;LostCove_Race;10
 RACING;massacre_mountain_race_v2;10
