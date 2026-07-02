@@ -31,12 +31,13 @@ MIX;sidewinder;CTF, rox
 MIX;tactics;CTF, normal weaps
 MIX;TrainingDay;CTF, classic weaps | Oddball, shotguns, 2 skulls
 MIX;triduct;CTF, rox
+MIX;liberty_wartorncov;CTF, rox, 3 flags
 RACING;atephobia__V2;10
 RACING;bc_raceway_final_mp;5
 RACING;Camtrack-Arena-Race;10
 RACING;Cityscape-Adrenaline;10
 RACING;cliffhanger;10
-RACING;dessication_pb1;10
+RACING;liberty_koopa_race2;15
 RACING;equinox_v2;10
 RACING;grove_final;10
 RACING;highlow_race;10
