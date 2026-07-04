@@ -55,6 +55,7 @@ VALENTINA;6;9;194;Recruit;1
 The Mr Frog;0;2;0;Recruit;1
 =TKG=VeNoM;1;2;5;Recruit;1
 ~NukeRussia;4;2;34;Recruit;1
+Nyan-chan;0;1;0;Recruit;1
 Migh;156;120;1252;Recruit;1
 12345;23;47;316;Recruit;1
 etesech;16;13;106;Recruit;1
