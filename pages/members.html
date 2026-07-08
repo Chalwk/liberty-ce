@@ -124,7 +124,7 @@ description: Liberty Gaming's guild members
         white-space: nowrap;
     }
 
-    .member-role + .member-role::before {
+    .member-role+.member-role::before {
         content: " • ";
         color: rgba(255, 255, 255, 0.4);
         font-weight: 400;
@@ -156,6 +156,7 @@ description: Liberty Gaming's guild members
     }
 
     @media (max-width: 640px) {
+
         .members-detail-table th,
         .members-detail-table td {
             padding: 0.65rem 0.8rem;
@@ -197,18 +198,18 @@ description: Liberty Gaming's guild members
     <div class="table-responsive">
         <table class="members-detail-table">
             <thead>
-            <tr>
-                <th><i class="fas fa-tag"></i> Member</th>
-                <th><i class="fas fa-globe"></i> Country</th>
-                <th><i class="fas fa-medal"></i> Status</th>
-            </tr>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Member</th>
+                    <th><i class="fas fa-globe"></i> Country</th>
+                    <th><i class="fas fa-medal"></i> Status</th>
+                </tr>
             </thead>
             <tbody id="members-tbody">
-            <tr class="loading-row">
-                <td colspan="3" style="text-align: center;">
-                    <i class="fas fa-spinner fa-pulse loading-spinner-small"></i> Loading roster...
-                </td>
-            </tr>
+                <tr class="loading-row">
+                    <td colspan="3" style="text-align: center;">
+                        <i class="fas fa-spinner fa-pulse loading-spinner-small"></i> Loading roster...
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

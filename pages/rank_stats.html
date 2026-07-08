@@ -382,6 +382,7 @@ description: Rank Progression & Leaderboard
     }
 
     @media (max-width: 768px) {
+
         .stats-table,
         .stats-table thead,
         .stats-table tbody,
@@ -488,20 +489,21 @@ description: Rank Progression & Leaderboard
     <div class="stats-table-container">
         <table class="stats-table" id="rank-table">
             <thead>
-            <tr>
-                <th>PLAYER NAME</th>
-                <th>KILLS</th>
-                <th>DEATHS</th>
-                <th>K/D</th>
-                <th>CREDITS (cR)</th>
-                <th>RANK & GRADE</th>
-                <th>ACTION</th>
-            </tr>
+                <tr>
+                    <th>PLAYER NAME</th>
+                    <th>KILLS</th>
+                    <th>DEATHS</th>
+                    <th>K/D</th>
+                    <th>CREDITS (cR)</th>
+                    <th>RANK & GRADE</th>
+                    <th>ACTION</th>
+                </tr>
             </thead>
             <tbody id="leaderboard-tbody">
-            <tr>
-                <td class="loading-spinner" colspan="7"><i class="fas fa-spinner fa-pulse"></i> Loading warriors...</td>
-            </tr>
+                <tr>
+                    <td class="loading-spinner" colspan="7"><i class="fas fa-spinner fa-pulse"></i> Loading warriors...
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -512,10 +514,10 @@ description: Rank Progression & Leaderboard
     <div class="stats-table-container">
         <table class="stats-table">
             <thead>
-            <tr>
-                <th>RANK</th>
-                <th>GRADE THRESHOLDS (I–IV)</th>
-            </tr>
+                <tr>
+                    <th>RANK</th>
+                    <th>GRADE THRESHOLDS (I–IV)</th>
+                </tr>
             </thead>
             <tbody id="ranks-tbody"></tbody>
         </table>
@@ -527,7 +529,8 @@ description: Rank Progression & Leaderboard
 
 <div class="modal-overlay" id="stats-modal">
     <div class="modal-container">
-        <div class="modal-header"><h3 id="modal-title">Player Progression</h3>
+        <div class="modal-header">
+            <h3 id="modal-title">Player Progression</h3>
             <button class="close-modal" id="close-modal-btn">&times;</button>
         </div>
         <div id="modal-body" style="max-height: 60vh; overflow-y: auto;"></div>
@@ -537,19 +540,19 @@ description: Rank Progression & Leaderboard
 <script>
     (function () {
         const rankThresholds = [
-            {name: "Recruit", grades: [0]},
-            {name: "Apprentice", grades: [3000, 6000]},
-            {name: "Private", grades: [9000, 12000]},
-            {name: "Corporal", grades: [13000, 14000]},
-            {name: "Sergeant", grades: [15000, 16000, 17000, 18000]},
-            {name: "Gunnery Sergeant", grades: [19000, 20000, 21000, 22000]},
-            {name: "Lieutenant", grades: [23000, 24000, 25000, 26000]},
-            {name: "Captain", grades: [27000, 28000, 29000, 30000]},
-            {name: "Major", grades: [31000, 32000, 33000, 34000]},
-            {name: "Commander", grades: [35000, 36000, 37000, 38000]},
-            {name: "Colonel", grades: [39000, 40000, 41000, 42000]},
-            {name: "Brigadier", grades: [43000, 44000, 45000, 46000]},
-            {name: "General", grades: [47000, 48000, 49000, 50000]}
+            { name: "Recruit", grades: [0] },
+            { name: "Apprentice", grades: [3000, 6000] },
+            { name: "Private", grades: [9000, 12000] },
+            { name: "Corporal", grades: [13000, 14000] },
+            { name: "Sergeant", grades: [15000, 16000, 17000, 18000] },
+            { name: "Gunnery Sergeant", grades: [19000, 20000, 21000, 22000] },
+            { name: "Lieutenant", grades: [23000, 24000, 25000, 26000] },
+            { name: "Captain", grades: [27000, 28000, 29000, 30000] },
+            { name: "Major", grades: [31000, 32000, 33000, 34000] },
+            { name: "Commander", grades: [35000, 36000, 37000, 38000] },
+            { name: "Colonel", grades: [39000, 40000, 41000, 42000] },
+            { name: "Brigadier", grades: [43000, 44000, 45000, 46000] },
+            { name: "General", grades: [47000, 48000, 49000, 50000] }
         ];
 
         const romanNumerals = ['', 'I', 'II', 'III', 'IV'];
@@ -618,7 +621,7 @@ description: Rank Progression & Leaderboard
                 ? Math.min(100, Math.max(0, ((rawCredits - currentThreshold) / (nextThreshold - currentThreshold)) * 100))
                 : 100;
 
-            return {rankName: currentRank, grade: currentGrade, currentThreshold, nextThreshold, progressPercent};
+            return { rankName: currentRank, grade: currentGrade, currentThreshold, nextThreshold, progressPercent };
         }
 
         function renderRanksTable() {
