@@ -13,7 +13,7 @@ _Mr Pigeon;38;15;845;Recruit;1
 Naitsak;28;36;424;Recruit;1
 {LºEº}þig©;235;282;3543;Apprentice;1
 Pipiee 2;3;8;39;Recruit;1
-LIB-Perico;1715;2216;26715;Lieutenant;4
+LIB-Perico;1837;2358;28530;Captain;2
 RusKY;0;3;0;Recruit;1
 Frank;2;13;20;Recruit;1
 FLoOd_LoRd;15;31;214;Recruit;1
@@ -23,6 +23,7 @@ msalerno®;5;8;56;Recruit;1
 navidad;3;0;101;Recruit;1
 [ x3RR0R ];61;69;934;Recruit;1
 partycrashr;56;7;459;Recruit;1
+7005-T6;51;66;768;Recruit;1
 _juice;26;0;243;Recruit;1
 Witcher;6;22;104;Recruit;1
 ifree423;1;4;7;Recruit;1
@@ -54,6 +55,7 @@ SPARTAN LOL;35;87;156;Recruit;1
 ACHTUNG!!;72;36;1191;Recruit;1
 NostraFeraT;1;0;34;Recruit;1
 Manny;1;1;15;Recruit;1
+FRITTE²;88;71;1303;Recruit;1
 Æ;53;37;775;Recruit;1
 Leonel Game;22;32;140;Recruit;1
 Misantrophy;2;0;30;Recruit;1
@@ -71,12 +73,18 @@ Nyan-chan;0;1;0;Recruit;1
 P¥RO;33;49;568;Recruit;1
 Migh;156;120;1252;Recruit;1
 12345;34;49;567;Recruit;1
+gato;2;10;22;Recruit;1
 etesech;16;13;106;Recruit;1
+WolfClaws;5;7;67;Recruit;1
 Davichi;0;1;0;Recruit;1
+sebi;6;12;54;Recruit;1
 ^jTINA^J<3;24;23;138;Recruit;1
 cardanol;1;0;36;Recruit;1
-LIB-Oldi;327;470;4835;Apprentice;1
-Harbinge®;368;549;5357;Apprentice;1
+LIB-Oldi;397;564;5835;Apprentice;1
+ELROLO_HPC;17;45;249;Recruit;1
+IRQ¦;15;23;202;Recruit;1
+Crystal_blu;7;41;62;Recruit;1
+Harbinge®;430;668;6394;Apprentice;2
 ^7H^8l^7DAN;0;5;0;Recruit;1
 NakedChick®;76;88;1070;Recruit;1
 i love YOU;3;0;31;Recruit;1
@@ -91,7 +99,7 @@ los angeles;0;6;-51;Recruit;1
 TodoEsAmor;115;89;1765;Recruit;1
 Fennec[ACI];12;6;340;Recruit;1
 HitMan;2;7;40;Recruit;1
-{L°E°}Atom®;1531;902;23509;Lieutenant;1
+{L°E°}Atom®;1647;978;25281;Lieutenant;3
 Mr Amigos;0;1;0;Recruit;1
 LIB-Spark;54;101;773;Recruit;1
 son goku;3;7;45;Recruit;1
@@ -100,17 +108,17 @@ LIB-Jerico;342;260;5368;Apprentice;1
 el cacas;78;177;1196;Recruit;1
 ~NukeRussia;4;2;34;Recruit;1
 arangio;3;14;45;Recruit;1
-FRITTE;142;121;2131;Recruit;1
+FRITTE;149;127;2230;Recruit;1
 LIB-Vegeta;127;146;1994;Recruit;1
 Iwax;10;15;258;Recruit;1
 North;9;10;58;Recruit;1
 Hell nah;2;0;90;Recruit;1
 LIB-Eddy;223;361;3237;Apprentice;1
-SID;777;720;11581;Private;1
+SID;941;845;14140;Corporal;2
 ZEROCOOL;1;0;34;Recruit;1
 Might;21;0;343;Recruit;1
 MataSete;0;2;0;Recruit;1
-ELROLO_HPC;17;45;249;Recruit;1
+La Mosca;27;24;398;Recruit;1
 PlâyêR=TwØ®;247;313;3666;Apprentice;1
 {L°E°}n@j;89;51;1329;Recruit;1
 {LÂ°EÂ°}Fa7aL;1;0;20;Recruit;1
@@ -120,7 +128,7 @@ Glashuts;1;3;9;Recruit;1
 Tjibuah_FT;101;182;1359;Recruit;1
 Seeker;16;30;234;Recruit;1
 NEMESIS;17;28;233;Recruit;1
-albatross;165;204;2766;Recruit;1
+albatross;188;226;3102;Apprentice;1
 FUCK-ICE;1;0;18;Recruit;1
 LIB-Chalwk;312;396;2172;Recruit;1
 R;59;64;872;Recruit;1
