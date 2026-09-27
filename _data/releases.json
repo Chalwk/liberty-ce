@@ -1,5 +1,29 @@
 [
   {
+    "id": 397537516,
+    "tag": "mix-liberty-gephy",
+    "name": "[MIX] Liberty Gephy",
+    "body": "Liberty CE map: Liberty Gephy",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:35:30Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-gephy",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_gephy.zip",
+        "size": 115857463,
+        "size_human": "110 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-gephy/liberty_gephy.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397537469,
     "tag": "mix-liberty-forgotten-market",
     "name": "[MIX] Liberty Forgotten Market",
