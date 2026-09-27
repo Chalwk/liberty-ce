@@ -1,5 +1,53 @@
 [
   {
+    "id": 397537381,
+    "tag": "mix-liberty-damnation",
+    "name": "[MIX] Liberty Damnation",
+    "body": "Liberty CE map: Liberty Damnation",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:34:47Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-damnation",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_damnation.zip",
+        "size": 21157518,
+        "size_human": "20 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-damnation/liberty_damnation.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537317,
+    "tag": "mix-liberty-cyberdyne",
+    "name": "[MIX] Liberty Cyberdyne",
+    "body": "Liberty CE map: Liberty Cyberdyne",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:34:40Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-cyberdyne",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_cyberdyne.zip",
+        "size": 78678295,
+        "size_human": "75 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-cyberdyne/liberty_cyberdyne.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397537287,
     "tag": "mix-liberty-city-fight",
     "name": "[MIX] Liberty City Fight",
