@@ -816,30 +816,6 @@
     ]
   },
   {
-    "id": 397537826,
-    "tag": "mix-liberty-paintball-final",
-    "name": "[MIX] Liberty Paintball Final",
-    "body": "",
-    "prerelease": false,
-    "published_at": "2026-09-27T06:36:33Z",
-    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-paintball-final",
-    "games": [
-      "CE"
-    ],
-    "server": "MIX",
-    "thumbnail": null,
-    "assets": [
-      {
-        "name": "liberty_paintball_final.zip",
-        "size": 25010719,
-        "size_human": "24 MB",
-        "download_count": 0,
-        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-paintball-final/liberty_paintball_final.zip",
-        "content_type": "application/zip"
-      }
-    ]
-  },
-  {
     "id": 397537786,
     "tag": "mix-liberty-opavo",
     "name": "[MIX] Liberty Opavo",
