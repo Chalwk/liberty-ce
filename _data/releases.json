@@ -1,5 +1,821 @@
 [
   {
+    "id": 397538809,
+    "tag": "race-wpitest1-race",
+    "name": "[RACE] WPI Test 1 Race",
+    "body": "Liberty CE map: WPI Test 1 Race",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:40:35Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-wpitest1-race",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "wpitest1_race.zip",
+        "size": 12579572,
+        "size_human": "12 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-wpitest1-race/wpitest1_race.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538789,
+    "tag": "race-tlsstronghold",
+    "name": "[RACE] TLS Stronghold",
+    "body": "Liberty CE map: TLS Stronghold",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:40:30Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-tlsstronghold",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "TLSstronghold.zip",
+        "size": 6859631,
+        "size_human": "6.5 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-tlsstronghold/TLSstronghold.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538769,
+    "tag": "race-timberland",
+    "name": "[RACE] Timberland",
+    "body": "Liberty CE map: Timberland",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:40:25Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-timberland",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "timberland.zip",
+        "size": 5795048,
+        "size_human": "5.5 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-timberland/timberland.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538745,
+    "tag": "race-siege",
+    "name": "[RACE] Siege",
+    "body": "Liberty CE map: Siege",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:40:20Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-siege",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "siege.zip",
+        "size": 15962014,
+        "size_human": "15 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-siege/siege.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538710,
+    "tag": "race-secrets-of-egypt",
+    "name": "[RACE] Secrets Of Egypt",
+    "body": "Liberty CE map: Secrets Of Egypt",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:40:14Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-secrets-of-egypt",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "secrets_of_egypt.zip",
+        "size": 17896465,
+        "size_human": "17 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-secrets-of-egypt/secrets_of_egypt.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538682,
+    "tag": "race-prime-c3-race",
+    "name": "[RACE] Prime C3 Race",
+    "body": "Liberty CE map: Prime C3 Race",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:40:07Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-prime-c3-race",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Prime_C3_Race.zip",
+        "size": 28394727,
+        "size_human": "27 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-prime-c3-race/Prime_C3_Race.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538666,
+    "tag": "race-new-mombasa-race-v2",
+    "name": "[RACE] New Mombasa Race V2",
+    "body": "Liberty CE map: New Mombasa Race V2",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:40:00Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-new-mombasa-race-v2",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "New_Mombasa_Race_v2.zip",
+        "size": 10270190,
+        "size_human": "9.8 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-new-mombasa-race-v2/New_Mombasa_Race_v2.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538641,
+    "tag": "race-mystic-mod",
+    "name": "[RACE] Mystic Mod",
+    "body": "Liberty CE map: Mystic Mod",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:39:55Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-mystic-mod",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "mystic_mod.zip",
+        "size": 21389918,
+        "size_human": "20 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-mystic-mod/mystic_mod.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538617,
+    "tag": "race-mongoose-point",
+    "name": "[RACE] Mongoose Point",
+    "body": "Liberty CE map: Mongoose Point",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:39:49Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-mongoose-point",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Mongoose_Point.zip",
+        "size": 22168509,
+        "size_human": "21 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-mongoose-point/Mongoose_Point.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538591,
+    "tag": "race-massacre-mountain-race-v2",
+    "name": "[RACE] Massacre Mountain Race V2",
+    "body": "Liberty CE map: Massacre Mountain Race V2",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:39:43Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-massacre-mountain-race-v2",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "massacre_mountain_race_v2.zip",
+        "size": 9763330,
+        "size_human": "9.3 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-massacre-mountain-race-v2/massacre_mountain_race_v2.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538566,
+    "tag": "race-lostcove-race",
+    "name": "[RACE] Lost Cove Race",
+    "body": "Liberty CE map: Lost Cove Race",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:39:37Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-lostcove-race",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "LostCove_Race.zip",
+        "size": 9915535,
+        "size_human": "9.5 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-lostcove-race/LostCove_Race.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538522,
+    "tag": "race-liberty-nervous-king",
+    "name": "[RACE] Liberty Nervous King",
+    "body": "Liberty CE map: Liberty Nervous King",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:39:31Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-liberty-nervous-king",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_nervous_king.zip",
+        "size": 35678716,
+        "size_human": "34 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-liberty-nervous-king/liberty_nervous_king.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538479,
+    "tag": "race-liberty-hornets-nest",
+    "name": "[RACE] Liberty Hornets Nest",
+    "body": "Liberty CE map: Liberty Hornets Nest",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:39:23Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-liberty-hornets-nest",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_hornets_nest.zip",
+        "size": 71242307,
+        "size_human": "68 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-liberty-hornets-nest/liberty_hornets_nest.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538423,
+    "tag": "race-liberty-green-grove",
+    "name": "[RACE] Liberty Green Grove",
+    "body": "Liberty CE map: Liberty Green Grove",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:39:11Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-liberty-green-grove",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_green_grove.zip",
+        "size": 109612699,
+        "size_human": "105 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-liberty-green-grove/liberty_green_grove.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538392,
+    "tag": "race-liberty-blockfort-quad",
+    "name": "[RACE] Liberty Blockfort Quad",
+    "body": "Liberty CE map: Liberty Blockfort Quad",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:38:55Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-liberty-blockfort-quad",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_blockfort_quad.zip",
+        "size": 41281700,
+        "size_human": "39 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-liberty-blockfort-quad/liberty_blockfort_quad.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538369,
+    "tag": "race-islandthunder-race",
+    "name": "[RACE] Island Thunder Race",
+    "body": "Liberty CE map: Island Thunder Race",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:38:45Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-islandthunder-race",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "islandthunder_race.zip",
+        "size": 8626703,
+        "size_human": "8.2 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-islandthunder-race/islandthunder_race.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538352,
+    "tag": "race-highlow-race",
+    "name": "[RACE] Highlow Race",
+    "body": "Liberty CE map: Highlow Race",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:38:40Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-highlow-race",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "highlow_race.zip",
+        "size": 6910918,
+        "size_human": "6.6 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-highlow-race/highlow_race.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538337,
+    "tag": "race-grove-final",
+    "name": "[RACE] Grove Final",
+    "body": "Liberty CE map: Grove Final",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:38:35Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-grove-final",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "grove_final.zip",
+        "size": 15121681,
+        "size_human": "14 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-grove-final/grove_final.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538313,
+    "tag": "race-equinox-v2",
+    "name": "[RACE] Equinox V2",
+    "body": "Liberty CE map: Equinox V2",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:38:28Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-equinox-v2",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "equinox_v2.zip",
+        "size": 15167302,
+        "size_human": "14 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-equinox-v2/equinox_v2.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538295,
+    "tag": "race-cliffhanger",
+    "name": "[RACE] Cliffhanger",
+    "body": "Liberty CE map: Cliffhanger",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:38:22Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-cliffhanger",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "cliffhanger.zip",
+        "size": 6911080,
+        "size_human": "6.6 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-cliffhanger/cliffhanger.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538269,
+    "tag": "race-cityscape-adrenaline",
+    "name": "[RACE] Cityscape Adrenaline",
+    "body": "Liberty CE map: Cityscape Adrenaline",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:38:16Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-cityscape-adrenaline",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Cityscape-Adrenaline.zip",
+        "size": 26603210,
+        "size_human": "25 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-cityscape-adrenaline/Cityscape-Adrenaline.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538248,
+    "tag": "race-camtrack-arena-race",
+    "name": "[RACE] Camtrack Arena Race",
+    "body": "Liberty CE map: Camtrack Arena Race",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:38:09Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-camtrack-arena-race",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Camtrack-Arena-Race.zip",
+        "size": 7474402,
+        "size_human": "7.1 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-camtrack-arena-race/Camtrack-Arena-Race.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538222,
+    "tag": "race-bc-raceway-final-mp",
+    "name": "[RACE] BC Raceway Final MP",
+    "body": "Liberty CE map: BC Raceway Final MP",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:38:04Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-bc-raceway-final-mp",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "bc_raceway_final_mp.zip",
+        "size": 20564906,
+        "size_human": "20 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-bc-raceway-final-mp/bc_raceway_final_mp.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538196,
+    "tag": "race-atephobia-v2",
+    "name": "[RACE] Atephobia V2",
+    "body": "Liberty CE map: Atephobia V2",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:37:58Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-atephobia-v2",
+    "games": [
+      "CE"
+    ],
+    "server": "RACE",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "atephobia__V2.zip",
+        "size": 9004693,
+        "size_human": "8.6 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-atephobia-v2/atephobia__V2.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538175,
+    "tag": "mix-triduct",
+    "name": "[MIX] Triduct",
+    "body": "Liberty CE map: Triduct",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:37:52Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-triduct",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "triduct.zip",
+        "size": 9966054,
+        "size_human": "9.5 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-triduct/triduct.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538140,
+    "tag": "mix-trainingday",
+    "name": "[MIX] Trainingday",
+    "body": "Liberty CE map: Trainingday",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:37:46Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-trainingday",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "TrainingDay.zip",
+        "size": 5521583,
+        "size_human": "5.3 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-trainingday/TrainingDay.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538115,
+    "tag": "mix-tactics",
+    "name": "[MIX] Tactics",
+    "body": "Liberty CE map: Tactics",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:37:40Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-tactics",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "tactics.zip",
+        "size": 15086263,
+        "size_human": "14 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-tactics/tactics.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538097,
+    "tag": "mix-oblivion",
+    "name": "[MIX] Oblivion",
+    "body": "Liberty CE map: Oblivion",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:37:34Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-oblivion",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Oblivion.zip",
+        "size": 7970366,
+        "size_human": "7.6 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-oblivion/Oblivion.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538066,
+    "tag": "mix-liberty-the-cage",
+    "name": "[MIX] Liberty The Cage",
+    "body": "Liberty CE map: Liberty The Cage",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:37:29Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-the-cage",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_the_cage.zip",
+        "size": 36969278,
+        "size_human": "35 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-the-cage/liberty_the_cage.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397538037,
+    "tag": "mix-liberty-tension",
+    "name": "[MIX] Liberty Tension",
+    "body": "Liberty CE map: Liberty Tension",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:37:20Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-tension",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_tension.zip",
+        "size": 28250216,
+        "size_human": "27 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-tension/liberty_tension.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537996,
+    "tag": "mix-liberty-silo-surprise2",
+    "name": "[MIX] Liberty Silo Surprise2",
+    "body": "Liberty CE map: Liberty Silo Surprise2",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:37:12Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-silo-surprise2",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_silo_surprise2.zip",
+        "size": 21738546,
+        "size_human": "21 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-silo-surprise2/liberty_silo_surprise2.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537956,
+    "tag": "mix-liberty-shrinking-man",
+    "name": "[MIX] Liberty Shrinking Man",
+    "body": "Liberty CE map: Liberty Shrinking Man",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:37:05Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-shrinking-man",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_shrinking_man.zip",
+        "size": 54421753,
+        "size_human": "52 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-shrinking-man/liberty_shrinking_man.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537904,
+    "tag": "mix-liberty-sanctified",
+    "name": "[MIX] Liberty Sanctified",
+    "body": "Liberty CE map: Liberty Sanctified",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:36:55Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-sanctified",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_sanctified.zip",
+        "size": 56197262,
+        "size_human": "54 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-sanctified/liberty_sanctified.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537860,
+    "tag": "mix-liberty-ratrace",
+    "name": "[MIX] Liberty Ratrace",
+    "body": "Liberty CE map: Liberty Ratrace",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:36:44Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-ratrace",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_ratrace.zip",
+        "size": 71697110,
+        "size_human": "68 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-ratrace/liberty_ratrace.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397537826,
     "tag": "mix-liberty-paintball-final",
     "name": "[MIX] Liberty Paintball Final",
@@ -452,30 +1268,6 @@
         "download_count": 0,
         "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-abandonment/Abandonment.zip",
         "content_type": "application/zip"
-      }
-    ]
-  },
-  {
-    "id": 397531559,
-    "tag": "Abandonment",
-    "name": "[MIX] - Abandonment",
-    "body": "",
-    "prerelease": false,
-    "published_at": "2026-09-27T06:11:31Z",
-    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/Abandonment",
-    "games": [
-      "CE"
-    ],
-    "server": "MIX",
-    "thumbnail": null,
-    "assets": [
-      {
-        "name": "Abandonment.zip",
-        "size": 7976952,
-        "size_human": "7.6 MB",
-        "download_count": 0,
-        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/Abandonment/Abandonment.zip",
-        "content_type": "application/x-zip-compressed"
       }
     ]
   }
