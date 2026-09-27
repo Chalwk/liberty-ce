@@ -1,5 +1,53 @@
 [
   {
+    "id": 397537826,
+    "tag": "mix-liberty-paintball-final",
+    "name": "[MIX] Liberty Paintball Final",
+    "body": "Liberty CE map: Liberty Paintball Final",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:36:33Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-paintball-final",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_paintball_final.zip",
+        "size": 25010719,
+        "size_human": "24 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-paintball-final/liberty_paintball_final.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537786,
+    "tag": "mix-liberty-opavo",
+    "name": "[MIX] Liberty Opavo",
+    "body": "Liberty CE map: Liberty Opavo",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:36:26Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-opavo",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_opavo.zip",
+        "size": 71709434,
+        "size_human": "68 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-opavo/liberty_opavo.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397537717,
     "tag": "mix-liberty-longest",
     "name": "[MIX] Liberty Longest",
