@@ -1,5 +1,29 @@
 [
   {
+    "id": 397537586,
+    "tag": "mix-liberty-hangem",
+    "name": "[MIX] Liberty Hangem",
+    "body": "Liberty CE map: Liberty Hangem",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:35:42Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-hangem",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_hangem.zip",
+        "size": 63220565,
+        "size_human": "60 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-hangem/liberty_hangem.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397537516,
     "tag": "mix-liberty-gephy",
     "name": "[MIX] Liberty Gephy",
