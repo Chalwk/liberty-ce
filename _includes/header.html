@@ -18,29 +18,46 @@
 <nav aria-label="Main navigation" class="main-nav">
        <ul>
               <li><a class="nav-link {% if page.url == '/' or page.url == '/index' %}active{% endif %}"
+                            {% if page.url == '/' or page.url == '/index' %}aria-current="page"{% endif %}
                             href="{{ site.baseurl }}/index">Home</a></li>
               <li><a class="nav-link {% if page.url == '/pages/servers' %}active{% endif %}"
+                            {% if page.url == '/pages/servers' %}aria-current="page"{% endif %}
                             href="{{ site.baseurl }}/pages/servers">Servers</a></li>
               <li><a class="nav-link {% if page.url == '/pages/maps' %}active{% endif %}"
+                            {% if page.url == '/pages/maps' %}aria-current="page"{% endif %}
                             href="{{ site.baseurl }}/pages/maps">Maps</a></li>
               <li class="dropdown">
-                     <a class="dropdown-toggle nav-link" href="#">Server Info <i class="fas fa-caret-down"></i></a>
+                     {% assign in_server_info = false %}
+                     {% if page.url == '/pages/server-features' or page.url == '/pages/race_stats' or page.url == '/pages/rank_stats' %}
+                     {% assign in_server_info = true %}
+                     {% endif %}
+                     <a aria-expanded="false" aria-haspopup="true"
+                            class="dropdown-toggle nav-link {% if in_server_info %}active{% endif %}" href="#">
+                            Server Info <i class="fas fa-caret-down"></i>
+                     </a>
                      <ul class="dropdown-menu">
                             <li><a class="nav-link {% if page.url == '/pages/server-features' %}active{% endif %}"
-                                          href="{{ site.baseurl }}/pages/server-features">Features</a></li>
+                                          {% if page.url == '/pages/server-features' %}aria-current="page"{% endif %}
+                                          href="{{ site.baseurl }}/pages/server-features">Features &amp; Commands</a></li>
                             <li><a class="nav-link {% if page.url == '/pages/race_stats' %}active{% endif %}"
+                                          {% if page.url == '/pages/race_stats' %}aria-current="page"{% endif %}
                                           href="{{ site.baseurl }}/pages/race_stats">Race Stats</a></li>
                             <li><a class="nav-link {% if page.url == '/pages/rank_stats' %}active{% endif %}"
+                                          {% if page.url == '/pages/rank_stats' %}aria-current="page"{% endif %}
                                           href="{{ site.baseurl }}/pages/rank_stats">Rank Stats - MIX</a></li>
                      </ul>
               </li>
               <li><a class="nav-link {% if page.url == '/pages/members' %}active{% endif %}"
+                            {% if page.url == '/pages/members' %}aria-current="page"{% endif %}
                             href="{{ site.baseurl }}/pages/members">Members</a></li>
               <li><a class="nav-link {% if page.url == '/pages/resources' %}active{% endif %}"
+                            {% if page.url == '/pages/resources' %}aria-current="page"{% endif %}
                             href="{{ site.baseurl }}/pages/resources">Resources</a></li>
               <li><a class="nav-link {% if page.url == '/pages/community-rules' %}active{% endif %}"
+                            {% if page.url == '/pages/community-rules' %}aria-current="page"{% endif %}
                             href="{{ site.baseurl }}/pages/community-rules">Community Rules</a></li>
               <li><a class="nav-link {% if page.url == '/pages/bans' %}active{% endif %}"
+                            {% if page.url == '/pages/bans' %}aria-current="page"{% endif %}
                             href="{{ site.baseurl }}/pages/bans">Bans</a></li>
        </ul>
 </nav>

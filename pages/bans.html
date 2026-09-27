@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Bans
-description: View all current bans and appeals.
+description: "View all current bans and appeals."
 ---
 
 <!--
@@ -13,19 +13,6 @@ description: View all current bans and appeals.
 -->
 
 <style>
-    :root {
-        --bg-panel: rgba(10, 12, 15, 0.8);
-        --bg-panel-light: rgba(20, 22, 26, 0.9);
-        --border-glow: rgba(42, 169, 161, 0.5);
-        --primary: #2aa9a1;
-        --primary-dark: #1e7e78;
-        --text-muted: #aaa;
-        --text-light: #fff;
-        --accent: #2aa9a1;
-        --danger: #e06c75;
-        --transition: all 0.2s ease;
-    }
-
     .ban-header-section {
         display: flex;
         justify-content: space-between;
@@ -62,7 +49,6 @@ description: View all current bans and appeals.
         font-size: 0.95rem;
     }
 
-    /* Button container - left aligned */
     .appeal-buttons {
         display: flex;
         align-items: center;
@@ -92,7 +78,6 @@ description: View all current bans and appeals.
         transform: scale(1.02);
     }
 
-    /* Email button specific style + hover fix */
     .appeal-btn.email-btn {
         background: #2aa9a1;
     }
@@ -102,7 +87,6 @@ description: View all current bans and appeals.
         color: white !important;
     }
 
-    /* OR separator */
     .appeal-or {
         font-size: 1rem;
         font-weight: 700;
@@ -359,7 +343,8 @@ description: View all current bans and appeals.
     <p><i class="fas fa-scale-balanced"></i> <strong>Dispute a ban?</strong> If you believe you've been banned unfairly
         from Liberty Gaming servers or Discord, please contact our admin team via GitHub or email.</p>
     <div class="appeal-buttons">
-        <a class="appeal-btn" href="{{ site.links.ban_appeal }}" target="_blank"><i class="fab fa-github"></i> Appeal
+        <a class="appeal-btn" href="{{ site.links.ban_appeal }}" target="_blank" rel="noopener"><i
+                class="fab fa-github"></i> Appeal
             via GitHub</a>
         <span class="appeal-or">OR</span>
         <a class="appeal-btn email-btn" href="mailto:{{ site.links.email }}"><i class="fas fa-envelope"></i> Email:

@@ -15,27 +15,41 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Dropdown toggle for mobile (and prevent page jump)
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
             const parentLi = this.closest('.dropdown');
             if (parentLi) {
-                // Close other open dropdowns? (optional, better UX)
                 document.querySelectorAll('.dropdown.open').forEach(drop => {
-                    if (drop !== parentLi) drop.classList.remove('open');
+                    if (drop !== parentLi) {
+                        drop.classList.remove('open');
+                        const otherToggle = drop.querySelector('.dropdown-toggle');
+                        if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+                    }
                 });
-                parentLi.classList.toggle('open');
+                const nowOpen = parentLi.classList.toggle('open');
+                this.setAttribute('aria-expanded', nowOpen ? 'true' : 'false');
             }
         });
     });
 
-    // On window resize above 768px, remove any .open classes to avoid stuck dropdowns
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown.open').forEach(drop => {
+                drop.classList.remove('open');
+                const toggle = drop.querySelector('.dropdown-toggle');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
+
     function handleResize() {
         if (window.innerWidth > 768) {
             document.querySelectorAll('.dropdown.open').forEach(drop => {
                 drop.classList.remove('open');
+                const toggle = drop.querySelector('.dropdown-toggle');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
             });
         }
     }

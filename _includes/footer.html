@@ -7,16 +7,23 @@
 -->
 
 <footer>
-    <p class="footer-copyright"></p>
+    <p class="footer-copyright">&copy; {{ site.time | date: "%Y" }} Liberty Gaming - Halo CE</p>
     <div class="social-share">
-        <a aria-label="Discord" class="social-icon" href="{{ site.links.discord }}" target="_blank">
+        <a aria-label="Join our Discord" class="social-icon" href="{{ site.links.discord }}" target="_blank"
+            rel="noopener">
             <i class="fab fa-discord"></i>
         </a>
-        <a aria-label="Facebook" class="social-icon" href="{{ site.links.facebook }}" target="_blank">
+        <a aria-label="Follow us on Facebook" class="social-icon" href="{{ site.links.facebook }}" target="_blank"
+            rel="noopener">
             <i class="fab fa-facebook"></i>
         </a>
-        <a aria-label="Email" class="social-icon" href="mailto:{{ site.links.email }}" target="_blank">
+        <a aria-label="Email Liberty Gaming" class="social-icon" href="mailto:{{ site.links.email }}">
             <i class="fas fa-envelope"></i>
         </a>
     </div>
+    <nav aria-label="Footer" class="footer-links">
+        <a href="{{ site.baseurl }}/pages/community-rules">Community Rules</a>
+        <a href="{{ site.links.join_request }}" target="_blank" rel="noopener">Apply to Join</a>
+        <a href="{{ site.links.ban_appeal }}" target="_blank" rel="noopener">Ban Appeal</a>
+    </nav>
 </footer>

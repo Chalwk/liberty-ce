@@ -11,7 +11,6 @@ url: "https://liberty-ce.net"
 baseurl: ""
 locale: en_GB
 timezone: Europe/London
-site_scale: 0.65
 
 author:
   name: Liberty Gaming

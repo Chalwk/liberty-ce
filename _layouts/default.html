@@ -13,9 +13,11 @@
 
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <header class="header">{% include header.html %} </header>
 
-  <main>{{ content }}</main>
+  <main id="main-content" tabindex="-1">{{ content }}</main>
 
   {% include footer.html %}
 

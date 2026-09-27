@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Servers
-description: Liberty Gaming's active servers
+description: "Liberty Gaming's active servers."
 ---
 
 <!--
@@ -50,24 +50,6 @@ description: Liberty Gaming's active servers
 </div>
 
 <style>
-    :root {
-        --bg-panel: rgba(10, 12, 15, 0.8);
-        --bg-panel-light: rgba(20, 22, 26, 0.9);
-        --border-glow: rgba(42, 169, 161, 0.5);
-        --primary: #2aa9a1;
-        --text-muted: #aaa;
-        --text-light: #fff;
-        --accent: #2aa9a1;
-        --transition: all 0.2s ease;
-    }
-
-    main {
-        padding: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-
     .server-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(230px, 380px));
@@ -147,9 +129,7 @@ description: Liberty Gaming's active servers
 </style>
 
 <script>
-    // Hides each Game Tracker loading overlay once its iframe has finished
-    // loading. This is the only script this page still needs now that the
-    // old map-rotation UI (and its data/maps.txt fetch) has been removed.
+    // Hides each Game Tracker loading overlay once its iframe has finished loading.
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.tracker-embed iframe').forEach(iframe => {
             const overlay = iframe.parentElement.querySelector('.loading-overlay');
