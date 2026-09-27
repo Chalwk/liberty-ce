@@ -1,5 +1,53 @@
 [
   {
+    "id": 397537687,
+    "tag": "mix-liberty-hung-higher",
+    "name": "[MIX] Liberty Hung Higher",
+    "body": "Liberty CE map: Liberty Hung Higher",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:36:02Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-hung-higher",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_hung_higher.zip",
+        "size": 21676694,
+        "size_human": "21 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-hung-higher/liberty_hung_higher.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537632,
+    "tag": "mix-liberty-hornets-nest",
+    "name": "[MIX] Liberty Hornets Nest",
+    "body": "Liberty CE map: Liberty Hornets Nest",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:35:55Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-hornets-nest",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_hornets_nest.zip",
+        "size": 71242307,
+        "size_human": "68 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-hornets-nest/liberty_hornets_nest.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397537586,
     "tag": "mix-liberty-hangem",
     "name": "[MIX] Liberty Hangem",
