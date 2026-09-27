@@ -1,5 +1,29 @@
 [
   {
+    "id": 397537195,
+    "tag": "mix-ivory-tower-final",
+    "name": "[MIX] Ivory Tower Final",
+    "body": "Liberty CE map: Ivory Tower Final",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:34:03Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-ivory-tower-final",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "ivory_tower_final.zip",
+        "size": 26545513,
+        "size_human": "25 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-ivory-tower-final/ivory_tower_final.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397537151,
     "tag": "mix-h2-zanzibar-v3",
     "name": "[MIX] H2 Zanzibar V3",
