@@ -1,5 +1,77 @@
 [
   {
+    "id": 397537151,
+    "tag": "mix-h2-zanzibar-v3",
+    "name": "[MIX] H2 Zanzibar V3",
+    "body": "Liberty CE map: H2 Zanzibar V3",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:33:56Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-h2-zanzibar-v3",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "H2_Zanzibar_v3.zip",
+        "size": 36038490,
+        "size_human": "34 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-h2-zanzibar-v3/H2_Zanzibar_v3.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537128,
+    "tag": "mix-delta-ruined",
+    "name": "[MIX] Delta Ruined",
+    "body": "Liberty CE map: Delta Ruined",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:33:48Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-delta-ruined",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "delta_ruined.zip",
+        "size": 12995125,
+        "size_human": "12 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-delta-ruined/delta_ruined.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537099,
+    "tag": "mix-abandonment",
+    "name": "[MIX] Abandonment",
+    "body": "Liberty CE map: Abandonment",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:33:42Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-abandonment",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Abandonment.zip",
+        "size": 7976952,
+        "size_human": "7.6 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-abandonment/Abandonment.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397531559,
     "tag": "Abandonment",
     "name": "[MIX] - Abandonment",
