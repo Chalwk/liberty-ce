@@ -1,5 +1,77 @@
 [
   {
+    "id": 397537287,
+    "tag": "mix-liberty-city-fight",
+    "name": "[MIX] Liberty City Fight",
+    "body": "Liberty CE map: Liberty City Fight",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:34:27Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-city-fight",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_city_fight.zip",
+        "size": 27109969,
+        "size_human": "26 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-city-fight/liberty_city_fight.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537262,
+    "tag": "mix-liberty-chillout",
+    "name": "[MIX] Liberty Chillout",
+    "body": "Liberty CE map: Liberty Chillout",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:34:20Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-chillout",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_chillout.zip",
+        "size": 17405675,
+        "size_human": "17 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-chillout/liberty_chillout.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
+    "id": 397537222,
+    "tag": "mix-liberty-battle-creek",
+    "name": "[MIX] Liberty Battle Creek",
+    "body": "Liberty CE map: Liberty Battle Creek",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:34:14Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-battle-creek",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_battle_creek.zip",
+        "size": 71985915,
+        "size_human": "69 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-battle-creek/liberty_battle_creek.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397537195,
     "tag": "mix-ivory-tower-final",
     "name": "[MIX] Ivory Tower Final",
