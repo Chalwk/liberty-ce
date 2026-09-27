@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 397531559,
+    "tag": "Abandonment",
+    "name": "[MIX] - Abandonment",
+    "body": "",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:11:31Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/Abandonment",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "Abandonment.zip",
+        "size": 7976952,
+        "size_human": "7.6 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/Abandonment/Abandonment.zip",
+        "content_type": "application/x-zip-compressed"
+      }
+    ]
+  }
+]
