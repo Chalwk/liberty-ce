@@ -1,5 +1,29 @@
 [
   {
+    "id": 397537717,
+    "tag": "mix-liberty-longest",
+    "name": "[MIX] Liberty Longest",
+    "body": "Liberty CE map: Liberty Longest",
+    "prerelease": false,
+    "published_at": "2026-09-27T06:36:14Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-liberty-longest",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": null,
+    "assets": [
+      {
+        "name": "liberty_longest.zip",
+        "size": 52688811,
+        "size_human": "50 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-longest/liberty_longest.zip",
+        "content_type": "application/zip"
+      }
+    ]
+  },
+  {
     "id": 397537687,
     "tag": "mix-liberty-hung-higher",
     "name": "[MIX] Liberty Hung Higher",
