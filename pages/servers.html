@@ -13,13 +13,10 @@ description: Liberty Gaming's active servers
 -->
 
 <h1>Active Servers</h1>
-<p>Click on a server to see its current map rotation and gametypes. All games run for 20 minutes. Click any map name
-    to download it.</p>
-
-<div class="full-map-view" id="map-view-container"></div>
+<p>Live player counts, current map, and top players for each Liberty server.</p>
 
 <div class="server-list">
-    <div class="server-entry" data-server="MIX">
+    <div class="server-entry">
         <div class="server-info">
             <div class="server-title">
                 <h3>! ++ LIBERTY - MIX ++ !</h3>
@@ -33,16 +30,9 @@ description: Liberty Gaming's active servers
                 <p>MIX - CTF, Slayer, Oddball, KoH</p>
             </div>
         </div>
-
-        <div class="server-meta">
-            <button class="toggle-maps-button" type="button">View map rotation</button>
-            <a class="download-bundle-button" download href="https://github.com/Chalwk/liberty-ce/releases/latest/">
-                <i class="fas fa-download"></i> Download Map Pack
-            </a>
-        </div>
     </div>
 
-    <div class="server-entry" data-server="RACING">
+    <div class="server-entry">
         <div class="server-info">
             <div class="server-title">
                 <h3>! ++ LIBERTY - RACING ++ !</h3>
@@ -55,13 +45,6 @@ description: Liberty Gaming's active servers
                 </div>
                 <p>Dedicated racing server - circuit and obstacle maps</p>
             </div>
-        </div>
-
-        <div class="server-meta">
-            <button class="toggle-maps-button" type="button">View map rotation</button>
-            <a class="download-bundle-button" download href="https://github.com/Chalwk/liberty-ce/releases/latest/">
-                <i class="fas fa-download"></i> Download Map Pack
-            </a>
         </div>
     </div>
 </div>
@@ -91,13 +74,6 @@ description: Liberty Gaming's active servers
         justify-content: center;
         gap: 2rem;
         margin-top: 2.5rem;
-        transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    .server-list.hidden {
-        opacity: 0;
-        transform: scale(0.95);
-        pointer-events: none;
     }
 
     .server-entry {
@@ -109,9 +85,7 @@ description: Liberty Gaming's active servers
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        cursor: pointer;
         transition: var(--transition);
-        min-height: 720px;
         overflow: hidden;
         text-align: center;
     }
@@ -134,58 +108,6 @@ description: Liberty Gaming's active servers
     .server-info p {
         color: var(--text-muted);
         margin: 0;
-    }
-
-    .server-meta {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .toggle-maps-button {
-        background: var(--primary);
-        border: 1px solid var(--border-glow);
-        color: #fff;
-        padding: 0.7rem 1rem;
-        border-radius: 999px;
-        cursor: pointer;
-        font-weight: 700;
-        transition: background 0.2s, transform 0.2s;
-        width: 100%;
-        max-width: 260px;
-    }
-
-    .toggle-maps-button:hover {
-        background: rgba(42, 169, 161, 0.85);
-        transform: translateY(-1px);
-    }
-
-    .download-bundle-button {
-        background: rgba(18, 21, 27, 0.95);
-        border: 1px solid rgba(42, 169, 161, 0.45);
-        color: #fff;
-        padding: 0.7rem 1rem;
-        border-radius: 999px;
-        cursor: pointer;
-        font-weight: 700;
-        text-decoration: none;
-        transition: background 0.2s, transform 0.2s, border-color 0.2s;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        width: 100%;
-        max-width: 260px;
-        box-sizing: border-box;
-    }
-
-    .download-bundle-button:hover {
-        background: rgba(42, 169, 161, 0.15);
-        border-color: var(--primary);
-        transform: translateY(-1px);
     }
 
     .tracker-embed {
@@ -222,260 +144,18 @@ description: Liberty Gaming's active servers
         opacity: 0;
         pointer-events: none;
     }
-
-    .full-map-view {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 2rem;
-        transition: opacity 0.4s ease, transform 0.4s ease;
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    .full-map-view.visible {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .maps-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-        gap: 0.8rem;
-        margin-top: 1rem;
-    }
-
-    .map-item {
-        background: rgba(18, 21, 27, 0.95);
-        border: 1px solid rgba(63, 160, 150, 0.45);
-        border-radius: 14px;
-        padding: 0.8rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 0.4rem;
-        min-height: 80px;
-    }
-
-    .map-name a {
-        color: var(--text-light);
-        text-decoration: none;
-        border-bottom: 1px solid transparent;
-        transition: border-color 0.2s, color 0.2s;
-        font-weight: 600;
-        font-size: 0.94rem;
-        display: block;
-        line-height: 1.2;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .map-name a:hover {
-        color: #ffffff;
-        border-bottom-color: var(--primary);
-    }
-
-    .map-gametype {
-        color: #d2f8ee;
-        font-size: 0.82rem;
-        font-weight: 700;
-        background: rgba(34, 54, 66, 0.8);
-        padding: 0.26rem 0.7rem;
-        border-radius: 12px;
-        border: 1px solid rgba(42, 169, 161, 0.3);
-        text-align: center;
-    }
-
-    .note {
-        color: var(--text-muted);
-        margin-bottom: 1rem;
-        font-style: italic;
-    }
-
-    .loading,
-    .error {
-        color: var(--text-muted);
-        text-align: center;
-        padding: 2rem;
-    }
-
-    .error {
-        color: #ff6b6b;
-    }
-
-    .hide-maps-button {
-        align-self: center;
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(4px);
-        border: 1px solid rgba(42, 169, 161, 0.7);
-        color: #fff;
-        padding: 0.8rem 1.5rem;
-        border-radius: 40px;
-        cursor: pointer;
-        font-weight: 700;
-        font-size: 1rem;
-        transition: all 0.25s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .hide-maps-button i {
-        font-size: 1rem;
-    }
-
-    .hide-maps-button:hover {
-        background: rgba(42, 169, 161, 0.2);
-        border-color: var(--primary);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .hide-maps-button:active {
-        transform: translateY(0);
-    }
 </style>
 
 <script>
-    (function () {
-        const baseUrl = 'https://maps.halonet.net/maps/';
-        const mapsTxtPath = '../data/maps.txt';
-        let mixMaps = [];
-        let racingMaps = [];
-        let fetchCompleted = false;
-
-        const mapViewContainer = document.getElementById('map-view-container');
-        const serverList = document.querySelector('.server-list');
-
+    // Hides each Game Tracker loading overlay once its iframe has finished
+    // loading. This is the only script this page still needs now that the
+    // old map-rotation UI (and its data/maps.txt fetch) has been removed.
+    document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.tracker-embed iframe').forEach(iframe => {
             const overlay = iframe.parentElement.querySelector('.loading-overlay');
-
             iframe.addEventListener('load', () => {
-                overlay.classList.add('hidden');
+                if (overlay) overlay.classList.add('hidden');
             });
         });
-
-        fetch(mapsTxtPath)
-            .then(res => {
-                if (!res.ok) throw new Error(`Failed to load data/maps.txt (${res.status})`);
-                return res.text();
-            })
-            .then(data => {
-                const lines = data.split(/\r?\n/);
-                const MIX = [];
-                const RACING = [];
-
-                lines.forEach(line => {
-                    line = line.trim();
-
-                    if (!line || line.startsWith('#')) return;
-                    const parts = line.split(';');
-                    if (parts.length < 3) return;
-
-                    const server = parts[0].trim();
-                    const map_name = parts[1].trim();
-                    const info = parts[2].trim();
-
-                    if (server === 'MIX') {
-                        MIX.push({
-                            map: map_name,
-                            gametype: info
-                        });
-                    } else if (server === 'RACING') {
-                        RACING.push({
-                            map: map_name,
-                            laps: info
-                        });
-                    }
-                });
-
-                mixMaps = MIX;
-                racingMaps = RACING;
-                fetchCompleted = true;
-            })
-            .catch(err => {
-                console.error('Error loading maps:', err);
-                fetchCompleted = true;
-            });
-
-        function renderMapView(serverType) {
-            if (!fetchCompleted) {
-                mapViewContainer.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-pulse"></i> Loading maps...</div>';
-                return;
-            }
-
-            const maps = serverType === 'MIX' ? mixMaps : racingMaps;
-            if (!maps.length) {
-                mapViewContainer.innerHTML = `<div class="error">No map data available for ${serverType} server.</div>`;
-                return;
-            }
-
-            let html = `<button class="hide-maps-button" type="button"><i class="fas fa-arrow-left"></i> Back to Servers</button>`;
-            html += '<p class="note"><i class="fas fa-clock"></i> All games run for 20 minutes. Click a map name to download.</p>';
-            html += '<div class="maps-grid">';
-
-            maps.forEach(item => {
-                const encoded = encodeURIComponent(item.map);
-                const gametype = serverType === 'MIX' ? item.gametype : `${item.laps} lap${parseInt(item.laps) !== 1 ? 's' : ''}`;
-
-                html += `
-                    <div class="map-item">
-                        <span class="map-name">
-                            <a href="${baseUrl}${encoded}.zip"
-                               target="_blank"
-                               title="Download ${item.map}">
-                                ${item.map}
-                            </a>
-                        </span>
-
-                        <span class="map-gametype">${gametype}</span>
-                    </div>
-                `;
-            });
-
-            html += '</div>';
-            mapViewContainer.innerHTML = html;
-            const transitionDuration = 400;
-            serverList.classList.add('hidden');
-
-            setTimeout(() => {
-                mapViewContainer.classList.add('visible');
-            }, transitionDuration);
-
-            const hideBtn = mapViewContainer.querySelector('.hide-maps-button');
-            hideBtn.addEventListener('click', () => {
-                mapViewContainer.classList.remove('visible');
-
-                setTimeout(() => {
-                    serverList.classList.remove('hidden');
-                }, transitionDuration);
-            });
-        }
-
-        document.querySelectorAll('.server-entry').forEach(entry => {
-            const serverType = entry.dataset.server;
-
-            entry.addEventListener('click', () => {
-                renderMapView(serverType);
-            });
-
-            const button = entry.querySelector('.toggle-maps-button');
-            if (button) {
-                button.addEventListener('click', e => {
-                    e.stopPropagation();
-                    renderMapView(serverType);
-                });
-            }
-
-            const downloadButton = entry.querySelector('.download-bundle-button');
-            if (downloadButton) {
-                downloadButton.addEventListener('click', e => {
-                    e.stopPropagation();
-                });
-            }
-        });
-    })();
+    });
 </script>

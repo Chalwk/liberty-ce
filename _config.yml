@@ -4,7 +4,6 @@
 # This file is part of the proprietary Liberty Gaming website.
 # Use, copying, or distribution without permission is strictly prohibited.
 
-
 title: Liberty Gaming - Halo CE
 description: Official website for Liberty Gaming Halo CE community.
 
@@ -25,6 +24,7 @@ links:
   email: LIBERTYCLAN2024@GMAIL.COM
   discord: https://discord.gg/invite/aQXhJy8UTT
   facebook: https://www.facebook.com/LibertyClan
+  releases: https://github.com/Chalwk/liberty-ce/releases
   ban_appeal: https://github.com/Chalwk/liberty-ce/issues/new?template=ban-appeal.yml
   join_request: https://github.com/Chalwk/liberty-ce/issues/new?template=join-request.yml
 

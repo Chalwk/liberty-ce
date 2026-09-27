@@ -1,0 +1,558 @@
+---
+layout: default
+title: Maps
+description: "Browse and download all Halo Custom Edition maps for Liberty Gaming."
+per_page: 9
+columns: 3
+---
+
+<!--
+  Liberty Gaming - Halo CE Website
+  Developer: Jericho Crosby / Chalwk
+  Copyright (c) 2026 Liberty Gaming - Halo CE. All rights reserved.
+  This file is part of the proprietary Liberty Gaming website.
+  Use, copying, or distribution without permission is strictly prohibited.
+-->
+
+<h1>Liberty-CE Map Library</h1>
+<p>
+    All maps here are pulled straight from
+    <a href="{{ site.links.releases }}" rel="noopener" target="_blank">GitHub Releases</a>.<br>
+    Click a file to download it directly. Extract each map into your Halo maps folder to install.
+</p>
+
+{% assign releases = site.data.releases | sort: 'published_at' | reverse %}
+
+{%- comment -%}
+Total downloads across every map, for the toolbar summary.
+{%- endcomment -%}
+{% assign site_total_downloads = 0 %}
+{% for release in releases %}
+{% for asset in release.assets %}
+{% assign site_total_downloads = site_total_downloads | plus: asset.download_count %}
+{% endfor %}
+{% endfor %}
+
+<div class="maps-toolbar">
+    <div class="search-wrap">
+        <i aria-hidden="true" class="fas fa-magnifying-glass"></i>
+        <input aria-label="Search maps" id="map-search" placeholder="Search maps by name..." type="text">
+    </div>
+
+    <div class="sort-wrap">
+        <label class="sr-only" for="map-server">Filter maps by server</label>
+        <select id="map-server">
+            <option value="all">All servers</option>
+            <option value="mix">MIX</option>
+            <option value="race">RACE</option>
+        </select>
+    </div>
+
+    <div class="sort-wrap">
+        <label class="sr-only" for="map-sort">Sort maps by</label>
+        <select id="map-sort">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="downloads">Most downloaded</option>
+        </select>
+    </div>
+
+    <span class="map-count">
+        {{ releases.size }} map{% if releases.size != 1 %}s{% endif %} published &middot;
+        {{ site_total_downloads }} total download{% if site_total_downloads != 1 %}s{% endif %}
+    </span>
+</div>
+
+{% if releases.size > 0 %}
+<div class="maps-grid" data-per-page="{{ page.per_page | default: 0 }}" id="maps-grid"
+    style="--maps-columns: {{ page.columns | default: 3 }};">
+    {% for release in releases %}
+    {% assign display_name = release.name %}
+    {% assign name_parts = release.name | split: ']' %}
+    {% if name_parts.size > 1 %}
+    {% assign tag_candidate = name_parts[0] | append: ']' | upcase %}
+    {% if tag_candidate contains '[CE' %}
+    {% assign remaining_parts = name_parts | slice: 1, name_parts.size %}
+    {% assign display_name = remaining_parts | join: ']' | strip %}
+    {% if display_name == '' %}
+    {% assign display_name = release.name %}
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
+    {%- comment -%}
+    Total downloads for this one release, summed across its map archives only.
+    {%- endcomment -%}
+    {% assign total_downloads = 0 %}
+    {% for asset in release.assets %}
+    {% assign total_downloads = total_downloads | plus: asset.download_count %}
+    {% endfor %}
+
+    <article class="map-card" data-downloads="{{ total_downloads }}" data-name="{{ display_name | downcase }}"
+        data-published="{{ release.published_at | date_to_xmlschema }}"
+        data-server="{{ release.server | default: '' | downcase }}" id="release-{{ release.id }}">
+        <div class="map-thumb">
+            {% if release.thumbnail %}
+            <img alt="{{ display_name }} preview" loading="lazy" src="{{ release.thumbnail }}">
+            {% else %}
+            <i class="fas fa-map"></i>
+            {% endif %}
+
+            {% if release.server %}
+            <span class="badge badge-server badge-{{ release.server | downcase }}">{{ release.server }}</span>
+            {% endif %}
+
+            {% if release.prerelease %}
+            <span class="badge badge-prerelease">Beta</span>
+            {% endif %}
+        </div>
+
+        <div class="map-body">
+            <h3>{{ display_name }}</h3>
+            <p class="map-date">
+                <i class="fas fa-calendar"></i>
+                {{ release.published_at | date: "%d %b %Y" }}
+                <span class="map-downloads-count">
+                    <i class="fas fa-download"></i>
+                    {{ total_downloads }} download{% if total_downloads != 1 %}s{% endif %}
+                </span>
+            </p>
+
+            <p class="map-description">
+                {{ release.body | markdownify | strip_html | truncatewords: 30 }}
+            </p>
+
+            <div class="map-downloads">
+                {% for asset in release.assets %}
+                <a class="download-btn" download href="{{ asset.browser_download_url }}">
+                    <i class="fas fa-download"></i>
+                    <span class="download-name">{{ asset.name }}</span>
+                    <span class="download-size">{{ asset.size_human }}</span>
+                </a>
+                {% endfor %}
+            </div>
+
+            {% unless release.assets.size > 0 %}
+            <p class="no-assets"><i class="fas fa-triangle-exclamation"></i> No files attached to this release.</p>
+            {% endunless %}
+
+            <div class="map-links">
+                <a class="map-source-link" href="{{ release.html_url }}" rel="noopener" target="_blank">
+                    View full release notes on GitHub <i class="fas fa-arrow-up-right-from-square fa-xs"></i>
+                </a>
+                <button aria-label="Copy link to {{ display_name }}" class="copy-link-btn"
+                    data-url="{{ site.url }}{{ site.baseurl }}/pages/maps/#release-{{ release.id }}" type="button">
+                    <i class="fas fa-link"></i> <span class="copy-link-label">Copy link</span>
+                </button>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+
+<p class="empty-state search-empty" hidden><i class="fas fa-magnifying-glass"></i> No maps match your filters.</p>
+<nav aria-label="Maps pagination" class="maps-pagination" id="maps-pagination"></nav>
+
+{% else %}
+<div class="empty-state">
+    <i class="fas fa-box-open"></i>
+    <p>No maps published yet - check back soon!</p>
+</div>
+{% endif %}
+
+<style>
+    .maps-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .search-wrap {
+        position: relative;
+        flex: 1 1 260px;
+        max-width: 420px;
+    }
+
+    .search-wrap i {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-muted);
+    }
+
+    #map-search {
+        width: 100%;
+        padding: 0.7rem 1rem 0.7rem 2.5rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-glow);
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text-light);
+        font-family: var(--font-body), sans-serif;
+        font-size: 1rem;
+    }
+
+    #map-search:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 10px var(--border-glow);
+    }
+
+    .sort-wrap {
+        flex: 0 0 auto;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    #map-sort,
+    #map-server {
+        padding: 0.55rem 2.6rem 0.55rem 1.1rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-glow);
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text-light);
+        font-family: var(--font-header), sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: var(--transition);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    #map-sort:hover,
+    #map-sort:focus,
+    #map-server:hover,
+    #map-server:focus {
+        border-color: var(--primary);
+        outline: none;
+    }
+
+    #map-sort option,
+    #map-server option {
+        background: var(--bg-panel);
+        color: var(--text-light);
+    }
+
+    .sort-wrap::after {
+        content: '\f078';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        right: 1.15rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--primary);
+        font-size: 1.05rem;
+        line-height: 1;
+        pointer-events: none;
+    }
+
+    .map-count {
+        color: var(--text-muted);
+        font-style: italic;
+    }
+
+    .maps-grid {
+        display: grid;
+        grid-template-columns: repeat(var(--maps-columns, 3), 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+        .maps-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .maps-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .map-card {
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--border-glow);
+        border-radius: 18px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition);
+    }
+
+    .map-card:hover {
+        border-color: var(--primary);
+        box-shadow: 0 0 15px var(--border-glow);
+    }
+
+    .map-thumb {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .map-thumb img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    .map-thumb i {
+        font-size: 2.8rem;
+        color: var(--primary);
+        opacity: 0.6;
+    }
+
+    .badge {
+        position: absolute;
+        top: 0.7rem;
+        right: 0.7rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        z-index: 1;
+    }
+
+    .badge-prerelease {
+        background: var(--accent);
+        color: #fff;
+    }
+
+    .badge-server {
+        left: 0.7rem;
+        right: auto;
+    }
+
+    .badge-server.badge-mix {
+        background: var(--primary);
+        color: var(--bg-dark);
+    }
+
+    .badge-server.badge-race {
+        background: var(--accent);
+        color: #fff;
+    }
+
+    .map-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .map-body h3 {
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .map-date {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 0.9rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .map-downloads-count {
+        color: var(--text-muted);
+    }
+
+    .map-description {
+        color: var(--text-light);
+        margin-bottom: 1.2rem;
+        flex-grow: 1;
+    }
+
+    .map-downloads {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .download-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: var(--primary);
+        color: var(--bg-dark);
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .download-btn:hover {
+        background: var(--accent);
+        color: #fff;
+    }
+
+    .download-name {
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.92rem;
+    }
+
+    .download-size {
+        font-size: 0.8rem;
+        opacity: 0.85;
+        white-space: nowrap;
+    }
+
+    .no-assets {
+        color: #ff4d4d;
+        font-weight: bold;
+        font-style: normal;
+        background: rgba(255, 77, 77, 0.12);
+        border-left: 4px solid #ff4d4d;
+        padding: 0.6rem 1rem;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .no-assets i {
+        color: #ff4d4d;
+        font-size: 1.1rem;
+    }
+
+    .map-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem 1rem;
+        margin-top: auto;
+    }
+
+    .map-source-link {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        text-decoration: none;
+    }
+
+    .map-source-link:hover {
+        color: var(--accent);
+    }
+
+    .copy-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: transparent;
+        border: 1px solid var(--border-glow);
+        color: var(--text-muted);
+        font-family: var(--font-body), sans-serif;
+        font-size: 0.85rem;
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: var(--transition);
+        white-space: nowrap;
+    }
+
+    .copy-link-btn:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .copy-link-btn.copied {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .empty-state {
+        text-align: center;
+        color: var(--text-muted);
+        padding: 3rem 1rem;
+    }
+
+    .empty-state i {
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 1rem;
+        color: var(--primary);
+    }
+
+    /* Pagination controls */
+    .maps-pagination {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 1rem 0 2.5rem;
+    }
+
+    .maps-pagination .page-btn {
+        min-width: 42px;
+        padding: 0.5rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-glow);
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text-light);
+        font-family: var(--font-header), sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .maps-pagination .page-btn:hover:not(:disabled) {
+        border-color: var(--primary);
+        background: rgba(42, 169, 161, 0.1);
+    }
+
+    .maps-pagination .page-btn.active {
+        background: var(--primary);
+        color: var(--bg-dark);
+        border-color: var(--primary);
+    }
+
+    .maps-pagination .page-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+</style>
+
+<script defer src="{{ site.baseurl }}/assets/js/maps.js"></script>

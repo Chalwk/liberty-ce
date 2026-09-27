@@ -1,0 +1,141 @@
+name: Fetch Map Releases
+
+#
+# Liberty Gaming - Halo CE Website
+# Developer: Jericho Crosby / Chalwk
+#
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  release:
+    types: [published, edited, unpublished, deleted, prereleased, released]
+  workflow_dispatch: {} # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-releases
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Fetch releases via GitHub API
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            function humanSize(bytes) {
+              if (!bytes && bytes !== 0) return 'Unknown size';
+              const units = ['B', 'KB', 'MB', 'GB'];
+              let size = bytes;
+              let unit = 0;
+              while (size >= 1024 && unit < units.length - 1) {
+                size /= 1024;
+                unit++;
+              }
+              return `${size.toFixed(size >= 10 || unit === 0 ? 0 : 1)} ${units[unit]}`;
+            }
+
+            function extractThumbnail(body) {
+              if (!body) return null;
+              // First markdown image in the release body, e.g. ![alt](url)
+              const match = body.match(/!\[[^\]]*\]\((https?:\/\/[^\s)]+)\)/);
+              return match ? match[1] : null;
+            }
+
+            function extractServerType(release) {
+              const title = (release.name || '').toUpperCase();
+              const tag = (release.tag_name || '').toUpperCase();
+
+              // Release titles are the primary source: [RACE] or [MIX].
+              if (/\[RACE\]/.test(title)) return 'RACE';
+              if (/\[MIX\]/.test(title)) return 'MIX';
+
+              // Fallback for releases that only tag the server type.
+              if (/\[RACE\]/.test(tag)) return 'RACE';
+              if (/\[MIX\]/.test(tag)) return 'MIX';
+
+              // Releases without either marker are not Liberty maps.
+              return null;
+            }
+
+            const IMAGE_RE = /\.(png|jpe?g|gif|webp)$/i;
+            const ARCHIVE_RE = /\.(zip|rar)$/i;
+
+            const releases = await github.paginate(github.rest.repos.listReleases, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            });
+
+            const data = releases
+              .filter(r => !r.draft)
+              .map(r => {
+                const server = extractServerType(r);
+
+                // Skip any release that isn't explicitly a [RACE] or [MIX] map.
+                if (!server) return null;
+
+                // Images are thumbnails, never downloadable maps.
+                const imageAssets = r.assets.filter(a => IMAGE_RE.test(a.name));
+                // Only .zip/.rar count as map archives. Anything else
+                // attached to the release (readmes, docs, etc.) is
+                // ignored rather than shown as a "map" download.
+                const mapAssets = r.assets.filter(a => ARCHIVE_RE.test(a.name));
+
+                return {
+                  id: r.id,
+                  tag: r.tag_name,
+                  name: r.name || r.tag_name,
+                  body: r.body || '',
+                  prerelease: !!r.prerelease,
+                  published_at: r.published_at || r.created_at,
+                  html_url: r.html_url,
+                  games: ['CE'],
+                  server: server,
+                  thumbnail: (imageAssets[0] && imageAssets[0].browser_download_url) || extractThumbnail(r.body),
+                  assets: mapAssets.map(a => ({
+                    name: a.name,
+                    size: a.size,
+                    size_human: humanSize(a.size),
+                    download_count: a.download_count,
+                    browser_download_url: a.browser_download_url,
+                    content_type: a.content_type
+                  }))
+                };
+              })
+              .filter(Boolean)
+              // newest first
+              .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+
+            const dataDir = path.join(process.env.GITHUB_WORKSPACE, '_data');
+            fs.mkdirSync(dataDir, { recursive: true });
+            fs.writeFileSync(
+              path.join(dataDir, 'releases.json'),
+              JSON.stringify(data, null, 2) + '\n'
+            );
+
+            core.info(`Wrote ${data.length} release(s) to _data/releases.json`);
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/releases.json
+          if git diff --staged --quiet; then
+            echo "No changes to releases.json"
+          else
+            git commit -m "chore: update releases data"
+            git push
+          fi
