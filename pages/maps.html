@@ -23,10 +23,6 @@ permalink: /pages/maps/
 </p>
 
 {% assign releases = site.data.releases | sort: 'published_at' | reverse %}
-
-{%- comment -%}
-Total downloads across every map, for the toolbar summary.
-{%- endcomment -%}
 {% assign site_total_downloads = 0 %}
 {% for release in releases %}
 {% for asset in release.assets %}
@@ -71,21 +67,23 @@ Total downloads across every map, for the toolbar summary.
     style="--maps-columns: {{ page.columns | default: 3 }};">
     {% for release in releases %}
     {% assign display_name = release.name %}
-    {% assign name_parts = release.name | split: ']' %}
-    {% if name_parts.size > 1 %}
+    {% for i in (1..3) %}
+    {% assign trimmed = display_name | strip %}
+    {% assign first_char = trimmed | slice: 0 %}
+    {% if first_char != '[' %}{% break %}{% endif %}
+    {% assign name_parts = trimmed | split: ']' %}
     {% assign tag_candidate = name_parts[0] | append: ']' | upcase %}
-    {% if tag_candidate contains '[CE' %}
+    {% if tag_candidate contains '[CE' or tag_candidate contains '[MIX]' or tag_candidate contains '[RACE]' %}
     {% assign remaining_parts = name_parts | slice: 1, name_parts.size %}
     {% assign display_name = remaining_parts | join: ']' | strip %}
+    {% else %}
+    {% break %}
+    {% endif %}
+    {% endfor %}
     {% if display_name == '' %}
     {% assign display_name = release.name %}
     {% endif %}
-    {% endif %}
-    {% endif %}
 
-    {%- comment -%}
-    Total downloads for this one release, summed across its map archives only.
-    {%- endcomment -%}
     {% assign total_downloads = 0 %}
     {% for asset in release.assets %}
     {% assign total_downloads = total_downloads | plus: asset.download_count %}
