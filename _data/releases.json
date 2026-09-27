@@ -432,30 +432,6 @@
     ]
   },
   {
-    "id": 397538295,
-    "tag": "race-cliffhanger",
-    "name": "[RACE] Cliffhanger",
-    "body": "Laps: 10",
-    "prerelease": false,
-    "published_at": "2026-09-27T06:38:22Z",
-    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-cliffhanger",
-    "games": [
-      "CE"
-    ],
-    "server": "RACE",
-    "thumbnail": null,
-    "assets": [
-      {
-        "name": "cliffhanger.zip",
-        "size": 6911080,
-        "size_human": "6.6 MB",
-        "download_count": 0,
-        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-cliffhanger/cliffhanger.zip",
-        "content_type": "application/zip"
-      }
-    ]
-  },
-  {
     "id": 397538269,
     "tag": "race-cityscape-adrenaline",
     "name": "[RACE] Cityscape Adrenaline",
