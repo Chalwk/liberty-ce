@@ -48,30 +48,6 @@
     ]
   },
   {
-    "id": 397538769,
-    "tag": "race-timberland",
-    "name": "[RACE] Timberland",
-    "body": "Laps: 10",
-    "prerelease": false,
-    "published_at": "2026-09-27T06:40:25Z",
-    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-timberland",
-    "games": [
-      "CE"
-    ],
-    "server": "RACE",
-    "thumbnail": null,
-    "assets": [
-      {
-        "name": "timberland.zip",
-        "size": 5795048,
-        "size_human": "5.5 MB",
-        "download_count": 0,
-        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-timberland/timberland.zip",
-        "content_type": "application/zip"
-      }
-    ]
-  },
-  {
     "id": 397538745,
     "tag": "race-siege",
     "name": "[RACE] Siege",
