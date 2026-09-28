@@ -48,30 +48,6 @@
     ]
   },
   {
-    "id": 397538769,
-    "tag": "race-timberland",
-    "name": "[RACE] Timberland",
-    "body": "Laps: 10",
-    "prerelease": false,
-    "published_at": "2026-09-27T06:40:25Z",
-    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-timberland",
-    "games": [
-      "CE"
-    ],
-    "server": "RACE",
-    "thumbnail": null,
-    "assets": [
-      {
-        "name": "timberland.zip",
-        "size": 5795048,
-        "size_human": "5.5 MB",
-        "download_count": 0,
-        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-timberland/timberland.zip",
-        "content_type": "application/zip"
-      }
-    ]
-  },
-  {
     "id": 397538745,
     "tag": "race-siege",
     "name": "[RACE] Siege",
@@ -451,30 +427,6 @@
         "size_human": "14 MB",
         "download_count": 0,
         "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-equinox-v2/equinox_v2.zip",
-        "content_type": "application/zip"
-      }
-    ]
-  },
-  {
-    "id": 397538295,
-    "tag": "race-cliffhanger",
-    "name": "[RACE] Cliffhanger",
-    "body": "Laps: 10",
-    "prerelease": false,
-    "published_at": "2026-09-27T06:38:22Z",
-    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/race-cliffhanger",
-    "games": [
-      "CE"
-    ],
-    "server": "RACE",
-    "thumbnail": null,
-    "assets": [
-      {
-        "name": "cliffhanger.zip",
-        "size": 6911080,
-        "size_human": "6.6 MB",
-        "download_count": 0,
-        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/race-cliffhanger/cliffhanger.zip",
         "content_type": "application/zip"
       }
     ]
