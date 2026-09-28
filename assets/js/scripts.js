@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function closeMobileNav() {
+        if (mainNav && mainNav.classList.contains('show')) {
+            mainNav.classList.remove('show');
+            closeAllDropdowns();
+        }
+    }
+
     if (navToggle && mainNav) {
         navToggle.addEventListener('click', () => {
             mainNav.classList.toggle('show');
@@ -44,8 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Close dropdowns when tapping/clicking outside.
+    // Close the mobile nav (and any open dropdowns) when tapping/clicking outside.
     function handleOutsideInteraction(e) {
+        if (!e.target.closest('.main-nav') && !e.target.closest('.nav-toggle')) {
+            closeMobileNav();
+        }
         if (!e.target.closest('.dropdown')) {
             closeAllDropdowns();
         }
