@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Servers
-description: "Liberty Gaming's active servers."
+description: "Liberty Gaming's active Halo CE servers — live player counts, current maps, and top players."
 ---
 
 <!--
@@ -12,129 +12,413 @@ description: "Liberty Gaming's active servers."
   Use, copying, or distribution without permission is strictly prohibited.
 -->
 
-<h1>Active Servers</h1>
-<p>Live player counts, current map, and top players for each Liberty server.</p>
-
-<div class="server-list">
-    <div class="server-entry">
-        <div class="server-info">
-            <div class="server-title">
-                <h3>! ++ LIBERTY - MIX ++ !</h3>
-                <div class="tracker-embed">
-                    <div class="loading-overlay"><i class="fas fa-spinner fa-pulse"></i> Stats loading...</div>
-                    <iframe height="596"
-                        src="https://cache.gametracker.com/components/html0/?host=185.107.96.224:2302&bgColor=0a0c0f&fontColor=cccccc&titleBgColor=0a0c0f&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=130&showCurrPlayers=1&topPlayersHeight=130&showTopPlayers=1&showBlogs=0&width=240"
-                        style="border:0; overflow:hidden;" width="240">
-                    </iframe>
-                </div>
-                <p>MIX - CTF, Slayer, Oddball, KoH</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="server-entry">
-        <div class="server-info">
-            <div class="server-title">
-                <h3>! ++ LIBERTY - RACING ++ !</h3>
-                <div class="tracker-embed">
-                    <div class="loading-overlay"><i class="fas fa-spinner fa-pulse"></i> Stats loading...</div>
-                    <iframe height="596"
-                        src="https://cache.gametracker.com/components/html0/?host=185.107.96.219:2302&bgColor=0a0c0f&fontColor=cccccc&titleBgColor=0a0c0f&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=130&showCurrPlayers=1&topPlayersHeight=130&showTopPlayers=1&showBlogs=0&width=240"
-                        style="border:0; overflow:hidden;" width="240">
-                    </iframe>
-                </div>
-                <p>Dedicated racing server - circuit and obstacle maps</p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <style>
-    .server-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 380px));
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 2.5rem;
+    .servers-intro {
+        color: var(--text-muted);
+        max-width: 780px;
+        margin-bottom: 2rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
     }
 
-    .server-entry {
-        background: rgba(10, 12, 15, 0.8);
+    .servers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-top: 1.5rem;
+    }
+
+    .server-card {
+        position: relative;
+        background: linear-gradient(180deg, rgba(26, 30, 36, 0.9) 0%, rgba(10, 12, 15, 0.9) 100%);
         border: 1px solid var(--border-glow);
-        border-radius: 20px;
-        padding: 1rem;
+        border-radius: 24px;
+        padding: 1.5rem 1.5rem 1.75rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        gap: 1.25rem;
         transition: var(--transition);
         overflow: hidden;
-        text-align: center;
     }
 
-    .server-entry:hover {
+    .server-card:hover {
+        transform: translateY(-4px);
         border-color: var(--primary);
-        box-shadow: 0 0 15px var(--primary);
+        box-shadow: 0 10px 30px rgba(42, 169, 161, 0.2), 0 0 20px rgba(42, 169, 161, 0.15);
     }
 
-    .server-info h3 {
+    .server-card-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .server-card-header h2 {
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-size: clamp(1.05rem, 3.5vw, 1.35rem);
         color: var(--primary);
-        margin-bottom: 0.7rem;
-        font-size: 1.2rem;
-        line-height: 1.2;
+        line-height: 1.25;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        letter-spacing: 0.05em;
     }
 
-    .server-info p {
+    .server-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 0.2rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        background: rgba(122, 165, 245, 0.12);
+        color: var(--accent);
+        border: 1px solid rgba(122, 165, 245, 0.25);
+        white-space: nowrap;
+    }
+
+    .tag-mode {
+        background: rgba(42, 169, 161, 0.15);
+        color: var(--primary);
+        border-color: rgba(42, 169, 161, 0.4);
+    }
+
+    .server-connect {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border-glow);
+        border-radius: 16px;
+        padding: 0.9rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .connect-label {
+        font-family: var(--font-header), sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .connect-label i {
+        color: var(--primary);
+        font-size: 0.8rem;
+    }
+
+    .ip-row {
+        display: flex;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .server-ip {
+        flex: 1;
+        background: var(--bg-dark);
+        color: var(--primary);
+        font-family: 'Courier New', ui-monospace, monospace;
+        font-size: 1.05rem;
+        font-weight: 600;
+        padding: 0.55rem 0.9rem;
+        border-radius: 10px;
+        border: 1px solid var(--border-glow);
+        letter-spacing: 0.5px;
+        user-select: all;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        scrollbar-width: thin;
+    }
+
+    .copy-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        min-width: 42px;
+        border-radius: 10px;
+        background: var(--primary);
+        color: var(--bg-dark);
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: var(--transition);
+        flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 0 12px var(--accent);
+    }
+
+    .copy-btn:active {
+        transform: scale(0.95);
+    }
+
+    .copy-btn.copied {
+        background: #4ade80;
+        color: var(--bg-dark);
+    }
+
+    .copy-btn.failed {
+        background: var(--danger);
+        color: #fff;
+    }
+
+    .connect-hint {
+        font-size: 0.8rem;
         color: var(--text-muted);
         margin: 0;
+        line-height: 1.4;
+    }
+
+    .connect-hint code {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0.1rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.78rem;
+        color: var(--primary);
+        white-space: nowrap;
     }
 
     .tracker-embed {
+        position: relative;
         width: 240px;
         max-width: 100%;
-        position: relative;
         margin: 0 auto;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow:
+            0 0 0 1px var(--border-glow),
+            0 0 20px rgba(42, 169, 161, 0.08);
+        min-height: 600px;
     }
 
     .tracker-embed iframe {
-        width: 100%;
+        width: 240px;
+        max-width: 100%;
         height: 600px;
         border: 0;
         display: block;
+        margin: 0 auto;
     }
 
     .tracker-embed .loading-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(10, 12, 15, 0.85);
+        inset: 0;
+        background: rgba(10, 12, 15, 0.92);
         display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
         justify-content: center;
         align-items: center;
         color: var(--text-light);
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
         z-index: 10;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+
+    .tracker-embed .loading-overlay i {
+        font-size: 1.6rem;
+        color: var(--primary);
     }
 
     .tracker-embed .loading-overlay.hidden {
         opacity: 0;
-        pointer-events: none;
+    }
+
+    @media (max-width: 640px) {
+        .server-card {
+            padding: 1.25rem;
+        }
+
+        .server-ip {
+            font-size: 0.95rem;
+            padding: 0.5rem 0.7rem;
+        }
+
+        .tracker-embed,
+        .tracker-embed iframe {
+            min-height: 580px;
+        }
+
+        .tracker-embed iframe {
+            height: 580px;
+        }
     }
 </style>
 
+<h1>Active Servers</h1>
+<p class="servers-intro">
+    Live player counts, current map, and top players for each Liberty server.
+    Use the copy button to grab a server IP for direct connect.
+</p>
+
+<div class="servers-grid">
+    <article class="server-card">
+        <header class="server-card-header">
+            <h2>! ++ LIBERTY - MIX ++ !</h2>
+            <div class="server-tags">
+                <span class="tag tag-mode">Mix</span>
+                <span class="tag">CTF</span>
+                <span class="tag">Slayer</span>
+                <span class="tag">Oddball</span>
+                <span class="tag">KoH</span>
+            </div>
+        </header>
+
+        <div class="server-connect">
+            <div class="connect-label"><i class="fas fa-network-wired"></i> Direct Connect</div>
+            <div class="ip-row">
+                <code class="server-ip">185.107.96.224:2302</code>
+                <button class="copy-btn" type="button" data-ip="185.107.96.224:2302"
+                    aria-label="Copy MIX server IP to clipboard">
+                    <i class="fas fa-copy" aria-hidden="true"></i>
+                </button>
+            </div>
+            <p class="connect-hint">
+                Paste into Halo's Direct IP field, or run <code>connect 185.107.96.224:2302</code>
+            </p>
+        </div>
+
+        <div class="tracker-embed">
+            <div class="loading-overlay" aria-hidden="true">
+                <i class="fas fa-spinner fa-pulse"></i>
+                <span>Stats loading...</span>
+            </div>
+            <iframe title="MIX server live stats" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                allowtransparency="true" scrolling="no"
+                src="https://cache.gametracker.com/components/html0/?host=185.107.96.224:2302&bgColor=0a0c0f&fontColor=cccccc&titleBgColor=0a0c0f&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=130&showCurrPlayers=1&topPlayersHeight=130&showTopPlayers=1&showBlogs=0&width=240">
+            </iframe>
+        </div>
+    </article>
+
+    <article class="server-card">
+        <header class="server-card-header">
+            <h2>! ++ LIBERTY - RACING ++ !</h2>
+            <div class="server-tags">
+                <span class="tag tag-mode">Race</span>
+                <span class="tag">Time Trials</span>
+                <span class="tag">Leaderboards</span>
+                <span class="tag">Custom Maps</span>
+            </div>
+        </header>
+
+        <div class="server-connect">
+            <div class="connect-label"><i class="fas fa-network-wired"></i> Direct Connect</div>
+            <div class="ip-row">
+                <code class="server-ip">185.107.96.219:2302</code>
+                <button class="copy-btn" type="button" data-ip="185.107.96.219:2302"
+                    aria-label="Copy RACING server IP to clipboard">
+                    <i class="fas fa-copy" aria-hidden="true"></i>
+                </button>
+            </div>
+            <p class="connect-hint">
+                Paste into Halo's Direct IP field, or run <code>connect 185.107.96.219:2302</code>
+            </p>
+        </div>
+
+        <div class="tracker-embed">
+            <div class="loading-overlay" aria-hidden="true">
+                <i class="fas fa-spinner fa-pulse"></i>
+                <span>Stats loading...</span>
+            </div>
+            <iframe title="RACING server live stats" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                allowtransparency="true" scrolling="no"
+                src="https://cache.gametracker.com/components/html0/?host=185.107.96.219:2302&bgColor=0a0c0f&fontColor=cccccc&titleBgColor=0a0c0f&titleColor=ff9900&borderColor=555555&linkColor=ffcc00&borderLinkColor=222222&showMap=1&currentPlayersHeight=130&showCurrPlayers=1&topPlayersHeight=130&showTopPlayers=1&showBlogs=0&width=240">
+            </iframe>
+        </div>
+    </article>
+</div>
+
 <script>
-    // Hides each Game Tracker loading overlay once its iframe has finished loading.
     document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.tracker-embed iframe').forEach(iframe => {
-            const overlay = iframe.parentElement.querySelector('.loading-overlay');
-            iframe.addEventListener('load', () => {
-                if (overlay) overlay.classList.add('hidden');
+        // Hide each tracker's loading overlay once its iframe has loaded.
+        // Includes a fallback timeout in case the load event never fires
+        // (e.g. the embed is blocked or slow to respond).
+        document.querySelectorAll('.tracker-embed').forEach(function (embed) {
+            const iframe = embed.querySelector('iframe');
+            const overlay = embed.querySelector('.loading-overlay');
+            if (!iframe || !overlay) return;
+
+            const hideOverlay = function () {
+                overlay.classList.add('hidden');
+            };
+
+            // If the browser has already completed loading before JS ran
+            // (cached embed), hide immediately.
+            try {
+                if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+                    hideOverlay();
+                    return;
+                }
+            } catch (err) {
+                // Cross-origin: cannot inspect, ignore.
+            }
+
+            iframe.addEventListener('load', hideOverlay, { once: true });
+
+            // Safety net: don't leave the spinner stuck forever.
+            setTimeout(hideOverlay, 6000);
+        });
+
+        // Copy-to-clipboard for server IPs, with a fallback for non-secure contexts.
+        document.querySelectorAll('.copy-btn').forEach(function (btn) {
+            btn.addEventListener('click', async function () {
+                const ip = btn.dataset.ip;
+                if (!ip) return;
+
+                let copied = false;
+
+                try {
+                    if (navigator.clipboard && window.isSecureContext) {
+                        await navigator.clipboard.writeText(ip);
+                        copied = true;
+                    } else {
+                        const ta = document.createElement('textarea');
+                        ta.value = ip;
+                        ta.setAttribute('readonly', '');
+                        ta.style.position = 'fixed';
+                        ta.style.top = '-1000px';
+                        ta.style.opacity = '0';
+                        document.body.appendChild(ta);
+                        ta.select();
+                        ta.setSelectionRange(0, ip.length);
+                        copied = document.execCommand('copy');
+                        document.body.removeChild(ta);
+                    }
+                } catch (err) {
+                    copied = false;
+                }
+
+                const originalHTML = btn.innerHTML;
+                btn.classList.remove('copied', 'failed');
+                btn.classList.add(copied ? 'copied' : 'failed');
+                btn.innerHTML = copied
+                    ? '<i class="fas fa-check" aria-hidden="true"></i>'
+                    : '<i class="fas fa-times" aria-hidden="true"></i>';
+
+                setTimeout(function () {
+                    btn.classList.remove('copied', 'failed');
+                    btn.innerHTML = originalHTML;
+                }, 1500);
             });
         });
     });
