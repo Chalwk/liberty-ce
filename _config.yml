@@ -18,7 +18,10 @@ author:
   name: Liberty Gaming
   url: https://github.com/Chalwk
 
-image: /assets/images/avatar.png
+title_separator: "|"
+twitter:
+  card: summary_large_image
+
 favicon: favicon.ico
 
 links:
@@ -42,7 +45,7 @@ plugins:
 relative_links:
   enabled: true
   collections: true
-  
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -51,3 +54,11 @@ exclude:
   - README.md
   - LICENSE
   - run.bat
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /assets/images/avatar.png
+        alt: "Liberty Gaming Logo"

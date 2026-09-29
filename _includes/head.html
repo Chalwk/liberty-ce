@@ -11,31 +11,7 @@
 <meta content="width=device-width, initial-scale={{ site.site_scale }}" name="viewport">
 <meta content="#0a0c0f" name="theme-color">
 
-<!-- title -->
-<title>
-  {% if page.title %}
-  {{ page.title }} | {{ site.title }}
-  {% else %}
-  {{ site.title }}
-  {% endif %}
-</title>
-
-<meta content="{{ page.description | default: site.description }}" name="description">
-
-<!-- SEO -->
 {% seo %}
-
-<!-- social metadata -->
-<meta content="{{ page.title | default: site.title }}" property="og:title">
-<meta content="{{ page.description | default: site.description }}" property="og:description">
-<meta content="{{ page.image | default: site.image | absolute_url }}" property="og:image">
-<meta content="Liberty Logo" property="og:image:alt">
-<meta content="{{ page.url | absolute_url }}" property="og:url">
-<meta content="website" property="og:type">
-<meta content="summary_large_image" name="twitter:card">
-<meta content="{{ page.title | default: site.title }}" name="twitter:title">
-<meta content="{{ page.description | default: site.description }}" name="twitter:description">
-<meta content="{{ page.image | default: site.image | absolute_url }}" name="twitter:image">
 
 <!-- preconnect hints for external resources -->
 <link href="https://fonts.googleapis.com" rel="preconnect">
