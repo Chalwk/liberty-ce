@@ -60,5 +60,5 @@ defaults:
       path: ""
     values:
       image:
-        path: /assets/images/avatar.png
+        path: /assets/images/liberty-logo-new.png
         alt: "Liberty Gaming Logo"
