@@ -539,7 +539,7 @@
       "CE"
     ],
     "server": "MIX",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/mix-triduct/triduct.jpg",
     "assets": [
       {
         "name": "triduct.zip",
