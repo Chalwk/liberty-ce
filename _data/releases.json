@@ -11,7 +11,7 @@
       "CE"
     ],
     "server": "RACE",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/race-wpitest1-race/wpitest1_race.jpg",
     "assets": [
       {
         "name": "wpitest1_race.zip",
@@ -35,7 +35,7 @@
       "CE"
     ],
     "server": "RACE",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/race-tlsstronghold/tlsstronghold.jpg",
     "assets": [
       {
         "name": "TLSstronghold.zip",
@@ -59,7 +59,7 @@
       "CE"
     ],
     "server": "RACE",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/race-siege/siege.jpg",
     "assets": [
       {
         "name": "siege.zip",
@@ -83,7 +83,7 @@
       "CE"
     ],
     "server": "RACE",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/race-secrets-of-egypt/secrets_of_egypt.jpg",
     "assets": [
       {
         "name": "secrets_of_egypt.zip",
@@ -107,7 +107,7 @@
       "CE"
     ],
     "server": "RACE",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/race-prime-c3-race/prime_c3_race.jpg",
     "assets": [
       {
         "name": "Prime_C3_Race.zip",
@@ -131,7 +131,7 @@
       "CE"
     ],
     "server": "RACE",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/race-new-mombasa-race-v2/New_Mombasa_Race_v2.jpg",
     "assets": [
       {
         "name": "New_Mombasa_Race_v2.zip",
@@ -155,7 +155,7 @@
       "CE"
     ],
     "server": "RACE",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/race-mystic-mod/mystic_mod.jpg",
     "assets": [
       {
         "name": "mystic_mod.zip",
