@@ -576,30 +576,6 @@
     ]
   },
   {
-    "id": 397538115,
-    "tag": "mix-tactics",
-    "name": "[MIX] Tactics",
-    "body": "CTF, normal weaps",
-    "prerelease": false,
-    "published_at": "2026-09-27T06:37:40Z",
-    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/mix-tactics",
-    "games": [
-      "CE"
-    ],
-    "server": "MIX",
-    "thumbnail": null,
-    "assets": [
-      {
-        "name": "tactics.zip",
-        "size": 15086263,
-        "size_human": "14 MB",
-        "download_count": 0,
-        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-tactics/tactics.zip",
-        "content_type": "application/zip"
-      }
-    ]
-  },
-  {
     "id": 397538097,
     "tag": "mix-oblivion",
     "name": "[MIX] Oblivion",
