@@ -347,7 +347,7 @@
       "CE"
     ],
     "server": "RACE",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/race-islandthunder-race/islandthunder_race.jpg",
     "assets": [
       {
         "name": "islandthunder_race.zip",
