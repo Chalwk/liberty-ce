@@ -227,7 +227,7 @@
       "CE"
     ],
     "server": "RACE",
-    "thumbnail": null,
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/race-lostcove-race/lostcove_race.jpg",
     "assets": [
       {
         "name": "LostCove_Race.zip",
