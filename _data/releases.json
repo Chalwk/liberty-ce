@@ -1,5 +1,29 @@
 [
   {
+    "id": 402686238,
+    "tag": "yoyorast_island_v2",
+    "name": "[MIX] Yoyorast Island V2",
+    "body": "",
+    "prerelease": false,
+    "published_at": "2026-10-03T20:48:27Z",
+    "html_url": "https://github.com/Chalwk/liberty-ce/releases/tag/yoyorast_island_v2",
+    "games": [
+      "CE"
+    ],
+    "server": "MIX",
+    "thumbnail": "https://github.com/Chalwk/liberty-ce/releases/download/yoyorast_island_v2/liberty-logo.png",
+    "assets": [
+      {
+        "name": "Yoyorast.Island.V2.zip",
+        "size": 38016088,
+        "size_human": "36 MB",
+        "download_count": 0,
+        "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/yoyorast_island_v2/Yoyorast.Island.V2.zip",
+        "content_type": "application/x-zip-compressed"
+      }
+    ]
+  },
+  {
     "id": 397538809,
     "tag": "race-wpitest1-race",
     "name": "[RACE] WPI Test 1 Race",
