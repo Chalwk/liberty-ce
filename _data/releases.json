@@ -737,7 +737,7 @@
         "name": "liberty_ratrace.zip",
         "size": 71697110,
         "size_human": "68 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-ratrace/liberty_ratrace.zip",
         "content_type": "application/zip"
       }
@@ -785,7 +785,7 @@
         "name": "liberty_longest.zip",
         "size": 52688811,
         "size_human": "50 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-longest/liberty_longest.zip",
         "content_type": "application/zip"
       }
@@ -857,7 +857,7 @@
         "name": "liberty_hangem.zip",
         "size": 63220565,
         "size_human": "60 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-hangem/liberty_hangem.zip",
         "content_type": "application/zip"
       }
@@ -977,7 +977,7 @@
         "name": "liberty_damnation.zip",
         "size": 21157518,
         "size_human": "20 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-damnation/liberty_damnation.zip",
         "content_type": "application/zip"
       }
@@ -1073,7 +1073,7 @@
         "name": "liberty_battle_creek.zip",
         "size": 71985915,
         "size_human": "69 MB",
-        "download_count": 0,
+        "download_count": 1,
         "browser_download_url": "https://github.com/Chalwk/liberty-ce/releases/download/mix-liberty-battle-creek/liberty_battle_creek.zip",
         "content_type": "application/zip"
       }
